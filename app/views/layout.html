@@ -19,6 +19,7 @@
 {% from "govuk/components/input/macro.njk"               import govukInput %}
 {% from "govuk/components/inset-text/macro.njk"          import govukInsetText %}
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% from "govuk/components/pagination/macro.njk"          import govukPagination %}
 {% from "govuk/components/panel/macro.njk"               import govukPanel %}
 {% from "govuk/components/phase-banner/macro.njk"        import govukPhaseBanner %}
 {% from "govuk/components/radios/macro.njk"              import govukRadios %}
@@ -40,23 +41,13 @@
 {% endblock %}
 
 {% block header %}
- <header class="govuk-header app-header" role="banner" data-module="govuk-header">
-   <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
-      <span class="govuk-header__logotype">
-         <img src="/public/images/crest.png" alt="Department for Education Crest" class="govuk-header__logotype-crown-fallback-image">
-          <span class="govuk-header__logotype-text">
-            Department for Education
-          </span>
-        </span>
-        <span class="govuk-header__product-name">
-          Trust and Academy Financial Health Assessment
-        </span>
-      </a>     
-    </div>
-  </div>
-</header>
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}

@@ -1,7 +1,8 @@
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Trust and Academy Financial Health Assessment
+  Home – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -9,78 +10,35 @@ Trust and Academy Financial Health Assessment
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-       Trust and Academy Financial Health Assessment
-      </h1>
+        Prototype your service using GOV.UK Prototype Kit
+        <span class="govuk-caption-xl">{{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      <p>
+        This kit lets you rapidly create HTML prototypes of GOV.UK services.
+      </p>
+
+      <p>
+        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
+      </p>
+
+      <h2 class="govuk-heading-m">About this page</h2>
+
+      <p>We recommend you add links to your prototype to this page, rather than delete it.
+        You'll find this page in the kit at '/app/views/index.html'.</p>
+
+      <p>You can change the service name by editing the file '/app/config.js'.</p>
+
+      <h2 class="govuk-heading-m">Examples and documentation</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
+        </li>
+        <li>
+          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
+        </li>
+      </ul>
     </div>
-  </div>
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-l">Reporting</h2>
-
-      <div class="cards">
-        <ul>
-           <li class="card">
-            <div class="text">
-              <h3>
-                <a href="/reporting/">New report</a>
-              </h3>
-              <p>Start a new financial health assessment report for an academy or trust.</p>
-            </div>
-          </li>
-          <li class="card">
-            <div class="text">
-              <h3>
-                <a href="/academy/">Academy information</a>
-              </h3>
-              <p>View data and information for trusts and academies.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-        <table class="govuk-table govuk-!-margin-top-9">
-                <caption class="govuk-table__caption govuk-table__caption--m">Reports</caption>
-                <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                        <th scope="col" class="govuk-table__header">Name</th>
-                        <th scope="col" class="govuk-table__header">Type</th>
-                        <th scope="col" class="govuk-table__header">Report</th>
-                        <th scope="col" class="govuk-table__header">Date created</th>
-                        <th scope="col" class="govuk-table__header">Created by</th>
-                        <th scope="col" class="govuk-table__header">Status</th>
-                    </tr>
-                </thead>
-                <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Buryfield Academy</th>
-                        <td class="govuk-table__cell">Academy</td>
-                        <td class="govuk-table__cell">FHA</td>
-                        <td class="govuk-table__cell">19 July 2022</td>
-                        <td class="govuk-table__cell">Robert Banner</td>
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Draft</strong></td>
-                    </tr> 
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Hillfield Academy</th>
-                        <td class="govuk-table__cell">Academy</td>
-                        <td class="govuk-table__cell">FHA</td>
-                        <td class="govuk-table__cell">19 July 2022</td>
-                        <td class="govuk-table__cell">Natasha Romanoff</td>
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Complete</strong></td>
-                    </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Tudor Academy</th>
-                        <td class="govuk-table__cell">Academy</td>
-                        <td class="govuk-table__cell">FHA</td>
-                        <td class="govuk-table__cell">18 July 2022</td>
-                        <td class="govuk-table__cell">Carol Danvers</td>
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Complete</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-
-    </div>
-    <div class="govuk-grid-column-one-third"></div>
   </div>
 
 {% endblock %}
