@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Buryfield Academy
+{% endblock %}
+{% block beforeContent %}
+    <div class="govuk-grid-row govuk-!-margin-bottom-3">
+        <div class="govuk-grid-column-full">
+            <div class="govuk-grid-row govuk-!-padding-top-2">
+                <div class="govuk-grid-column-one-half">
+                    <strong class="govuk-tag">URN 104079</strong>
+                    <p class="govuk-body-s govuk-!-margin-top-2">
+               Buryfield Road, Solihull, West Midlands, B91 2AZ (<a href="https://www.google.co.uk/maps/place/Greswold+Primary+School/@52.4244216,-1.7843641,17z/data=!4m8!1m2!2m1!1shttps:%2F%2Fgoo.gl%2Fmaps%2FFHKCcnDxWZ1pXyE26!3m4!1s0x4870b9faf7cb0c6d:0x88207d9ed86f1a45!8m2!3d52.4235598!4d-1.7802754" target="_blank">View on map
+               <a/>
+                  )
+            </p>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+
+                        <ul class="govuk-list inline">
+                            <li>
+                                <a class="govuk-link" href="#">Overview</a>
+                            </li>
+                            <li>
+                                <a class="govuk-link selected" href="/academy/financial">Financial</a>
+                            </li>
+                            <li>
+                                <a class="govuk-link" href="#">Governance</a>
+                            </li>
+                            <li>
+                                <a class="govuk-link" href="#">Ofsted</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+        <a href="/reporting/fha/srma" class="govuk-back-link">Back</a>
+        {% endblock%}
+        {% block content %}
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+                    <span class="govuk-caption-l">Buryfield Academy</span>
+                    <h1 class="govuk-heading-l"> Year end cash balance and ratio</h1>
+
+                    <p>From <a href="">audit report</a> submitted on 31 December 2021</p>
+
+                    <div class="govuk-inset-text">
+                        <table class="govuk-table">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Year end cash balance</th>
+                                    <th scope="col" class="govuk-table__header">Ratio</th>
+                                    <th scope="col" class="govuk-table__header">Comments</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">£33,126,000</th>
+                                    <td class="govuk-table__cell">4.4</td>
+                                    <td class="govuk-table__cell">This indicates the trust is likely to meets its debts as they fall due.</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+{% if data['cya'] === 'true' %}
+ <div class="govuk-button-group">
+                    <a href="/reporting/fha/cya" class="govuk-button">Continue</a> 
+                    <a href="/academy/financial" class="govuk-link">Cancel</a>
+                    </div>
+{%else%}
+                    <div class="govuk-button-group">
+                        <a href="/reporting/fha/comments" class="govuk-button">Continue</a>
+                        <a href="/academy/financial" class="govuk-link">Cancel</a>
+                    </div>
+                    {% endif%}
+
+                </div>
+
+            </div>
+        {% endblock %}
