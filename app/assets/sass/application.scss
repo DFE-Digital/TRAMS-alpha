@@ -1,6 +1,1022 @@
-//
-// For guidance on how to add CSS and SCSS see:
-// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
 
-// Add extra styles here
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import ".tmp/sass/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/contents-list";
+@import "patterns/mainstream-guide";
+@import "patterns/pagination";
+@import "patterns/related-items";
+@import "patterns/step-by-step-header";
+@import "patterns/step-by-step-nav";
+@import "patterns/step-by-step-related";
+@import "patterns/task-list";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+$dfe-blue: #003a69;
+$accent: #4073ac;
+
+.govuk-header {
+    background-color: $dfe-blue;
+}
+
+.govuk-header__container {
+    position: relative;
+    margin-bottom: -10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 10px solid $accent;
+}
+
+.govuk-header__product-name, .govuk-header__logotype-text {
+    line-height: 2.5rem !important;
+    font-size: 1.2rem;
+}
+
+.govuk-header__logotype-crown-fallback-image{height: 45px; width: 45px;}
+
+.govuk-width-container {
+    max-width: 1200px;
+}
+
+@media (min-width: 48.0625em){
+.govuk-header__logo {
+    width: 100%;
+    margin-bottom:0px;
+}}
+
+.cards>ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card+.card {
+    margin-top: 1.5rem;
+}
+
+@supports (display: grid) {
+    .cards>ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 1.5rem;
+    }
+
+    .card+.card {
+        margin-top: 0;
+    }
+
+    @media (max-width: 400px) {
+        .cards>ul {
+            grid-gap: 4.5rem;
+        }
+    }
+
+    .cards.cards-single>ul {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+
+        >li {
+            width: 60%;
+
+            
+        }
+    }
+}
+
+
+
+.card {
+    border: 1px solid $accent;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card .text {
+    padding: 1rem;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards.top-text .card .text {
+    flex: 0 0 auto;
+}
+
+
+
+@supports (display: grid) {
+    .cards.top-text>ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 1.5rem;
+    }
+
+    .cards.top-text .card+.card {
+        margin-top: 0;
+    }
+
+    @media (max-width: 400px) {
+        .cards.top-text>ul {
+            grid-gap: 4.5rem;
+        }
+    }
+}
+
+.card {
+    background-color: #fff;
+
+    h3 {
+        font-size: 19px;
+        padding-top: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+
+    h3 a {
+        text-decoration: none;
+    }
+
+    h3 a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    h3 a:focus {
+        outline: none;
+        text-decoration: underline;
+    }
+
+    h3,
+    p,
+    a {
+        color: #0b0c0c;
+    }
+
+}
+
+
+
+.card:focus-within,
+.card:hover {
+    box-shadow: 0 0 0 0.25rem;
+}
+
+.card:focus-within h2 a:focus {
+    text-decoration: none;
+}
+
+.card small {
+    display: block;
+}
+
+.card small a {
+    position: relative;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.card small a:hover,
+.card small a:focus {
+    font-weight: bold;
+}
+
+.card .text>*+* {
+    margin-top: 0.75rem;
+}
+
+.card .text> :last-child {
+    margin-top: auto;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.card .text p.meta{color: #505a5f; font-size: 1rem !important;}
+
+.card .text h3+p{margin-top: 15px !important;}
+
+
+.gc-search * {
+    box-sizing: border-box
+}
+
+.gc-search {
+    width: 100%;
+    margin-bottom: 0px
+}
+
+.gc-search .inner-form {
+    background: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.gc-search .inner-form .input-field {
+    height: 48px
+}
+
+.gc-search .inner-form .input-field input {
+    height: 100%;
+    background: 0 0;
+    border: 0;
+    border-left: 1px solid #b1b4b6;
+
+    border-top: 1px solid #b1b4b6;
+
+    border-bottom: 1px solid #b1b4b6;
+    border-radius: 2px 0px 0px 2px;
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #0b0c0c !important
+}
+
+.gc-search--whitebg .inner-form .input-field input {
+    border: 2px solid #b1b4b6
+}
+
+.gc-search .inner-form .input-field input.placeholder {
+    color: #505a5f;
+    font-size: 16px
+}
+
+.gc-search .inner-form .input-field input:-moz-placeholder {
+    color: #505a5f;
+    font-size: 16px
+}
+
+.gc-search .inner-form .input-field input::-webkit-input-placeholder {
+    color: #505a5f;
+    font-size: 16px
+}
+
+.gc-search .inner-form .input-field input:focus,
+.gc-search .inner-form .input-field input:hover {
+    box-shadow: 0 0 0 4px #fd0
+}
+
+.gc-search .inner-form .input-field.second-wrap {
+    -ms-flex-positive: 1;
+    flex-grow: 1
+}
+
+.gc-search .inner-form .input-field.third-wrap {
+    width: 50px;
+    margin-left: 4px;
+    border-right: 1px solid #b1b4b6;
+    border-top: 1px solid #b1b4b6;
+    border-bottom: 1px solid #b1b4b6;
+    border-radius: 0px 2px 2px 0px;
+
+}
+
+.gc-search--whitebg .inner-form .input-field.third-wrap {
+    margin-left: 0
+}
+
+.gc-search .inner-form .input-field.third-wrap .btn-search {
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    background: #0b0c0c;
+    transition: all .2s ease-out, color .2s ease-out
+}
+
+.gc-search .inner-form .input-field.third-wrap .btn-search svg {
+    width: 16px
+}
+
+.gc-search .inner-form .input-field.third-wrap .btn-search:hover {
+    background: #0b0c0c;
+    box-shadow: 0 0 0 4px #fd0
+}
+
+.gc-search .inner-form .input-field.third-wrap .btn-search:focus {
+    box-shadow: 0 0 0 4px #fd0
+}
+
+@media screen and (max-width:992px) {
+    .gc-search .inner-form .input-field {
+        height: 50px
+    }
+}
+
+@media screen and (max-width:300px) {
+    .gc-search .inner-form {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 20px
+    }
+
+    .gc-search .inner-form .input-field {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #b1b4b6
+    }
+
+    .gc-search .inner-form .input-field input {
+        padding: 10px 15px
+    }
+
+    .gc-search .inner-form .input-field.first-wrap {
+        width: 100%;
+        border-right: 0
+    }
+
+    .gc-search .inner-form .input-field.first-wrap .choices__inner {
+        padding: 10px 15px
+    }
+
+    .gc-search .inner-form .input-field.first-wrap .choices[data-type*=select-one]:after {
+        right: 11.5px;
+        border-color: #e5e5e5 transparent transparent transparent
+    }
+
+    .gc-search .inner-form .input-field.second-wrap {
+        width: 100%;
+        margin-bottom: 30px
+    }
+
+    .gc-search .inner-form .input-field.second-wrap input {
+        border: 1px solid rgba(255, 255, 255, .3)
+    }
+
+    .gc-search .inner-form .input-field.third-wrap {
+        margin-bottom: 0;
+        width: 100%
+    }
+}
+
+.gc-search-result {
+    margin-bottom: 15px;
+    box-shadow: 0 0 0 2px #b1b4b6;
+    border-radius: 0;
+    padding: 15px;
+    border-bottom: none
+}
+
+.gc-search-pagination-left {
+    border-left: 5px solid #1d70b8;
+    background: #f3f2f1;
+    padding: 10px 15px;
+    display: block;
+    margin-bottom: 15px
+}
+
+.gc-search-pagination-right {
+    border-right: 5px solid #1d70b8;
+    background: #f3f2f1;
+    padding: 10px 15px;
+    display: block;
+    text-align: right;
+    margin-bottom: 15px
+}
+
+.gc-search-pagination-left:focus,
+.gc-search-pagination-left:hover {
+    background: #fd0;
+    border-left: 5px solid #0b0c0c
+}
+
+.gc-search-pagination-right:focus,
+.gc-search-pagination-right:hover {
+    background: #fd0;
+    border-right: 5px solid #0b0c0c
+}
+
+.gc-search .inner-form .input-field.third-wrap .btn-search {
+    border-radius: 0px 2px 2px 0px;
+    background: $dfe-blue;
+}
+
+
+.gc-search .inner-form .input-field.third-wrap .btn-search .gcweb-icon__search {
+    height: 27px;
+    width: 27px;
+    fill: #ffffff;
+    margin-top: 4px;
+}
+
+.gc-search .inner-form .input-field.third-wrap:hover .btn-search .gcweb-icon__search {
+
+    fill: #ffffff;
+}
+
+
+.gc-search .inner-form .input-field.third-wrap {
+    margin-left: 0px;
+}
+
+ul.inline { text-align: right; margin-top: 15px;}
+
+ul.inline > li {
+    display: inline;
+    padding-left: 15px;
+
+    a{
+        text-decoration: none;
+    }
+
+    a.selected{
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
+
+.bordered-left{border-left: 1px solid #505a5f;}
+
+
+.gcweb-data-list {
+    width: 100%;
+  }
+  
+  .gcweb-data-list > a .gcweb-data-list--item {
+    background-color: #fdfdfd;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #696969;
+    margin-bottom: 10px;
+  }
+  
+  .gcweb-data-list.gcweb-data-list--white a > .gcweb-data-list--item {
+    background-color: #ffffff;
+  }
+  
+  .gcweb-data-list > a .gcweb-data-list--item div {
+    align-items: flex-start;
+  }
+  
+  .gcweb-data-list > a .gcweb-data-list--item div {
+    font-weight: 400;
+    width: 15%;
+    color: #696969;
+    margin: 0px 10px;
+    font-size: 14px;
+    text-decoration: none !important;
+  }
+  
+  .gcweb-data-list a {
+    text-decoration: none !important;
+  }
+  
+  .gcweb-data-list > a .gcweb-data-list--item:hover {
+    text-decoration: none !important;
+    background-color: #ececec;
+  }
+  
+  .gcweb-data-list > a .gcweb-data-list--item div:first-of-type {
+    font-weight: 700;
+    width: 55%;
+    color: #171b1c;
+    margin-left: 0px;
+    display: table-cell;
+    font-weight: 16px;
+  
+    span {
+      font-weight: 400;
+    }
+  }
+  
+  .gcweb-data-list > a .gcweb-data-list--item div:last-of-type {
+    align-items: flex-end;
+    margin-right: 0px;
+    text-align: right;
+  }
+  
+  .gcweb-data-list > a .gcweb-data-list--item div > .govuk-tag {
+    font-size: 14px !important;
+  }
+  
+  .govuk-back-link {
+    margin-top: 0px;
+  }
+  
+  .gcweb-data-list--item-high {
+    border-left: 10px solid #d4351c !important;
+  }
+  
+  .gcweb-data-list--item-medium {
+    border-left: 10px solid #f47738 !important;
+  }
+  
+  .gcweb-data-list--item-low {
+    border-left: 10px solid #00703c !important;
+  }
+  
+  .gcweb-table-thin {
+    font-size: 16px;
+    .govuk-table__cell,
+    .govuk-table__header {
+      padding: 5px 20px 5px 0;
+    }
+  }
+  
+  .gc-info-panel {
+    padding: 15px;
+    background: #ececec;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .gc-info-panel--count {
+    font-size: 48px;
+    font-weight: 700;
+  }
+  
+  .gc-header-service-name {
+    font-size: 1.2rem !important;
+    margin-top: 5px !important;
+    display: block;
+    clear: left;
+  }
+  .govuk-form-group {
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+  
+  .gc-card {
+    margin-bottom: 36px;
+    width: 100%;
+    max-width: 100%;
+    background-color: #f3f2f1;
+  }
+  .gc-card__link-wrapper {
+    border: 1px solid #b1b4b6;
+    box-shadow: 0 4px 0 0 #b1b4b6;
+    display: block;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+  }
+  .gc-card__link-wrapper:focus {
+    box-shadow: 0 0 0 4px #fd0;
+  }
+  .gc-card__link-wrapper .gc-card__heading {
+    text-decoration: underline;
+  }
+  .gc-card__link-wrapper .gc-card__description,
+  .gc-card__link-wrapper .gc-card__heading {
+    color: #0b0c0c;
+  }
+  .gc-card__content-panel {
+    background: #fff;
+    padding: 16px;
+  }
+  .gc-card__content-panel > :first-child {
+    margin-top: 0;
+  }
+  .gc-card__content-panel > :last-child {
+    margin-bottom: 0;
+  }
+  @media (min-width: 40.0625em) {
+    .gc-card__content-panel {
+      padding: 24px;
+    }
+  }
+  a.gc-card__link-wrapper:hover {
+    box-shadow: 0 0 0 4px #fd0;
+    color: #003078;
+  }
+  a.gc-card__link-wrapper:active {
+    box-shadow: 0 0 0 4px #fd0;
+    top: 4px;
+  }
+  a.gc-card__link-wrapper:active .gc-card__heading,
+  a.gc-card__link-wrapper:hover .gc-card__heading {
+    text-decoration: none;
+  }
+  .gc-card__img {
+    border-bottom: 1px solid #f3f2f1;
+    display: block;
+    width: 100%;
+  }
+  @media print {
+    .gc-card__img {
+      display: none;
+    }
+  }
+  .gc-card__heading {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.11111;
+    margin-bottom: 16px;
+    text-decoration: underline;
+  }
+  @media print {
+    .gc-card__heading {
+      font-family: sans-serif;
+    }
+  }
+  @media (min-width: 40.0625em) {
+    .gc-card__heading {
+      font-size: 24px;
+      font-size: 1.5rem;
+      line-height: 1.25;
+    }
+  }
+  @media print {
+    .gc-card__heading {
+      font-size: 18pt;
+      line-height: 1.15;
+    }
+  }
+  .gc-card__content {
+    padding: 24px;
+  }
+  .gc-card__content > :first-child {
+    margin-top: 0;
+  }
+  .gc-card__content > :last-child {
+    margin-bottom: 0;
+  }
+  @media (min-width: 40.0625em) {
+    .gc-card__content {
+      padding: 32px;
+    }
+  }
+  .gc-card__description {
+    color: #0b0c0c;
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.14286;
+  }
+  @media print {
+    .gc-card__description {
+      font-family: sans-serif;
+    }
+  }
+  @media (min-width: 40.0625em) {
+    .gc-card__description {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+  }
+  @media print {
+    .gc-card__description {
+      font-size: 14pt;
+      line-height: 1.2;
+    }
+  }
+  .gc-card--small .gc-card__heading {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+  @media print {
+    .gc-card--small .gc-card__heading {
+      font-family: sans-serif;
+    }
+  }
+  @media (min-width: 40.0625em) {
+    .gc-card--small .gc-card__heading {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.31579;
+    }
+  }
+  @media print {
+    .gc-card--small .gc-card__heading {
+      font-size: 14pt;
+      line-height: 1.15;
+    }
+  }
+  .gc-card--small .gc-card__description {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.14286;
+  }
+  @media print {
+    .gc-card--small .gc-card__description {
+      font-family: sans-serif;
+    }
+  }
+  @media (min-width: 40.0625em) {
+    .gc-card--small .gc-card__description {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+  }
+  @media print {
+    .gc-card--small .gc-card__description {
+      font-size: 14pt;
+      line-height: 1.2;
+    }
+  }
+  .gc-card-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+  }
+  @media (max-width: 48.0525em) {
+    .gc-card-group {
+      margin-bottom: 28px;
+    }
+  }
+  .gc-card-group__item {
+    display: flex;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 48.0525em) {
+    .gc-card-group__item {
+      flex: 0 0 100%;
+    }
+  }
+  @media (max-width: 48.0525em) {
+    .gc-card-group__item {
+      margin-bottom: 28px;
+    }
+    .gc-card-group__item:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .gc-card-group__item .gc-card {
+    margin-bottom: 0;
+  }
+  .gc-card__content--thin {
+    padding: 15px !important;
+  }
+  .gc-card-with-actions {
+    max-width: 100%;
+    margin-bottom: 2em;
+  }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    .gc-card-with-actions {
+      flex-basis: 45.99%;
+    }
+    .gc-card-with-actions:nth-child(2n-1) {
+      margin-right: 3%;
+    }
+    .gc-card-with-actions:nth-child(2n-2) {
+      margin-left: 3%;
+    }
+  }
+  @media screen and (min-width: 900px) {
+    .gc-card-with-actions {
+      flex-basis: 100%;
+    }
+    .gc-card-with-actions:nth-child(3n-1) {
+      margin-left: 3%;
+      margin-right: 3%;
+    }
+  }
+  html[data-useragent*="MSIE 10.0"] .flex-container .gc-card-with-actions {
+    flex-basis: 100%;
+    margin: 3%;
+  }
+  .gc-card-with-actions {
+    border: 1px solid #b1b4b6;
+    font-size: 16px;
+    min-height: 256px;
+  }
+  .gc-card-with-actions .inactive {
+    color: #505a5f;
+  }
+  .gc-card-with-actions .gc-card-with-actions-heading {
+    margin-top: 0;
+  }
+  .gc-card-with-actions .gc-card-with-actions-body {
+    box-shadow: 0 4px 0 0 #b1b4b6;
+    padding: 16px;
+    background: #f3f2f1;
+    min-height: 60px;
+  }
+  @media (min-width: 40.0625em) {
+    .gc-card-with-actions .gc-card-with-actions-body {
+      padding: 24px;
+    }
+  }
+  .gc-card-with-actions .gc-card-with-actions-body:last-child {
+    margin-bottom: 0;
+  }
+  .gc-card-with-actions .gc-card-with-actions-body .detail-large {
+    color: #505a5f;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .gc-card-with-actions .gc-card-with-actions-body .detail {
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .gc-card-with-actions-body.active {
+    background-color: #f3f2f1;
+    transition: 0.1s ease-in-out;
+  }
+  .gc-card-with-actions-action {
+    border-top: 0;
+    padding: 16px;
+  }
+  @media (min-width: 40.0625em) {
+    .gc-card-with-actions-action {
+      padding: 24px;
+    }
+  }
+  .gc-card-with-actions-action ul {
+    margin: 0;
+  }
+  .gc-card-with-actions-action ul li {
+    margin: 0 0 5px 0;
+  }
+  .gc-card-with-actions-action ul li a {
+    font-size: 14px;
+  }
+  .gc-card-with-actions-action ul li:last-child {
+    margin-bottom: 0;
+  }
+  .gc-card-with-actions-body.active.highlighted {
+    background-color: #1d70b8;
+    color: #fff;
+    transition: 0.1s ease-in-out;
+    transition-delay: 0.25s;
+  }
+  .gc-card-with-actions-body.active.highlighted .gc-card-with-actions-heading,
+  .gc-card-with-actions-body.active.highlighted p,
+  .gc-card-with-actions-body.active.highlighted span {
+    color: #fff;
+    transition: 0.1s ease-in-out;
+    transition-delay: 0.25s;
+  }
+  .gc-card-with-actions-body.active.highlighted .gc-card-with-actions-heading a {
+    color: #fff;
+    transition-delay: 0.25s;
+  }
+  .gc-card-with-actions-body.active.highlighted .detail-large {
+    color: #fff;
+    transition-delay: 0.25s;
+  }
+  .gc-card-with-actions-body.active:hover {
+    transition: 0.1s ease-in-out;
+    transition-delay: 0.25s;
+  }
+  .gc-card-with-actions-body.active:hover .gc-card-with-actions-heading,
+  .gc-card-with-actions-body.active:hover p,
+  .gc-card-with-actions-body.active:hover span {
+    transition: 0.1s ease-in-out;
+    transition-delay: 0.25s;
+  }
+  .gc-card-with-actions-body.active:hover .gc-card-with-actions-heading a {
+    transition-delay: 0.25s;
+  }
+  .gc-card-with-actions-body.active:hover .detail-large {
+    transition-delay: 0.25s;
+  }
+  .gc-card-with-actions-body.active a {
+    text-decoration: none;
+  }
+  
+  .tooltip {
+    position: relative; /* making the .tooltip span a container for the tooltip text */
+  }
+  
+  .tooltip:before {
+    content: attr(data-text); /* here's the magic */
+    position: absolute;
+  
+    /* vertically center */
+    top: -200%;
+    transform: translateY(600%);
+    transform: translateX(220%);
+  
+    /* move to right */
+    left: 100%;
+    margin-left: 15px; /* and add a small left margin */
+  
+    /* basic styles */
+    width: 200px;
+    padding: 10px;
+    background: #444;
+    color: #ffffff;
+    text-align: left;
+    z-index: 1;
+  
+    display: none; /* hide by default */
+  }
+  
+  .tooltip:hover:before {
+    display: block;
+  }
+  
+  .gc-app-update-panel {
+    display: block;
+    padding: 15px;
+    background-color: #efefef;
+    margin-bottom: 15px;
+  }
+  
+  .gc-card-rag--red {
+    border-top: 15px solid red;
+  }
+  
+  .gc-card-rag--amber {
+    border-top: 15px solid orange;
+  }
+  
+  .gc-card-rag--green {
+    border-top: 15px solid green;
+  }
+  
+  .rag-status-square {
+    height: 18px;
+    width: 18px;
+    line-height: 26px;
+    display: inline-block;
+    margin-right: 3px;
+    text-align: center !important;
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 4px 8px 12px 8px;
+  }
+  
+  .rag-status-square--red,
+  .govuk-tag--red {
+    background-color: red;
+    color: #fff;
+  }
+  .rag-status-square--amber,
+  .govuk-tag--amber {
+    background-color: orange;
+    color: #1b1c1d;
+  }
+  .rag-status-square--green,
+  .govuk-tag--green {
+    background-color: green;
+    color: #fff;
+  }
+  
+  .rag-status-square--red:hover {
+    cursor: help;
+  }
+  .rag-status-square--amber:hover {
+    cursor: help;
+  }
+  .rag-status-square--green:hover {
+    cursor: help;
+  }
+  
+  .gcweb-app-page-header details {
+    margin-bottom: 0px;
+  }
+  
+  .gcweb-panel {
+    padding: 15px;
+    margin-bottom: 25px;
+    background: #f3f2f1;
+  }
+
+  .govuk-text-right{text-align: right;}
+
+  .negative{
+    color: #d4351c
+  }
+
+  .current-col{ background-color: #f3f2f1;}
+
+  .govuk-panel--confirmation{text-align: left; margin-bottom: 30px;}
+  .govuk-panel__body, .govuk-panel__body a {color: #ffffff; font-size: 24px;}
