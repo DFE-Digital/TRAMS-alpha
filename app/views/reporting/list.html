@@ -1,7 +1,7 @@
 {% extends "layouts/layout.html" %}
 
 {% block pageTitle %}
-  Search academy or trust
+ Results
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,6 +13,9 @@
             <li class="govuk-breadcrumbs__list-item">
                 <a class="govuk-breadcrumbs__link" href="/reporting/">Search academy or trust</a>
             </li>
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="/reporting/list">Results</a>
+            </li>
         </ol>
     </div>
     {% endblock%}
@@ -23,27 +26,24 @@
             <div class="govuk-grid-column-two-thirds">
                 <span class="govuk-caption-xl">Get information about an educational establishment</span>
                 <h1 class="govuk-heading-xl">
-       Search by trust, academy or number
-      </h1>
+       Results for {{data['register-search']}}
+                </h1>
             </div>
         </div>
 
         <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-grid-column-one-quarter">
 
-                <div class="panel search govuk-!-margin-bottom-5">
+  <div class="panel search govuk-!-margin-bottom-5">
 
                     <div class="gc-search">
                         <form method="GET" action="/reporting/list">
                             <label for="search" class="govuk-label">
-                                <p id="search-hint" class="govuk-heading-m">
-                Search
-            </p>
+                                <p id="search-hint" class="govuk-heading-s">Search for an academy or trust</p>
                             </label>
-
                             <div class="inner-form govuk-!-margin-bottom-3">
                                 <div class="input-field second-wrap">
-                                    <input id="search" name="register-search" type="text" placeholder="" aria-describedby="search-hint" spellcheck="false" data-ms-editor="true">
+                                    <input id="search" name="register-search" type="text" placeholder="Search" aria-describedby="search-hint" spellcheck="false" data-ms-editor="true">
                                 </div>
                                 <div class="input-field third-wrap">
                                     <button class="btn-search" type="submit" aria-label="Search">
@@ -61,7 +61,28 @@
                 </div>
 
             </div>
-            <div class="govuk-grid-column-one-third"></div>
+            <div class="govuk-grid-column-three-quarters">
+
+               <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Results</caption>
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Name</th>
+                        <th scope="col" class="govuk-table__header">Type</th>
+                        <th scope="col" class="govuk-table__header">Town or city</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><a href="/academy/financial">Buryfield Academy</a></th>
+                        <td class="govuk-table__cell">Academy</td>
+                        <td class="govuk-table__cell">Solihull</td>
+                    </tr> 
+                </tbody>
+            </table>
+
+            </div>
+            
         </div>
 
     {% endblock %}
