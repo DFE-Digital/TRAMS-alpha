@@ -38,6 +38,10 @@ $accent: #347ca9;
 
 .dfe-template__body {
 
+  .govuk-width-container {
+    max-width: 1200px;
+  }
+
   .govuk-header {
     background-color: $dfe-blue;
   }
