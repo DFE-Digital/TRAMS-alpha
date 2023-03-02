@@ -8,41 +8,57 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% set bodyClasses = "dfe-template__body" %}
 
 {% block header %}
-  <header class="govuk-header app-header" role="banner" data-module="govuk-header">
-    <div class="govuk-header__container govuk-width-container">
-      <div class="govuk-header__logo">
-        <a href="/" class="govuk-header__link govuk-header__link--homepage">
-          <span class="govuk-header__logotype">
-            <img src="/public/images/crest.png" alt="Department for Education homepage" class="govuk-header__logotype-crown-fallback-image">
-            <span class="govuk-header__logotype-text">
-          Department for Education |
-        </span>
+<header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <img src="/public/images/crest.png" alt="Department for Education homepage"
+            class="govuk-header__logotype-crown-fallback-image">
+          <span class="govuk-header__logotype-text">
+            Department for Education |
           </span>
-          <span class="govuk-header__product-name">{{ serviceName }}</span>
-        </a>
-      </div>
-      <div class="govuk-header__content">
-        <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
-        <nav>
-          <ul id="navigation" class="govuk-header__navigation " aria-label="Navigation menu">
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="/">
-            Home
-          </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="#">
-            Search
-          </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="#">
-            Help
-          </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+        </span>
+        <span class="govuk-header__product-name">{{ serviceName }}</span>
+      </a>
     </div>
-  </header>
+    <div class="govuk-header__content">
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation"
+        aria-label="Show or hide navigation menu">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation " aria-label="Navigation menu">
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="/">
+              Home
+            </a>
+          </li>
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="#">
+              Search
+            </a>
+          </li>
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="#">
+              Help
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
 {% endblock %}
