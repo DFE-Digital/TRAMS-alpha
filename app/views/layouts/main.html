@@ -22,6 +22,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
         <span class="govuk-header__product-name">{{ serviceName }}</span>
       </a>
     </div>
+    {% block headerNavLinks %}
     <div class="govuk-header__content">
       <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation"
         aria-label="Show or hide navigation menu">Menu</button>
@@ -45,6 +46,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
         </ul>
       </nav>
     </div>
+    {% endblock %}
   </div>
 </header>
 

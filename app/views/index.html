@@ -4,6 +4,11 @@
 Versions – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
+<!--Remove the header links on the Prototype version page
+   because these are only relevant within a prototype-->
+{% block headerNavLinks %}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -21,7 +26,7 @@ Versions – {{serviceName}} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h2><a href="/version-1/home" class="govuk-link--no-visited-state">Version 1</a></h2>
+    <h2><a href="/version-1/home" class="govuk-link govuk-link--no-visited-state">Version 1</a></h2>
   </div>
 
   <div class="govuk-grid-column-one-third">
@@ -32,12 +37,17 @@ Versions – {{serviceName}} – GOV.UK Prototype Kit
       <nav role="navigation" aria-labelledby="subsection-title">
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
-            <a href="https://github.com/DFE-Digital/TRAMS-alpha" class="govuk-link--no-visited-state">
+            <a href="https://github.com/DFE-Digital/TRAMS-alpha" class="govuk-link govuk-link--no-visited-state">
               GitHub
             </a>
           </li>
           <li>
-            <a href="/manage-prototype" class="govuk-link--no-visited-state">
+            <a href="https://dfe-gov-uk.visualstudio.com.mcas.ms/Academies-and-Free-Schools-SIP/_wiki/wikis/Academies-and-Free-Schools-SIP.wiki/3413/Alpha" class="govuk-link govuk-link--no-visited-state">
+              Project wiki
+            </a>
+          </li>
+          <li>
+            <a href="/manage-prototype" class="govuk-link govuk-link--no-visited-state">
               Manage prototype
             </a>
           </li>
