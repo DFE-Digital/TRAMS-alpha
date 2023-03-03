@@ -1,0 +1,20 @@
+.dfe-black-button {
+  background-color: govuk-colour("black");
+  color: govuk-colour("white");
+  box-shadow: none;
+}
+
+.dfe-search-input {
+  height: 3.125rem;
+}
+
+.dfe-callout {
+  @include govuk-responsive-padding(9, "top");
+  @include govuk-responsive-padding(8, "bottom");
+  background-color: govuk-colour("blue");
+
+  .govuk-heading-xl,
+  .govuk-body {
+    color: govuk-colour("white");
+  }
+}

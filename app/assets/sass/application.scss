@@ -5,6 +5,8 @@
 
 // Add extra styles here
 
+@import "./components.scss";
+
 body,
 p,
 h1,
@@ -37,7 +39,6 @@ $dfe-blue: #003a69;
 $accent: #347ca9;
 
 .dfe-template__body {
-
   .govuk-width-container {
     max-width: 1200px;
   }

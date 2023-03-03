@@ -1,10 +1,48 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+Find information about a Trust or Academy – {{ serviceName }}
 {% endblock %}
 
-{% block content %}
+{% block main %}
 
+  <div class="govuk-grid-row govuk-width-container">
+    {{ govukPhaseBanner({
+      tag: {
+        text: "alpha"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+  </div>
+
+  <div class="dfe-callout">
+    <div class="govuk-grid-row govuk-width-container">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Find information about a Trust or Academy</h1>
+        <p class="govuk-body">You can search for and download information on establishments, establishment groups (such as academies,
+      trusts or federation).</p>
+        <div >
+          <div class="govuk-form-group">
+            <div class="govuk-input__wrapper">
+              <input class="govuk-input dfe-search-input">
+              <button class="govuk-button dfe-black-button" data-module="govuk-button">
+                <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+                  <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-width-container">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l">Related internal systems</h2>
+      <p class="govuk-body">Use these services to find related information and other services provided by the Department for Education (DfE):</p>
+    </div>
+  </div>
 
 {% endblock %}
