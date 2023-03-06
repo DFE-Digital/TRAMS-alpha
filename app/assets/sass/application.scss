@@ -5,10 +5,10 @@
 
 // Add extra styles here
 
-@import "./components.scss";
-@import "./utilities";
+@import "./components";
 @import "./reset";
 @import "./typography";
+@import "./utilities";
 
 $dfe-blue: #003a69;
 $accent: #347ca9;
