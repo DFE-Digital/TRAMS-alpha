@@ -8,34 +8,7 @@
 @import "./components.scss";
 @import "./utilities";
 @import "./reset";
-
-body,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-span,
-div,
-table,
-th,
-td,
-blockquote,
-li,
-tr {
-  font-family:
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen-Sans,
-    Ubuntu,
-    Cantarell,
-    'Helvetica Neue',
-    sans-serif !important;
-}
+@import "./typography";
 
 $dfe-blue: #003a69;
 $accent: #347ca9;
