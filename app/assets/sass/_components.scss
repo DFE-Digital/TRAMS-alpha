@@ -74,3 +74,16 @@
     border-color: $dfe-blue-secondary;
   }
 }
+
+.dfe-page-heading {
+  .dfe-page-heading__title {
+    @extend .govuk-heading-xl;
+    @include govuk-responsive-margin(3, "bottom");
+  }
+
+  .dfe-page-heading__detail {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: max-content max-content;
+  }
+}
