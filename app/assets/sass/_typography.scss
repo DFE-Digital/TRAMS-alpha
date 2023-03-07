@@ -1,0 +1,34 @@
+@import "node_modules/govuk-frontend/govuk/all";
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+div,
+table,
+th,
+td,
+blockquote,
+li,
+tr {
+  font-family:
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    'Helvetica Neue',
+    sans-serif !important;
+}
+
+.dfe-heading-lite-m {
+  @extend .govuk-heading-m;
+  font-weight: normal;
+}

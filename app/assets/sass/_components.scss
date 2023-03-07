@@ -1,0 +1,43 @@
+@import "node_modules/govuk-frontend/govuk/all";
+
+.dfe-black-button {
+  background-color: govuk-colour("black");
+  color: govuk-colour("white");
+  box-shadow: none;
+}
+
+.dfe-inline-button {
+  display: flex;
+  flex: 1 1 auto;
+  margin-bottom: 0;
+}
+
+.dfe-search-input {
+  border-color: transparent;
+  height: 3.125rem;
+}
+
+.dfe-callout {
+  @include govuk-responsive-padding(9, "top");
+  @include govuk-responsive-padding(8, "bottom");
+  background-color: govuk-colour("blue");
+
+  .govuk-heading-xl,
+  .govuk-body {
+    color: govuk-colour("white");
+  }
+}
+
+.dfe-card-grid {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.875rem;
+  list-style-type: none;
+  padding: 0;
+
+  .dfe-card-item {
+    @include govuk-responsive-padding(5);
+    background-color: govuk-colour("light-grey");
+  }
+}
