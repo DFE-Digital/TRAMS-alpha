@@ -29,18 +29,9 @@
   }
 }
 
-.dfe-card-grid {
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.875rem;
-  list-style-type: none;
-  padding: 0;
-
-  .dfe-card-item {
-    @include govuk-responsive-padding(5);
-    background-color: govuk-colour("light-grey");
-  }
+.dfe-card {
+  @include govuk-responsive-padding(5);
+  background-color: govuk-colour("light-grey");
 }
 
 .dfe-side-nav {
