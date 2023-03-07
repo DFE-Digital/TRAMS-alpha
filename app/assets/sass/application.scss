@@ -5,13 +5,12 @@
 
 // Add extra styles here
 
+@import "./variables";
+
 @import "./components";
 @import "./reset";
 @import "./typography";
 @import "./utilities";
-
-$dfe-blue: #003a69;
-$accent: #347ca9;
 
 .dfe-template__body {
   .govuk-width-container {
