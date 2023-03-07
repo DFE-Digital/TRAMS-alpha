@@ -1,5 +1,9 @@
 {% extends "layouts/main.html" %}
 
+{% block pageTitle %}
+Abbey Lane Academies Trust – {{ serviceName }}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -63,6 +67,7 @@
           <p class="govuk-body">Multi-academy trust</p>
         </div>
       </header>
+      {% block pageContent %}{% endblock %}
     </main>
   </div>
 {% endblock %}
