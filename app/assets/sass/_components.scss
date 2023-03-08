@@ -78,3 +78,15 @@
     grid-template-columns: max-content max-content;
   }
 }
+
+.dfe-data-source-list {
+  .dfe-data-source-list__item {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 10px;
+  }
+
+  .dfe-data-source-list__title {
+    font-weight: bold;
+  }
+}

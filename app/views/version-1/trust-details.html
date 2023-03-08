@@ -22,5 +22,130 @@
           <p class="govuk-!-margin-bottom-1">james.smith@education.gov.uk</p>
         </dd>
       </dl>
-  </div>
-{% endblock %}
+    </div>
+    <section>
+      <h2>Trust details</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Address:"
+            },
+            value: {
+              html: "Abbey Lane, Abbey Road, Sheffield, S1 2BC"
+            }
+          },
+          {
+            key: {
+              text: "Website:"
+            },
+            value: {
+              html: '<a class="govuk-link govuk-link--no-visited-state" href="http://www.abbeylanetrust.sch.uk">www.abbeylanetrust.sch.uk</a> (opens in a new tab)'
+            }
+          },
+          {
+            key: {
+              text: "Local authorites:"
+            },
+            value: {
+              html: '<a class="govuk-link govuk-link--no-visited-state" href="#">Sheffield</a> (88)'
+            }
+          },
+          {
+            key: {
+              text: "Regions Group:"
+            },
+            value: {
+              html: "South Yorkshire"
+            }
+          },
+          {
+            key: {
+              text: "National sponsor oversight:"
+            },
+            value: {
+              html: "---"
+            }
+          },
+          {
+            key: {
+              text: "Schools financial support territory (SFSO):"
+            },
+            value: {
+              html: "Yorkshire and the Humber"
+            }
+          },
+          {
+            key: {
+              text: "Date incorporated:"
+            },
+            value: {
+              html: "19 July 2010"
+            }
+          },
+          {
+            key: {
+              text: "Date opened:"
+            },
+            value: {
+              html: "1 Jan 2010"
+            }
+          },
+          {
+            key: {
+              text: "Trust reference number:"
+            },
+            value: {
+              html: "TR00123"
+            }
+          },
+          {
+            key: {
+              text: "Companies House number:"
+            },
+            value: {
+              html: "07318733"
+            }
+          },
+          {
+            key: {
+              text: "Companies House filing history:"
+            },
+            value: {
+              html: '<a class="govuk-link govuk-link--no-visited-state" href="https://find-and-update.company-information.service.gov.uk/company/07318714/filing-history">https://find-and-update.company-information.service.gov.uk/company/07318714/filing-history (opens in a new tab)</a>'
+            }
+          },
+          {
+            key: {
+              text: "Get information about schools:"
+            },
+            value: {
+              html: '<a class="govuk-link govuk-link--no-visited-state" href="#">View data held on Get information about schools (opens in a new tab)</a>'
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="dfe-data-source-list">
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools<dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021<dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022<dd>
+            </div>
+          </dl>
+        '
+      }) }}
+    </section>
+
+  {% endblock %}
