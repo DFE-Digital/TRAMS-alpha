@@ -4,6 +4,11 @@
 Versions – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
+<!--Remove the header links on the Prototype version page
+   because these are only relevant within a prototype-->
+{% block headerNavLinks %}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -12,10 +17,43 @@ Versions – {{serviceName}} – GOV.UK Prototype Kit
     <h1 class="govuk-heading-l">
       {{ serviceName }} Prototypes
     </h1>
+    <p class="govuk-body-l">This is where the Department for Education Regional Services Division (RSD) TRust and
+      Academies Management System (TRAMS) prototypes for alpha phase live.</p>
 
-    <h2><a href="/version-1/home">Version 1</a></h2>
+    <hr class="govuk-section-break govuk-section-break--visible">
+  </div>
+</div>
 
-    <h2><a href="/manage-prototype">Manage prototype</a></h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2><a href="/version-1/home" class="govuk-link govuk-link--no-visited-state">Version 1</a></h2>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="https://github.com/DFE-Digital/TRAMS-alpha" class="govuk-link govuk-link--no-visited-state">
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://dfe-gov-uk.visualstudio.com.mcas.ms/Academies-and-Free-Schools-SIP/_wiki/wikis/Academies-and-Free-Schools-SIP.wiki/3413/Alpha" class="govuk-link govuk-link--no-visited-state">
+              Project wiki
+            </a>
+          </li>
+          <li>
+            <a href="/manage-prototype" class="govuk-link govuk-link--no-visited-state">
+              Manage prototype
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
   </div>
 </div>
 
