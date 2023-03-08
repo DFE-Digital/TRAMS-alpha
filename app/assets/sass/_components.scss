@@ -35,15 +35,6 @@
 }
 
 .dfe-side-nav {
-  .dfe-side-nav__heading {
-    font-weight: normal;
-    font-size: 1.1857rem;
-    color: $dfe-grey;
-    margin-bottom: 8px;
-    padding-top: 4px;
-    padding-left: 8px;
-    border-left: 4px solid transparent;
-  }
 
   .dfe-side-nav__list {
     @include govuk-responsive-margin(7, "bottom");
@@ -55,7 +46,7 @@
   .dfe-side-nav__item {
     padding-left: 8px;
     padding-bottom: 8px;
-    padding-top: 4px;
+    padding-top: 6px;
     box-sizing: content-box;
     border-left: 4px solid transparent;
   }
@@ -63,6 +54,19 @@
   .dfe-side-nav__item--current {
     background-color: $dfe-grey-light;
     border-color: $dfe-blue-secondary;
+    font-weight: bold;
+  }
+
+  .dfe-side-nav__heading {
+    @extend .dfe-side-nav__item;
+    font-weight: normal;
+    font-size: 1.1857rem;
+    color: $dfe-grey;
+    margin: 0;
+  }
+
+  .dfe-side-nav__link {
+    text-decoration: none;
   }
 }
 
