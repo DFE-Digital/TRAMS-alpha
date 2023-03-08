@@ -147,5 +147,48 @@
         '
       }) }}
     </section>
+    <section>
+      <h2>Trust details</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Sponsor status:"
+            },
+            value: {
+              html: "Approved"
+            }
+          },
+          {
+            key: {
+              text: "Sponsor restrictions:"
+            },
+            value: {
+              html: "No restrictions"
+            }
+          },
+          {
+            key: {
+              text: "Sponsor approval date:"
+            },
+            value: {
+              html: "1 June 2010"
+            }
+          },
+          {
+            key: {
+              text: "Sponsor name:"
+            },
+            value: {
+              html: "Abbey Academies Trust"
+            }
+          }
+        ]
+      }) }}
+    </section>
+    <div>
+      <a class="govuk-link" href="#">Is there anything wrong with this page?</a>
+    </div>
 
   {% endblock %}
