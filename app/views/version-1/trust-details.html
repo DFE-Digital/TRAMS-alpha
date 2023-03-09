@@ -22,12 +22,13 @@
           <p class="govuk-!-margin-bottom-1"><a href="mailto:jen.hadfield@abbeylaneacademies.co.uk">jen.hadfield@abbeylaneacademies.co.uk</a></p>
           <p class="govuk-!-margin-bottom-1">Tel: 0114 201 3456</p>
         </dd>
-      </dl>
-    </div>
-    <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-8">
-      <h2>Trust details</h2>
+      </div>
+    </dl>
+  </div>
+  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+    <h2>Trust details</h2>
 
-      {{ govukSummaryList({
+    {{ govukSummaryList({
         rows: [
           {
             key: {
@@ -128,30 +129,30 @@
         ]
       }) }}
 
-      {{ govukDetails({
+    {{ govukDetails({
         summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
         html: '
           <dl class="dfe-data-source-list">
             <div class="dfe-data-source-list__item">
               <dt class="dfe-data-source-list__title">Data source:</dt>
-              <dd>Get information about schools<dd>
+              <dd>Get information about schools</dd>
             </div>
             <div class="dfe-data-source-list__item">
               <dt class="dfe-data-source-list__title">Last updated:</dt>
-              <dd>21 December 2021<dd>
+              <dd>21 December 2021</dd>
             </div>
             <div class="dfe-data-source-list__item">
               <dt class="dfe-data-source-list__title">Next scheduled update:</dt>
-              <dd>21 January 2022<dd>
+              <dd>21 January 2022</dd>
             </div>
           </dl>
         '
       }) }}
-    </section>
-    <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-8">
-      <h2>Sponsor details</h2>
+  </section>
+  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+    <h2>Sponsor details</h2>
 
-      {{ govukSummaryList({
+    {{ govukSummaryList({
         rows: [
           {
             key: {
@@ -187,9 +188,9 @@
           }
         ]
       }) }}
-    </section>
-    <div class="govuk-!-margin-top-8 govuk-!-margin-bottom-8">
-      <a class="govuk-link" href="#">Is there anything wrong with this page?</a>
-    </div>
+  </section>
+  <div class="govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+    <a class="govuk-link" href="#">Is there anything wrong with this page?</a>
+  </div>
 
-  {% endblock %}
+{% endblock %}
