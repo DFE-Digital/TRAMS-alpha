@@ -49,18 +49,12 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     {% endblock %}
   </div>
 </header>
-
-
-
-{% endblock %}
-
-{% block beforeContent %}
-
-{{ govukPhaseBanner({
-    tag: {
-      text: "alpha"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+      tag: {
+        text: "alpha"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+  </div>
 {% endblock %}
