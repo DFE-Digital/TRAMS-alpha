@@ -1,0 +1,7 @@
+.dfe-grid-3 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.875rem;
+  margin: 1em 0;
+}

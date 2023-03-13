@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Abbey Lane Academies Trust – {{ serviceName }}
+{% endblock %}
+
+{% block main %}
+
+<div class="govuk-main-wrapper ">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-one-quarter">
+  
+        <nav class="dfe-side-nav">
+  
+          <h2 class="dfe-side-nav__heading">About the trust</h2>
+          <ul class="dfe-side-nav__list">
+            <li class="dfe-side-nav__item dfe-side-nav__item--current">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./trust-details">Trust details</a>
+            </li>
+            <li class="dfe-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Trust overview</a>
+            </li>
+            <li class="dfe-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Academies in this trust (17)</a>
+            </li>
+            <li class="dfe-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Governance</a>
+            </li>
+          </ul>
+  
+          <h2 class="dfe-side-nav__heading">Risk and interventions</h2>
+          <ul class="dfe-side-nav__list">
+            <li class="dfe-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Cases and concerns</a>
+            </li>
+          </ul>
+  
+          <h2 class="dfe-side-nav__heading">Educational performance</h2>
+          <ul class="dfe-side-nav__list">
+            <li class="dfe-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Primary</a>
+            </li>
+            <li class="dfe-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Secondary</a>
+            </li>
+          </ul>
+  
+          <h2 class="dfe-side-nav__heading">Financial</h2>
+          <ul class="dfeuk-list dfe-side-nav__list">
+            <li class="dfe-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Financial data</a>
+            </li>
+            <li class="dfe-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Financial documents</a>
+            </li>
+          </ul>
+  
+        </nav>
+  
+      </div>
+  
+      <main class="govuk-grid-column-three-quarters" id="main-content">
+        <header class="dfe-page-heading">
+          <h1 class="dfe-page-heading__title">Abbey Lane Academies Trust</h1>
+          <div class="dfe-page-heading__detail">
+            <p class="govuk-body"><span class="govuk-!-font-weight-bold">UID:</span> 1234</p>
+            <p class="govuk-body">Multi-academy trust</p>
+          </div>
+        </header>
+        {% block pageContent %}{% endblock %}
+      </main>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
