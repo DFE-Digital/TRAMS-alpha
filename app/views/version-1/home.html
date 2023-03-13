@@ -12,12 +12,11 @@ Find information about a Trust or Academy – {{ serviceName }}
       <div class="govuk-grid-row govuk-width-container">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-xl">Find information about a Trust or Academy</h1>
-          <p class="govuk-body">You can search for and download information on establishments, establishment groups (such as academies,
-        trusts or federation).</p>
-          <div >
             <form class="govuk-form-group" action="/version-1/trust-details" method="get">
-              <div class="govuk-input__wrapper">
-              <label class="dfeuk-u-visually-hidden" for="search">Search for a Trust or Academy by name, URN, location or local authority</label>
+              <label class="govuk-body" for="search">
+                Search for a Trust or Academy by name, URN, location or local authority
+              </label>
+              <div class="govuk-input__wrapper govuk-!-margin-top-4">
                 <input class="govuk-input dfe-search-input" id="search" placeholder="Search by name, URN, location or local authority">
                 <button class="govuk-button dfe-black-button dfe-inline-button" data-module="govuk-button" type="submit">
                   <span class="dfeuk-u-visually-hidden">Search</span>
@@ -28,7 +27,6 @@ Find information about a Trust or Academy – {{ serviceName }}
                 </button>
               </div>
             </form>
-          </div>
         </div>
         <div class="govuk-grid-column-one-third">
           <p class="govuk-body"><a href="#" class="govuk-link govuk-link--inverse">Contact the TRAMS team</a> with any comments or questions</p>
