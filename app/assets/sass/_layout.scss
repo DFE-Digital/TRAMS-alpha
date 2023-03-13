@@ -5,3 +5,11 @@
   gap: 1.875rem;
   margin: 1em 0;
 }
+
+.dfe-grid-2-column {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content max-content;
+  column-gap: 1.875rem;
+}

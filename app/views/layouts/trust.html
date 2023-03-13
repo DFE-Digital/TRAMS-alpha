@@ -16,7 +16,7 @@ Abbey Lane Academies Trust – {{ serviceName }}
   
           <h2 class="dfe-side-nav__heading">About the trust</h2>
           <ul class="dfe-side-nav__list">
-            <li class="dfe-side-nav__item dfe-side-nav__item--current">
+            <li class="dfe-side-nav__item {% if current_page == 'trust-details' %}dfe-side-nav__item--current{% endif %}">
               <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./trust-details">Trust details</a>
             </li>
             <li class="dfe-side-nav__item">
@@ -52,8 +52,8 @@ Abbey Lane Academies Trust – {{ serviceName }}
             <li class="dfe-side-nav__item">
               <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Financial data</a>
             </li>
-            <li class="dfe-side-nav__item">
-              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Financial documents</a>
+            <li class="dfe-side-nav__item  {% if current_page == 'financial-documents' %}dfe-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./financial-documents">Financial documents</a>
             </li>
           </ul>
   
