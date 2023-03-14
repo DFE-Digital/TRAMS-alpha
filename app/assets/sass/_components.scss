@@ -5,6 +5,10 @@
   background-color: govuk-colour("black");
   color: govuk-colour("white");
   box-shadow: none;
+
+  &:hover {
+    background-color: $dfe-blue;
+  }
 }
 
 .dfe-inline-button {
