@@ -1,2 +1,29 @@
 {% extends "layouts/trust.html" %}
 {% set current_page = "academies-in-this-trust" %}
+
+{% block pageContent %}
+  <h2 class="govuk-heading-l govuk-!-margin-top-7">Academies in trust summary</h2>
+  <div class="dfe-card">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Trust pupil numbers</h3>
+    <dl class="govuk-grid-row govuk-!-margin-bottom-5">
+      <div class="govuk-grid-column-one-half">
+          <div class="dfe-key-value-list">
+            <dt class="govuk-body govuk-!-margin-0">Number of academies in trust</dt>
+            <dd class="govuk-heading-m govuk-!-margin-0 govuk-!-padding-0">17</dd>
+
+            <dt class="govuk-body govuk-!-margin-0">Trust actual pupil numbers</dt>
+            <dd class="govuk-heading-m govuk-!-margin-0 govuk-!-padding-0">15,856</dd>
+          </div>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <div class="dfe-key-value-list">
+          <dt class="govuk-body govuk-!-margin-0">Trust capacity</dt>
+          <dd class="govuk-heading-m govuk-!-margin-0 govuk-!-padding-0">16,256</dd>
+
+          <dt class="govuk-body govuk-!-margin-0">Trust capacity % full</dt>
+          <dd class="govuk-heading-m govuk-!-margin-0 govuk-!-padding-0">89%</dd>
+        </div>
+      </div>
+    </dl>
+  </div>
+{% endblock %}

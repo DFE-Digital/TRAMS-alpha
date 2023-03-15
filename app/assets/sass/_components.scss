@@ -104,3 +104,7 @@
     }
   }
 }
+
+.dfe-key-value-list {
+  @include grid-2-row-variable-width(0.9375rem, end);
+}
