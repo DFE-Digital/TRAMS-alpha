@@ -61,20 +61,27 @@ Abbey Lane Academies Trust – {{ serviceName }}
   
       </div>
   
-      <main class="govuk-grid-column-three-quarters" id="main-content">
-        <header class="dfe-page-heading">
-          <h1 class="dfe-page-heading__title">Abbey Lane Academies Trust</h1>
-          <div class="dfe-page-heading__detail">
-            <p class="govuk-body"><span class="govuk-!-font-weight-bold">UID:</span> 1234</p>
-            <p class="govuk-body">Multi-academy trust</p>
-          </div>
-        </header>
+      <main id="main-content">
+        <div class="govuk-grid-column-three-quarters">
+          <header class="dfe-page-heading">
+            <h1 class="dfe-page-heading__title">Abbey Lane Academies Trust</h1>
+            <div class="dfe-page-heading__detail">
+              <p class="govuk-body"><span class="govuk-!-font-weight-bold">UID:</span> 1234</p>
+              <p class="govuk-body">Multi-academy trust</p>
+            </div>
+          </header>
 
-        {% block pageContent %}{% endblock %}
+          {% block pageContent %}{% endblock %}
 
-        <div class="govuk-!-margin-top-8 govuk-!-margin-bottom-4">
-          <a class="govuk-link" href="#">Is there anything wrong with this page?</a>
+          {% block anythingWrong %}
+            <div class="govuk-!-margin-top-8 govuk-!-margin-bottom-4">
+              <a class="govuk-link" href="#">Is there anything wrong with this page?</a>
+            </div>
+          {% endblock %}
         </div>
+        
+        {% block pageContentColumnOverride %}{% endblock %}
+
       </main>
     </div>
   </div>

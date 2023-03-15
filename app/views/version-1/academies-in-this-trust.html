@@ -7,13 +7,13 @@
     <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Trust pupil numbers</h3>
     <dl class="govuk-grid-row govuk-!-margin-bottom-5">
       <div class="govuk-grid-column-one-half">
-          <div class="dfe-key-value-list">
-            <dt class="govuk-body govuk-!-margin-0">Number of academies in trust</dt>
-            <dd class="govuk-heading-m govuk-!-margin-0 govuk-!-padding-0">17</dd>
+        <div class="dfe-key-value-list">
+          <dt class="govuk-body govuk-!-margin-0">Number of academies in trust</dt>
+          <dd class="govuk-heading-m govuk-!-margin-0 govuk-!-padding-0">17</dd>
 
-            <dt class="govuk-body govuk-!-margin-0">Trust actual pupil numbers</dt>
-            <dd class="govuk-heading-m govuk-!-margin-0 govuk-!-padding-0">15,856</dd>
-          </div>
+          <dt class="govuk-body govuk-!-margin-0">Trust actual pupil numbers</dt>
+          <dd class="govuk-heading-m govuk-!-margin-0 govuk-!-padding-0">15,856</dd>
+        </div>
       </div>
       <div class="govuk-grid-column-one-half">
         <div class="dfe-key-value-list">
@@ -27,3 +27,18 @@
     </dl>
   </div>
 {% endblock %}
+
+{% block pageContentColumnOverride %}
+
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-!-margin-top-8 govuk-!-margin-bottom-4">
+      <a class="govuk-link" href="#">Is there anything wrong with this page?</a>
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{# Override anything wrong link block because it is manually included above #}
+{% block anythingWrong %}{% endblock %}
