@@ -59,12 +59,18 @@
   }
 
   .govuk-header nav {
-    display: inline-block;
-    float: right;
+    @include mq ($from: desktop) {
+      display: inline-block;
+      float: right;
+    }
   }
 
   .govuk-header__navigation {
     margin: 0;
+  }
+
+  .govuk-header__navigation-item {
+    border-color: white;
   }
 }
 
