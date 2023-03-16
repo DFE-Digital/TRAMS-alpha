@@ -1,5 +1,6 @@
 @import "node_modules/govuk-frontend/govuk/all";
 @import "./variables";
+@import "./mixins";
 
 .dfe-black-button {
   background-color: govuk-colour("black");
@@ -81,17 +82,14 @@
   }
 
   .dfe-page-heading__detail {
-    display: grid;
-    gap: 1.25rem;
-    grid-template-columns: max-content max-content;
+    @include grid-2-row-variable-width(1.25rem);
   }
 }
 
 .dfe-data-source-list {
   .dfe-data-source-list__item {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    gap: 10px;
+    @include grid-2-row-variable-width(0.625rem);
+    margin-bottom: 0.625rem;
   }
 
   .dfe-data-source-list__title {
