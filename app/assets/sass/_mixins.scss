@@ -1,7 +1,11 @@
-@mixin grid-2-row-variable-width($gap, $align) {
+@mixin grid-2-row-variable-width($gap, $align: stretch) {
   display: grid;
   grid-auto-flow: row;
   grid-template-columns: max-content max-content;
   gap: $gap;
   align-items: $align;
+
+  @include govuk-media-query($until: tablet) {
+    display: block;
+  }
 }
