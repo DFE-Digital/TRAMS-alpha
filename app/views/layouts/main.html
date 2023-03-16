@@ -24,10 +24,10 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     </div>
     {% block headerNavLinks %}
     <div class="govuk-header__content">
+      <nav aria-label="Menu" class="govuk-header__navigation ">
       <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation"
-        aria-label="Show or hide navigation menu">Menu</button>
-      <nav>
-        <ul id="navigation" class="govuk-header__navigation " aria-label="Navigation menu">
+        aria-label="Show or hide navigation menu" hidden>Menu</button>
+        <ul id="navigation" class="govuk-header__navigation-list">
           <li class="govuk-header__navigation-item">
             <a class="govuk-header__link" href="./home">
               Home
