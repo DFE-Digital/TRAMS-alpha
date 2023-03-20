@@ -42,7 +42,7 @@
 .dfe-side-nav {
 
   .dfe-side-nav__list {
-    @include govuk-responsive-margin(7, "bottom");
+    @include govuk-responsive-margin(6, "bottom");
     list-style-type: none;
     padding: 0;
     margin-top: 0;
@@ -103,4 +103,8 @@
       width: 20%;
     }
   }
+}
+
+.dfe-key-value-list {
+  @include grid-2-row-variable-width(0.9375rem, end);
 }
