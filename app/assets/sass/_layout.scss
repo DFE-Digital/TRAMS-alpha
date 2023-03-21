@@ -31,3 +31,11 @@
     display: block;
   }
 }
+
+.dfe-flex-between {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.875rem;
+  align-items: baseline;
+}
