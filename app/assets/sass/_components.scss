@@ -18,6 +18,26 @@
   margin-bottom: 0;
 }
 
+.dfe-image-button {
+  @extend .govuk-button;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: none;
+  box-shadow: none;
+  border: transparent;
+  color: $govuk-link-colour;
+
+  &:hover {
+    background-color: $govuk-link-colour;
+  }
+
+  .dfe-image-button__image {
+    height: 20px;
+    fill: currentColor;
+  }
+}
+
 .dfe-search-input {
   border-color: transparent;
   height: 3.125rem;
