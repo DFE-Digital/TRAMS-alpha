@@ -1,7 +1,7 @@
 {% extends "./main.html" %}
 
 {% block pageTitle %}
-Abbey Lane Academies Trust – {{ serviceName }}
+{{trust.Name}} – {{ serviceName }}
 {% endblock %}
 
 {% block main %}
@@ -64,9 +64,9 @@ Abbey Lane Academies Trust – {{ serviceName }}
       <main id="main-content">
         <div class="govuk-grid-column-three-quarters">
           <header class="dfe-page-heading">
-            <h1 class="dfe-page-heading__title">Abbey Lane Academies Trust</h1>
+            <h1 class="dfe-page-heading__title">{{trust.Name}}</h1>
             <div class="dfe-page-heading__detail">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">UID:</span> 1234</p>
+              <p class="govuk-body"><span class="govuk-!-font-weight-bold">UID:</span> {{trust.Uid}}</p>
               <p class="govuk-body">Multi-academy trust</p>
             </div>
           </header>
