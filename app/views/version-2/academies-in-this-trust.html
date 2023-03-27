@@ -1,0 +1,845 @@
+{% extends "layouts/trust.html" %}
+{% set current_page = "academies-in-this-trust" %}
+
+{% block pageContent %}
+  <h2 class="govuk-heading-l govuk-!-margin-top-7">Academies in trust summary</h2>
+  <div class="dfe-card">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Trust pupil numbers</h3>
+
+    <div class="dfe-summary-list-statistics--v2">
+      {{ govukSummaryList({
+        classes: 'govuk-summary-list--no-border',
+        rows: [
+          {
+            key: {
+              text: "Number of academies in trust"
+            },
+            value: {
+              text: "17"
+            }
+          },
+          {
+            key: {
+              text: "Trust actual pupil numbers"
+            },
+            value: {
+              text: "15,856"
+            }
+          },
+          {
+            key: {
+              text: "Trust capacity"
+            },
+            value: {
+              text: "16,256"
+            }
+          },
+          {
+            key: {
+              text: "Trust capacity % full"
+            },
+            value: {
+              text: "89%"
+            }
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageContentColumnOverride %}
+
+  <div class="govuk-grid-column-full">
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+
+    {{ govukTable({
+      attributes: {
+        'data-module': 'moj-sortable-table'
+      },
+      caption: "Academies in this trust (17)",
+      captionClasses: "govuk-table__caption--l",
+      head: [
+        {
+          text: "Establishment name",
+          attributes: {
+            "aria-sort": "ascending"
+          }
+        },
+        {
+          text: "Local authority",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+          text: "Phase",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+          text: "Age range",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+            text: "Capacity",
+            attributes: {
+            "aria-sort": "none"
+            }
+        },
+        {
+            text: "Pupil numbers",
+            attributes: {
+            "aria-sort": "none"
+            }
+        },
+        {
+            text: "Date joined",
+            attributes: {
+            "aria-sort": "none"
+            }
+        },
+        {
+            text: "Current Ofsted rating",
+            attributes: {
+            "aria-sort": "none"
+            }
+        },
+        {
+            text: "Previous Ofsted rating",
+            attributes: {
+            "aria-sort": "none"
+            }
+        }
+      ],
+      rows: [
+        [
+          {
+            html: '<b>Abbey Grange Church of England Academy</b>',
+            attributes: {
+              "data-sort-value": "Abbey Grange Church of England Academy"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Secondary"
+          },
+          {
+            text: "11 - 18",
+            attributes: {
+              "data-sort-value": "1118"
+            }
+          },
+          {
+            text: "1,120",
+            attributes: {
+              "data-sort-value": "1120"
+            }
+          },
+          {
+            text: "1,607",
+            attributes: {
+              "data-sort-value": "1607"
+            }
+          },
+          {
+            text: "August 2011",
+            attributes: {
+              "data-sort-value": "20110801"
+            }
+          },
+          {
+            html: "<b>Good</b><br>9 Feb 2021"
+          },
+          {
+            html: "<b>Requires Improvement</b><br>7 May 2009"
+          }
+        ],
+        [
+          {
+            html: '<b>Bishop Young Church of England Academy</b>',
+            attributes: {
+              "data-sort-value": "Bishop Young Church of England Academy"
+            }
+          },
+          {
+            text: "Calderdale"
+          },
+          {
+            text: "Secondary"
+          },
+          {
+            text: "11 - 16",
+            attributes: {
+              "data-sort-value": "1116"
+            }
+          },
+          {
+            text: "900"
+          },
+          {
+            text: "683"
+
+          },
+          {
+            text: "May 2007",
+            attributes: {
+              "data-sort-value": "20070501"
+            }
+          },
+          {
+            html: "<b>Requires Improvement</b><br>22 Sept 2021"
+          },
+          {
+            html: "<b>Inadequate</b><br>30 Oct 2015"
+          }
+        ],
+        [
+          {
+            html: '<b>Christ Church Upper Armley Church of England Primary School</b>',
+            attributes: {
+              "data-sort-value": "Christ Church Upper Armley Church of England Primary School"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Primary"
+          },
+          {
+            text: "4 - 11",
+            attributes: {
+              "data-sort-value": "411"
+            }
+          },
+          {
+            text: "230"
+          },
+          {
+            text: "173"
+
+          },
+          {
+            text: "Sep 2018",
+            attributes: {
+              "data-sort-value": "20180901"
+            }
+          },
+          {
+            html: "<b>Inadequate</b><br>13 Oct 2017"
+          },
+          {
+            html: "<b>Good</b><br>13 Oct 2017"
+          }
+        ],
+        [
+          {
+            html: '<b>Holy Trinity Church of England Academy</b>',
+            attributes: {
+              "data-sort-value": "Holy Trinity Church of England Academy"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Secondary"
+          },
+          {
+            text: "11 - 18",
+            attributes: {
+              "data-sort-value": "1118"
+            }
+          },
+          {
+            text: "1,152",
+            attributes: {
+              "data-sort-value": "1152"
+            }
+          },
+          {
+            text: "1,607",
+            attributes: {
+              "data-sort-value": "1607"
+            }
+          },
+          {
+            text: "August 2011",
+            attributes: {
+              "data-sort-value": "20110801"
+            }
+          },
+          {
+            html: "<b>Good</b><br>9 Feb 2021"
+          },
+          {
+            html: "<b>Requires Improvement</b><br>7 May 2009"
+          }
+        ],
+        [
+          {
+            html: '<b>Chesterfield Academy</b>',
+            attributes: {
+              "data-sort-value": "Lightcliffe Academy"
+            }
+          },
+          {
+            text: "Calderdale"
+          },
+          {
+            text: "Secondary"
+          },
+          {
+            text: "11 - 16",
+            attributes: {
+              "data-sort-value": "1116"
+            }
+          },
+          {
+            text: "900"
+          },
+          {
+            text: "1008"
+
+          },
+          {
+            text: "May 2009",
+            attributes: {
+              "data-sort-value": "20090512"
+            }
+          },
+          {
+            html: "<b>Requires Improvement</b><br>22 Sept 2021"
+          },
+          {
+            html: "<b>Inadequate</b><br>30 Oct 2015"
+          }
+        ],
+        [
+          {
+            html: '<b>Darkcliffe C of E Primary School</b>',
+            attributes: {
+              "data-sort-value": "Darkcliffe C of E Primary School"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Primary"
+          },
+          {
+            text: "4 - 11",
+            attributes: {
+              "data-sort-value": "411"
+            }
+          },
+          {
+            text: "190"
+          },
+          {
+            text: "173"
+
+          },
+          {
+            text: "Sep 2018",
+            attributes: {
+              "data-sort-value": "20180901"
+            }
+          },
+          {
+            html: "<b>Inadequate</b><br>13 Oct 2017"
+          },
+          {
+            html: "<b>Good</b><br>13 Oct 2017"
+          }
+        ],
+        [
+          {
+            html: '<b>St Chad’s Church of England Primary School</b>',
+            attributes: {
+              "data-sort-value": "St Chad’s Church of England Primary School"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Primary"
+          },
+          {
+            text: "4 - 9",
+            attributes: {
+              "data-sort-value": "49"
+            }
+          },
+          {
+            text: "1,152",
+            attributes: {
+              "data-sort-value": "1152"
+            }
+          },
+          {
+            text: "1,607",
+            attributes: {
+              "data-sort-value": "1607"
+            }
+          },
+          {
+            text: "August 2011",
+            attributes: {
+              "data-sort-value": "20110801"
+            }
+          },
+          {
+            html: "<b>Good</b><br>9 Feb 2021"
+          },
+          {
+            html: "<b>Requires Improvement</b><br>7 May 2009"
+          }
+        ],
+        [
+          {
+            html: '<b>Lightcliffe Academy</b>',
+            attributes: {
+              "data-sort-value": "Lightcliffe Academy"
+            }
+          },
+          {
+            text: "Calderdale"
+          },
+          {
+            text: "Secondary"
+          },
+          {
+            text: "11 - 16",
+            attributes: {
+              "data-sort-value": "1116"
+            }
+          },
+          {
+            text: "900"
+          },
+          {
+            text: "683"
+
+          },
+          {
+            text: "May 2007",
+            attributes: {
+              "data-sort-value": "20070501"
+            }
+          },
+          {
+            html: "<b>Requires Improvement</b><br>22 Sept 2021"
+          },
+          {
+            html: "<b>Inadequate</b><br>30 Oct 2015"
+          }
+        ],
+        [
+          {
+            html: '<b>Lightcliffe C of E Primary School</b>',
+            attributes: {
+              "data-sort-value": "Lightcliffe C of E Primary School"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Primary"
+          },
+          {
+            text: "4 - 11",
+            attributes: {
+              "data-sort-value": "411"
+            }
+          },
+          {
+            text: "195"
+          },
+          {
+            text: "173"
+
+          },
+          {
+            text: "Sep 2018",
+            attributes: {
+              "data-sort-value": "20180901"
+            }
+          },
+          {
+            html: "<b>Inadequate</b><br>13 Oct 2017"
+          },
+          {
+            html: "<b>Good</b><br>13 Oct 2017"
+          }
+        ],
+        [
+          {
+            html: "<b>St Cuthbert's Church of England Primary School</b>",
+            attributes: {
+              "data-sort-value": "St Cuthbert's Church of England Primary School"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Primary"
+          },
+          {
+            text: "4 - 11",
+            attributes: {
+              "data-sort-value": "411"
+            }
+          },
+          {
+            text: "1,152",
+            attributes: {
+              "data-sort-value": "1152"
+            }
+          },
+          {
+            text: "1,607",
+            attributes: {
+              "data-sort-value": "1607"
+            }
+          },
+          {
+            text: "August 2011",
+            attributes: {
+              "data-sort-value": "20110801"
+            }
+          },
+          {
+            html: "<b>Good</b><br>9 Feb 2021"
+          },
+          {
+            html: "<b>Requires Improvement</b><br>7 May 2009"
+          }
+        ],
+        [
+          {
+            html: '<b>Holy Trinity Church of England Academy</b>',
+            attributes: {
+              "data-sort-value": "Holy Trinity Church of England Academy"
+            }
+          },
+          {
+            text: "Calderdale"
+          },
+          {
+            text: "Secondary"
+          },
+          {
+            text: "11 - 16",
+            attributes: {
+              "data-sort-value": "1116"
+            }
+          },
+          {
+            text: "900"
+          },
+          {
+            text: "683"
+
+          },
+          {
+            text: "May 2007",
+            attributes: {
+              "data-sort-value": "20070501"
+            }
+          },
+          {
+            html: "<b>Requires Improvement</b><br>22 Sept 2021"
+          },
+          {
+            html: "<b>Inadequate</b><br>30 Oct 2015"
+          }
+        ],
+        [
+          {
+            html: '<b>Westcliffe C of E Primary School</b>',
+            attributes: {
+              "data-sort-value": "Westcliffe C of E Primary School"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Primary"
+          },
+          {
+            text: "4 - 11",
+            attributes: {
+              "data-sort-value": "411"
+            }
+          },
+          {
+            text: "800"
+          },
+          {
+            text: "768"
+
+          },
+          {
+            text: "Sep 2018",
+            attributes: {
+              "data-sort-value": "20180901"
+            }
+          },
+          {
+            html: "<b>Inadequate</b><br>13 Oct 2017"
+          },
+          {
+            html: "<b>Good</b><br>13 Oct 2017"
+          }
+        ],
+        [
+          {
+            html: '<b>Orchard Primary School</b>',
+            attributes: {
+              "data-sort-value": "Orchard Primary School"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Primary"
+          },
+          {
+            text: "4 - 11",
+            attributes: {
+              "data-sort-value": "411"
+            }
+          },
+          {
+            text: "210"
+          },
+          {
+            text: "173"
+
+          },
+          {
+            text: "Sep 2018",
+            attributes: {
+              "data-sort-value": "20180901"
+            }
+          },
+          {
+            html: "<b>Inadequate</b><br>13 Oct 2017"
+          },
+          {
+            html: "<b>Good</b><br>13 Oct 2017"
+          }
+        ],
+        [
+          {
+            html: '<b>Leeds Girls Academy</b>',
+            attributes: {
+              "data-sort-value": "Leeds Girls Academy"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Secondary"
+          },
+          {
+            text: "11 - 18",
+            attributes: {
+              "data-sort-value": "1118"
+            }
+          },
+          {
+            text: "210"
+          },
+          {
+            text: "173"
+
+          },
+          {
+            text: "Sep 2018",
+            attributes: {
+              "data-sort-value": "20180901"
+            }
+          },
+          {
+            html: "<b>Inadequate</b><br>13 Oct 2017"
+          },
+          {
+            html: "<b>Good</b><br>13 Oct 2017"
+          }
+        ],
+        [
+          {
+            html: '<b>Northbourne CofE Primary School</b>',
+            attributes: {
+              "data-sort-value": "Northbourne CofE Primary School"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Primary"
+          },
+          {
+            text: "4 - 11",
+            attributes: {
+              "data-sort-value": "411"
+            }
+          },
+          {
+            text: "230"
+          },
+          {
+            text: "179"
+
+          },
+          {
+            text: "Sep 2018",
+            attributes: {
+              "data-sort-value": "20180901"
+            }
+          },
+          {
+            html: "<b>Inadequate</b><br>13 Oct 2017"
+          },
+          {
+            html: "<b>Good</b><br>13 Oct 2017"
+          }
+        ],
+        [
+          {
+            html: '<b>Our Ladys Convent Academy</b>',
+            attributes: {
+              "data-sort-value": "Our Ladys Convent Academy"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Primary"
+          },
+          {
+            text: "4 - 11",
+            attributes: {
+              "data-sort-value": "411"
+            }
+          },
+          {
+            text: "210"
+          },
+          {
+            text: "173"
+
+          },
+          {
+            text: "Sep 2018",
+            attributes: {
+              "data-sort-value": "20180901"
+            }
+          },
+          {
+            html: "<b>Inadequate</b><br>13 Oct 2017"
+          },
+          {
+            html: "<b>Good</b><br>13 Oct 2017"
+          }
+        ],
+        [
+          {
+            html: '<b>Mossbourne Community Academy</b>',
+            attributes: {
+              "data-sort-value": "Mossbourne Community Academy"
+            }
+          },
+          {
+            text: "Leeds"
+          },
+          {
+            text: "Secondary"
+          },
+          {
+            text: "11 - 18",
+            attributes: {
+              "data-sort-value": "1118"
+            }
+          },
+          {
+            text: "205"
+          },
+          {
+            text: "173"
+
+          },
+          {
+            text: "Sep 2018",
+            attributes: {
+              "data-sort-value": "20180901"
+            }
+          },
+          {
+            html: "<b>Inadequate</b><br>13 Jan 2018"
+          },
+          {
+            html: "<b>Good</b><br>10 Oct 2017"
+          }
+        ]
+              
+      ]
+    }) }}
+
+    <div class="dfe-flex-between">
+      {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="dfe-data-source-list">
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+
+      <button class="dfe-image-button">
+        <svg class="dfe-image-button__image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M23,4H22V21a1,1,0,0,1-1,1H4v1a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1V5A1,1,0,0,0,23,4Z"/>
+          <path d="M19,20a1,1,0,0,0,1-1V1a1,1,0,0,0-1-1H1A1,1,0,0,0,0,1V19a1,1,0,0,0,1,1H19Z"/>
+        </svg>
+        Download data
+      </button>
+    </div>
+
+    <div class="govuk-!-margin-top-9 govuk-!-margin-bottom-4">
+      <a class="govuk-body govuk-link  govuk-link--no-visited-state" href="#" class="govuk-link govuk-link--no-visited-state">Is there anything wrong with this page?</a>
+    </div>
+  </div>
+
+{% endblock %}
+
+{# Override anything wrong link block because it is manually included above #}
+{% block anythingWrong %}{% endblock %}
