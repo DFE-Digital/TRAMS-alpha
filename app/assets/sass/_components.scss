@@ -158,3 +158,16 @@
     font-weight: bold;
   }
 }
+
+.dfe-summary-list-statistics--v2 {
+  .govuk-summary-list {
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .govuk-summary-list__key {
+    @include govuk-media-query($from: tablet) {
+      width: auto;
+    }
+  }
+}
