@@ -1,0 +1,383 @@
+{% extends "layouts/trust.html" %}
+{% set current_page = "governance" %} 
+
+{% block pageContent %}
+  <div class="govuk-!-margin-top-7 govuk-!-margin-bottom-8">
+    <h2 class="govuk-heading-l">Governance</h2>
+
+    {{ govukInsetText({
+      html: '<a class="govuk-link" href="#">View this trust on Companies House officer information (opens in new tab)</a>'
+    }) }}
+
+    <section class="govuk-!-margin-bottom-9">
+      {{ govukTable({
+        caption: "Present",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Full name"
+          },
+          {
+            text: "Trust role"
+          },
+          {
+            text: "Date appointed"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: 'Mark Abbey<br><a href="mailto:mark.abbey@abbeylanetrust.org.uk">mark.abbey@abbeylanetrust.org.uk</a>'
+            },
+            {
+              text: "Accounting Officer"
+            },
+            {
+              text: "4 January 2023"
+            }
+          ],
+          [
+            {
+              html: 'Jen Hadfield<br><a href="mailto:jen.hadfield@abbeylane.trust.org.uk">jen.hadfield@abbeylane.trust.org.uk</a>'
+            },
+            {
+              text: "Chair of Trustees"
+            },
+            {
+              text: "14 November 2022"
+            }
+          ],
+          [
+            {
+              text: "Colin Coles"
+            },
+            {
+              text: "Chief Financial Officer"
+            },
+            {
+              text: "25 October 2021"
+            }
+          ],
+          [
+            {
+              text: "Cheryl Ann Hobbs"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "4 January 2023"
+            }
+          ],
+          [
+            {
+              text: "Nicholas Martin"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "14 November 2022"
+            }
+          ],
+          [
+            {
+              text: "Keith Evans"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "25 October 2021"
+            }
+          ],
+          [
+            {
+              text: "Rachael Cave"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "4 January 2023"
+            }
+          ],
+          [
+            {
+              text: "Lee Mccall"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "14 November 2022"
+            }
+          ],
+          [
+            {
+              text: "George Harper"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "25 October 2021"
+            }
+          ],
+          [
+            {
+              text: "Phil Pearson"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "4 January 2023"
+            }
+          ]
+        ]
+      }) }}
+
+      {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="dfe-data-source-list">
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+    </section>
+    <section class="govuk-!-margin-bottom-9">
+      {{ govukTable({
+        caption: "Members",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Full name"
+          },
+          {
+            text: "Trust role"
+          },
+          {
+            text: "Date appointed"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "David Kilshaw"
+            },
+            {
+              text: "Member"
+            },
+            {
+              text: "4 January 2023"
+            }
+          ],
+          [
+            {
+              text: "Beverley Laws"
+            },
+            {
+              text: "Member"
+            },
+            {
+              text: "14 November 2022"
+            }
+          ],
+          [
+            {
+              text: "Lee Headland"
+            },
+            {
+              text: "Member"
+            },
+            {
+              text: "25 October 2021"
+            }
+          ]
+        ]
+      }) }}
+
+      {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="dfe-data-source-list">
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+    </section>
+    <section class="govuk-!-margin-bottom-9">
+      {{ govukTable({
+        caption: "Previous",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Full name"
+          },
+          {
+            text: "Trust role"
+          },
+          {
+            text: "Date appointed"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Mark Abbey"
+            },
+            {
+              text: "Accounting Officer"
+            },
+            {
+              text: "4 January 2023"
+            }
+          ],
+          [
+            {
+              text: "Jen Hadfield"
+            },
+            {
+              text: "Chair of Trustees"
+            },
+            {
+              text: "14 November 2022"
+            }
+          ],
+          [
+            {
+              text: "Colin Coles"
+            },
+            {
+              text: "Chief Financial Officer"
+            },
+            {
+              text: "25 October 2021"
+            }
+          ],
+          [
+            {
+              text: "Cheryl Ann Hobbs"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "4 January 2023"
+            }
+          ],
+          [
+            {
+              text: "Nicholas Martin"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "14 November 2022"
+            }
+          ],
+          [
+            {
+              text: "Keith Evans"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "25 October 2021"
+            }
+          ],
+          [
+            {
+              text: "Rachael Cave"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "4 January 2023"
+            }
+          ],
+          [
+            {
+              text: "Lee Mccall"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "14 November 2022"
+            }
+          ],
+          [
+            {
+              text: "George Harper"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "25 October 2021"
+            }
+          ],
+          [
+            {
+              text: "Phil Pearson"
+            },
+            {
+              text: "Trustee"
+            },
+            {
+              text: "4 January 2023"
+            }
+          ]
+        ]
+      }) }}
+
+      {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="dfe-data-source-list">
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+    </section>
+  </div>
+{% endblock %}

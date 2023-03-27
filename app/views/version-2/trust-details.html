@@ -1,0 +1,194 @@
+{% extends "layouts/trust.html" %}
+{% set current_page = "trust-details" %} 
+
+{% block pageContent %}
+  <div class="dfe-card  dfe-card--two-columns">
+    <dl class="dfe-card__content">
+      <div class="dfe-card__column">
+        <dt class="govuk-heading-s govuk-!-margin-bottom-1">Trust relationship manager:</dt>
+        <dd class="govuk-body govuk-!-margin-bottom-6">
+          <p class="govuk-!-margin-bottom-1">James Smith</p>
+          <p class="govuk-!-margin-bottom-1"><a class="govuk-link" href="mailto:james.smith@education.gov.uk">james.smith@education.gov.uk</a></p>
+        </dd>
+        <dt class="govuk-heading-s govuk-!-margin-bottom-1">SFSO Lead:</dt>
+        <dd class="govuk-body govuk-!-margin-bottom-6">
+          <p class="govuk-!-margin-bottom-1">Michelle Hadfield</p>
+          <p class="govuk-!-margin-bottom-1"><a class="govuk-link" href="mailto:michelle.hadfield@education.gov.uk">michelle.hadfield@education.gov.uk</a></p>
+        </dd>
+      </div>
+      <div class="dfe-card__column">
+        <dt class="govuk-heading-s govuk-!-margin-bottom-1 govuk-!-padding-top-1">Main contact at trust:</dt>
+        <dd class="govuk-body govuk-!-margin-bottom-6">
+          <p class="govuk-!-margin-bottom-1">Jen Hadfield - Chair of trustees</p>
+          <p class="govuk-!-margin-bottom-1"><a href="mailto:jen.hadfield@abbeylaneacademies.co.uk">jen.hadfield@abbeylaneacademies.co.uk</a></p>
+          <p class="govuk-!-margin-bottom-1">Tel: 0114 201 3456</p>
+        </dd>
+      </div>
+    </dl>
+  </div>
+  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+    <h2>Trust details</h2>
+
+    {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Address:"
+            },
+            value: {
+              html: "Abbey Lane, Abbey Road, Sheffield, S1 2BC"
+            }
+          },
+          {
+            key: {
+              text: "Website:"
+            },
+            value: {
+              html: '<a class="govuk-link govuk-link--no-visited-state" href="http://www.abbeylanetrust.sch.uk">www.abbeylanetrust.sch.uk</a> (opens in a new tab)'
+            }
+          },
+          {
+            key: {
+              text: "Local authorites:"
+            },
+            value: {
+              html: '<a class="govuk-link govuk-link--no-visited-state" href="#">Sheffield</a> (88)'
+            }
+          },
+          {
+            key: {
+              text: "Regions Group:"
+            },
+            value: {
+              html: "South Yorkshire"
+            }
+          },
+          {
+            key: {
+              text: "National sponsor oversight:"
+            },
+            value: {
+              html: "---"
+            }
+          },
+          {
+            key: {
+              text: "Schools financial support territory (SFSO):"
+            },
+            value: {
+              html: "Yorkshire and the Humber"
+            }
+          },
+          {
+            key: {
+              text: "Date incorporated:"
+            },
+            value: {
+              html: "19 July 2010"
+            }
+          },
+          {
+            key: {
+              text: "Date opened:"
+            },
+            value: {
+              html: "1 Jan 2010"
+            }
+          },
+          {
+            key: {
+              text: "Trust reference number:"
+            },
+            value: {
+              html: "TR00123"
+            }
+          },
+          {
+            key: {
+              text: "Companies House number:"
+            },
+            value: {
+              html: "07318733"
+            }
+          },
+          {
+            key: {
+              text: "Companies House filing history:"
+            },
+            value: {
+              html: '<a class="govuk-link govuk-link--no-visited-state" href="https://find-and-update.company-information.service.gov.uk/company/07318714/filing-history">https://find-and-update.company-information.service.gov.uk/company/07318714/filing-history (opens in a new tab)</a>'
+            }
+          },
+          {
+            key: {
+              text: "Get information about schools:"
+            },
+            value: {
+              html: '<a class="govuk-link govuk-link--no-visited-state" href="#">View data held on Get information about schools (opens in a new tab)</a>'
+            }
+          }
+        ]
+      }) }}
+
+    {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="dfe-data-source-list">
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+  </section>
+  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+    <h2>Sponsor details</h2>
+
+    {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Sponsor status:"
+            },
+            value: {
+              html: "Approved"
+            }
+          },
+          {
+            key: {
+              text: "Sponsor restrictions:"
+            },
+            value: {
+              html: "No restrictions"
+            }
+          },
+          {
+            key: {
+              text: "Sponsor approval date:"
+            },
+            value: {
+              html: "1 June 2010"
+            }
+          },
+          {
+            key: {
+              text: "Sponsor name:"
+            },
+            value: {
+              html: "Abbey Academies Trust"
+            }
+          }
+        ]
+      }) }}
+  </section>
+
+{% endblock %}
