@@ -3,30 +3,48 @@
 
 {% block pageContent %}
   <h2 class="govuk-heading-l govuk-!-margin-top-7">Academies in trust summary</h2>
-  <div class="dfe-card dfe-card--two-columns">
+  <div class="dfe-card">
     <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Trust pupil numbers</h3>
-    <dl class="dfe-summary-list-statistics dfe-card__content">
-      <div class="govuk-summary-list govuk-summary-list--no-border dfe-card__column">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Number of academies in trust</dt>
-          <dd class="govuk-summary-list__value govuk-body-l">17</dd>
-        </div>
-        <div  class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Trust actual pupil numbers</dt>
-          <dd class="govuk-summary-list__value govuk-body-l">15,856</dd>
-        </div>
-      </div>
-      <div class="govuk-summary-list govuk-summary-list--no-border dfe-card__column">
-        <div  class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Trust capacity</dt>
-          <dd class="govuk-summary-list__value govuk-body-l">16,256</dd>
-        </div>
-        <div  class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Trust capacity % full</dt>
-          <dd class="govuk-summary-list__value govuk-body-l">89%</dd>
-        </div>
-      </div>
-    </dl>
+
+    <div class="dfe-summary-list-statistics">
+      {{ govukSummaryList({
+        classes: 'govuk-summary-list--no-border',
+        rows: [
+          {
+            key: {
+              text: "Number of academies in trust"
+            },
+            value: {
+              text: "17"
+            }
+          },
+          {
+            key: {
+              text: "Trust actual pupil numbers"
+            },
+            value: {
+              text: "15,856"
+            }
+          },
+          {
+            key: {
+              text: "Trust capacity"
+            },
+            value: {
+              text: "16,256"
+            }
+          },
+          {
+            key: {
+              text: "Trust capacity % full"
+            },
+            value: {
+              text: "89%"
+            }
+          }
+        ]
+      }) }}
+    </div>
   </div>
 {% endblock %}
 
@@ -34,7 +52,7 @@
 
   <div class="govuk-grid-column-full">
 
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6 govuk-!-margin-top-6">
 
     {{ govukTable({
       attributes: {
