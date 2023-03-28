@@ -1,4 +1,5 @@
 {% extends "layouts/trust.html" %}
+{% from "./includes/contact.html" import contact %}
 {% set current_page = "trust-details" %} 
 
 {% block pageContent %}
@@ -6,23 +7,13 @@
     <dl class="dfe-card__content">
       <div class="dfe-card__column">
         <dt class="govuk-heading-s govuk-!-margin-bottom-1">Trust relationship manager:</dt>
-        <dd class="govuk-body govuk-!-margin-bottom-6">
-          <p class="govuk-!-margin-bottom-1">James Smith</p>
-          <p class="govuk-!-margin-bottom-1"><a class="govuk-link" href="mailto:james.smith@education.gov.uk">james.smith@education.gov.uk</a></p>
-        </dd>
+        {{ contact(data.trust.trustDetails.trustRelationshipManager) }}
         <dt class="govuk-heading-s govuk-!-margin-bottom-1">SFSO Lead:</dt>
-        <dd class="govuk-body govuk-!-margin-bottom-6">
-          <p class="govuk-!-margin-bottom-1">Michelle Hadfield</p>
-          <p class="govuk-!-margin-bottom-1"><a class="govuk-link" href="mailto:michelle.hadfield@education.gov.uk">michelle.hadfield@education.gov.uk</a></p>
-        </dd>
+        {{ contact(data.trust.trustDetails.sfsoLead) }}
       </div>
       <div class="dfe-card__column">
         <dt class="govuk-heading-s govuk-!-margin-bottom-1 govuk-!-padding-top-1">Main contact at trust:</dt>
-        <dd class="govuk-body govuk-!-margin-bottom-6">
-          <p class="govuk-!-margin-bottom-1">Jen Hadfield - Chair of trustees</p>
-          <p class="govuk-!-margin-bottom-1"><a href="mailto:jen.hadfield@abbeylaneacademies.co.uk">jen.hadfield@abbeylaneacademies.co.uk</a></p>
-          <p class="govuk-!-margin-bottom-1">Tel: 0114 201 3456</p>
-        </dd>
+        {{ contact(data.trust.trustDetails.mainContactAtTrust, true) }}
       </div>
     </dl>
   </div>
