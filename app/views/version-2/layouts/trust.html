@@ -1,7 +1,7 @@
 {% extends "./main.html" %}
 
 {% block pageTitle %}
-{{ data.trust.Name }} – {{ serviceName }}
+{{ data.trust.name }} – {{ serviceName }}
 {% endblock %}
 
 {% block main %}
@@ -64,9 +64,9 @@
       <main id="main-content">
         <div class="govuk-grid-column-three-quarters">
           <header class="dfe-page-heading">
-            <h1 class="dfe-page-heading__title">{{ data.trust.Name }}</h1>
+            <h1 class="dfe-page-heading__title">{{ data.trust.name }}</h1>
             <div class="dfe-page-heading__detail">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">UID:</span> {{ data.trust.Uid }}</p>
+              <p class="govuk-body"><span class="govuk-!-font-weight-bold">UID:</span> {{ data.trust.uid }}</p>
               <p class="govuk-body">Multi-academy trust</p>
             </div>
           </header>
