@@ -10,10 +10,10 @@ Trust not found – {{ serviceName }}
       <div class="govuk-width-container">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
-            <p>Could not find "{{ searchTerm }}"</p>
+            <p>Could not find "{{ data.search }}"</p>
             <p>Try searching for one of these:</p>
             <ul>
-              {% for trust in trusts %}
+              {% for trust in data.trusts %}
                 <li>{{ trust.Uid }} - {{ trust.Name }}</li>
               {% endfor %}
             </ul>
