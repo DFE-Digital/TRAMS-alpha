@@ -1,5 +1,6 @@
 module.exports = {
-
-  // Insert values here
-
+  trust: {
+    Name: 'Abbey Lane Academies Trust',
+    Uid: '1234',
+  }
 }

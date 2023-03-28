@@ -16,11 +16,10 @@ router.post('/version-2/trust-details', function (request, response) {
   }
 
   if (trust) {
-  response.locals.trust = trust;
-  response.render('version-2/trust-details');
+    response.locals.data.trust = trust;
+    response.render('version-2/trust-details');
   } else {
-    response.locals.searchTerm = searchTerm;
-    response.locals.trusts = trusts.slice(0, 10);
-    response.redirect('./not-found');
+    response.locals.data.trusts = trusts.slice(0, 10);
+    response.render('version-2/not-found');
   }
 });
