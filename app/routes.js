@@ -12,7 +12,7 @@ router.post('/version-2/trust-details', function (request, response) {
   const searchTerm = request.session.data.search;
   if (searchTerm) {
     const searchTermLower = searchTerm.toLowerCase();
-    trust = trusts.filter(t => t.Name.toLowerCase().includes(searchTermLower) || t.Uid === searchTermLower)[0];
+    trust = trusts.filter(t => t.name.toLowerCase().includes(searchTermLower) || t.uid === searchTermLower)[0];
   }
 
   if (trust) {

@@ -5,5 +5,404 @@
  */
 module.exports = {
   "trusts":
-    [{"Name":"Abbey Lane Academies Trust","Uid":"3591","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Eric Welch","Email":"Eric_Welch@hotmail.com","Telephone":"016977 5375"},"SfsoLead":{"Name":"German Runolfsson","Email":"German.Runolfsson@hotmail.com","Telephone":"029 6325 2874"},"MainContactAtTrust":{"Name":"Ricky Abernathy","Email":"Ricky.Abernathy@hotmail.com","Telephone":"0800 702 9226"},"Address":null,"Website":"https://www.abbeylaneacademiestrust.co.uk","LocalAuthorities":["Hull City Council","Newham London Borough Council","City of York Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Edify Multi-Academy Trust","Uid":"6686","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Randal Boyle","Email":"Randal84@yahoo.com","Telephone":"056 1312 5395"},"SfsoLead":{"Name":"Edyth Rowe","Email":"Edyth16@gmail.com","Telephone":"0111 320 0434"},"MainContactAtTrust":{"Name":"Audreanne Gaylord","Email":"Audreanne94@hotmail.com","Telephone":"029 9780 6130"},"Address":null,"Website":"https://www.edifymulti-academytrust.co.uk","LocalAuthorities":["City of Bradford Metropolitan District Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Innovate Academy Trust","Uid":"1178","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Eliezer Walker","Email":"Eliezer75@gmail.com","Telephone":"016977 8297"},"SfsoLead":{"Name":"Ona Turner","Email":"Ona_Turner@hotmail.com","Telephone":"01954 745195"},"MainContactAtTrust":{"Name":"Elda Rice","Email":"Elda.Rice@gmail.com","Telephone":"0800 124 7559"},"Address":null,"Website":"https://www.innovateacademytrust.co.uk","LocalAuthorities":["Bournemouth Borough Council","Redbridge London Borough Council","West Sussex County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Momentum Multi-Academy Trust","Uid":"6053","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Guadalupe Prosacco","Email":"Guadalupe.Prosacco23@hotmail.com","Telephone":"01005 57440"},"SfsoLead":{"Name":"Toy Lakin","Email":"Toy.Lakin58@gmail.com","Telephone":"0800 812730"},"MainContactAtTrust":{"Name":"Kristoffer Anderson","Email":"Kristoffer.Anderson63@gmail.com","Telephone":"0131 248 3848"},"Address":null,"Website":"https://www.momentummulti-academytrust.co.uk","LocalAuthorities":["Trafford Council","Barnet London Borough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Vanguard Learning Trust","Uid":"9819","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Shayna Douglas","Email":"Shayna73@hotmail.com","Telephone":"0113 532 7512"},"SfsoLead":{"Name":"Ashly Price","Email":"Ashly.Price80@gmail.com","Telephone":"0800 369 2679"},"MainContactAtTrust":{"Name":"Gus Pacocha","Email":"Gus_Pacocha@gmail.com","Telephone":"0341 794 0979"},"Address":null,"Website":"https://www.vanguardlearningtrust.co.uk","LocalAuthorities":["Stockton-on-Tees Borough Council","North Lincolnshire Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Progressive Education Trust","Uid":"7794","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Fritz Gutkowski","Email":"Fritz_Gutkowski95@yahoo.com","Telephone":"056 7293 8088"},"SfsoLead":{"Name":"Bulah Medhurst","Email":"Bulah99@gmail.com","Telephone":"013040 44988"},"MainContactAtTrust":{"Name":"Cassidy O\u0027Keefe","Email":"Cassidy34@yahoo.com","Telephone":"055 9461 5311"},"Address":null,"Website":"https://www.progressiveeducationtrust.co.uk","LocalAuthorities":["Surrey County Council","North Lincolnshire Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Horizon Multi-Academy Trust","Uid":"6732","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Elvis Muller","Email":"Elvis4@yahoo.com","Telephone":"0116 654 1763"},"SfsoLead":{"Name":"Lawrence O\u0027Hara","Email":"Lawrence91@hotmail.com","Telephone":"055 3637 7807"},"MainContactAtTrust":{"Name":"Nicole Hermiston","Email":"Nicole35@hotmail.com","Telephone":"016977 7531"},"Address":null,"Website":"https://www.horizonmulti-academytrust.co.uk","LocalAuthorities":["Stockport Metropolitan Borough Council","Devon County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Elevate Schools Trust","Uid":"2513","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Parker Leffler","Email":"Parker_Leffler@yahoo.com","Telephone":"0800 124 3945"},"SfsoLead":{"Name":"Walter Cormier","Email":"Walter.Cormier83@gmail.com","Telephone":"016977 8184"},"MainContactAtTrust":{"Name":"Alphonso Rempel","Email":"Alphonso51@gmail.com","Telephone":"0357 418 3838"},"Address":null,"Website":"https://www.elevateschoolstrust.co.uk","LocalAuthorities":["Lambeth London Borough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Visionary Academy Trust","Uid":"4282","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Darron Huels","Email":"Darron_Huels@gmail.com","Telephone":"010491 10488"},"SfsoLead":{"Name":"Clint Blick","Email":"Clint_Blick4@hotmail.com","Telephone":"0800 582580"},"MainContactAtTrust":{"Name":"Jettie Stamm","Email":"Jettie88@yahoo.com","Telephone":"0888 905 4415"},"Address":null,"Website":"https://www.visionaryacademytrust.co.uk","LocalAuthorities":["Redcar and Cleveland Borough Council","Rotherham Metropolitan Borough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Empowerment Multi-Academy Trust","Uid":"9638","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Danika Hermann","Email":"Danika.Hermann50@hotmail.com","Telephone":"056 1573 8633"},"SfsoLead":{"Name":"Allie Oberbrunner","Email":"Allie_Oberbrunner@gmail.com","Telephone":"0800 141 9126"},"MainContactAtTrust":{"Name":"Ulises Konopelski","Email":"Ulises.Konopelski45@hotmail.com","Telephone":"0116 784 5017"},"Address":null,"Website":"https://www.empowermentmulti-academytrust.co.uk","LocalAuthorities":["Medway Council","Islington London Borough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Echelon Education Trust","Uid":"9083","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Clotilde Upton","Email":"Clotilde90@gmail.com","Telephone":"056 2788 3162"},"SfsoLead":{"Name":"Lucy Nader","Email":"Lucy14@yahoo.com","Telephone":"014012 50305"},"MainContactAtTrust":{"Name":"Gladyce Hodkiewicz","Email":"Gladyce_Hodkiewicz@hotmail.com","Telephone":"0115 661 4851"},"Address":null,"Website":"https://www.echeloneducationtrust.co.uk","LocalAuthorities":["Knowsley Metropolitan Borough Council","Walsall Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Ascendancy Academy Trust","Uid":"3813","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Zachariah Pfeffer","Email":"Zachariah37@gmail.com","Telephone":"0800 913817"},"SfsoLead":{"Name":"Kari Gorczany","Email":"Kari.Gorczany@yahoo.com","Telephone":"013269 66815"},"MainContactAtTrust":{"Name":"Paxton Cole","Email":"Paxton_Cole@yahoo.com","Telephone":"01672 921474"},"Address":null,"Website":"https://www.ascendancyacademytrust.co.uk","LocalAuthorities":["Sheffield City Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Nexus Multi-Academy Trust","Uid":"3748","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Jaleel Trantow","Email":"Jaleel52@gmail.com","Telephone":"01648 130929"},"SfsoLead":{"Name":"Gerardo Schaden","Email":"Gerardo_Schaden@yahoo.com","Telephone":"0500 885918"},"MainContactAtTrust":{"Name":"Genoveva Hintz","Email":"Genoveva7@hotmail.com","Telephone":"013854 90560"},"Address":null,"Website":"https://www.nexusmulti-academytrust.co.uk","LocalAuthorities":["Poole Borough Council","Warwickshire County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Merit Academy Trust","Uid":"8450","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Wellington Leffler","Email":"Wellington51@gmail.com","Telephone":"056 7663 6094"},"SfsoLead":{"Name":"Zetta Dickens","Email":"Zetta_Dickens6@yahoo.com","Telephone":"0924 120 1074"},"MainContactAtTrust":{"Name":"Luisa Fahey","Email":"Luisa_Fahey@yahoo.com","Telephone":"01717 67960"},"Address":null,"Website":"https://www.meritacademytrust.co.uk","LocalAuthorities":["Kensington and Chelsea London Borough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Epic Learning Trust","Uid":"4652","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Katherine Watsica","Email":"Katherine.Watsica78@hotmail.com","Telephone":"0500 677828"},"SfsoLead":{"Name":"Erica Smith","Email":"Erica17@hotmail.com","Telephone":"0879 414 0723"},"MainContactAtTrust":{"Name":"Johann Pagac","Email":"Johann.Pagac72@hotmail.com","Telephone":"0800 029441"},"Address":null,"Website":"https://www.epiclearningtrust.co.uk","LocalAuthorities":["Leeds City Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Peak Multi-Academy Trust","Uid":"2338","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Meggie Larson","Email":"Meggie_Larson@gmail.com","Telephone":"056 2563 6803"},"SfsoLead":{"Name":"Christian Fay","Email":"Christian_Fay@hotmail.com","Telephone":"0876 964 8076"},"MainContactAtTrust":{"Name":"Caden Jaskolski","Email":"Caden_Jaskolski@hotmail.com","Telephone":"055 8169 8306"},"Address":null,"Website":"https://www.peakmulti-academytrust.co.uk","LocalAuthorities":["Gloucestershire County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Legacy Education Trust","Uid":"4667","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Maurice Nitzsche","Email":"Maurice.Nitzsche@yahoo.com","Telephone":"0800 850 1727"},"SfsoLead":{"Name":"Ahmed Gaylord","Email":"Ahmed_Gaylord@hotmail.com","Telephone":"012857 35955"},"MainContactAtTrust":{"Name":"Sandy Rodriguez","Email":"Sandy68@hotmail.com","Telephone":"0840 874 5553"},"Address":null,"Website":"https://www.legacyeducationtrust.co.uk","LocalAuthorities":["Calderdale Metropolitan Borough Council","Cheshire East Council","Newcastle City Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Acclivity Multi-Academy Trust","Uid":"3046","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Minerva Zieme","Email":"Minerva_Zieme@hotmail.com","Telephone":"0151 106 0354"},"SfsoLead":{"Name":"Enid Lubowitz","Email":"Enid_Lubowitz20@gmail.com","Telephone":"0841 914 8395"},"MainContactAtTrust":{"Name":"Bradley Sawayn","Email":"Bradley_Sawayn61@yahoo.com","Telephone":"022 5538 8602"},"Address":null,"Website":"https://www.acclivitymulti-academytrust.co.uk","LocalAuthorities":["Sutton London Borough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Pinnacle Education Trust","Uid":"4449","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Eriberto MacGyver","Email":"Eriberto.MacGyver17@hotmail.com","Telephone":"0500 279460"},"SfsoLead":{"Name":"Candelario Bergnaum","Email":"Candelario20@yahoo.com","Telephone":"0121 669 8623"},"MainContactAtTrust":{"Name":"Cullen Kulas","Email":"Cullen29@gmail.com","Telephone":"0161 353 5580"},"Address":null,"Website":"https://www.pinnacleeducationtrust.co.uk","LocalAuthorities":["Devon County Council","Solihull Metropolitan Borough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Thrive Multi-Academy Trust","Uid":"4964","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Serenity Wuckert","Email":"Serenity_Wuckert38@yahoo.com","Telephone":"016977 4845"},"SfsoLead":{"Name":"Dillan Abshire","Email":"Dillan.Abshire@gmail.com","Telephone":"0813 531 1443"},"MainContactAtTrust":{"Name":"Katlyn Pacocha","Email":"Katlyn48@hotmail.com","Telephone":"016977 7645"},"Address":null,"Website":"https://www.thrivemulti-academytrust.co.uk","LocalAuthorities":["Westmorland and Furness Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Elevated Schools Trust","Uid":"2482","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Ada Keeling","Email":"Ada_Keeling85@gmail.com","Telephone":"0321 793 5440"},"SfsoLead":{"Name":"Halie Howe","Email":"Halie_Howe@hotmail.com","Telephone":"019154 15108"},"MainContactAtTrust":{"Name":"German Mante","Email":"German91@hotmail.com","Telephone":"01052 870718"},"Address":null,"Website":"https://www.elevatedschoolstrust.co.uk","LocalAuthorities":["Bath and North East Somerset Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Champion Academy Trust","Uid":"3136","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Karlee Champlin","Email":"Karlee_Champlin@hotmail.com","Telephone":"0500 602318"},"SfsoLead":{"Name":"May Sawayn","Email":"May_Sawayn@hotmail.com","Telephone":"0800 548543"},"MainContactAtTrust":{"Name":"Onie Grady","Email":"Onie_Grady@hotmail.com","Telephone":"0116 267 5102"},"Address":null,"Website":"https://www.championacademytrust.co.uk","LocalAuthorities":["North Yorkshire County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Intrepid Education Trust","Uid":"4942","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Alec Torp","Email":"Alec.Torp@yahoo.com","Telephone":"01805 18588"},"SfsoLead":{"Name":"Mateo Koss","Email":"Mateo_Koss46@hotmail.com","Telephone":"01143 60138"},"MainContactAtTrust":{"Name":"Belle Gleichner","Email":"Belle.Gleichner97@hotmail.com","Telephone":"01182 871581"},"Address":null,"Website":"https://www.intrepideducationtrust.co.uk","LocalAuthorities":["Bath and North East Somerset Council","Southwark London Borough Council","Norfolk County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Prospect Multi-Academy Trust","Uid":"2627","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Elisabeth O\u0027Reilly","Email":"Elisabeth37@hotmail.com","Telephone":"023 1287 2653"},"SfsoLead":{"Name":"Anika Smith","Email":"Anika_Smith64@hotmail.com","Telephone":"055 7265 7084"},"MainContactAtTrust":{"Name":"Elnora Towne","Email":"Elnora_Towne44@yahoo.com","Telephone":"0363 001 2329"},"Address":null,"Website":"https://www.prospectmulti-academytrust.co.uk","LocalAuthorities":["Kent County Council","Wigan Metropolitan Borough Council","Essex County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"New Horizons Trust","Uid":"1902","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Joshuah Sipes","Email":"Joshuah.Sipes@yahoo.com","Telephone":"0500 966561"},"SfsoLead":{"Name":"Burnice Breitenberg","Email":"Burnice63@gmail.com","Telephone":"01892 228469"},"MainContactAtTrust":{"Name":"Nestor Reynolds","Email":"Nestor56@yahoo.com","Telephone":"0310 958 1588"},"Address":null,"Website":"https://www.newhorizonstrust.co.uk","LocalAuthorities":["Rochdale Borough Council","Barnet London Borough Council","Hounslow London Borough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Milestone Multi-Academy Trust","Uid":"7828","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Charity Corkery","Email":"Charity_Corkery@yahoo.com","Telephone":"026 3092 3306"},"SfsoLead":{"Name":"Jaron Kirlin","Email":"Jaron.Kirlin@hotmail.com","Telephone":"010489 12383"},"MainContactAtTrust":{"Name":"Norwood Nitzsche","Email":"Norwood73@yahoo.com","Telephone":"025 3900 0402"},"Address":null,"Website":"https://www.milestonemulti-academytrust.co.uk","LocalAuthorities":["Salford City Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Galvanize Academy Trust","Uid":"6687","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Mariane Paucek","Email":"Mariane_Paucek@hotmail.com","Telephone":"055 4149 1217"},"SfsoLead":{"Name":"Sheridan O\u0027Conner","Email":"Sheridan.OConner25@gmail.com","Telephone":"016977 7980"},"MainContactAtTrust":{"Name":"Brice Conn","Email":"Brice95@hotmail.com","Telephone":"01540 327960"},"Address":null,"Website":"https://www.galvanizeacademytrust.co.uk","LocalAuthorities":["Redbridge London Borough Council","Lindsey County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Cornerstone Multi-Academy Trust","Uid":"7439","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Sandra Dibbert","Email":"Sandra.Dibbert@yahoo.com","Telephone":"01473 095976"},"SfsoLead":{"Name":"Patsy Hills","Email":"Patsy_Hills@yahoo.com","Telephone":"0800 519 0383"},"MainContactAtTrust":{"Name":"Jacques Hermann","Email":"Jacques73@yahoo.com","Telephone":"0191 784 7631"},"Address":null,"Website":"https://www.cornerstonemulti-academytrust.co.uk","LocalAuthorities":["Cornwall Council","Sutton London Borough Council","Nottingham City Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Inspire Multi-Academy Trust","Uid":"3737","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Ivah Moore","Email":"Ivah_Moore@yahoo.com","Telephone":"01301 96404"},"SfsoLead":{"Name":"Rodrick Jacobson","Email":"Rodrick22@hotmail.com","Telephone":"0971 620 3443"},"MainContactAtTrust":{"Name":"Ludie Carter","Email":"Ludie.Carter29@gmail.com","Telephone":"0191 370 0375"},"Address":null,"Website":"https://www.inspiremulti-academytrust.co.uk","LocalAuthorities":["Surrey County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Success Multi-Academy Trust","Uid":"2340","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Sienna Gulgowski","Email":"Sienna.Gulgowski63@gmail.com","Telephone":"0800 041496"},"SfsoLead":{"Name":"Lonzo Torphy","Email":"Lonzo99@yahoo.com","Telephone":"0115 499 1447"},"MainContactAtTrust":{"Name":"Dayne Olson","Email":"Dayne_Olson32@gmail.com","Telephone":"0393 774 1371"},"Address":null,"Website":"https://www.successmulti-academytrust.co.uk","LocalAuthorities":["Cumbria County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Bridge Education Trust","Uid":"4845","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Conrad MacGyver","Email":"Conrad78@gmail.com","Telephone":"01241 645345"},"SfsoLead":{"Name":"Loy Gleason","Email":"Loy4@hotmail.com","Telephone":"0500 067056"},"MainContactAtTrust":{"Name":"Mercedes Conroy","Email":"Mercedes_Conroy61@hotmail.com","Telephone":"0112 449 5439"},"Address":null,"Website":"https://www.bridgeeducationtrust.co.uk","LocalAuthorities":["Oldham Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Crescendo Academy Trust","Uid":"1172","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Eloy Douglas","Email":"Eloy.Douglas18@hotmail.com","Telephone":"0161 023 4607"},"SfsoLead":{"Name":"Einar Kuhn","Email":"Einar.Kuhn90@yahoo.com","Telephone":"016977 8872"},"MainContactAtTrust":{"Name":"Gertrude Stark","Email":"Gertrude89@yahoo.com","Telephone":"016977 6185"},"Address":null,"Website":"https://www.crescendoacademytrust.co.uk","LocalAuthorities":["Redbridge London Borough Council","Norfolk County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Potential Learning Trust","Uid":"2895","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Tyson Gleason","Email":"Tyson75@gmail.com","Telephone":"0500 770938"},"SfsoLead":{"Name":"Consuelo Herzog","Email":"Consuelo6@gmail.com","Telephone":"020 1900 4685"},"MainContactAtTrust":{"Name":"Antonietta Ruecker","Email":"Antonietta.Ruecker32@gmail.com","Telephone":"056 9227 4064"},"Address":null,"Website":"https://www.potentiallearningtrust.co.uk","LocalAuthorities":["Middlesbrough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Horizons Multi-Academy Trust","Uid":"8472","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Kobe Bartoletti","Email":"Kobe17@hotmail.com","Telephone":"056 9108 9400"},"SfsoLead":{"Name":"Manuel Ferry","Email":"Manuel.Ferry16@yahoo.com","Telephone":"0973 449 3120"},"MainContactAtTrust":{"Name":"Noel Dooley","Email":"Noel1@yahoo.com","Telephone":"0834 764 9885"},"Address":null,"Website":"https://www.horizonsmulti-academytrust.co.uk","LocalAuthorities":["North Tyneside Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Rise Education Trust","Uid":"6864","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Syble Bernhard","Email":"Syble_Bernhard67@hotmail.com","Telephone":"0955 992 6017"},"SfsoLead":{"Name":"Maegan Rosenbaum","Email":"Maegan_Rosenbaum5@hotmail.com","Telephone":"055 4299 4680"},"MainContactAtTrust":{"Name":"Lane Bosco","Email":"Lane_Bosco9@yahoo.com","Telephone":"0500 254333"},"Address":null,"Website":"https://www.riseeducationtrust.co.uk","LocalAuthorities":["Bracknell Forest Council","Cambridgeshire and Isle of Ely County Council","Durham County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Excel Multi-Academy Trust","Uid":"3096","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Javon Conroy","Email":"Javon.Conroy84@hotmail.com","Telephone":"0369 137 2275"},"SfsoLead":{"Name":"Marilyne Flatley","Email":"Marilyne.Flatley@yahoo.com","Telephone":"0800 990123"},"MainContactAtTrust":{"Name":"Erling West","Email":"Erling48@hotmail.com","Telephone":"0113 053 2006"},"Address":null,"Website":"https://www.excelmulti-academytrust.co.uk","LocalAuthorities":["Leicester City Council","Somerset County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Unity Learning Trust","Uid":"1744","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Electa Macejkovic","Email":"Electa.Macejkovic@hotmail.com","Telephone":"0887 743 6002"},"SfsoLead":{"Name":"Kendra Hudson","Email":"Kendra.Hudson52@hotmail.com","Telephone":"0972 588 7599"},"MainContactAtTrust":{"Name":"Trevion Hamill","Email":"Trevion27@hotmail.com","Telephone":"016977 3413"},"Address":null,"Website":"https://www.unitylearningtrust.co.uk","LocalAuthorities":["Redcar and Cleveland Borough Council","Holland County Council","Sefton Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Adept Academy Trust","Uid":"5243","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Marion Schneider","Email":"Marion.Schneider95@gmail.com","Telephone":"01850 521833"},"SfsoLead":{"Name":"Alphonso Miller","Email":"Alphonso.Miller@yahoo.com","Telephone":"0800 535 5823"},"MainContactAtTrust":{"Name":"Carmela Mraz","Email":"Carmela_Mraz@gmail.com","Telephone":"024 6941 7665"},"Address":null,"Website":"https://www.adeptacademytrust.co.uk","LocalAuthorities":["Bromley London Borough Council","Norfolk County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Excellence Multi-Academy Trust","Uid":"3626","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Jasen Prohaska","Email":"Jasen.Prohaska@gmail.com","Telephone":"056 4112 8169"},"SfsoLead":{"Name":"Alexys Quitzon","Email":"Alexys_Quitzon@yahoo.com","Telephone":"055 0701 0584"},"MainContactAtTrust":{"Name":"Sophia Volkman","Email":"Sophia_Volkman29@gmail.com","Telephone":"056 4621 6005"},"Address":null,"Website":"https://www.excellencemulti-academytrust.co.uk","LocalAuthorities":["Solihull Metropolitan Borough Council","Sandwell Metropolitan Borough Council","Hull City Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Prosperity Education Trust","Uid":"4685","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Harmon Adams","Email":"Harmon.Adams10@hotmail.com","Telephone":"023 9179 3677"},"SfsoLead":{"Name":"Gladys Sanford","Email":"Gladys60@gmail.com","Telephone":"0337 151 5205"},"MainContactAtTrust":{"Name":"Hiram Hayes","Email":"Hiram_Hayes96@gmail.com","Telephone":"026 1710 4251"},"Address":null,"Website":"https://www.prosperityeducationtrust.co.uk","LocalAuthorities":["Nottingham City Council","Warrington Borough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Pathfinder Multi-Academy Trust","Uid":"2907","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Bradly Haley","Email":"Bradly89@yahoo.com","Telephone":"0500 094882"},"SfsoLead":{"Name":"Ova Schiller","Email":"Ova.Schiller72@gmail.com","Telephone":"029 6165 9587"},"MainContactAtTrust":{"Name":"Julie Willms","Email":"Julie.Willms@hotmail.com","Telephone":"01411 13597"},"Address":null,"Website":"https://www.pathfindermulti-academytrust.co.uk","LocalAuthorities":["Kesteven County Council","Holland County Council","Lambeth London Borough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Vitality Academy Trust","Uid":"8356","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Drake Marquardt","Email":"Drake_Marquardt@gmail.com","Telephone":"0181 651 8290"},"SfsoLead":{"Name":"Lamar Runte","Email":"Lamar.Runte@yahoo.com","Telephone":"056 4688 9052"},"MainContactAtTrust":{"Name":"Adrianna Pacocha","Email":"Adrianna70@hotmail.com","Telephone":"016977 0420"},"Address":null,"Website":"https://www.vitalityacademytrust.co.uk","LocalAuthorities":["East Sussex County Council","Cumberland Council","Kent County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Forward Multi-Academy Trust","Uid":"8808","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Grover Fritsch","Email":"Grover14@hotmail.com","Telephone":"055 5525 4735"},"SfsoLead":{"Name":"Marlon Schmidt","Email":"Marlon_Schmidt@gmail.com","Telephone":"0800 289665"},"MainContactAtTrust":{"Name":"Henri Brown","Email":"Henri88@yahoo.com","Telephone":"024 9264 7906"},"Address":null,"Website":"https://www.forwardmulti-academytrust.co.uk","LocalAuthorities":["Newcastle City Council","Nottingham City Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Transcendence Education Trust","Uid":"3312","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Jaunita Murray","Email":"Jaunita.Murray66@yahoo.com","Telephone":"0800 788063"},"SfsoLead":{"Name":"Merl Stark","Email":"Merl60@hotmail.com","Telephone":"0390 585 8660"},"MainContactAtTrust":{"Name":"Joshua Kertzmann","Email":"Joshua.Kertzmann1@gmail.com","Telephone":"055 8078 1040"},"Address":null,"Website":"https://www.transcendenceeducationtrust.co.uk","LocalAuthorities":["Ealing London Borough Council","Oxfordshire County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Advantage Academy Trust","Uid":"8674","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Boris Kozey","Email":"Boris.Kozey@hotmail.com","Telephone":"0800 674489"},"SfsoLead":{"Name":"Torrey Turner","Email":"Torrey73@hotmail.com","Telephone":"01700 47756"},"MainContactAtTrust":{"Name":"Reece Bradtke","Email":"Reece85@gmail.com","Telephone":"0800 419737"},"Address":null,"Website":"https://www.advantageacademytrust.co.uk","LocalAuthorities":["Hartlepool Borough Council","Kent County Council","Lambeth London Borough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Illuminate Multi-Academy Trust","Uid":"8978","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Isabel Stiedemann","Email":"Isabel.Stiedemann72@yahoo.com","Telephone":"056 4268 8083"},"SfsoLead":{"Name":"Bonita Bahringer","Email":"Bonita75@hotmail.com","Telephone":"0800 442703"},"MainContactAtTrust":{"Name":"Justina Ryan","Email":"Justina.Ryan71@yahoo.com","Telephone":"01462 95770"},"Address":null,"Website":"https://www.illuminatemulti-academytrust.co.uk","LocalAuthorities":["Huntingdonshire County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Fusion Education Trust","Uid":"3522","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Janessa Williamson","Email":"Janessa_Williamson@yahoo.com","Telephone":"0800 102527"},"SfsoLead":{"Name":"Philip Marvin","Email":"Philip_Marvin@hotmail.com","Telephone":"0141 007 3742"},"MainContactAtTrust":{"Name":"Liam Bogan","Email":"Liam.Bogan@yahoo.com","Telephone":"0117 098 3780"},"Address":null,"Website":"https://www.fusioneducationtrust.co.uk","LocalAuthorities":["Rutland County Council","Nottinghamshire County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Empower Academy Trust","Uid":"8397","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Florencio Deckow","Email":"Florencio.Deckow62@yahoo.com","Telephone":"056 6066 4169"},"SfsoLead":{"Name":"Timmothy Reichert","Email":"Timmothy_Reichert58@hotmail.com","Telephone":"0995 546 1201"},"MainContactAtTrust":{"Name":"Verona Bayer","Email":"Verona71@hotmail.com","Telephone":"0181 422 8851"},"Address":null,"Website":"https://www.empoweracademytrust.co.uk","LocalAuthorities":["Haringey London Borough Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Illuminate Learning Trust","Uid":"5372","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Arnulfo Durgan","Email":"Arnulfo_Durgan3@hotmail.com","Telephone":"01119 259699"},"SfsoLead":{"Name":"Nya Mohr","Email":"Nya_Mohr@yahoo.com","Telephone":"016977 2127"},"MainContactAtTrust":{"Name":"Citlalli Harris","Email":"Citlalli70@yahoo.com","Telephone":"0111 468 5887"},"Address":null,"Website":"https://www.illuminatelearningtrust.co.uk","LocalAuthorities":["Surrey County Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}},{"Name":"Challenger Multi-Academy Trust","Uid":"3557","TrustType":"Multi-academy trust","TrustDetails":{"TrustRelationshipManager":{"Name":"Juana Mohr","Email":"Juana38@hotmail.com","Telephone":"056 6683 2557"},"SfsoLead":{"Name":"Daisha Cruickshank","Email":"Daisha.Cruickshank@gmail.com","Telephone":"056 8894 5725"},"MainContactAtTrust":{"Name":"Laurence Marks","Email":"Laurence.Marks@yahoo.com","Telephone":"013575 85322"},"Address":null,"Website":"https://www.challengermulti-academytrust.co.uk","LocalAuthorities":["Luton Borough Council","Hull City Council","Medway Council"],"RegionsGroup":null,"SchoolsFinancialSupportTerritory":null,"DateIncorporated":"0001-01-01T00:00:00","DateOpened":"0001-01-01T00:00:00","TrustReferenceNumber":null,"CompaniesHouseNumber":null,"CompaniesHouseFilingHistoryUrl":null,"GetInformationAboutSchoolsUrl":null,"SponsorStatus":"Approved","SponsorRestrictions":"No restrictions","SponsorApprovalDate":"0001-01-01T00:00:00","SponsorName":null}}]
+  [
+    {
+      "name": "Abbey Lane Academies Trust",
+      "uid": "3591",
+      "trustType": "Multi-academy trust",
+      "trustDetails": {
+        "trustRelationshipManager": {
+          "name": "Eric Welch",
+          "email": "Eric_Welch@hotmail.com",
+          "telephone": "016977 5375"
+        },
+        "sfsoLead": {
+          "name": "German Runolfsson",
+          "email": "German.Runolfsson@hotmail.com",
+          "telephone": "029 6325 2874"
+        },
+        "mainContactAtTrust": {
+          "name": "Ricky Abernathy",
+          "email": "Ricky.Abernathy@hotmail.com",
+          "telephone": "0800 702 9226"
+        },
+        "address": null,
+        "website": "https://www.abbeylaneacademiestrust.co.uk",
+        "localAuthorities": [
+          "Huntingdonshire County Council",
+          "Torbay Council",
+          "Richmond upon Thames London Borough Council"
+        ],
+        "regionsGroup": null,
+        "schoolsFinancialSupportTerritory": null,
+        "dateIncorporated": "0001-01-01T00:00:00",
+        "dateOpened": "0001-01-01T00:00:00",
+        "trustReferenceNumber": null,
+        "companiesHouseNumber": null,
+        "companiesHouseFilingHistoryUrl": null,
+        "getInformationAboutSchoolsUrl": null,
+        "sponsorStatus": "Approved",
+        "sponsorRestrictions": "No restrictions",
+        "sponsorApprovalDate": "0001-01-01T00:00:00",
+        "sponsorName": null
+      }
+    },
+    {
+      "name": "Edify Multi-Academy Trust",
+      "uid": "4410",
+      "trustType": "Multi-academy trust",
+      "trustDetails": {
+        "trustRelationshipManager": {
+          "name": "Zoey Murray",
+          "email": "Zoey_Murray0@yahoo.com",
+          "telephone": "055 4131 2539"
+        },
+        "sfsoLead": {
+          "name": "Edyth Rowe",
+          "email": "Edyth16@gmail.com",
+          "telephone": "0111 320 0434"
+        },
+        "mainContactAtTrust": {
+          "name": "Audreanne Gaylord",
+          "email": "Audreanne94@hotmail.com",
+          "telephone": "029 9780 6130"
+        },
+        "address": null,
+        "website": "https://www.edifymulti-academytrust.co.uk",
+        "localAuthorities": [
+          "Wiltshire Council"
+        ],
+        "regionsGroup": null,
+        "schoolsFinancialSupportTerritory": null,
+        "dateIncorporated": "0001-01-01T00:00:00",
+        "dateOpened": "0001-01-01T00:00:00",
+        "trustReferenceNumber": null,
+        "companiesHouseNumber": null,
+        "companiesHouseFilingHistoryUrl": null,
+        "getInformationAboutSchoolsUrl": null,
+        "sponsorStatus": "Approved",
+        "sponsorRestrictions": "No restrictions",
+        "sponsorApprovalDate": "0001-01-01T00:00:00",
+        "sponsorName": null
+      }
+    },
+    {
+      "name": "Innovate Academy Trust",
+      "uid": "1709",
+      "trustType": "Multi-academy trust",
+      "trustDetails": {
+        "trustRelationshipManager": {
+          "name": "Stephon Gusikowski",
+          "email": "Stephon75@gmail.com",
+          "telephone": "016977 8297"
+        },
+        "sfsoLead": {
+          "name": "Ona Turner",
+          "email": "Ona_Turner@hotmail.com",
+          "telephone": "01954 745195"
+        },
+        "mainContactAtTrust": {
+          "name": "Elda Rice",
+          "email": "Elda.Rice@gmail.com",
+          "telephone": "0800 124 7559"
+        },
+        "address": null,
+        "website": "https://www.innovateacademytrust.co.uk",
+        "localAuthorities": [
+          "Halton Borough Council",
+          "Staffordshire County Council",
+          "Hertfordshire County Council"
+        ],
+        "regionsGroup": null,
+        "schoolsFinancialSupportTerritory": null,
+        "dateIncorporated": "0001-01-01T00:00:00",
+        "dateOpened": "0001-01-01T00:00:00",
+        "trustReferenceNumber": null,
+        "companiesHouseNumber": null,
+        "companiesHouseFilingHistoryUrl": null,
+        "getInformationAboutSchoolsUrl": null,
+        "sponsorStatus": "Approved",
+        "sponsorRestrictions": "No restrictions",
+        "sponsorApprovalDate": "0001-01-01T00:00:00",
+        "sponsorName": null
+      }
+    },
+    {
+      "name": "Momentum Multi-Academy Trust",
+      "uid": "1606",
+      "trustType": "Multi-academy trust",
+      "trustDetails": {
+        "trustRelationshipManager": {
+          "name": "Trycia MacGyver",
+          "email": "Trycia.MacGyver65@hotmail.com",
+          "telephone": "0856 580 0557"
+        },
+        "sfsoLead": {
+          "name": "George Renner",
+          "email": "George.Renner@yahoo.com",
+          "telephone": "0500 186981"
+        },
+        "mainContactAtTrust": {
+          "name": "Ethyl Ritchie",
+          "email": "Ethyl.Ritchie@yahoo.com",
+          "telephone": "026 1040 1324"
+        },
+        "address": null,
+        "website": "https://www.momentummulti-academytrust.co.uk",
+        "localAuthorities": [
+          "Harrow London Borough Council",
+          "Huntingdon and Peterborough County Council"
+        ],
+        "regionsGroup": null,
+        "schoolsFinancialSupportTerritory": null,
+        "dateIncorporated": "0001-01-01T00:00:00",
+        "dateOpened": "0001-01-01T00:00:00",
+        "trustReferenceNumber": null,
+        "companiesHouseNumber": null,
+        "companiesHouseFilingHistoryUrl": null,
+        "getInformationAboutSchoolsUrl": null,
+        "sponsorStatus": "Approved",
+        "sponsorRestrictions": "No restrictions",
+        "sponsorApprovalDate": "0001-01-01T00:00:00",
+        "sponsorName": null
+      }
+    },
+    {
+      "name": "Vanguard Learning Trust",
+      "uid": "4689",
+      "trustType": "Multi-academy trust",
+      "trustDetails": {
+        "trustRelationshipManager": {
+          "name": "Ona Stamm",
+          "email": "Ona97@hotmail.com",
+          "telephone": "0181 171 3812"
+        },
+        "sfsoLead": {
+          "name": "Mckenna Reinger",
+          "email": "Mckenna.Reinger69@hotmail.com",
+          "telephone": "018335 95369"
+        },
+        "mainContactAtTrust": {
+          "name": "Misael Ondricka",
+          "email": "Misael.Ondricka@yahoo.com",
+          "telephone": "01734 179409"
+        },
+        "address": null,
+        "website": "https://www.vanguardlearningtrust.co.uk",
+        "localAuthorities": [
+          "Medway Council",
+          "Islington London Borough Council",
+          "Wakefield Council"
+        ],
+        "regionsGroup": null,
+        "schoolsFinancialSupportTerritory": null,
+        "dateIncorporated": "0001-01-01T00:00:00",
+        "dateOpened": "0001-01-01T00:00:00",
+        "trustReferenceNumber": null,
+        "companiesHouseNumber": null,
+        "companiesHouseFilingHistoryUrl": null,
+        "getInformationAboutSchoolsUrl": null,
+        "sponsorStatus": "Approved",
+        "sponsorRestrictions": "No restrictions",
+        "sponsorApprovalDate": "0001-01-01T00:00:00",
+        "sponsorName": null
+      }
+    },
+    {
+      "name": "Progressive Education Trust",
+      "uid": "5021",
+      "trustType": "Multi-academy trust",
+      "trustDetails": {
+        "trustRelationshipManager": {
+          "name": "Kirk Roob",
+          "email": "Kirk_Roob@gmail.com",
+          "telephone": "055 4257 2938"
+        },
+        "sfsoLead": {
+          "name": "Sim Wolff",
+          "email": "Sim_Wolff@hotmail.com",
+          "telephone": "0500 790304"
+        },
+        "mainContactAtTrust": {
+          "name": "Alessia Wintheiser",
+          "email": "Alessia65@yahoo.com",
+          "telephone": "0391 674 9461"
+        },
+        "address": null,
+        "website": "https://www.progressiveeducationtrust.co.uk",
+        "localAuthorities": [
+          "Bromley London Borough Council"
+        ],
+        "regionsGroup": null,
+        "schoolsFinancialSupportTerritory": null,
+        "dateIncorporated": "0001-01-01T00:00:00",
+        "dateOpened": "0001-01-01T00:00:00",
+        "trustReferenceNumber": null,
+        "companiesHouseNumber": null,
+        "companiesHouseFilingHistoryUrl": null,
+        "getInformationAboutSchoolsUrl": null,
+        "sponsorStatus": "Approved",
+        "sponsorRestrictions": "No restrictions",
+        "sponsorApprovalDate": "0001-01-01T00:00:00",
+        "sponsorName": null
+      }
+    },
+    {
+      "name": "Horizon Multi-Academy Trust",
+      "uid": "4796",
+      "trustType": "Multi-academy trust",
+      "trustDetails": {
+        "trustRelationshipManager": {
+          "name": "Gaylord Jacobson",
+          "email": "Gaylord62@yahoo.com",
+          "telephone": "019529 26654"
+        },
+        "sfsoLead": {
+          "name": "Tressie Hansen",
+          "email": "Tressie_Hansen59@yahoo.com",
+          "telephone": "0191 854 7436"
+        },
+        "mainContactAtTrust": {
+          "name": "Stuart Goodwin",
+          "email": "Stuart76@gmail.com",
+          "telephone": "01703 44117"
+        },
+        "address": null,
+        "website": "https://www.horizonmulti-academytrust.co.uk",
+        "localAuthorities": [
+          "Croydon London Borough Council",
+          "Waltham Forest London Borough Council"
+        ],
+        "regionsGroup": null,
+        "schoolsFinancialSupportTerritory": null,
+        "dateIncorporated": "0001-01-01T00:00:00",
+        "dateOpened": "0001-01-01T00:00:00",
+        "trustReferenceNumber": null,
+        "companiesHouseNumber": null,
+        "companiesHouseFilingHistoryUrl": null,
+        "getInformationAboutSchoolsUrl": null,
+        "sponsorStatus": "Approved",
+        "sponsorRestrictions": "No restrictions",
+        "sponsorApprovalDate": "0001-01-01T00:00:00",
+        "sponsorName": null
+      }
+    },
+    {
+      "name": "Elevate Schools Trust",
+      "uid": "1580",
+      "trustType": "Multi-academy trust",
+      "trustDetails": {
+        "trustRelationshipManager": {
+          "name": "Rachelle Feeney",
+          "email": "Rachelle.Feeney@hotmail.com",
+          "telephone": "0800 189 5124"
+        },
+        "sfsoLead": {
+          "name": "Gabe Price",
+          "email": "Gabe57@hotmail.com",
+          "telephone": "01633 47818"
+        },
+        "mainContactAtTrust": {
+          "name": "Raul Baumbach",
+          "email": "Raul51@gmail.com",
+          "telephone": "0357 418 3838"
+        },
+        "address": null,
+        "website": "https://www.elevateschoolstrust.co.uk",
+        "localAuthorities": [
+          "Essex County Council"
+        ],
+        "regionsGroup": null,
+        "schoolsFinancialSupportTerritory": null,
+        "dateIncorporated": "0001-01-01T00:00:00",
+        "dateOpened": "0001-01-01T00:00:00",
+        "trustReferenceNumber": null,
+        "companiesHouseNumber": null,
+        "companiesHouseFilingHistoryUrl": null,
+        "getInformationAboutSchoolsUrl": null,
+        "sponsorStatus": "Approved",
+        "sponsorRestrictions": "No restrictions",
+        "sponsorApprovalDate": "0001-01-01T00:00:00",
+        "sponsorName": null
+      }
+    },
+    {
+      "name": "Visionary Academy Trust",
+      "uid": "5131",
+      "trustType": "Multi-academy trust",
+      "trustDetails": {
+        "trustRelationshipManager": {
+          "name": "Orlo Feil",
+          "email": "Orlo.Feil@hotmail.com",
+          "telephone": "0930 049 1104"
+        },
+        "sfsoLead": {
+          "name": "Geovanni Kessler",
+          "email": "Geovanni19@gmail.com",
+          "telephone": "0990 476 7958"
+        },
+        "mainContactAtTrust": {
+          "name": "Miller Hills",
+          "email": "Miller.Hills85@yahoo.com",
+          "telephone": "0500 256889"
+        },
+        "address": null,
+        "website": "https://www.visionaryacademytrust.co.uk",
+        "localAuthorities": [
+          "Middlesbrough Council"
+        ],
+        "regionsGroup": null,
+        "schoolsFinancialSupportTerritory": null,
+        "dateIncorporated": "0001-01-01T00:00:00",
+        "dateOpened": "0001-01-01T00:00:00",
+        "trustReferenceNumber": null,
+        "companiesHouseNumber": null,
+        "companiesHouseFilingHistoryUrl": null,
+        "getInformationAboutSchoolsUrl": null,
+        "sponsorStatus": "Approved",
+        "sponsorRestrictions": "No restrictions",
+        "sponsorApprovalDate": "0001-01-01T00:00:00",
+        "sponsorName": null
+      }
+    },
+    {
+      "name": "Empowerment Multi-Academy Trust",
+      "uid": "8905",
+      "trustType": "Multi-academy trust",
+      "trustDetails": {
+        "trustRelationshipManager": {
+          "name": "Mercedes Stanton",
+          "email": "Mercedes_Stanton95@yahoo.com",
+          "telephone": "011783 56957"
+        },
+        "sfsoLead": {
+          "name": "Roma Greenholt",
+          "email": "Roma64@hotmail.com",
+          "telephone": "0500 518951"
+        },
+        "mainContactAtTrust": {
+          "name": "Alyson Torp",
+          "email": "Alyson94@gmail.com",
+          "telephone": "01146 58426"
+        },
+        "address": null,
+        "website": "https://www.empowermentmulti-academytrust.co.uk",
+        "localAuthorities": [
+          "Enfield London Borough Council"
+        ],
+        "regionsGroup": null,
+        "schoolsFinancialSupportTerritory": null,
+        "dateIncorporated": "0001-01-01T00:00:00",
+        "dateOpened": "0001-01-01T00:00:00",
+        "trustReferenceNumber": null,
+        "companiesHouseNumber": null,
+        "companiesHouseFilingHistoryUrl": null,
+        "getInformationAboutSchoolsUrl": null,
+        "sponsorStatus": "Approved",
+        "sponsorRestrictions": "No restrictions",
+        "sponsorApprovalDate": "0001-01-01T00:00:00",
+        "sponsorName": null
+      }
+    }
+  ]
 }

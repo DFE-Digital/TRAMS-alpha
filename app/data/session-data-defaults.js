@@ -1,6 +1,6 @@
 module.exports = {
   trust: {
-    Name: 'Abbey Lane Academies Trust',
-    Uid: '1234',
+    name: 'Abbey Lane Academies Trust',
+    uid: '1234',
   }
 }
