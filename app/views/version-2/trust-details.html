@@ -1,5 +1,6 @@
 {% extends "layouts/trust.html" %}
 {% from "./includes/contact.html" import contact %}
+{% from "./includes/link.njk" import link %}
 {% set current_page = "trust-details" %} 
 
 {% block pageContent %}
@@ -27,7 +28,7 @@
               text: "Address:"
             },
             value: {
-              html: "Abbey Lane, Abbey Road, Sheffield, S1 2BC"
+              text: data.trust.trustDetails.address | default('---', true)
             }
           },
           {
@@ -35,7 +36,7 @@
               text: "Website:"
             },
             value: {
-              html: '<a class="govuk-link govuk-link--no-visited-state" href="http://www.abbeylanetrust.sch.uk">www.abbeylanetrust.sch.uk</a> (opens in a new tab)'
+              html: link(data.trust.trustDetails.website, opensInNewTab=true)
             }
           },
           {
@@ -43,7 +44,7 @@
               text: "Local authorites:"
             },
             value: {
-              html: '<a class="govuk-link govuk-link--no-visited-state" href="#">Sheffield</a> (88)'
+              text: data.trust.trustDetails.localAuthorities | join(', ') | default('---', true)
             }
           },
           {
@@ -51,7 +52,7 @@
               text: "Regions Group:"
             },
             value: {
-              html: "South Yorkshire"
+              text: data.trust.trustDetails.regionsGroup | default('---', true)
             }
           },
           {
@@ -67,7 +68,7 @@
               text: "Schools financial support territory (SFSO):"
             },
             value: {
-              html: "Yorkshire and the Humber"
+              html: data.trust.trustDetails.schoolsFinancialSupportTerritory | default('---', true)
             }
           },
           {
@@ -75,7 +76,7 @@
               text: "Date incorporated:"
             },
             value: {
-              html: "19 July 2010"
+              html: data.trust.trustDetails.dateIncorporatedString | default('---', true)
             }
           },
           {
@@ -83,7 +84,7 @@
               text: "Date opened:"
             },
             value: {
-              html: "1 Jan 2010"
+              html: data.trust.trustDetails.dateOpenedString | default('---', true)
             }
           },
           {
@@ -91,7 +92,7 @@
               text: "Trust reference number:"
             },
             value: {
-              html: "TR00123"
+              html: data.trust.trustDetails.trustReferenceNumber | default('---', true)
             }
           },
           {
@@ -99,7 +100,7 @@
               text: "Companies House number:"
             },
             value: {
-              html: "07318733"
+              html: data.trust.trustDetails.companiesHouseNumber | default('---', true)
             }
           },
           {
@@ -107,7 +108,11 @@
               text: "Companies House filing history:"
             },
             value: {
-              html: '<a class="govuk-link govuk-link--no-visited-state" href="https://find-and-update.company-information.service.gov.uk/company/07318714/filing-history">https://find-and-update.company-information.service.gov.uk/company/07318714/filing-history (opens in a new tab)</a>'
+              html: link(
+                data.trust.trustDetails.companiesHouseFilingHistoryUrl, 
+                linkText=data.trust.trustDetails.companiesHouseFilingHistoryUrl, 
+                opensInNewTab=true
+              )
             }
           },
           {
@@ -115,7 +120,7 @@
               text: "Get information about schools:"
             },
             value: {
-              html: '<a class="govuk-link govuk-link--no-visited-state" href="#">View data held on Get information about schools (opens in a new tab)</a>'
+              html: '<a class="govuk-link" href="#">View data held on Get information about schools (opens in a new tab)</a>'
             }
           }
         ]
@@ -151,7 +156,7 @@
               text: "Sponsor status:"
             },
             value: {
-              html: "Approved"
+              text: data.trust.trustDetails.sponsorStatus | default('---', true)
             }
           },
           {
@@ -159,7 +164,7 @@
               text: "Sponsor restrictions:"
             },
             value: {
-              html: "No restrictions"
+              text: data.trust.trustDetails.sponsorRestrictions | default('---', true)
             }
           },
           {
@@ -167,7 +172,7 @@
               text: "Sponsor approval date:"
             },
             value: {
-              html: "1 June 2010"
+              html: data.trust.trustDetails.sponsorApprovalDateString | default('---', true)
             }
           },
           {
@@ -175,7 +180,7 @@
               text: "Sponsor name:"
             },
             value: {
-              html: "Abbey Academies Trust"
+              html: data.trust.trustDetails.sponsorName | default('---', true)
             }
           }
         ]
