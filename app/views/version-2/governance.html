@@ -1,6 +1,8 @@
 {% extends "layouts/trust.html" %}
 {% set current_page = "governance" %} 
 
+
+
 {% block pageContent %}
   <div class="govuk-!-margin-top-7 govuk-!-margin-bottom-8">
     <h2 class="govuk-heading-l">Governance</h2>
@@ -22,120 +24,12 @@
           },
           {
             text: "Date appointed"
+          },
+          {
+            text: "Term end"
           }
         ],
-        rows: [
-          [
-            {
-              html: 'Mark Abbey<br><a href="mailto:mark.abbey@abbeylanetrust.org.uk">mark.abbey@abbeylanetrust.org.uk</a>'
-            },
-            {
-              text: "Accounting Officer"
-            },
-            {
-              text: "4 January 2023"
-            }
-          ],
-          [
-            {
-              html: 'Jen Hadfield<br><a href="mailto:jen.hadfield@abbeylane.trust.org.uk">jen.hadfield@abbeylane.trust.org.uk</a>'
-            },
-            {
-              text: "Chair of Trustees"
-            },
-            {
-              text: "14 November 2022"
-            }
-          ],
-          [
-            {
-              text: "Colin Coles"
-            },
-            {
-              text: "Chief Financial Officer"
-            },
-            {
-              text: "25 October 2021"
-            }
-          ],
-          [
-            {
-              text: "Cheryl Ann Hobbs"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "4 January 2023"
-            }
-          ],
-          [
-            {
-              text: "Nicholas Martin"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "14 November 2022"
-            }
-          ],
-          [
-            {
-              text: "Keith Evans"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "25 October 2021"
-            }
-          ],
-          [
-            {
-              text: "Rachael Cave"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "4 January 2023"
-            }
-          ],
-          [
-            {
-              text: "Lee Mccall"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "14 November 2022"
-            }
-          ],
-          [
-            {
-              text: "George Harper"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "25 October 2021"
-            }
-          ],
-          [
-            {
-              text: "Phil Pearson"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "4 January 2023"
-            }
-          ]
-        ]
+        rows: data.governanceRows.present
       }) }}
 
       {{ govukDetails({
@@ -171,43 +65,12 @@
           },
           {
             text: "Date appointed"
+          },
+          {
+            text: "Term end"
           }
         ],
-        rows: [
-          [
-            {
-              text: "David Kilshaw"
-            },
-            {
-              text: "Member"
-            },
-            {
-              text: "4 January 2023"
-            }
-          ],
-          [
-            {
-              text: "Beverley Laws"
-            },
-            {
-              text: "Member"
-            },
-            {
-              text: "14 November 2022"
-            }
-          ],
-          [
-            {
-              text: "Lee Headland"
-            },
-            {
-              text: "Member"
-            },
-            {
-              text: "25 October 2021"
-            }
-          ]
-        ]
+        rows: data.governanceRows.members
       }) }}
 
       {{ govukDetails({
@@ -243,120 +106,12 @@
           },
           {
             text: "Date appointed"
+          },
+          {
+            text: "Term end"
           }
         ],
-        rows: [
-          [
-            {
-              text: "Mark Abbey"
-            },
-            {
-              text: "Accounting Officer"
-            },
-            {
-              text: "4 January 2023"
-            }
-          ],
-          [
-            {
-              text: "Jen Hadfield"
-            },
-            {
-              text: "Chair of Trustees"
-            },
-            {
-              text: "14 November 2022"
-            }
-          ],
-          [
-            {
-              text: "Colin Coles"
-            },
-            {
-              text: "Chief Financial Officer"
-            },
-            {
-              text: "25 October 2021"
-            }
-          ],
-          [
-            {
-              text: "Cheryl Ann Hobbs"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "4 January 2023"
-            }
-          ],
-          [
-            {
-              text: "Nicholas Martin"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "14 November 2022"
-            }
-          ],
-          [
-            {
-              text: "Keith Evans"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "25 October 2021"
-            }
-          ],
-          [
-            {
-              text: "Rachael Cave"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "4 January 2023"
-            }
-          ],
-          [
-            {
-              text: "Lee Mccall"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "14 November 2022"
-            }
-          ],
-          [
-            {
-              text: "George Harper"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "25 October 2021"
-            }
-          ],
-          [
-            {
-              text: "Phil Pearson"
-            },
-            {
-              text: "Trustee"
-            },
-            {
-              text: "4 January 2023"
-            }
-          ]
-        ]
+        rows: data.governanceRows.past
       }) }}
 
       {{ govukDetails({
