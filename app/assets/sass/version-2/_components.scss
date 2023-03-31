@@ -111,7 +111,7 @@
 
   .dfe-page-heading {
     .dfe-page-heading__title {
-      @extend .govuk-heading-xl;
+      @extend .govuk-heading-l;
       @include govuk-responsive-margin(3, "bottom");
     }
 
