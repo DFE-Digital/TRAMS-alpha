@@ -26,3 +26,33 @@ Node.js LTS version 18.x.x
 2. Type `npm run dev` to start the application
 3. View the application in a broswer by visiting [http://localhost:3000/](http://localhost:3000/)
  
+### Creating a new version
+
+If you would like to iterate on the same pages and styles from a previous sprint or version, here is a guide to getting set up
+
+#### Layouts
+
+1. Create a new version folder under views, with a `Layout` subfolder
+
+```
+app
+|-views
+    |-version-2
+    |-version-3
+        |-layout
+```
+
+2. Copy 'layouts/main.html' and any relevant layouts from the previous version into your current version folder
+3. Ensure that any layout template inheritance from html templates is using a relative link 
+
+#### Styles
+
+1. Navigate to `app/assets/sass`
+2. Create a new copy of the latest version folder and name it to match the new folder name under views.
+3. Import the index.scss of your new version in application.scss: `@import "./{version-name}/index";`
+4. Update the body class in layouts.html to the new version name: `{% set bodyClasses = "version-3" %}`
+5. Inside each _.scss file in your new sass version folder, update the version name of the parent css class to match the new body class:
+```
+  .version-3 {
+    ...
+  }
