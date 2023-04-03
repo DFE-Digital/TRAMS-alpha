@@ -1,0 +1,182 @@
+{% extends "./layouts/trust.html" %}
+{% set current_page = "trust-overview" %}
+
+{% block pageContent %}
+  <section class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+    <div class="dfe-grid-2">
+      <div class="dfe-card dfe-grid-2__item">
+        {{ govukTable({
+          attributes: {
+            'data-module': 'moj-sortable-table'
+          },
+          caption: "Ofsted data",
+          captionClasses: "govuk-table__caption--m",
+          head: [
+            {
+              text: "Rating",
+              attributes: {
+                "aria-sort": "ascending"
+              }
+            },
+            {
+              text: "Number of schools",
+              attributes: {
+                "aria-sort": "none"
+              },
+              format: "numeric"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: 'Outstanding',
+                attributes: {
+                  "data-sort-value": "1"
+                }
+              },
+              {
+                text: "3",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: 'Good',
+                attributes: {
+                  "data-sort-value": "2"
+                }
+              },
+              {
+                text: "5",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: 'Requires improvement',
+                attributes: {
+                  "data-sort-value": "3"
+                }
+              },
+              {
+                text: "2",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: 'Inadequate',
+                attributes: {
+                  "data-sort-value": "4"
+                }
+              },
+              {
+                text: "3",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: 'Not yet inspected',
+                attributes: {
+                  "data-sort-value": "5"
+                }
+              },
+              {
+                text: "4",
+                format: "numeric"
+              }
+            ]
+          ]
+        }) }}
+      </div>
+      <div class="dfe-card dfe-grid-2__item">
+        {{ govukTable({
+          attributes: {
+            'data-module': 'moj-sortable-table'
+          },
+          caption: "Free school meals data",
+          captionClasses: "govuk-table__caption--m",
+          head: [
+            {
+              text: "Rating",
+              attributes: {
+                "aria-sort": "ascending"
+              }
+            },
+            {
+              text: "Number of schools",
+              attributes: {
+                "aria-sort": "none"
+              },
+              format: "numeric"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: 'Outstanding',
+                attributes: {
+                  "data-sort-value": "1"
+                }
+              },
+              {
+                text: "3",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: 'Good',
+                attributes: {
+                  "data-sort-value": "2"
+                }
+              },
+              {
+                text: "5",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: 'Requires improvement',
+                attributes: {
+                  "data-sort-value": "3"
+                }
+              },
+              {
+                text: "2",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: 'Inadequate',
+                attributes: {
+                  "data-sort-value": "4"
+                }
+              },
+              {
+                text: "3",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: 'Not yet inspected',
+                attributes: {
+                  "data-sort-value": "5"
+                }
+              },
+              {
+                text: "4",
+                format: "numeric"
+              }
+            ]
+          ]
+        }) }}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
