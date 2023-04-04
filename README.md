@@ -18,41 +18,57 @@ Node.js LTS version 18.x.x
 
 1. Clone this repository to a local directory folder: `git clone git@github.com:DFE-Digital/TRAMS-alpha.git`
 2. Navigate to the new directory `TRAMS-alpa` and open the terminal or command line
-3. Type `npm install` to install dependencies needed to run the application 
+3. Type `npm install` to install dependencies needed to run the application
 
 ### Working locally
 
 1. Navigate to the project directory and open the terminal or command line
 2. Type `npm run dev` to start the application
 3. View the application in a broswer by visiting [http://localhost:3000/](http://localhost:3000/)
- 
-### Creating a new version
 
-If you would like to iterate on the same pages and styles from a previous sprint or version, here is a guide to getting set up
+## Project structure
 
-#### Layouts
+This is a cut down version of the file structure with the important parts highlighted.
 
-1. Create a new version folder under views, with a `Layout` subfolder
-
-```
+```bash
 app
-|-views
-    |-version-2
-    |-version-3
-        |-layout
+├── assets
+│   ├── images
+│   ├── javascripts
+│   └── sass
+│       ├── version-1 # All css used by version 1
+│       │   ├── _components.scss
+│       │   ├── _layout.scss
+│       │   ├── _mixins.scss
+│       │   ├── _typography.scss
+│       │   ├── _variables.scss
+│       │   └── index.scss
+│       ├── version-2
+│       ├── _reset.scss
+│       └── application.scss # Links css to the application
+├── data  # Contains the sample data used by prototype
+├── views
+│   ├── version-1  # Each prototype version has a folder containing its html
+│   ├── version-2
+│   └── index.html # The root html page for the prototype. It links to all the versions
+├── config.json
+├── filters.js
+└── routes.js  # Controls what happens when you navigate to a page
 ```
 
-2. Copy 'layouts/main.html' and any relevant layouts from the previous version into your current version folder
-3. Ensure that any layout template inheritance from html templates is using a relative link 
+## Creating a new version
 
-#### Styles
+If you would like to iterate on the same pages and styles from a previous sprint or version, here is a guide to getting set up.
 
-1. Navigate to `app/assets/sass`
-2. Create a new copy of the latest version folder and name it to match the new folder name under views.
-3. Import the index.scss of your new version in application.scss: `@import "./{version-name}/index";`
-4. Update the body class in layouts.html to the new version name: `{% set bodyClasses = "version-3" %}`
-5. Inside each _.scss file in your new sass version folder, update the version name of the parent css class to match the new body class:
-```
-  .version-3 {
-    ...
-  }
+1. Sort the css
+    - Duplicate the last version-x folder in `app/assets/sass/` and name it after your new version number
+    - Most scss files inside your new version folder have `.version-x {` near the top. Change this to match your new version number.
+    - Update the imports in `app/assets/sass/application.scss` to add your new version.
+2. Sort the html
+    - Duplicate the last version-x folder in `app/views/` and name it after your new version number
+    - Inside your new version folder, open `layouts/main.html` and update `{% set bodyClasses = "version-x dfe-template__body" %}` to your new version number
+3. Update the template homepage
+    - Link to your new version in `app/views/index.html`
+    - Ensure the text describing the old version is up to date
+4. Make sure it works
+    - [Run the application](#working-locally) and navigate to your new version to ensure that it looks and functions as expected
