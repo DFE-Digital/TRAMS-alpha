@@ -1,0 +1,8 @@
+@import "node_modules/govuk-frontend/govuk/all";
+
+.version-1 {
+  .dfe-heading-lite-m {
+    @extend .govuk-heading-m;
+    font-weight: normal;
+  }
+}
