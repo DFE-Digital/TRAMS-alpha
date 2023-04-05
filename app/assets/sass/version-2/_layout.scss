@@ -96,7 +96,7 @@
     gap: 1.875rem;
     margin: 1em 0;
 
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query($until: desktop) {
       display: block;
 
       .dfe-grid-2__item {
