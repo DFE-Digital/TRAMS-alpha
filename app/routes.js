@@ -8,48 +8,51 @@ const trusts = require('./data/invented-trust-data').trusts;
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-router.post('/version-2/trust-details', function (request, response) {
-  let trust;
-  const searchTerm = request.session.data.search;
-  if (searchTerm) {
-    const searchTermLower = searchTerm.toLowerCase();
-    trust = trusts.filter(t => t.name.toLowerCase().includes(searchTermLower) || t.uid === searchTermLower)[0];
+router.post(/version-\d+\/trust-details/, function (request, response) {
+  const currentVersion = request.url.split("/")[1];
+
+  //version-1 does not support variables so no searching required
+  if (currentVersion === "version-1"){
+    response.render(currentVersion + '/trust-details');
+    return;
   }
 
+  let trust = searchForTrust(request.session.data.search);
+
   if (trust) {
+    //response locals data will be used by next page render
     response.locals.data.trust = trust;
-    response.render('version-2/trust-details');
+    //session data will be persisted for future pages
+    request.session.data.trust = trust;
+    response.render(currentVersion + '/trust-details');
   } else {
     response.locals.data.trusts = trusts.slice(0, 10);
-    response.render('version-2/not-found');
+    response.render(currentVersion + '/not-found');
   }
 });
 
-router.get('/version-2/governance', function (request, response) {
-  const search = request.session.data.search;
+router.get(/version-\d+\/governance/, function (request, response) {
+  const currentVersion = request.url.split("/")[1];
 
-  let trust;
-  if (search) {
-    trust = searchTrust(search);
-    response.locals.data.trust = trust;
-  } else {
-    trust = request.locals.data.trust;
+  //version-1 does not support variables so no governance rows required
+  if (currentVersion === "version-1"){
+    response.render(currentVersion + '/governance');
+    return;
   }
 
-  const present = GovernanceUtils.getRows(trust.governance.present, true);
-  const members = GovernanceUtils.getRows(trust.governance.members);
-  const past = GovernanceUtils.getRows(trust.governance.past);
+  const present = GovernanceUtils.getRows(request.session.data.trust.governance.present, true);
+  const members = GovernanceUtils.getRows(request.session.data.trust.governance.members);
+  const past = GovernanceUtils.getRows(request.session.data.trust.governance.past);
 
   response.locals.data.governanceRows = {
     present,
     members,
     past
   }
-  response.render('version-2/governance');
+  response.render(currentVersion + '/governance');
 });
 
-const searchTrust = (searchTerm) => {
+const searchForTrust = (searchTerm) => {
   const searchTermLower = searchTerm.toLowerCase();
-    return trusts.filter(t => t.name.toLowerCase().includes(searchTermLower) || t.uid === searchTermLower)[0];
+  return trusts.filter(t => t.name.toLowerCase().includes(searchTermLower) || t.uid === searchTermLower)[0];
 }
-
