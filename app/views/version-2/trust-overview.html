@@ -95,11 +95,11 @@
           attributes: {
             'data-module': 'moj-sortable-table'
           },
-          caption: "Free school meals data",
+          caption: "Free school meals %",
           captionClasses: "govuk-table__caption--m",
           head: [
             {
-              text: "Rating",
+              text: "% banding",
               attributes: {
                 "aria-sort": "ascending"
               }
@@ -115,33 +115,9 @@
           rows: [
             [
               {
-                text: 'Outstanding',
+                text: "0 - 10%",
                 attributes: {
                   "data-sort-value": "1"
-                }
-              },
-              {
-                text: "3",
-                format: "numeric"
-              }
-            ],
-            [
-              {
-                text: 'Good',
-                attributes: {
-                  "data-sort-value": "2"
-                }
-              },
-              {
-                text: "5",
-                format: "numeric"
-              }
-            ],
-            [
-              {
-                text: 'Requires improvement',
-                attributes: {
-                  "data-sort-value": "3"
                 }
               },
               {
@@ -151,9 +127,21 @@
             ],
             [
               {
-                text: 'Inadequate',
+                text: "10 - 30%",
                 attributes: {
-                  "data-sort-value": "4"
+                  "data-sort-value": "2"
+                }
+              },
+              {
+                text: "2",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: "30 - 50%",
+                attributes: {
+                  "data-sort-value": "3"
                 }
               },
               {
@@ -163,13 +151,25 @@
             ],
             [
               {
-                text: 'Not yet inspected',
+                text: "50 - 70%",
+                attributes: {
+                  "data-sort-value": "4"
+                }
+              },
+              {
+                text: "7",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: "70 - 100%",
                 attributes: {
                   "data-sort-value": "5"
                 }
               },
               {
-                text: "4",
+                text: "3",
                 format: "numeric"
               }
             ]
