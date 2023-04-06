@@ -1,10 +1,10 @@
 {% extends "./layouts/trust.html" %}
 {% set current_page = "governance" %} 
+{% set title = "Governance" %}
+{% set pageSection = "About the trust" %}
 
 {% block pageContent %}
   <div class="govuk-!-margin-top-7 govuk-!-margin-bottom-8">
-    <h2 class="govuk-heading-l">Governance</h2>
-
     {{ govukInsetText({
       html: '<a class="govuk-link" href="#">View this trust on Companies House officer information (opens in new tab)</a>'
     }) }}
