@@ -76,7 +76,7 @@
               text: "Date incorporated:"
             },
             value: {
-              html: data.trust.trustDetails.dateIncorporatedString | default('---', true)
+              html: data.trust.trustDetails.dateIncorporated | formatDate
             }
           },
           {
@@ -84,7 +84,7 @@
               text: "Date opened:"
             },
             value: {
-              html: data.trust.trustDetails.dateOpenedString | default('---', true)
+              html: data.trust.trustDetails.dateOpened | formatDate
             }
           },
           {
@@ -172,7 +172,7 @@
               text: "Sponsor approval date:"
             },
             value: {
-              html: data.trust.trustDetails.sponsorApprovalDateString | default('---', true)
+              html: data.trust.trustDetails.sponsorApprovalDate | formatDate
             }
           },
           {
