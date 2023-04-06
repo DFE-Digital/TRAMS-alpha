@@ -5,8 +5,7 @@
   <div class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
     <div class="dfe-grid-2">
       
-      <article class="dfe-card dfe-card--align-vertically dfe-grid-2__item">
-        <div>
+      <article class="dfe-card dfe-grid-2__item">
           {% include "./includes/internal-data-use.html"%}
           <h2 class="govuk-heading-m">Trust risk grade</h2>
           <div>
@@ -14,56 +13,53 @@
             <p class="govuk-body">Expected to be stable in the short-term, but potentially exposed to adverse events in the long-term</p>
             <p class="govuk-body"><a class="govuk-link" href="#">School Financial Benchmarking data (Opens in a new tab)</a></p>
           </div>
-        </div>  
         {% include "./includes/data-source.html"%}
       </article>
 
-      <article class="dfe-card dfe-card--align-vertically dfe-grid-2__item">
+      <article class="dfe-card dfe-grid-2__item">
         {# TODO: This card needs a title or label #}
-        <div>
-          {% include "./includes/internal-data-use.html"%}
-          {{ govukSummaryList({
-            classes: 'govuk-summary-list--no-border dfe-summary-list-statistics govuk-!-margin-bottom-0',
-            rows: [
-              {
-                key: {
-                  text: "Latest trust banding score"
-                },
-                value: {
-                  html: "Upper Consolidate"
-                }
+        {% include "./includes/internal-data-use.html"%}
+        {{ govukSummaryList({
+          classes: 'govuk-summary-list--no-border dfe-summary-list-statistics',
+          rows: [
+            {
+              key: {
+                text: "Latest trust banding score"
               },
-              {
-                key: {
-                  text: "Date of trust review meeting"
-                },
-                value: {
-                  text: "1 Feb 2023"
-                }
-              },
-              {
-                key: {
-                  text: "Single joint risk rating"
-                },
-                value: {
-                  text: "Monitor"
-                }
-              },
-              {
-                key: {
-                  text: "SFSO concern level"
-                },
-                value: {
-                  text: "Amber / Green"
-                }
+              value: {
+                html: "Upper Consolidate"
               }
-            ]
-          }) }}
-        </div>
+            },
+            {
+              key: {
+                text: "Date of trust review meeting"
+              },
+              value: {
+                text: "1 Feb 2023"
+              }
+            },
+            {
+              key: {
+                text: "Single joint risk rating"
+              },
+              value: {
+                text: "Monitor"
+              }
+            },
+            {
+              key: {
+                text: "SFSO concern level"
+              },
+              value: {
+                text: "Amber / Green"
+              }
+            }
+          ]
+        }) }}
         {% include "./includes/data-source.html"%}
       </article>
 
-      <article class="dfe-card dfe-card--align-vertically dfe-grid-2__item">
+      <article class="dfe-card dfe-grid-2__item">
         {{ govukTable({
           attributes: {
             'data-module': 'moj-sortable-table'
@@ -151,7 +147,7 @@
         }) }}
         {% include "./includes/data-source.html"%}
       </article>
-      <article class="dfe-card dfe-card--align-vertically dfe-grid-2__item">
+      <article class="dfe-card dfe-grid-2__item">
         {{ govukTable({
           attributes: {
             'data-module': 'moj-sortable-table'

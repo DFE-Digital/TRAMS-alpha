@@ -71,11 +71,6 @@
       }
     }
 
-    &--align-vertically {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
   }
 
   .dfe-side-nav {
@@ -145,7 +140,7 @@
   }
 
   .dfe-summary-list-statistics {
-    .govuk-summary-list {
+    &.gov-uk-summary-list, .govuk-summary-list {
       width: auto;
       margin-bottom: 0;
     }
