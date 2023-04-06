@@ -49,8 +49,9 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     {% endblock %}
   </div>
 </header>
-<div class="govuk-width-container{% if current_page == 'home' %} home-wrapper{% endif %}"">
+<div class="govuk-width-container">
   {{ govukPhaseBanner({
+    classes: "dfe-phase-banner--no-border",
     tag: {
       text: "alpha"
     },

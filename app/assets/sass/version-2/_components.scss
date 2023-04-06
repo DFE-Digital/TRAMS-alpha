@@ -159,4 +159,10 @@
       }
     }
   }
+
+  .dfe-phase-banner--no-border {
+    &.govuk-phase-banner {
+      border-bottom: none;
+    }
+  }
 }
