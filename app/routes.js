@@ -5,7 +5,8 @@
 const GovernanceUtils = require('./assets/javascripts/governanceUtils');
 const trusts = require('./data/invented-trust-data').trusts;
 
-const govukPrototypeKit = require('govuk-prototype-kit')
+const govukPrototypeKit = require('govuk-prototype-kit');
+const { formatDate } = require('./assets/javascripts/dateUtils');
 const router = govukPrototypeKit.requests.setupRouter()
 
 router.post(/version-\d+\/trust-details/, function (request, response) {
@@ -21,6 +22,10 @@ router.post(/version-\d+\/trust-details/, function (request, response) {
 
   if (trust) {
     //response locals data will be used by next page render
+    trust.trustDetails.dateIncorporatedString = formatDate(trust.trustDetails.dateIncorporated)
+    trust.trustDetails.dateOpenedString = formatDate(trust.trustDetails.dateOpened)
+    trust.trustDetails.sponsorApprovalDateString = formatDate(trust.trustDetails.sponsorApprovalDate)
+
     response.locals.data.trust = trust;
     //session data will be persisted for future pages
     request.session.data.trust = trust;
