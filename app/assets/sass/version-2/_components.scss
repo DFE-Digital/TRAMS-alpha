@@ -71,6 +71,14 @@
       }
     }
 
+    &--blue {
+      background-color: $dfe-blue-background;
+
+      .govuk-heading-l,
+      .govuk-body {
+        color: govuk-colour("white");
+      }
+    }
   }
 
   .dfe-side-nav {
