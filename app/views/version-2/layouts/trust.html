@@ -10,11 +10,11 @@
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full dfe-page-heading">
-          <p class="dfe-page-heading__title">Abbey Lane Academies Trust</p>
+          <p class="dfe-page-heading__title">{{ data.trust.name }}</p>
           <div class="dfe-page-heading__detail">
-            <p class="govuk-body">
-              <span class="govuk-!-font-weight-bold">UID:</span> 1234</p>
-            <p class="govuk-body">Multi-academy trust</p>
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              <span class="govuk-!-font-weight-bold">UID:</span> {{ data.trust.uid }}</p>
+            <p class="govuk-body govuk-!-margin-bottom-0">{{ data.trust.trustType }}</p>
           </div>
         </div>
       </div>
