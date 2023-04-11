@@ -21,6 +21,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
         </span>
         <span class="govuk-header__product-name">{{ serviceName }}</span>
       </a>
+      <strong class="govuk-tag">alpha</strong>
     </div>
     {% block headerNavLinks %}
     <div class="govuk-header__content">
@@ -49,13 +50,4 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     {% endblock %}
   </div>
 </header>
-<div class="govuk-width-container">
-  {{ govukPhaseBanner({
-    classes: "dfe-phase-banner--no-border",
-    tag: {
-      text: "alpha"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-</div>
 {% endblock %}
