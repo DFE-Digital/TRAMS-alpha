@@ -1,11 +1,27 @@
 {% extends "./main.html" %}
 
 {% block pageTitle %}
-{{ data.trust.name }} – {{ serviceName }}
+  {{ title }} – {{ serviceName }}
 {% endblock %}
 
 {% block main %}
 
+  <div class="dfe-banner">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full dfe-page-heading">
+          <p class="dfe-page-heading__title">{{ data.trust.name }}</p>
+          <div class="dfe-page-heading__detail">
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              <span class="govuk-!-font-weight-bold">UID:</span> {{ data.trust.uid }}</p>
+            <p class="govuk-body govuk-!-margin-bottom-0">{{ data.trust.trustType }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
 <div class="govuk-main-wrapper ">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
@@ -64,24 +80,18 @@
       <main id="main-content">
         <div class="govuk-grid-column-three-quarters">
           <header class="dfe-page-heading">
-            <h1 class="dfe-page-heading__title">{{ data.trust.name }}</h1>
-            <div class="dfe-page-heading__detail">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">UID:</span> {{ data.trust.uid }}</p>
-              <p class="govuk-body">Multi-academy trust</p>
-            </div>
+            <span class="govuk-caption-xl">{{ pageSection }}</span>
+            <h1 class="govuk-heading-xl">{{ title }}</h1>
           </header>
-
           {% block pageContent %}{% endblock %}
-
           {% block anythingWrong %}
             <div class="govuk-!-margin-top-8 govuk-!-margin-bottom-4">
               <a class="govuk-body govuk-link govuk-link--no-visited-state" href="#">Is there anything wrong with this page?</a>
             </div>
           {% endblock %}
         </div>
-        
-        {% block pageContentColumnOverride %}{% endblock %}
 
+        {% block pageContentColumnOverride %}{% endblock %}
       </main>
     </div>
   </div>

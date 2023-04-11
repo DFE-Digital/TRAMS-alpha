@@ -44,15 +44,22 @@
     height: 3.125rem;
   }
 
-  .dfe-callout {
-    @include govuk-responsive-padding(9, "top");
-    @include govuk-responsive-padding(8, "bottom");
-    background-color: govuk-colour("blue");
+  .dfe-banner {
+    @include govuk-responsive-padding(5, "top");
+    @include govuk-responsive-padding(5, "bottom");
+    background-color: $accent;
 
+    .govuk-heading-l,
     .govuk-heading-xl,
     .govuk-body {
       color: govuk-colour("white");
     }
+
+    &.dfe-banner--l {
+      @include govuk-responsive-padding(9, "top");
+      @include govuk-responsive-padding(8, "bottom");
+    }
+
   }
 
   .dfe-card {
@@ -71,9 +78,18 @@
       }
     }
 
+    &--blue {
+      background-color: $accent;
+
+      .govuk-heading-l,
+      .govuk-body {
+        color: govuk-colour("white");
+      }
+    }
   }
 
   .dfe-side-nav {
+    margin-left: -12px;
 
     .dfe-side-nav__list {
       @include govuk-responsive-margin(6, "bottom");
@@ -111,7 +127,7 @@
 
   .dfe-page-heading {
     .dfe-page-heading__title {
-      @extend .govuk-heading-xl;
+      @extend .govuk-heading-l;
       @include govuk-responsive-margin(3, "bottom");
     }
 
@@ -149,6 +165,12 @@
       @include govuk-media-query($from: tablet) {
         width: auto;
       }
+    }
+  }
+
+  .dfe-phase-banner--no-border {
+    &.govuk-phase-banner {
+      border-bottom: none;
     }
   }
 }

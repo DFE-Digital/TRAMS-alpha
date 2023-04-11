@@ -13,7 +13,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     <div class="govuk-header__logo">
       <a href="/" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
-          <img src="/public/images/crest.png" alt="Department for Education homepage"
+          <img src="/public/images/crest.png" alt=""
             class="govuk-header__logotype-crown-fallback-image">
           <span class="govuk-header__logotype-text">
             Department for Education |
@@ -21,6 +21,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
         </span>
         <span class="govuk-header__product-name">{{ serviceName }}</span>
       </a>
+      <strong class="govuk-tag">alpha</strong>
     </div>
     {% block headerNavLinks %}
     <div class="govuk-header__content">
@@ -49,12 +50,4 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     {% endblock %}
   </div>
 </header>
-<div class="govuk-width-container{% if current_page == 'home' %} home-wrapper{% endif %}"">
-  {{ govukPhaseBanner({
-    tag: {
-      text: "alpha"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-</div>
 {% endblock %}
