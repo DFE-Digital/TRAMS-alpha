@@ -1,11 +1,9 @@
 {% macro contact(type, showTelephone = false) %}
-  <dd class="govuk-body govuk-!-margin-bottom-6">
-    <p class="govuk-!-margin-bottom-1">{{ type['name'] }}</p>
-    <p class="govuk-!-margin-bottom-1">
-      <a class="govuk-link" href="{{ type['email'] }}">{{ type['email'] }}</a>
-    </p>
-    {% if showTelephone and type['telephone'] %}
-      <p class="govuk-!-margin-bottom-1">Tel: {{ type['telephone'] }}</p>
-    {% endif %}
-  </dd>
+  <p class="govuk-!-margin-bottom-1">{{ type['name'] }}</p>
+  <p class="govuk-!-margin-bottom-1">
+    <a class="govuk-link" href="{{ type['email'] }}">{{ type['email'] }}</a>
+  </p>
+  {% if showTelephone and type['telephone'] %}
+    <p class="govuk-!-margin-bottom-1">Tel: {{ type['telephone'] }}</p>
+  {% endif %}
 {% endmacro %}

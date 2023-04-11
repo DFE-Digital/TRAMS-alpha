@@ -1,24 +1,51 @@
 {% extends "./layouts/trust.html" %}
 {% from "./includes/contact.html" import contact %}
 {% from "./includes/link.njk" import link %}
-{% set current_page = "trust-details" %} 
+{% set current_page = "trust-details" %}
 
 {% block pageContent %}
-  <div class="dfe-card  dfe-card--two-columns">
-    <dl class="dfe-card__content">
-      <div class="dfe-card__column">
-        <dt class="govuk-heading-s govuk-!-margin-bottom-1">Trust relationship manager:</dt>
-        {{ contact(data.trust.trustDetails.trustRelationshipManager) }}
-        <dt class="govuk-heading-s govuk-!-margin-bottom-1">SFSO Lead:</dt>
-        {{ contact(data.trust.trustDetails.sfsoLead) }}
-      </div>
-      <div class="dfe-card__column">
-        <dt class="govuk-heading-s govuk-!-margin-bottom-1 govuk-!-padding-top-1">Main contact at trust:</dt>
-        {{ contact(data.trust.trustDetails.mainContactAtTrust, true) }}
-      </div>
-    </dl>
-  </div>
-  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+  <section class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+    <h2>Internal DfE contacts</h2>
+
+    {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Trust relationship manager"
+            },
+            value: {
+              html: contact(data.trust.trustDetails.trustRelationshipManager)
+            }
+          },
+          {
+            key: {
+              text: "SFSO Lead"
+            },
+            value: {
+              html: contact(data.trust.trustDetails.sfsoLead)
+            }
+          }
+        ]
+      }) }}
+  </section>
+  <section class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+    <h2>External Trust contacts</h2>
+
+    {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Chair of Trustees"
+            },
+            value: {
+              html: contact(data.trust.trustDetails.mainContactAtTrust, showTelephone=true)
+            }
+          }
+        ]
+      }) }}
+  </section>
+
+  <section class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
     <h2>Trust details</h2>
 
     {{ govukSummaryList({
@@ -146,7 +173,7 @@
         '
       }) }}
   </section>
-  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+  <section class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
     <h2>Sponsor details</h2>
 
     {{ govukSummaryList({

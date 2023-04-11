@@ -70,6 +70,7 @@
         flex: 1 1 45%;
       }
     }
+
   }
 
   .dfe-side-nav {
@@ -139,7 +140,7 @@
   }
 
   .dfe-summary-list-statistics {
-    .govuk-summary-list {
+    &.gov-uk-summary-list, .govuk-summary-list {
       width: auto;
       margin-bottom: 0;
     }
