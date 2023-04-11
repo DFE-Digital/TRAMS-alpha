@@ -47,7 +47,7 @@
   .dfe-callout {
     @include govuk-responsive-padding(9, "top");
     @include govuk-responsive-padding(8, "bottom");
-    background-color: govuk-colour("blue");
+    background-color: $accent;
 
     .govuk-heading-xl,
     .govuk-body {
@@ -72,7 +72,7 @@
     }
 
     &--blue {
-      background-color: $dfe-blue-background;
+      background-color: $accent;
 
       .govuk-heading-l,
       .govuk-body {
