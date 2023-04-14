@@ -2,6 +2,7 @@
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
+const { AcademiesSummary } = require('./assets/javascripts/academiesUtils');
 const trusts = require('./data/invented-trust-data').trusts;
 
 const govukPrototypeKit = require('govuk-prototype-kit');
@@ -30,6 +31,24 @@ router.post(/version-\d+\/trust-details/, function (request, response) {
     response.render(currentVersion + '/not-found');
   }
 });
+
+router.get(
+  /version-\d+\/academies-in-this-trust/,
+  function (request, response) {
+    const currentVersion = request.url.split("/")[1];
+
+    //version-1 does not support variables so no governance rows required
+    if (currentVersion === "version-1") {
+      response.render(currentVersion + "/academies-in-this-trust");
+      return;
+    }
+
+    response.locals.data.academiesSummary = new AcademiesSummary(
+      request.session.data.trust.academiesInTrust.academies
+    );
+    response.render(currentVersion + "/academies-in-this-trust");
+  }
+);
 
 const searchForTrust = (searchTerm) => {
   const searchTermLower = searchTerm.toLowerCase();

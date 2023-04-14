@@ -16,7 +16,7 @@
               text: "Number of academies in trust"
             },
             value: {
-              text: "17"
+              text: data.trust.academiesInTrust.academies.length
             }
           },
           {
@@ -24,7 +24,7 @@
               text: "Trust actual pupil numbers"
             },
             value: {
-              text: "15,856"
+              text: data.academiesSummary.totalPupilNumbers | formatNumber
             }
           },
           {
@@ -32,7 +32,7 @@
               text: "Trust capacity"
             },
             value: {
-              text: "16,256"
+              text: data.academiesSummary.totalCapacity | formatNumber
             }
           },
           {
@@ -40,7 +40,7 @@
               text: "Trust capacity % full"
             },
             value: {
-              text: "89%"
+              text: data.academiesSummary.percentageCapacity + "%"
             }
           }
         ]

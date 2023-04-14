@@ -55,4 +55,13 @@ const formatAcademyRows = (academies) =>
     ];
   });
 
-module.exports = { formatAcademyRows };
+
+class AcademiesSummary {
+  constructor(academies) {
+    this.totalPupilNumbers = academies.reduce((acc,academy) => acc + academy.pupilNumbers, 0);
+    this.totalCapacity = academies.reduce((acc,academy) => acc + academy.capacity, 0);
+    this.percentageCapacity = Math.round(this.totalPupilNumbers / this.totalCapacity * 100)
+  }
+}
+
+module.exports = { AcademiesSummary, formatAcademyRows };

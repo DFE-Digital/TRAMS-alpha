@@ -19,5 +19,9 @@ addFilter("formatDate", function (date) {
     }
 });
 
+addFilter("formatNumber", function (num) {
+    return num.toLocaleString(); 
+})
+
 addFilter("formatAcademyRows", formatAcademyRows);
 addFilter("formatGovernorRows", formatGovernorRows);
