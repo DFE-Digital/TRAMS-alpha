@@ -1,4 +1,5 @@
 {% extends "./main.html" %}
+{% from "../includes/academies-in-trust-title.html" import academiesInTrustTitle %}
 
 {% block pageTitle %}
   {{ title }} – {{ serviceName }}
@@ -40,7 +41,7 @@
             </li>
             <li class="dfe-side-nav__item {% if current_page == 'academies-in-this-trust' %}dfe-side-nav__item--current{% endif %}">
               <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./academies-in-this-trust">
-                Academies in this trust ({{ data.trust.academiesInTrust.academies.length }})
+                {{ academiesInTrustTitle(data.trust.academiesInTrust.academies.length )}}
               </a>
             </li>
             <li class="dfe-side-nav__item {% if current_page == 'governance' %}dfe-side-nav__item--current{% endif %}">
