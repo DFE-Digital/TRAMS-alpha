@@ -1,5 +1,6 @@
 const govukPrototypeKit = require('govuk-prototype-kit');
 const { formatAcademyRows } = require('./assets/javascripts/academiesUtils');
+const { formatGovernorRows } = require('./assets/javascripts/governanceUtils');
 const addFilter = govukPrototypeKit.views.addFilter
 
 addFilter("formatDate", function (date) {
@@ -19,3 +20,4 @@ addFilter("formatDate", function (date) {
 });
 
 addFilter("formatAcademyRows", formatAcademyRows);
+addFilter("formatGovernorRows", formatGovernorRows);

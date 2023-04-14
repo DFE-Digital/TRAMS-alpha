@@ -1,6 +1,6 @@
 const DateUtils = require("./dateUtils");
 
-const getRows = (governors, isCurrent = false) => governors.map(governor => getRow(governor,isCurrent));
+const formatGovernorRows = (governors, isCurrent = false) => governors.map(governor => getRow(governor,isCurrent));
 
 const getRow = (governor, isCurrent) => {
   let nameText = governor.name
@@ -15,4 +15,4 @@ const getRow = (governor, isCurrent) => {
   ])
 }
 
-module.exports = { getRows };
+module.exports = { formatGovernorRows };
