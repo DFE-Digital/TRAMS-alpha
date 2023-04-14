@@ -39,7 +39,9 @@
               <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./trust-overview">Trust overview</a>
             </li>
             <li class="dfe-side-nav__item {% if current_page == 'academies-in-this-trust' %}dfe-side-nav__item--current{% endif %}">
-              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./academies-in-this-trust">Academies in this trust (17)</a>
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./academies-in-this-trust">
+                Academies in this trust ({{ data.trust.academiesInTrust.academies.length }})
+              </a>
             </li>
             <li class="dfe-side-nav__item {% if current_page == 'governance' %}dfe-side-nav__item--current{% endif %}">
               <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./governance">Governance</a>
