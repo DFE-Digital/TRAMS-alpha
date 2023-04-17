@@ -2,7 +2,7 @@
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
-const GovernanceUtils = require('./assets/javascripts/governanceUtils');
+const { AcademiesSummary } = require('./assets/javascripts/academiesUtils');
 const trusts = require('./data/invented-trust-data').trusts;
 
 const govukPrototypeKit = require('govuk-prototype-kit');
@@ -32,26 +32,23 @@ router.post(/version-\d+\/trust-details/, function (request, response) {
   }
 });
 
-router.get(/version-\d+\/governance/, function (request, response) {
-  const currentVersion = request.url.split("/")[1];
+router.get(
+  /version-\d+\/academies-in-this-trust/,
+  function (request, response) {
+    const currentVersion = request.url.split("/")[1];
 
-  //version-1 does not support variables so no governance rows required
-  if (currentVersion === "version-1"){
-    response.render(currentVersion + '/governance');
-    return;
+    //version-1 does not support variables so return immediately
+    if (currentVersion === "version-1") {
+      response.render(currentVersion + "/academies-in-this-trust");
+      return;
+    }
+
+    response.locals.data.academiesSummary = new AcademiesSummary(
+      request.session.data.trust.academiesInTrust.academies
+    );
+    response.render(currentVersion + "/academies-in-this-trust");
   }
-
-  const present = GovernanceUtils.getRows(request.session.data.trust.governance.present, true);
-  const members = GovernanceUtils.getRows(request.session.data.trust.governance.members);
-  const past = GovernanceUtils.getRows(request.session.data.trust.governance.past);
-
-  response.locals.data.governanceRows = {
-    present,
-    members,
-    past
-  }
-  response.render(currentVersion + '/governance');
-});
+);
 
 const searchForTrust = (searchTerm) => {
   const searchTermLower = searchTerm.toLowerCase();

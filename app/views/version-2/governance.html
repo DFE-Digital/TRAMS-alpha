@@ -27,7 +27,7 @@
             text: "Term end"
           }
         ],
-        rows: data.governanceRows.present
+        rows: data.trust.governance.present | formatGovernorRows(true)
       }) }}
 
       {{ govukDetails({
@@ -68,7 +68,7 @@
             text: "Term end"
           }
         ],
-        rows: data.governanceRows.members
+        rows: data.trust.governance.members | formatGovernorRows
       }) }}
 
       {{ govukDetails({
@@ -109,7 +109,7 @@
             text: "Term end"
           }
         ],
-        rows: data.governanceRows.past
+        rows: data.trust.governance.past | formatGovernorRows
       }) }}
 
       {{ govukDetails({
