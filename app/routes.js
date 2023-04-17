@@ -37,7 +37,7 @@ router.get(
   function (request, response) {
     const currentVersion = request.url.split("/")[1];
 
-    //version-1 does not support variables so no governance rows required
+    //version-1 does not support variables so return immediately
     if (currentVersion === "version-1") {
       response.render(currentVersion + "/academies-in-this-trust");
       return;
