@@ -9,6 +9,19 @@ const govukPrototypeKit = require('govuk-prototype-kit');
 
 const router = govukPrototypeKit.requests.setupRouter()
 
+router.get(/version-\d+\/home/, function (request, response) {
+  const currentVersion = request.url.split("/")[1];
+
+  //version-1 does not support variables \
+  if (currentVersion === "version-1"){
+    response.render(currentVersion + '/home');
+    return;
+  }
+
+  response.locals.data.trusts = trusts;
+  response.render(currentVersion + '/home');
+});
+
 router.post(/version-\d+\/trust-details/, function (request, response) {
   const currentVersion = request.url.split("/")[1];
 
