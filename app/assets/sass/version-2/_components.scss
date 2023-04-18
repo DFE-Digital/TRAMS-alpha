@@ -14,8 +14,7 @@
   }
 
   .dfe-inline-button {
-    display: flex;
-    flex: 1 1 auto;
+    align-self: flex-start;
     margin-bottom: 0;
   }
 
@@ -39,9 +38,24 @@
     }
   }
 
+  .dfe-autocomplete-wrapper--search {
+    & > div {
+      width: 100%;
+    }
+
+    .autocomplete__input {
+      @extend .govuk-input;
+      border-color: transparent;
+      height: 3.125rem;
+      background-color: white;
+    }
+
+  }
+
   .dfe-search-input {
     border-color: transparent;
     height: 3.125rem;
+    background-color: white;
   }
 
   .dfe-banner {
