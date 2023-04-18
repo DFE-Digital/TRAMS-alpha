@@ -39,7 +39,7 @@
   }
 
   .dfe-autocomplete-wrapper--search {
-    & > div {
+    &>div {
       width: 100%;
     }
 
@@ -48,6 +48,20 @@
       border-color: transparent;
       height: 3.125rem;
       background-color: white;
+    }
+
+    .autocomplete__option-hint {
+      display: block;
+      @include govuk-font(16);
+      color: $govuk-secondary-text-colour;
+    }
+
+    .autocomplete__option--focused,
+    .autocomplete__option:hover {
+
+      .autocomplete__option-hint {
+        color: govuk-colour("white");
+      }
     }
 
   }
@@ -86,7 +100,7 @@
         flex-wrap: wrap;
         column-gap: 3.75rem;
       }
-      
+
       .dfe-card__column {
         flex: 1 1 45%;
       }
@@ -170,7 +184,9 @@
   }
 
   .dfe-summary-list-statistics {
-    &.gov-uk-summary-list, .govuk-summary-list {
+
+    &.gov-uk-summary-list,
+    .govuk-summary-list {
       width: auto;
       margin-bottom: 0;
     }
