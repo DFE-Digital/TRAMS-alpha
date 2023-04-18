@@ -48,8 +48,8 @@ const formatAcademyRows = (academies) =>
         )}`,
       },
       {
-        html: `<b>${academy.currentOfstedRating}</b><br>${formatDate(
-          academy.currentOfstedRatingDate
+        html: `<b>${academy.previousOfstedRating}</b><br>${formatDate(
+          academy.previousOfstedRatingDate
         )}`,
       },
     ];

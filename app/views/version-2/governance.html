@@ -11,20 +11,35 @@
 
     <section class="govuk-!-margin-bottom-9">
       {{ govukTable({
+        attributes: {
+          'data-module': 'moj-sortable-table'
+        },
         caption: "Present",
         captionClasses: "govuk-table__caption--m",
         head: [
           {
-            text: "Full name"
+            text: "Full name",
+            attributes: {
+              "aria-sort": "none"
+            }
           },
           {
-            text: "Trust role"
+            text: "Trust role",
+            attributes: {
+              "aria-sort": "none"
+            }
           },
           {
-            text: "Date appointed"
+            text: "Date appointed",
+            attributes: {
+              "aria-sort": "none"
+            }
           },
           {
-            text: "Term end"
+            text: "Term end",
+            attributes: {
+              "aria-sort": "none"
+            }
           }
         ],
         rows: data.trust.governance.present | formatGovernorRows(true)
@@ -52,20 +67,35 @@
     </section>
     <section class="govuk-!-margin-bottom-9">
       {{ govukTable({
+        attributes: {
+          'data-module': 'moj-sortable-table'
+        },
         caption: "Members",
         captionClasses: "govuk-table__caption--m",
         head: [
           {
-            text: "Full name"
+            text: "Full name",
+            attributes: {
+              "aria-sort": "none"
+            }
           },
           {
-            text: "Trust role"
+            text: "Trust role",
+            attributes: {
+              "aria-sort": "none"
+            }
           },
           {
-            text: "Date appointed"
+            text: "Date appointed",
+            attributes: {
+              "aria-sort": "none"
+            }
           },
           {
-            text: "Term end"
+            text: "Term end",
+            attributes: {
+              "aria-sort": "none"
+            }
           }
         ],
         rows: data.trust.governance.members | formatGovernorRows
@@ -93,20 +123,35 @@
     </section>
     <section class="govuk-!-margin-bottom-9">
       {{ govukTable({
+      attributes: {
+        'data-module': 'moj-sortable-table'
+      },
         caption: "Previous",
         captionClasses: "govuk-table__caption--m",
         head: [
           {
-            text: "Full name"
+            text: "Full name",
+            attributes: {
+              "aria-sort": "none"
+            }
           },
           {
-            text: "Trust role"
+            text: "Trust role",
+            attributes: {
+              "aria-sort": "none"
+            }
           },
           {
-            text: "Date appointed"
+            text: "Date appointed",
+            attributes: {
+              "aria-sort": "none"
+            }
           },
           {
-            text: "Term end"
+            text: "Term end",
+            attributes: {
+              "aria-sort": "none"
+            }
           }
         ],
         rows: data.trust.governance.past | formatGovernorRows
