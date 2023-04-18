@@ -7,6 +7,11 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% set bodyClasses = "version-2 dfe-template__body" %}
 
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
 {% block header %}
 <header class="govuk-header app-header" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
