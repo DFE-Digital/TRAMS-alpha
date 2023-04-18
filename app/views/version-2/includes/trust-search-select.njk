@@ -3,7 +3,12 @@
     Search for a Trust or Academy by name, URN, location or local authority
   </label>
   <div class="govuk-input__wrapper govuk-!-margin-top-4 dfe-autocomplete-wrapper--search">
-    <div id="app-autocomplete-container"></div>
+      <select name="search" id="search">
+          <option value=""></option>
+        {% for trust in trusts %}
+          <option value="{{trust.uid}}">{{ trust.name }} | {{ trust.trustDetails.address }}</option>
+        {% endfor %}
+      </select>
     <button class="govuk-button dfe-black-button dfe-inline-button" data-module="govuk-button" type="submit">
       <span class="govuk-visually-hidden">Search</span>
       <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -37,10 +42,11 @@
       }
     }
 
-    accessibleAutocomplete({
-      element: document.querySelector('#app-autocomplete-container'),
-      id: 'search', // To match it to the existing <label>.
-      source: trusts,
+    accessibleAutocomplete.enhanceSelectElement({
+      autoselect: true, 
+      defaultValue: '', 
+      minLength: 2, 
+      selectElement: selectEl,
       displayMenu: 'overlay',
       templates: {
         inputValue,

@@ -1,5 +1,5 @@
 {% extends "./layouts/main.html" %}
-{% from "./includes/trust-search-select.njk" import appTrustSearchSelect%}
+{% from "./includes/trust-search.njk" import appTrustSearch%}
 {% set current_page = "home" %} 
 {% set title = "Find information about a Trust or Academy" %}
 
@@ -12,7 +12,7 @@
           <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-xl">Find information about a Trust or Academy</h1>
               <form class="form govuk-form-group" action="./trust-details" method="post">
-                {{appTrustSearchSelect(data.trusts)}}
+                {{appTrustSearch(data.trusts)}}
               </form>
           </div>
           <div class="govuk-grid-column-one-third">
