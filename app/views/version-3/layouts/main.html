@@ -1,0 +1,58 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set bodyClasses = "version-3 dfe-template__body" %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block header %}
+<header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <img src="/public/images/crest.png" alt=""
+            class="govuk-header__logotype-crown-fallback-image">
+          <span class="govuk-header__logotype-text">
+            Department for Education |
+          </span>
+        </span>
+        <span class="govuk-header__product-name">{{ serviceName }}</span>
+      </a>
+      <strong class="govuk-tag">alpha</strong>
+    </div>
+    {% block headerNavLinks %}
+    <div class="govuk-header__content">
+      <nav aria-label="Menu" class="govuk-header__navigation ">
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation"
+        aria-label="Show or hide navigation menu" hidden>Menu</button>
+        <ul id="navigation" class="govuk-header__navigation-list">
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="./home">
+              Home
+            </a>
+          </li>
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="./home">
+              Search
+            </a>
+          </li>
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="#">
+              Help
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    {% endblock %}
+  </div>
+</header>
+{% endblock %}

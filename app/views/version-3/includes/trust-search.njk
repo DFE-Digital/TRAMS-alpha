@@ -1,0 +1,47 @@
+{% macro appTrustSearchSelect(trusts) %}
+  <label class="govuk-body" for="search">
+    Search for a Trust or Academy by name, URN, location or local authority
+  </label>
+  <div class="govuk-input__wrapper govuk-!-margin-top-4 dfe-autocomplete-wrapper--search">
+    <div id="app-autocomplete-container"></div>
+    <button class="govuk-button dfe-black-button dfe-inline-button" data-module="govuk-button" type="submit">
+      <span class="govuk-visually-hidden">Search</span>
+      <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+        <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+      </svg>
+    </button>
+  </div>
+
+  <script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+
+  <script type="text/javascript">
+    var selectEl = document.querySelector('#search')
+    var inputValue = result => {
+      if (result) {
+        const name = result.split(' | ')
+        return name[0]
+      }
+    }
+    var suggestion = result => {
+      if (result) {
+        const name = result.split(' | ')
+        if (name[1]) {
+          return name[0] && name[0] + '<span class="autocomplete__option-hint">' + name[1] + '</span>'
+        } else {
+          return result && result;
+        }
+      }
+    }
+    accessibleAutocomplete({
+      element: document.querySelector('#app-autocomplete-container'),
+      id: 'search', // To match it to the existing <label>.
+      source: trusts,
+      displayMenu: 'overlay',
+      templates: {
+        inputValue,
+        suggestion
+      }
+    })
+  </script>
+{% endmacro %}

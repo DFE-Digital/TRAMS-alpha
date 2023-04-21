@@ -1,0 +1,95 @@
+{% extends "./layouts/main.html" %}
+{% from "./includes/trust-search-select.njk" import appTrustSearchSelect%}
+{% set current_page = "home" %} 
+{% set title = "Find information about a Trust or Academy" %}
+
+{% block main %}
+
+  <main id="main-content">
+    <div class="dfe-banner dfe-banner--l">
+      <div class="govuk-width-container">
+        <div class="govuk-grid-row ">
+          <div class="govuk-grid-column-one-half">
+            <h1 class="govuk-heading-xl">Find information about academies and trusts</h1>
+             
+         
+
+
+                <div class="govuk-form-group" action="./trust-details" method="post">
+                 
+
+          
+
+                </div>
+                {{appTrustSearchSelect(data.trusts)}}
+
+              </form>
+          </div></div>
+        
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-width-container">
+      <section class="govuk-grid-row govuk-!-margin-top-9">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-l">Related internal systems</h2>
+          <p class="govuk-body">Use these services to find related information and other services provided by the Department for Education (DfE):</p>
+          <dl class="dfe-grid-3">
+            <div class="dfe-card">
+              <dt class="dfe-heading-lite-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Data and reporting tool (DaRT)</a></dt>
+              <dd class="govuk-body">Search to find and download information about schools, colleges, educational organisations and governors in England.</dd>
+            </div>
+            <div class="dfe-card">
+              <dt class="dfe-heading-lite-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Knowledge Information Management (KIM)</a></dt>
+              <dd class="govuk-body">Search to find and download information about schools, colleges, educational organisations and governors in England.</dd>
+            </div>
+            <div class="dfe-card">
+              <dt class="dfe-heading-lite-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Regions Group data tool</a></dt>
+              <dd class="govuk-body">Search to find and download information about schools, colleges, educational organisations and governors in England.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+      <section class="govuk-grid-row  govuk-!-margin-top-7 govuk-!-margin-bottom-6">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-l">Related public facing services</h2>
+          <p class="govuk-body">Use these services to find related information and other services provided by the Department for Education (DfE):</p>
+          <dl class="dfe-grid-3">
+            <div class="dfe-card">
+              <dt class="dfe-heading-lite-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Get information about schools</a></dt>
+              <dd class="govuk-body">Search to find and download information about schools, colleges, educational organisations and governors in England.</dd>
+            </div>
+            <div class="dfe-card">
+              <dt class="dfe-heading-lite-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Ofsted - Find an inspection report</a></dt>
+              <dd class="govuk-body">You can find reports for schools, colleges, childminders, nurseries, children’s homes and more in England.</dd>
+            </div>
+            <div class="dfe-card">
+              <dt class="dfe-heading-lite-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Statistics at DfE</a></dt>
+              <dd class="govuk-body">Find out more about latest news, announcements, forthcoming releases and ad hoc publications, as well as related education statistics.</dd>
+            </div>
+            <div class="dfe-card">
+              <dt class="dfe-heading-lite-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Schools financial benchmarking</a></dt>
+              <dd class="govuk-body">Compare your school's income and expenditure with other schools in England.</dd>
+            </div>
+            <div class="dfe-card">
+              <dt class="dfe-heading-lite-m"><a href="#" class="govuk-link govuk-link--no-visited-state">Find and compare schools in England</a></dt>
+              <dd class="govuk-body">Search for and check the performance of primary, secondary and special needs schools and colleges.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      <section class="govuk-grid-row govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l">Contact us</h2>
+          <p class="govuk-body">The Trust and Academy Management Information Service is operated by the Department for Education (DfE).</p>
+          <p class="govuk-body">If you need help and support or have a question please contact:</p>
+          <h3 class="govuk-heading-s">Trust and Academy Management Information</h3>
+          <p class="govuk-body">Email <a href="mailto:TRAMS@education.gov.uk">TRAMS@education.gov.uk</a></p>
+        </div>
+      </section>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,181 @@
+{% extends "./layouts/trust.html" %}
+{% set current_page = "governance" %} 
+{% set title = "Governance" %}
+{% set pageSection = "About the trust" %}
+
+{% block pageContent %}
+  <div class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+    {{ govukInsetText({
+      html: '<a class="govuk-link" href="#">View this trust on Companies House officer information (opens in new tab)</a>'
+    }) }}
+
+    <section class="govuk-!-margin-bottom-9">
+      {{ govukTable({
+        attributes: {
+          'data-module': 'moj-sortable-table'
+        },
+        caption: "Present",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Full name",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Trust role",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Date appointed",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Term end",
+            attributes: {
+              "aria-sort": "none"
+            }
+          }
+        ],
+        rows: data.trust.governance.present | formatGovernorRows(true)
+      }) }}
+
+      {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="dfe-data-source-list">
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+    </section>
+    <section class="govuk-!-margin-bottom-9">
+      {{ govukTable({
+        attributes: {
+          'data-module': 'moj-sortable-table'
+        },
+        caption: "Members",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Full name",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Trust role",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Date appointed",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Term end",
+            attributes: {
+              "aria-sort": "none"
+            }
+          }
+        ],
+        rows: data.trust.governance.members | formatGovernorRows
+      }) }}
+
+      {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="dfe-data-source-list">
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+    </section>
+    <section class="govuk-!-margin-bottom-9">
+      {{ govukTable({
+      attributes: {
+        'data-module': 'moj-sortable-table'
+      },
+        caption: "Previous",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Full name",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Trust role",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Date appointed",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Term end",
+            attributes: {
+              "aria-sort": "none"
+            }
+          }
+        ],
+        rows: data.trust.governance.past | formatGovernorRows
+      }) }}
+
+      {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="dfe-data-source-list">
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+    </section>
+  </div>
+{% endblock %}

@@ -1,0 +1,219 @@
+{% extends "./layouts/trust.html" %}
+{% from "./includes/contact.html" import contact %}
+{% from "./includes/link.njk" import link %}
+{% set current_page = "trust-details" %} 
+{% set title = "Trust details" %}
+{% set pageSection = "About the trust" %}
+
+{% block pageContent %}
+  <section class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+    <h2>Internal DfE contacts</h2>
+
+    {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Trust relationship manager"
+            },
+            value: {
+              html: contact(data.trust.trustDetails.trustRelationshipManager)
+            }
+          },
+          {
+            key: {
+              text: "SFSO Lead"
+            },
+            value: {
+              html: contact(data.trust.trustDetails.sfsoLead)
+            }
+          }
+        ]
+      }) }}
+  </section>
+  <section class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+    <h2>External Trust contacts</h2>
+
+    {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: data.trust.trustDetails.mainContactAtTrust.role
+            },
+            value: {
+              html: contact(data.trust.trustDetails.mainContactAtTrust, showTelephone=true)
+            }
+          }
+        ]
+      }) }}
+  </section>
+
+  <section class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+    <h2>Trust details</h2>
+
+    {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Address:"
+            },
+            value: {
+              text: data.trust.trustDetails.address | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Website:"
+            },
+            value: {
+              html: link(data.trust.trustDetails.website, opensInNewTab=true)
+            }
+          },
+          {
+            key: {
+              text: "Local authorites:"
+            },
+            value: {
+              text: data.trust.trustDetails.localAuthorities | join(', ') | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Regions Group:"
+            },
+            value: {
+              text: data.trust.trustDetails.regionsGroup | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "National sponsor oversight:"
+            },
+            value: {
+              html: "---"
+            }
+          },
+          {
+            key: {
+              text: "Schools financial support territory (SFSO):"
+            },
+            value: {
+              html: data.trust.trustDetails.schoolsFinancialSupportTerritory | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Date incorporated:"
+            },
+            value: {
+              html: data.trust.trustDetails.dateIncorporated | formatDate
+            }
+          },
+          {
+            key: {
+              text: "Date opened:"
+            },
+            value: {
+              html: data.trust.trustDetails.dateOpened | formatDate
+            }
+          },
+          {
+            key: {
+              text: "Trust reference number:"
+            },
+            value: {
+              html: data.trust.trustDetails.trustReferenceNumber | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Companies House number:"
+            },
+            value: {
+              html: data.trust.trustDetails.companiesHouseNumber | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Companies House filing history:"
+            },
+            value: {
+              html: link(
+                data.trust.trustDetails.companiesHouseFilingHistoryUrl, 
+                linkText=data.trust.trustDetails.companiesHouseFilingHistoryUrl, 
+                opensInNewTab=true
+              )
+            }
+          },
+          {
+            key: {
+              text: "Get information about schools:"
+            },
+            value: {
+              html: '<a class="govuk-link" href="#">View data held on Get information about schools (opens in a new tab)</a>'
+            }
+          }
+        ]
+      }) }}
+
+    {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="dfe-data-source-list">
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+  </section>
+  <section class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+    <h2>Sponsor details</h2>
+
+    {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Sponsor status:"
+            },
+            value: {
+              text: data.trust.trustDetails.sponsorStatus | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Sponsor restrictions:"
+            },
+            value: {
+              text: data.trust.trustDetails.sponsorRestrictions | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Sponsor approval date:"
+            },
+            value: {
+              html: data.trust.trustDetails.sponsorApprovalDate | formatDate
+            }
+          },
+          {
+            key: {
+              text: "Sponsor name:"
+            },
+            value: {
+              html: data.trust.trustDetails.sponsorName | default('---', true)
+            }
+          }
+        ]
+      }) }}
+  </section>
+
+{% endblock %}

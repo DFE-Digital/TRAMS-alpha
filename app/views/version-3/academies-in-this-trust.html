@@ -1,0 +1,162 @@
+{% extends "./layouts/trust.html" %}
+{% set current_page = "academies-in-this-trust" %}
+{% set title = "Academies in trust" %}
+{% set pageSection = "About the trust" %}
+{% from "./includes/academies-in-trust-title.html" import academiesInTrustTitle %}
+
+{% block pageContent %}
+  <div class="dfe-card govuk-!-margin-top-9 ">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Trust pupil numbers</h3>
+
+    <div class="dfe-summary-list-statistics">
+      {{ govukSummaryList({
+        classes: 'govuk-summary-list--no-border',
+        rows: [
+          {
+            key: {
+              text: "Number of academies in trust"
+            },
+            value: {
+              text: data.trust.academiesInTrust.academies.length
+            }
+          },
+          {
+            key: {
+              text: "Trust actual pupil numbers"
+            },
+            value: {
+              text: data.academiesSummary.totalPupilNumbers | formatNumber
+            }
+          },
+          {
+            key: {
+              text: "Trust capacity"
+            },
+            value: {
+              text: data.academiesSummary.totalCapacity | formatNumber
+            }
+          },
+          {
+            key: {
+              text: "Trust capacity % full"
+            },
+            value: {
+              text: data.academiesSummary.percentageCapacity + "%"
+            }
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageContentColumnOverride %}
+
+  <div class="govuk-grid-column-full">
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+
+    {{ govukTable({
+      attributes: {
+        'data-module': 'moj-sortable-table'
+      },
+      caption: academiesInTrustTitle(data.trust.academiesInTrust.academies.length),
+      captionClasses: "govuk-table__caption--l",
+      head: [
+        {
+          text: "Establishment name",
+          attributes: {
+            "aria-sort": "ascending"
+          }
+        },
+        {
+          text: "Local authority",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+          text: "Phase",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+          text: "Age range",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+            text: "Capacity",
+            attributes: {
+            "aria-sort": "none"
+            }
+        },
+        {
+            text: "Pupil numbers",
+            attributes: {
+            "aria-sort": "none"
+            }
+        },
+        {
+            text: "Date joined",
+            attributes: {
+            "aria-sort": "none"
+            }
+        },
+        {
+            text: "Current Ofsted rating",
+            attributes: {
+            "aria-sort": "none"
+            }
+        },
+        {
+            text: "Previous Ofsted rating",
+            attributes: {
+            "aria-sort": "none"
+            }
+        }
+      ],
+      rows: data.trust.academiesInTrust.academies | formatAcademyRows
+    }) }}
+
+    <div class="dfe-flex-between">
+      {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="dfe-data-source-list">
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021</dd>
+            </div>
+            <div class="dfe-data-source-list__item">
+              <dt class="dfe-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+
+      <button class="dfe-image-button">
+        <svg class="dfe-image-button__image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M23,4H22V21a1,1,0,0,1-1,1H4v1a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1V5A1,1,0,0,0,23,4Z"/>
+          <path d="M19,20a1,1,0,0,0,1-1V1a1,1,0,0,0-1-1H1A1,1,0,0,0,0,1V19a1,1,0,0,0,1,1H19Z"/>
+        </svg>
+        Download data
+      </button>
+    </div>
+
+    <div class="govuk-!-margin-top-9 govuk-!-margin-bottom-4">
+      <a class="govuk-body govuk-link  govuk-link--no-visited-state" href="#" class="govuk-link govuk-link--no-visited-state">Is there anything wrong with this page?</a>
+    </div>
+  </div>
+
+{% endblock %}
+
+{# Override anything wrong link block because it is manually included above #}
+{% block anythingWrong %}{% endblock %}
