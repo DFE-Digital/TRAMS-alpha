@@ -3,16 +3,6 @@
 @import "./mixins";
 
 .version-3 {
-  .dfe-black-button {
-    background-color: govuk-colour("black");
-    color: govuk-colour("white");
-    box-shadow: none;
-
-    &:hover {
-      background-color: $dfe-blue;
-    }
-  }
-
   .dfe-autocomplete-wrapper--search {
     &>div {
       width: 100%;
@@ -20,9 +10,10 @@
 
     .autocomplete__input {
       @extend .govuk-input;
-      border-color: transparent;
-      height: 3.125rem;
-      background-color: white;
+      border-color: govuk-colour("black");
+      height: 2.5rem;
+      background-color: govuk-colour("white");
+  
     }
 
     .autocomplete__option-hint {
@@ -41,48 +32,18 @@
 
   }
 
-
-  .dfe-inline-button {
-    display: flex;
-    flex: 1 1 auto;
-    margin-bottom: 0;
-  }
-
-  .dfe-image-button {
-    @extend .govuk-button;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    background: none;
-    box-shadow: none;
-    border: transparent;
-    color: $govuk-link-colour;
-
-    &:hover {
-      background-color: $govuk-link-colour;
-    }
-
-    .dfe-image-button__image {
-      height: 20px;
-      fill: currentColor;
-    }
-  }
-
-  .dfe-search-input {
-    margin-right: 10px;
-    border-color: govuk-colour("black");
-  background-color: white;
- 
-  }
-
+.govuk-button {
+  margin-left: 10px;
+}
+  
   .dfe-banner {
     @include govuk-responsive-padding(5, "top");
     @include govuk-responsive-padding(5, "bottom");
     background-color: $dfe-blue-light;
 
     .govuk-heading-l,
-    .govuk-heading-xl,
-    .govuk-body {color: $dfe-blue;}
+    .govuk-heading-xl,{color: $dfe-blue;}
+    .govuk-body {color: black;}
  
 
     &.dfe-banner--l {
@@ -163,6 +124,7 @@
 
     .dfe-page-heading__detail {
       @include grid-2-row-variable-width(1.25rem);
+     
     }
   }
 

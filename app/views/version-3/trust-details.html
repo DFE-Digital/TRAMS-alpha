@@ -54,7 +54,7 @@
         rows: [
           {
             key: {
-              text: "Address:"
+              text: "Address"
             },
             value: {
               text: data.trust.trustDetails.address | default('---', true)
@@ -62,7 +62,7 @@
           },
           {
             key: {
-              text: "Website:"
+              text: "Website"
             },
             value: {
               html: link(data.trust.trustDetails.website, opensInNewTab=true)
@@ -70,7 +70,7 @@
           },
           {
             key: {
-              text: "Local authorites:"
+              text: "Local authorites"
             },
             value: {
               text: data.trust.trustDetails.localAuthorities | join(', ') | default('---', true)
@@ -78,7 +78,7 @@
           },
           {
             key: {
-              text: "Regions Group:"
+              text: "Regions Group"
             },
             value: {
               text: data.trust.trustDetails.regionsGroup | default('---', true)
@@ -86,7 +86,7 @@
           },
           {
             key: {
-              text: "National sponsor oversight:"
+              text: "National sponsor oversight"
             },
             value: {
               html: "---"
@@ -94,7 +94,7 @@
           },
           {
             key: {
-              text: "Schools financial support territory (SFSO):"
+              text: "Schools financial support territory (SFSO)"
             },
             value: {
               html: data.trust.trustDetails.schoolsFinancialSupportTerritory | default('---', true)
@@ -102,7 +102,7 @@
           },
           {
             key: {
-              text: "Date incorporated:"
+              text: "Date incorporated"
             },
             value: {
               html: data.trust.trustDetails.dateIncorporated | formatDate
@@ -110,7 +110,7 @@
           },
           {
             key: {
-              text: "Date opened:"
+              text: "Date opened"
             },
             value: {
               html: data.trust.trustDetails.dateOpened | formatDate
@@ -118,7 +118,7 @@
           },
           {
             key: {
-              text: "Trust reference number:"
+              text: "Trust reference number"
             },
             value: {
               html: data.trust.trustDetails.trustReferenceNumber | default('---', true)
@@ -126,27 +126,27 @@
           },
           {
             key: {
-              text: "Companies House number:"
+              text: "Companies House number"
             },
             value: {
               html: data.trust.trustDetails.companiesHouseNumber | default('---', true)
+              
             }
           },
+       
+
+
           {
             key: {
-              text: "Companies House filing history:"
+              text: "Companies House filing history"
             },
             value: {
-              html: link(
-                data.trust.trustDetails.companiesHouseFilingHistoryUrl, 
-                linkText=data.trust.trustDetails.companiesHouseFilingHistoryUrl, 
-                opensInNewTab=true
-              )
+              html: '<a class="govuk-link" href="#">View data held on Companies House (opens in a new tab)</a>'
             }
           },
           {
             key: {
-              text: "Get information about schools:"
+              text: "Get information about schools"
             },
             value: {
               html: '<a class="govuk-link" href="#">View data held on Get information about schools (opens in a new tab)</a>'
@@ -182,7 +182,7 @@
         rows: [
           {
             key: {
-              text: "Sponsor status:"
+              text: "Sponsor status"
             },
             value: {
               text: data.trust.trustDetails.sponsorStatus | default('---', true)
@@ -190,7 +190,7 @@
           },
           {
             key: {
-              text: "Sponsor restrictions:"
+              text: "Sponsor restrictions"
             },
             value: {
               text: data.trust.trustDetails.sponsorRestrictions | default('---', true)
@@ -198,7 +198,7 @@
           },
           {
             key: {
-              text: "Sponsor approval date:"
+              text: "Sponsor approval date"
             },
             value: {
               html: data.trust.trustDetails.sponsorApprovalDate | formatDate
@@ -206,7 +206,7 @@
           },
           {
             key: {
-              text: "Sponsor name:"
+              text: "Sponsor name"
             },
             value: {
               html: data.trust.trustDetails.sponsorName | default('---', true)
