@@ -35,6 +35,25 @@
 .govuk-button {
   margin-left: 10px;
 }
+
+.dfe-search-button {
+  background-color: $dfe-blue-secondary;
+  color: govuk-colour("white");
+  box-shadow: none;
+  height: 60px;
+  width: 60px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+
+
+  &:hover {
+    background-color: $dfe-blue-secondary;
+  }
+}
   
   .dfe-banner {
     @include govuk-responsive-padding(5, "top");
