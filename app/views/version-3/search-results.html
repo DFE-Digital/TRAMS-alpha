@@ -1,0 +1,27 @@
+{% extends "./layouts/main.html" %}
+{% set current_page = "search-results" %} 
+{% set title = "Search results" %}
+
+{% block content %}
+
+
+<h1 class="govuk-heading-xl">Search results</h1>
+
+<ul class="govuk-list">
+    {% for trust in data.searchResults %}
+
+  
+
+    <li>
+        <h2 class="govuk-heading-m"><a href="" class="govuk-link">{{trust.name}}</a></h2>
+        <p class="govuk-body govuk-!-margin-0">Bourne Abbey C Of E Primary Academy, Abbey Road, Bourne, PE10 9EP</p>
+        <p class="govuk-body govuk-!-margin-0">TRN: TR00261</p>
+        <p class="govuk-body govuk-!-margin-top-0">Group UID: 2044</p>
+    
+        <hr class="govuk-section-break govuk-section-break--visible">
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

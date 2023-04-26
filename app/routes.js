@@ -22,6 +22,20 @@ router.get(/version-\d+\/home/, function (request, response) {
   response.render(currentVersion + '/home');
 });
 
+router.post(/version-\d+\/search-results/, function (request, response) {
+  const currentVersion = request.url.split("/")[1];
+  const trusts = searchForTrusts(request.session.data.search);
+
+if (trusts) {
+  response.locals.data.searchResults = trusts;
+  console.log(trusts);
+  response.render(currentVersion + '/search-results');
+
+} else {
+  response.locals.data.trusts = trusts.slice(0, 10);
+  response.render(currentVersion + '/not-found');
+}
+});
 
 router.post(/version-\d+\/trust-details/, function (request, response) {
   const currentVersion = request.url.split("/")[1];
@@ -32,13 +46,13 @@ router.post(/version-\d+\/trust-details/, function (request, response) {
     return;
   }
 
-  let trust = searchForTrust(request.session.data.search);
+  let trusts = searchForTrusts(request.session.data.search);
 
-  if (trust) {
+  if (trusts) {
     //response locals data will be used by next page render
-    response.locals.data.trust = trust;
+    response.locals.data.trust = trusts[0];
     //session data will be persisted for future pages
-    request.session.data.trust = trust;
+    request.session.data.trust = trusts[0];
     response.render(currentVersion + '/trust-details');
   } else {
     response.locals.data.trusts = trusts.slice(0, 10);
@@ -64,7 +78,7 @@ router.get(
   }
 );
 
-const searchForTrust = (searchTerm) => {
+const searchForTrusts = (searchTerm) => {
   const searchTermLower = searchTerm.toLowerCase();
-  return trusts.filter(t => t.name.toLowerCase().includes(searchTermLower) || t.uid === searchTermLower)[0];
+  return trusts.filter(t => t.name.toLowerCase().includes(searchTermLower) || t.uid === searchTermLower);
 }
