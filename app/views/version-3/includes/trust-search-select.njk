@@ -21,7 +21,7 @@
       <select name="search" id="search">
           <option value=""></option>
         {% for trust in trusts %}
-          <option value="{{trust.name}}">{{ trust.name }} | {{ trust.trustDetails.address }}</option>
+          <option value="{{trust.uid}}">{{ trust.name }} | {{ trust.trustDetails.address }}</option>
         {% endfor %}
       </select>
 
