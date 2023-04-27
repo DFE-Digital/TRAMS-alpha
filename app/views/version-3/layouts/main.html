@@ -4,6 +4,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "../includes/trust-search.njk" import appTrustSearch%}
 
 {% set bodyClasses = "version-3 dfe-template__body" %}
 
@@ -31,8 +32,6 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     {% block headerNavLinks %}
     <div class="govuk-header__content">
       <nav aria-label="Menu" class="govuk-header__navigation ">
-      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation"
-        aria-label="Show or hide navigation menu" hidden>Menu</button>
         <ul id="navigation" class="govuk-header__navigation-list">
           <li class="govuk-header__navigation-item">
             <a class="govuk-header__link" href="./help">
@@ -40,7 +39,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
             </a>
           </li>
           <li class="govuk-header__navigation-item">
-            <button class="govuk-button dfe-search-icon-button dfe-inline-button" data-module="govuk-button" type="submit">
+            <button class="govuk-button dfe-search-icon-button dfe-search-js-toggle dfe-inline-button" data-module="govuk-button" type="submit" aria-controls="search-menu" aria-expanded="false">
               <span class="govuk-visually-hidden">Search</span>
               <svg width="20" height="20" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
@@ -51,13 +50,34 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
         </ul>
       </nav>
     </div>
+    
     {% endblock %}
   </div>
 </header>
+<div id="search-menu" class="dfe-banner dfe-banner--white" hidden>
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row ">
+      <div class="govuk-grid-column-two-thirds">
+        <form class="govuk-form-group" action="./search" method="post">
+          {{appTrustSearch('header')}}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
 
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/accessible-autocomplete.min.js"></script>
   <script src="/public/javascripts/autocomplete.js"></script>
+  <script src="/public/javascripts/header-search.js"></script>
+  <script type="text/javascript">
+    autocomplete({
+      idPrefix: 'header',
+      formName: 'search',
+      valueName: 'uid',
+      path: '/trusts'
+    })
+  </script>
 {% endblock %}

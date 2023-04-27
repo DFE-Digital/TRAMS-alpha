@@ -90,6 +90,10 @@
       @include govuk-responsive-padding(8, "bottom");
     }
 
+    &.dfe-banner--white {
+      background-color: white;
+    }
+
   }
 
   .dfe-card {
