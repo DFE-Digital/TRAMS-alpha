@@ -25,16 +25,26 @@ router.get(/version-\d+\/home/, function (request, response) {
 
 router.post(/version-\d+\/search-results/, function (request, response) {
   const currentVersion = request.url.split("/")[1];
+  const search = request.session.data.search;
+  const trust = getTrustByUid(search);
+  if (trust) {
+    //response locals data will be used by next page render
+    response.locals.data.trust = trust;
+    //session data will be persisted for future pages
+    request.session.data.trust = trust;
+    response.redirect('./trust-details');
+    return;
+  }
+
   const trusts = searchForTrusts(request.session.data.search);
+  if (trusts) {
+    response.locals.data.searchResults = trusts;
+    response.render(currentVersion + '/search-results');
 
-if (trusts) {
-  response.locals.data.searchResults = trusts;
-  response.render(currentVersion + '/search-results');
-
-} else {
-  response.locals.data.trusts = trusts.slice(0, 10);
-  response.render(currentVersion + '/not-found');
-}
+  } else {
+    response.locals.data.trusts = trusts.slice(0, 10);
+    response.render(currentVersion + '/not-found');
+  }
 });
 
 
