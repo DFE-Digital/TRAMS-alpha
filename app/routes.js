@@ -23,7 +23,7 @@ router.get(/version-\d+\/home/, function (request, response) {
   response.render(currentVersion + '/home');
 });
 
-router.post(/version-\d+\/search-results/, function (request, response) {
+router.post(/version-\d+\/search/, function (request, response) {
   const currentVersion = request.url.split("/")[1];
   const {search, uid} = request.session.data;
 
@@ -40,7 +40,7 @@ router.post(/version-\d+\/search-results/, function (request, response) {
   const searchResults = searchForTrusts(search);
   if (searchResults) {
     response.locals.data.searchResults = searchResults;
-    response.render(currentVersion + '/search-results');
+    response.render(currentVersion + '/search');
   } else {
     response.locals.data.trusts = searchResults.slice(0, 10);
     response.render(currentVersion + '/not-found');

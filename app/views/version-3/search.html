@@ -1,11 +1,11 @@
 {% extends "./layouts/main.html" %}
-{% set current_page = "search-results" %}
-{% set title = "Search results" %}
+{% set current_page = "search" %}
+{% set title = "Search" %}
 
 {% block content %}
 
 
-<h1 class="govuk-heading-xl">Search results</h1>
+<h1 class="govuk-heading-xl">Search</h1>
 
 <ul class="govuk-list">
   {% for trust in data.searchResults %}
