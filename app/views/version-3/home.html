@@ -1,5 +1,5 @@
 {% extends "./layouts/main.html" %}
-{% from "./includes/trust-search-select.njk" import appTrustSearchSelect%}
+{% from "./includes/trust-search.njk" import appTrustSearch%}
 {% set current_page = "home" %} 
 {% set title = "Find information about a Trust or Academy" %}
 
@@ -11,18 +11,8 @@
         <div class="govuk-grid-row ">
           <div class="govuk-grid-column-one-half">
             <h1 class="govuk-heading-xl">Find information about academies and trusts</h1>
-             
-         
-
-        
                 <form class="govuk-form-group" action="./search-results" method="post">
-                 
-
-          
-
-           
-                {{appTrustSearchSelect(data.trusts)}}
-
+                {{appTrustSearch('home')}}
               </form>
           </div>
         </div>
@@ -93,4 +83,16 @@
       </section>
     </div>
   </main>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript">
+  autocomplete({
+    idPrefix: 'home',
+    formName: 'search',
+    valueName: 'uid',
+    path: '/trusts'
+  })
+</script>
 {% endblock %}

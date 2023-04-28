@@ -1,35 +1,21 @@
-{% macro appTrustSearchSelect(trusts) %}
+{% macro appTrustSearch(idPrefix) %}
+  <label class="govuk-label govuk-label--l" for="{{idPrefix}}-search">
+  Search for a trust by name or reference number
+</label>
 
-
-  <script src="/public/javascripts/accessible-autocomplete.min.js"></script>
-
-  <script type="text/javascript">
-    var selectEl = document.querySelector('#search')
-    var inputValue = result => {
-      if (result) {
-        const name = result.split(' | ')
-        return name[0]
-      }
-    }
-    var suggestion = result => {
-      if (result) {
-        const name = result.split(' | ')
-        if (name[1]) {
-          return name[0] && name[0] + '<span class="autocomplete__option-hint">' + name[1] + '</span>'
-        } else {
-          return result && result;
-        }
-      }
-    }
-    accessibleAutocomplete({
-      element: document.querySelector('#app-autocomplete-container'),
-      id: 'search', // To match it to the existing <label>.
-      source: trusts,
-      displayMenu: 'overlay',
-      templates: {
-        inputValue,
-        suggestion
-      }
-    })
-  </script>
+  <label class="govuk-hint">
+    Enter trust name, TRN, Group UID or UKPRN  
+    <a href="#name-reference-help" class="help-icon modal-link">
+      <span class="govuk-visually-hidden">Help with reference numbers</span>
+      <span class="govuk-visually-hidden">Opens a dialog</span>
+    </a>
+  </a>
+</label>
+<div class="govuk-input__wrapper govuk-!-margin-top-4 dfe-autocomplete-wrapper--search">
+  <div id="{{idPrefix}}-autocomplete-container"></div>
+  <input type="hidden" id="{{idPrefix}}-uid" name="uid"/>
+  <button class="govuk-button" data-module="govuk-button" type="submit">
+    Search
+  </button>
+</div>
 {% endmacro %}

@@ -56,3 +56,9 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   </div>
 </header>
 {% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+  <script src="/public/javascripts/autocomplete.js"></script>
+{% endblock %}
