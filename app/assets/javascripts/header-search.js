@@ -28,4 +28,7 @@ HeaderSearch.prototype.syncState = function () {
 }
 
 const headerSearch = new HeaderSearch();
-headerSearch.init();
+if (headerSearch.menuButton) {
+  headerSearch.init();
+}
+

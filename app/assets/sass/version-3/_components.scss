@@ -208,4 +208,23 @@
       border-bottom: none;
     }
   }
+
+  // Manage 'js-enabled' components and fallback visibility
+  .dfe-search-js-toggle {
+    display: none;
+  }
+  
+  .dfe-search-js-fallback {
+    display: flex;
+  }
+  
+  &.js-enabled {
+    .dfe-search-js-toggle {
+      display: flex;
+    }
+  
+    .dfe-search-js-fallback {
+      display: none;
+    }
+  }
 }
