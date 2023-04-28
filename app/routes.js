@@ -48,7 +48,6 @@ router.post(/version-\d+\/search/, function (request, response) {
 
 
 router.get("/version-*/trust-details/:uid", function (request, response) {
-  const currentVersion = request.url.split("/")[1];
   const uid = request.params.uid;
   const trust = getTrustByUid(uid);
   //response locals data will be used by next page render
