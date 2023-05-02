@@ -2,7 +2,6 @@
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
-const { get } = require('jquery');
 const { AcademiesSummary } = require('./assets/javascripts/academiesUtils');
 const trusts = require('./data/invented-trust-data').trusts;
 

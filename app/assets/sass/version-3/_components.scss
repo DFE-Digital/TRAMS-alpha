@@ -32,9 +32,9 @@
 
   }
 
-.govuk-button {
-  margin-left: 10px;
-}
+  .dfe-search-button {
+    margin-left: 10px;
+  }
   
   .dfe-banner {
     @include govuk-responsive-padding(5, "top");
