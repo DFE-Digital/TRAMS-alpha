@@ -1,0 +1,128 @@
+@import "node_modules/govuk-frontend/govuk/all";
+
+.version-3 {
+  &.dfe-template__body {
+    .govuk-width-container {
+      max-width: 1200px;
+    }
+
+    .govuk-header {
+      background-color: $dfe-blue;
+      border-bottom: 0px;
+    }
+
+    .govuk-header__container {
+      position: relative;
+      margin-bottom: -10px;
+      padding-top: 25px;
+      padding-bottom: 15px;
+      border-bottom: 10px solid $dfe-blue-light;
+    }
+
+    .govuk-header__product-name,
+    .govuk-header__logotype-text,
+    .govuk-header__content {
+      line-height: 2.5rem !important;
+      font-size: 1.2rem;
+    }
+
+    .govuk-header__logotype-crown-fallback-image {
+      height: 45px;
+      width: 45px;
+    }
+
+    .govuk-header__logotype {
+      margin-right: 0;
+    }
+
+    .govuk-header__logo {
+      @include mq ($from: desktop) {
+        width: 70%;
+      }
+    }
+
+    .govuk-header__content {
+      @include mq ($from: desktop) {
+        width: 30%;
+        float: right;
+      }
+    }
+
+    .govuk-header nav {
+      @include mq ($from: desktop) {
+        display: inline-block;
+        float: right;
+      }
+    }
+
+    .govuk-header__navigation {
+      margin: 0;
+    }
+
+    .govuk-header__navigation-item {
+      border-color: white;
+    }
+  }
+
+  .home-wrapper {
+    .govuk-phase-banner {
+      border-bottom: none;
+    }
+  }
+
+  .dfe-grid-3 {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.875rem;
+    margin: 1em 0;
+
+    @include govuk-media-query($from: tablet, $until: desktop) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include govuk-media-query($until: tablet) {
+      display: block;
+
+      div {
+        margin-bottom: 1.875rem;
+      }
+    }
+  }
+
+  .dfe-grid-2 {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.875rem;
+    margin: 1em 0;
+
+    @include govuk-media-query($until: desktop) {
+      display: block;
+
+      .dfe-grid-2__item {
+        margin-bottom: 1.875rem;
+      }
+    }
+  }
+
+  .dfe-grid-2-column {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content max-content;
+    column-gap: 1.875rem;
+
+    @include govuk-media-query($until: desktop) {
+      display: block;
+    }
+  }
+
+  .dfe-flex-between {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.875rem;
+    align-items: baseline;
+  }
+}

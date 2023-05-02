@@ -1,0 +1,24 @@
+{% extends "./layouts/main.html" %}
+{% set current_page = "search" %}
+{% set title = "Search" %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Search by trust name or reference number</h1>
+
+<h2>Results for "{{data.search}}" ({{data.searchResults.length}})</h2>
+
+<ul class="govuk-list">
+  {% for trust in data.searchResults %}
+  <li>
+    <h3 class="govuk-heading-m govuk-!-margin-top-6"><a href="./trust-details/{{trust.uid}}" class="govuk-link">{{trust.name}}</a></h3>
+    <p class="govuk-body govuk-!-margin-0"><b>Address: </b>{{trust.trustDetails.address}}</p>
+    <p class="govuk-body govuk-!-margin-0"><b>Group ID/TRN:</b> {{trust.trustDetails.trustReferenceNumber}}</p>
+    <p class="govuk-body govuk-!-margin-bottom-0"><b>UID:</b> {{data.trust.uid}}</p>
+    <p class="govuk-body govuk-!-margin-bottom-6"><b>Academies in this trust:</b> {{trust.academiesInTrust.academies.length}}</p>
+    <hr class="govuk-section-break govuk-section-break--visible ">
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "./main.html" %}
+{% from "../includes/academies-in-trust-title.html" import academiesInTrustTitle %}
+
+{% block pageTitle %}
+  {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block main %}
+
+  <div class="dfe-banner">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full dfe-page-heading">
+          <p class="dfe-page-heading__title">{{ data.trust.name }}</p>
+          <div class="dfe-page-heading__detail">
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              <span class="govuk-!-font-weight-bold">UID:</span> {{ data.trust.uid }}</p>
+            <p class="govuk-body govuk-!-margin-bottom-0">{{ data.trust.trustType }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<div class="govuk-main-wrapper ">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-one-quarter">
+  
+        <nav class="dfe-side-nav">
+  
+          <h2 class="dfe-side-nav__heading">About the trust</h2>
+          <ul class="dfe-side-nav__list">
+            <li class="dfe-side-nav__item {% if current_page == 'trust-details' %}dfe-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./trust-details">Trust details</a>
+            </li>
+            <li class="dfe-side-nav__item {% if current_page == 'trust-overview' %}dfe-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./trust-overview">Trust overview</a>
+            </li>
+            <li class="dfe-side-nav__item {% if current_page == 'academies-in-this-trust' %}dfe-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./academies-in-this-trust">
+                {{ academiesInTrustTitle(data.trust.academiesInTrust.academies.length )}}
+              </a>
+            </li>
+            <li class="dfe-side-nav__item {% if current_page == 'governance' %}dfe-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./governance">Governance</a>
+            </li>
+          </ul>
+  
+          <h2 class="dfe-side-nav__heading">Risk and interventions</h2>
+          <ul class="dfe-side-nav__list">
+            <li class="dfe-side-nav__item {% if current_page == 'cases-and-concerns' %}dfe-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./cases-and-concerns">Cases and concerns</a>
+            </li>
+          </ul>
+  
+          <h2 class="dfe-side-nav__heading">Educational performance</h2>
+          <ul class="dfe-side-nav__list">
+            <li class="dfe-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Primary</a>
+            </li>
+            <li class="dfe-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Secondary</a>
+            </li>
+          </ul>
+  
+          <h2 class="dfe-side-nav__heading">Financial</h2>
+          <ul class="dfeuk-list dfe-side-nav__list">
+            <li class="dfe-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="#">Financial data</a>
+            </li>
+            <li class="dfe-side-nav__item  {% if current_page == 'financial-documents' %}dfe-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state dfe-side-nav__link" href="./financial-documents">Financial documents</a>
+            </li>
+          </ul>
+  
+        </nav>
+  
+      </div>
+  
+      <main id="main-content">
+        <div class="govuk-grid-column-three-quarters">
+          <header class="dfe-page-heading">
+            <span class="govuk-caption-xl">{{ pageSection }}</span>
+            <h1 class="govuk-heading-xl">{{ title }}</h1>
+          </header>
+          {% block pageContent %}{% endblock %}
+          {% block anythingWrong %}
+            <div class="govuk-!-margin-top-8 govuk-!-margin-bottom-4">
+              <a class="govuk-body govuk-link govuk-link--no-visited-state" href="#">Is there anything wrong with this page?</a>
+            </div>
+          {% endblock %}
+        </div>
+
+        {% block pageContentColumnOverride %}{% endblock %}
+      </main>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
