@@ -7,7 +7,10 @@ const { trusts } = require('./data/invented-trust-data');
 
 const govukPrototypeKit = require('govuk-prototype-kit');
 
-const router = govukPrototypeKit.requests.setupRouter()
+const router = govukPrototypeKit.requests.setupRouter();
+
+
+// Routes across all versions
 
 router.get("/version-*/home/", function (request, response) {
   const currentVersion = request.url.split("/")[1];
@@ -41,18 +44,6 @@ router.get("/version-*/trust-details/:uid", function (request, response) {
   response.redirect('../trust-details');
 })
 
-router.post("/version-2/trust-details", function (request, response) {
-  let searchResults = searchForTrusts(request.session.data.search);
-
-  if (searchResults && searchResults.length > 0) {
-    setTrust(request, response, searchResults[0]);
-    response.render('version-2/trust-details');
-  } else {
-    response.locals.data.trusts = trusts.slice(0, 100);
-    response.render('version-2/not-found');
-  }
-});
-
 router.get("/version-*/academies-in-this-trust/", function (request, response) {
     const currentVersion = request.url.split("/")[1];
 
@@ -69,6 +60,24 @@ router.get("/version-*/academies-in-this-trust/", function (request, response) {
   }
 );
 
+
+// Routes for specific versions
+
+router.post("/version-2/trust-details", function (request, response) {
+  let searchResults = searchForTrusts(request.session.data.search);
+
+  if (searchResults && searchResults.length > 0) {
+    setTrust(request, response, searchResults[0]);
+    response.render('version-2/trust-details');
+  } else {
+    response.locals.data.trusts = trusts.slice(0, 100);
+    response.render('version-2/not-found');
+  }
+});
+
+
+// Routes for api requests
+
 router.get('/api/trusts', function(request, response) {
   const query = request.query.query;
   response.json(searchForTrusts(query).map(trust => ({
@@ -77,6 +86,7 @@ router.get('/api/trusts', function(request, response) {
     uid: trust.uid
   })))
 })
+
 
 const searchForTrusts = (searchTerm) => {
   const searchTermLower = searchTerm.toLowerCase();
