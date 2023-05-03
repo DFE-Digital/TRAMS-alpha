@@ -27,56 +27,29 @@ router.post("/version-*/search/", function (request, response) {
   const {search, uid} = request.session.data;
 
   if (uid) {
-    const trust = getTrustByUid(uid);
-    //response locals data will be used by next page render
-    response.locals.data.trust = trust;
-    //session data will be persisted for future pages
-    request.session.data.trust = trust;
-    response.redirect('./trust-details');
+    response.redirect(`./trust-details/${uid}`);
     return;
   }
 
-  const searchResults = searchForTrusts(search);
-  if (searchResults) {
-    response.locals.data.searchResults = searchResults;
-    response.render(currentVersion + '/search');
-  } else {
-    response.locals.data.trusts = searchResults.slice(0, 10);
-    response.render(currentVersion + '/not-found');
-  }
+  response.locals.data.searchResults = searchForTrusts(search);
+  response.render(currentVersion + '/search');
 });
-
 
 router.get("/version-*/trust-details/:uid", function (request, response) {
   const uid = request.params.uid;
-  const trust = getTrustByUid(uid);
-  //response locals data will be used by next page render
-  response.locals.data.trust = trust;
-  //session data will be persisted for future pages
-  request.session.data.trust = trust;
+  setTrust(request, response, getTrustByUid(uid));
   response.redirect('../trust-details');
 })
 
-router.post("/version-*/trust-details", function (request, response) {
-  const currentVersion = request.url.split("/")[1];
-
-  //version-1 does not support variables so no searching required
-  if (currentVersion === "version-1"){
-    response.render(currentVersion + '/trust-details');
-    return;
-  }
-
+router.post("/version-2/trust-details", function (request, response) {
   let searchResults = searchForTrusts(request.session.data.search);
 
-  if (searchResults) {
-    //response locals data will be used by next page render
-    response.locals.data.trust = searchResults[0];
-    //session data will be persisted for future pages
-    request.session.data.trust = searchResults[0];
-    response.render(currentVersion + '/trust-details');
+  if (searchResults && searchResults.length > 0) {
+    setTrust(request, response, searchResults[0]);
+    response.render('version-2/trust-details');
   } else {
-    response.locals.data.trusts = searchResults.slice(0, 10);
-    response.render(currentVersion + '/not-found');
+    response.locals.data.trusts = trusts.slice(0, 100);
+    response.render('version-2/not-found');
   }
 });
 
@@ -112,4 +85,11 @@ const searchForTrusts = (searchTerm) => {
 
 const getTrustByUid = (uid) => {
   return trusts.find(t => t.uid === uid);
+}
+
+const setTrust = (request, response, trust) => {
+    //response locals data will be used by next page render
+    response.locals.data.trust = trust;
+    //session data will be persisted for future pages
+    request.session.data.trust = trust;
 }
