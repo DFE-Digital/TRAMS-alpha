@@ -55,6 +55,25 @@
   .dfe-search-button {
     margin-left: 10px;
   }
+
+  .dfe-search-icon-button {
+    background-color: $dfe-blue-secondary;
+    color: govuk-colour("white");
+    box-shadow: none;
+    height: 60px;
+    width: 60px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+
+
+    &:hover {
+      background-color: $dfe-blue-secondary;
+    }
+  }
   
   .dfe-banner {
     @include govuk-responsive-padding(5, "top");
@@ -69,6 +88,10 @@
     &.dfe-banner--l {
       @include govuk-responsive-padding(9, "top");
       @include govuk-responsive-padding(8, "bottom");
+    }
+
+    &.dfe-banner--white {
+      background-color: white;
     }
 
   }
@@ -183,6 +206,25 @@
   .dfe-phase-banner--no-border {
     &.govuk-phase-banner {
       border-bottom: none;
+    }
+  }
+
+  // Manage 'js-enabled' components and fallback visibility
+  .dfe-search-js-toggle {
+    display: none;
+  }
+  
+  .dfe-search-js-fallback {
+    display: flex;
+  }
+  
+  &.js-enabled {
+    .dfe-search-js-toggle {
+      display: flex;
+    }
+  
+    .dfe-search-js-fallback {
+      display: none;
     }
   }
 }

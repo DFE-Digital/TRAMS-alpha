@@ -13,10 +13,11 @@
 
     .govuk-header__container {
       position: relative;
-      margin-bottom: -10px;
-      padding-top: 25px;
-      padding-bottom: 15px;
-      border-bottom: 10px solid $dfe-blue-light;
+
+      border-bottom: 0px solid $dfe-blue-light;
+      margin-bottom: 0;
+      padding-top: 0;
+      padding-bottom: 0;
     }
 
     .govuk-header__product-name,
@@ -27,8 +28,8 @@
     }
 
     .govuk-header__logotype-crown-fallback-image {
-      height: 45px;
-      width: 45px;
+      height: 40px;
+      width: 40px;
     }
 
     .govuk-header__logotype {
@@ -36,6 +37,7 @@
     }
 
     .govuk-header__logo {
+      padding-top: 10px;
       @include mq ($from: desktop) {
         width: 70%;
       }
@@ -59,9 +61,19 @@
       margin: 0;
     }
 
+    .govuk-header__navigation-list {
+      display: flex;
+      align-items: center;
+    }
+
     .govuk-header__navigation-item {
       border-color: white;
+      margin-top: 0px;
+      display: block;
+      padding: 0;
     }
+
+    
   }
 
   .home-wrapper {
