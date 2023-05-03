@@ -17,7 +17,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 <header class="govuk-header app-header" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+      <a href="./home" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
           <img src="/public/images/crest.png" alt=""
             class="govuk-header__logotype-crown-fallback-image">
@@ -34,7 +34,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
       <nav aria-label="Menu" class="govuk-header__navigation ">
         <ul id="navigation" class="govuk-header__navigation-list">
           <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="./help">
+            <a class="govuk-header__link" href="#">
               Help
             </a>
           </li>
@@ -71,6 +71,28 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     </div>
   </div>
 </div>
+{% endblock %}
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "/",
+         text: "Prototype versions"
+       },
+       {
+         href: "/manage-prototype",
+         text: "Manage your prototype"
+       },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
 {% endblock %}
 
 {% block scripts %}
