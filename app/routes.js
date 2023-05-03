@@ -9,7 +9,7 @@ const govukPrototypeKit = require('govuk-prototype-kit');
 
 const router = govukPrototypeKit.requests.setupRouter()
 
-router.get(/version-\d+\/home/, function (request, response) {
+router.get("/version-*/home/", function (request, response) {
   const currentVersion = request.url.split("/")[1];
 
   //version-1 does not support variables \
@@ -22,7 +22,7 @@ router.get(/version-\d+\/home/, function (request, response) {
   response.render(currentVersion + '/home');
 });
 
-router.post(/version-\d+\/search/, function (request, response) {
+router.post("/version-*/search/", function (request, response) {
   const currentVersion = request.url.split("/")[1];
   const {search, uid} = request.session.data;
 
@@ -57,7 +57,7 @@ router.get("/version-*/trust-details/:uid", function (request, response) {
   response.redirect('../trust-details');
 })
 
-router.post(/version-\d+\/trust-details/, function (request, response) {
+router.post("/version-*/trust-details", function (request, response) {
   const currentVersion = request.url.split("/")[1];
 
   //version-1 does not support variables so no searching required
@@ -80,9 +80,7 @@ router.post(/version-\d+\/trust-details/, function (request, response) {
   }
 });
 
-router.get(
-  /version-\d+\/academies-in-this-trust/,
-  function (request, response) {
+router.get("/version-*/academies-in-this-trust/", function (request, response) {
     const currentVersion = request.url.split("/")[1];
 
     //version-1 does not support variables so return immediately
