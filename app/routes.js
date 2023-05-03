@@ -3,7 +3,7 @@
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
 const { AcademiesSummary } = require('./assets/javascripts/academiesUtils');
-const trusts = require('./data/invented-trust-data').trusts;
+const { trusts } = require('./data/invented-trust-data');
 
 const govukPrototypeKit = require('govuk-prototype-kit');
 
@@ -69,7 +69,7 @@ router.get("/version-*/academies-in-this-trust/", function (request, response) {
   }
 );
 
-router.get('/trusts', function(request, response) {
+router.get('/api/trusts', function(request, response) {
   const query = request.query.query;
   response.json(searchForTrusts(query).map(trust => ({
     name: trust.name,
