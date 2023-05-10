@@ -1,5 +1,5 @@
 function HeaderSearch() {
-  this.menuButton = document.querySelector('.dfe-search-js-toggle');
+  this.menuButton = document.querySelector('.fiat-search-js-toggle');
     this.menu = this.menuButton && document.querySelector(
       '#' + this.menuButton.getAttribute('aria-controls')
     );

@@ -3,7 +3,7 @@
 @import "./mixins";
 
 .version-3 {
-  .dfe-autocomplete-wrapper--search {
+  .fiat-autocomplete-wrapper--search {
     &>div {
       width: 100%;
     }
@@ -32,7 +32,7 @@
 
   }
 
-  .dfe-image-button {
+  .fiat-image-button {
     @extend .govuk-button;
     display: flex;
     gap: 10px;
@@ -46,18 +46,18 @@
       background-color: $govuk-link-colour;
     }
 
-    .dfe-image-button__image {
+    .fiat-image-button__image {
       height: 20px;
       fill: currentColor;
     }
   }
 
-  .dfe-search-button {
+  .fiat-search-button {
     margin-left: 10px;
   }
 
-  .dfe-search-icon-button {
-    background-color: $dfe-blue-secondary;
+  .fiat-search-icon-button {
+    background-color: $fiat-blue-secondary;
     color: govuk-colour("white");
     box-shadow: none;
     height: 60px;
@@ -71,43 +71,43 @@
 
 
     &:hover {
-      background-color: $dfe-blue-secondary;
+      background-color: $fiat-blue-secondary;
     }
   }
   
-  .dfe-banner {
+  .fiat-banner {
     @include govuk-responsive-padding(5, "top");
     @include govuk-responsive-padding(5, "bottom");
-    background-color: $dfe-blue-light;
+    background-color: $fiat-blue-light;
 
     .govuk-heading-l,
-    .govuk-heading-xl{color: $dfe-blue;}
+    .govuk-heading-xl{color: $fiat-blue;}
     .govuk-body {color: black;}
  
 
-    &.dfe-banner--l {
+    &.fiat-banner--l {
       @include govuk-responsive-padding(9, "top");
       @include govuk-responsive-padding(8, "bottom");
     }
 
-    &.dfe-banner--white {
+    &.fiat-banner--white {
       background-color: white;
     }
 
   }
 
-  .dfe-card {
+  .fiat-card {
     @include govuk-responsive-padding(5);
     background-color: govuk-colour("light-grey");
 
     &--two-columns {
-      .dfe-card__content {
+      .fiat-card__content {
         display: flex;
         flex-wrap: wrap;
         column-gap: 3.75rem;
       }
       
-      .dfe-card__column {
+      .fiat-card__column {
         flex: 1 1 45%;
       }
     }
@@ -122,17 +122,17 @@
     }
   }
 
-  .dfe-side-nav {
+  .fiat-side-nav {
     margin-left: -12px;
 
-    .dfe-side-nav__list {
+    .fiat-side-nav__list {
       @include govuk-responsive-margin(6, "bottom");
       list-style-type: none;
       padding: 0;
       margin-top: 0;
     }
 
-    .dfe-side-nav__item {
+    .fiat-side-nav__item {
       padding-left: 8px;
       padding-bottom: 8px;
       padding-top: 6px;
@@ -140,48 +140,48 @@
       border-left: 4px solid transparent;
     }
 
-    .dfe-side-nav__item--current {
-      background-color: $dfe-grey-light;
-      border-color: $dfe-blue-secondary;
+    .fiat-side-nav__item--current {
+      background-color: $fiat-grey-light;
+      border-color: $fiat-blue-secondary;
       font-weight: bold;
     }
 
-    .dfe-side-nav__heading {
-      @extend .dfe-side-nav__item;
+    .fiat-side-nav__heading {
+      @extend .fiat-side-nav__item;
       font-weight: normal;
       font-size: 1.1857rem;
-      color: $dfe-grey;
+      color: $fiat-grey;
       margin: 0;
     }
 
-    .dfe-side-nav__link {
+    .fiat-side-nav__link {
       text-decoration: none;
     }
   }
 
-  .dfe-page-heading {
-    .dfe-page-heading__title {
+  .fiat-page-heading {
+    .fiat-page-heading__title {
       @extend .govuk-heading-l;
       @include govuk-responsive-margin(3, "bottom");
     }
 
-    .dfe-page-heading__detail {
+    .fiat-page-heading__detail {
       @include grid-2-row-variable-width(1.25rem);
     }
   }
 
-  .dfe-data-source-list {
-    .dfe-data-source-list__item {
+  .fiat-data-source-list {
+    .fiat-data-source-list__item {
       @include grid-2-row-variable-width(0.625rem);
       margin-bottom: 0.625rem;
     }
 
-    .dfe-data-source-list__title {
+    .fiat-data-source-list__title {
       font-weight: bold;
     }
   }
 
-  .dfe-summary-list-narrow {
+  .fiat-summary-list-narrow {
     .govuk-summary-list__key {
       @include govuk-media-query($from: tablet) {
         width: 20%;
@@ -189,7 +189,7 @@
     }
   }
 
-  .dfe-summary-list-statistics {
+  .fiat-summary-list-statistics {
     &.gov-uk-summary-list, 
     .govuk-summary-list {
       width: auto;
@@ -203,27 +203,27 @@
     }
   }
 
-  .dfe-phase-banner--no-border {
+  .fiat-phase-banner--no-border {
     &.govuk-phase-banner {
       border-bottom: none;
     }
   }
 
   // Manage 'js-enabled' components and fallback visibility
-  .dfe-search-js-toggle {
+  .fiat-search-js-toggle {
     display: none;
   }
   
-  .dfe-search-js-fallback {
+  .fiat-search-js-fallback {
     display: flex;
   }
   
   &.js-enabled {
-    .dfe-search-js-toggle {
+    .fiat-search-js-toggle {
       display: flex;
     }
   
-    .dfe-search-js-fallback {
+    .fiat-search-js-fallback {
       display: none;
     }
   }

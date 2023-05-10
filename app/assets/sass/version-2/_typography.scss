@@ -1,12 +1,12 @@
 @import "node_modules/govuk-frontend/govuk/all";
 
 .version-2 {  
-  .dfe-heading-lite-m {
+  .fiat-heading-lite-m {
     @extend .govuk-heading-m;
     font-weight: normal;
   }
 
-  .dfe-statistic-large {
+  .fiat-statistic-large {
     font-size: 5rem;
     line-height: 5.25rem;
     font-weight: bold;

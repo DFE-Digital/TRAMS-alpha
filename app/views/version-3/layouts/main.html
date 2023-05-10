@@ -6,7 +6,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 {% from "../includes/trust-search.njk" import appTrustSearch%}
 
-{% set bodyClasses = "version-3 dfe-template__body" %}
+{% set bodyClasses = "version-3 fiat-template__body" %}
 
 {% block stylesheets %}
   {{ super() }}
@@ -39,14 +39,14 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
             </a>
           </li>
           <li class="govuk-header__navigation-item">
-            <button class="govuk-button dfe-search-icon-button dfe-inline-button dfe-search-js-toggle" data-module="govuk-button" type="submit" aria-controls="search-menu" aria-expanded="false">
+            <button class="govuk-button fiat-search-icon-button fiat-inline-button fiat-search-js-toggle" data-module="govuk-button" type="submit" aria-controls="search-menu" aria-expanded="false">
               <span class="govuk-visually-hidden">Search</span>
               <svg width="20" height="20" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
                 <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
               </svg>
             </button>
-            <a href="search" class="govuk-button dfe-search-icon-button dfe-inline-button dfe-search-js-fallback">
+            <a href="search" class="govuk-button fiat-search-icon-button fiat-inline-button fiat-search-js-fallback">
               <span class="govuk-visually-hidden">Search</span>
               <svg width="20" height="20" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
@@ -60,7 +60,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     {% endblock %}
   </div>
 </header>
-<div id="search-menu" class="dfe-banner dfe-banner--white" hidden>
+<div id="search-menu" class="fiat-banner fiat-banner--white" hidden>
   <div class="govuk-width-container">
     <div class="govuk-grid-row ">
       <div class="govuk-grid-column-two-thirds">
