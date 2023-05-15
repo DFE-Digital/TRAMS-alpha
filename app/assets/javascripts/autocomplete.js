@@ -1,4 +1,4 @@
-const autocomplete  = ({ idPrefix, formName, valueName, path }) => {
+const autocomplete  = ({ idPrefix, formName, valueName, path, placeholder }) => {
   const inputValue = result => result && result.name
   const suggestion = result => {
     if (result) {
@@ -25,6 +25,7 @@ const autocomplete  = ({ idPrefix, formName, valueName, path }) => {
     source: suggest,
     displayMenu: 'overlay',
     minLength: 3,
+    placeholder,
     templates: {
       inputValue,
       suggestion
