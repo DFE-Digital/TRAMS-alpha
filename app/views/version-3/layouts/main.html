@@ -8,6 +8,10 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% set bodyClasses = "version-3 fiat-template__body" %}
 
+{% block pageTitle %}
+  {{ title }} – {{ serviceName }}
+{% endblock %}
+
 {% block stylesheets %}
   {{ super() }}
   <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
