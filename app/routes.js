@@ -3,13 +3,16 @@
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
 const { AcademiesSummary } = require('./assets/javascripts/academiesUtils');
-const trusts = require('./data/invented-trust-data').trusts;
+const { trusts } = require('./data/invented-trust-data');
 
 const govukPrototypeKit = require('govuk-prototype-kit');
 
-const router = govukPrototypeKit.requests.setupRouter()
+const router = govukPrototypeKit.requests.setupRouter();
 
-router.get(/version-\d+\/home/, function (request, response) {
+
+// Routes across all versions
+
+router.get("/version-*/home/", function (request, response) {
   const currentVersion = request.url.split("/")[1];
 
   //version-1 does not support variables \
@@ -22,67 +25,26 @@ router.get(/version-\d+\/home/, function (request, response) {
   response.render(currentVersion + '/home');
 });
 
-router.post(/version-\d+\/search/, function (request, response) {
+router.post("/version-*/search/", function (request, response) {
   const currentVersion = request.url.split("/")[1];
   const {search, uid} = request.session.data;
 
   if (uid) {
-    const trust = getTrustByUid(uid);
-    //response locals data will be used by next page render
-    response.locals.data.trust = trust;
-    //session data will be persisted for future pages
-    request.session.data.trust = trust;
-    response.redirect('./trust-details');
+    response.redirect(`./trust-details/${uid}`);
     return;
   }
 
-  const searchResults = searchForTrusts(search);
-  if (searchResults) {
-    response.locals.data.searchResults = searchResults;
-    response.render(currentVersion + '/search');
-  } else {
-    response.locals.data.trusts = searchResults.slice(0, 10);
-    response.render(currentVersion + '/not-found');
-  }
+  response.locals.data.searchResults = searchForTrusts(search);
+  response.render(currentVersion + '/search');
 });
-
 
 router.get("/version-*/trust-details/:uid", function (request, response) {
   const uid = request.params.uid;
-  const trust = getTrustByUid(uid);
-  //response locals data will be used by next page render
-  response.locals.data.trust = trust;
-  //session data will be persisted for future pages
-  request.session.data.trust = trust;
+  setTrust(request, response, getTrustByUid(uid));
   response.redirect('../trust-details');
 })
 
-router.post(/version-\d+\/trust-details/, function (request, response) {
-  const currentVersion = request.url.split("/")[1];
-
-  //version-1 does not support variables so no searching required
-  if (currentVersion === "version-1"){
-    response.render(currentVersion + '/trust-details');
-    return;
-  }
-
-  let searchResults = searchForTrusts(request.session.data.search);
-
-  if (searchResults) {
-    //response locals data will be used by next page render
-    response.locals.data.trust = searchResults[0];
-    //session data will be persisted for future pages
-    request.session.data.trust = searchResults[0];
-    response.render(currentVersion + '/trust-details');
-  } else {
-    response.locals.data.trusts = searchResults.slice(0, 10);
-    response.render(currentVersion + '/not-found');
-  }
-});
-
-router.get(
-  /version-\d+\/academies-in-this-trust/,
-  function (request, response) {
+router.get("/version-*/academies-in-this-trust/", function (request, response) {
     const currentVersion = request.url.split("/")[1];
 
     //version-1 does not support variables so return immediately
@@ -98,7 +60,25 @@ router.get(
   }
 );
 
-router.get('/trusts', function(request, response) {
+
+// Routes for specific versions
+
+router.post("/version-2/trust-details", function (request, response) {
+  let searchResults = searchForTrusts(request.session.data.search);
+
+  if (searchResults && searchResults.length > 0) {
+    setTrust(request, response, searchResults[0]);
+    response.render('version-2/trust-details');
+  } else {
+    response.locals.data.trusts = trusts.slice(0, 100);
+    response.render('version-2/not-found');
+  }
+});
+
+
+// Routes for api requests
+
+router.get('/api/trusts', function(request, response) {
   const query = request.query.query;
   response.json(searchForTrusts(query).map(trust => ({
     name: trust.name,
@@ -107,6 +87,7 @@ router.get('/trusts', function(request, response) {
   })))
 })
 
+
 const searchForTrusts = (searchTerm) => {
   const searchTermLower = searchTerm.toLowerCase();
   return trusts.filter(t => t.name.toLowerCase().includes(searchTermLower) || t.uid === searchTermLower || t.trustDetails.address.toLowerCase().includes(searchTermLower));
@@ -114,4 +95,11 @@ const searchForTrusts = (searchTerm) => {
 
 const getTrustByUid = (uid) => {
   return trusts.find(t => t.uid === uid);
+}
+
+const setTrust = (request, response, trust) => {
+    //response locals data will be used by next page render
+    response.locals.data.trust = trust;
+    //session data will be persisted for future pages
+    request.session.data.trust = trust;
 }

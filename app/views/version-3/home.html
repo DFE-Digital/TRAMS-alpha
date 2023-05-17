@@ -86,14 +86,13 @@
 {% endblock %}
 
 {% block scripts %}
-{{ super() }}
-<script type="text/javascript">
-  autocomplete({
-    idPrefix: 'home',
-    formName: 'search',
-    valueName: 'uid',
-    path: '/trusts'
-  })
-
-</script>
+  {{ super() }}
+  <script type="text/javascript">
+    autocomplete({
+      idPrefix: 'home',
+      formName: 'search',
+      valueName: 'uid',
+      path: '/api/trusts'
+    })
+  </script>
 {% endblock %}

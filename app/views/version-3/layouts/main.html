@@ -4,7 +4,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
-{% from "../includes/trust-search.njk" import appTrustSearch%}
+{% from "../includes/trust-search.njk" import appTrustSearch %}
 
 {% set bodyClasses = "version-3 fiat-template__body" %}
 
@@ -69,7 +69,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
       <div class="govuk-grid-column-two-thirds">
         <form class="govuk-form-group" action="./search" method="post">
           {{appTrustSearch('header')}}
-        </form>
+        </form>	
       </div>
     </div>
   </div>
@@ -108,7 +108,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
       idPrefix: 'header',
       formName: 'search',
       valueName: 'uid',
-      path: '/trusts',
+      path: '/api/trusts',
       placeholder: 'Search for a trust',
     })
   </script>
