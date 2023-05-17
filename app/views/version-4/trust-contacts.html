@@ -1,0 +1,58 @@
+{% extends "./layouts/trust.html" %}
+{% from "./includes/contact.html" import contact %}
+{% from "./includes/link.njk" import link %}
+{% set current_page = "trust-contacts" %} 
+{% set title = "Trust contacts" %}
+{% set pageSection = "About the trust" %}
+
+{% block pageContent %}
+<section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "DfE contacts"
+      }
+    },
+    rows: [
+        {
+          key: {
+            text: "Trust relationship manager"
+          },
+          value: {
+            html: contact(data.trust.trustDetails.trustRelationshipManager)
+          }
+        },
+        {
+          key: {
+            text: "Schools financial support and oversight (SFSO) lead"
+          },
+          value: {
+            html: contact(data.trust.trustDetails.sfsoLead)
+          }
+        }
+      ]
+    }) }}
+</section>
+<section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Trust contacts"
+      }
+    },
+      rows: [
+        {
+          key: {
+            text: data.trust.trustDetails.mainContactAtTrust.role
+          },
+          value: {
+            html: contact(data.trust.trustDetails.mainContactAtTrust, showTelephone=true)
+          }
+        }
+      ]
+    }) }}
+</section>
+
+{% endblock %}
