@@ -1,0 +1,12 @@
+{% macro link(href, linkText = "", opensInNewTab = false) %}
+  <a class="govuk-link" href="{{ href }}" {% if opensInNewTab %}rel="noreferrer noopener" target="blank"{% endif %}>
+    {% if linkText %}
+      {{ linkText }}
+    {% else %}
+      {{ href | replace("https://", "") }}
+    {% endif %}
+    {% if opensInNewTab %}
+      (opens in a new tab)
+    {% endif %}
+  </a>
+{% endmacro %}
