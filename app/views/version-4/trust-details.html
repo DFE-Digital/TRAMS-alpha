@@ -47,7 +47,7 @@
               text: "Lead local authority"
             },
             value: {
-              text: data.trust.trustDetails.localAuthorities | join(', ') | default('---', true)
+              text: data.trust.trustDetails.localAuthorities[0] | default('---', true)
             }
           },
           {
@@ -55,7 +55,7 @@
               text: "Local authorites (number of academies)"
             },
             value: {
-              text: data.trust.trustDetails.localAuthorities | join(', ') | default('---', true)
+              html: data.trust.trustDetails.localAuthorities | join('<br>') | default('---', true)
             }
           },
           {
@@ -126,7 +126,7 @@
             text: "Companies House number"
           },
           value: {
-            html: data.trust.trustDetails.companiesHouseNumber | default('---', true)
+            html: link('#', linkText=data.trust.trustDetails.companiesHouseNumber) | default('---', true)
           }  
           }
         ]
