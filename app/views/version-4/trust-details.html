@@ -55,7 +55,7 @@
               text: "Local authorites (number of academies)"
             },
             value: {
-              html: data.trust.trustDetails.localAuthorities | join('<br>') | default('---', true)
+              html: data.trust.academiesInTrust.academies | getLocalAuthoritiesWithCount | default('---', true)
             }
           },
           {
