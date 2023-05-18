@@ -42,16 +42,7 @@
         text: "Trust contacts"
       }
     },
-      rows: [
-        {
-          key: {
-            text: data.trust.trustDetails.mainContactAtTrust.role
-          },
-          value: {
-            html: contact(data.trust.trustDetails.mainContactAtTrust, showTelephone=true)
-          }
-        }
-      ]
+      rows: data.trust.governance.present | formatTrustContacts
     }) }}
 </section>
 
