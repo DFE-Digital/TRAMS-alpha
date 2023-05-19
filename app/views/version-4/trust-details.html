@@ -7,48 +7,6 @@
 
 {% block pageContent %}
   <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
-    <h2>Internal DfE contacts</h2>
-
-    {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Trust relationship manager"
-            },
-            value: {
-              html: contact(data.trust.trustDetails.trustRelationshipManager)
-            }
-          },
-          {
-            key: {
-              text: "SFSO Lead"
-            },
-            value: {
-              html: contact(data.trust.trustDetails.sfsoLead)
-            }
-          }
-        ]
-      }) }}
-  </section>
-  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
-    <h2>External Trust contacts</h2>
-
-    {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: data.trust.trustDetails.mainContactAtTrust.role
-            },
-            value: {
-              html: contact(data.trust.trustDetails.mainContactAtTrust, showTelephone=true)
-            }
-          }
-        ]
-      }) }}
-  </section>
-
-  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
-    <h2>Trust details</h2>
 
     {{ govukSummaryList({
         rows: [
@@ -70,39 +28,7 @@
           },
           {
             key: {
-              text: "Local authorites"
-            },
-            value: {
-              text: data.trust.trustDetails.localAuthorities | join(', ') | default('---', true)
-            }
-          },
-          {
-            key: {
-              text: "Regions Group"
-            },
-            value: {
-              text: data.trust.trustDetails.regionsGroup | default('---', true)
-            }
-          },
-          {
-            key: {
-              text: "National sponsor oversight"
-            },
-            value: {
-              html: "---"
-            }
-          },
-          {
-            key: {
-              text: "Schools financial support territory (SFSO)"
-            },
-            value: {
-              html: data.trust.trustDetails.schoolsFinancialSupportTerritory | default('---', true)
-            }
-          },
-          {
-            key: {
-              text: "Date incorporated"
+              text: "Incorporated on (open date)"
             },
             value: {
               html: data.trust.trustDetails.dateIncorporated | formatDate
@@ -110,46 +36,37 @@
           },
           {
             key: {
-              text: "Date opened"
+              text: "Region / territory"
             },
             value: {
-              html: data.trust.trustDetails.dateOpened | formatDate
+              text: data.trust.trustDetails.regionsGroup | default('---', true)
             }
           },
           {
             key: {
-              text: "Trust reference number"
+              text: "Lead local authority"
             },
             value: {
-              html: data.trust.trustDetails.trustReferenceNumber | default('---', true)
+              text: data.trust.trustDetails.localAuthorities[0] | default('---', true)
             }
           },
           {
             key: {
-              text: "Companies House number"
+              text: "Local authorites (number of academies)"
             },
             value: {
-              html: data.trust.trustDetails.companiesHouseNumber | default('---', true)
-              
-            }
-          },
-       
-
-
-          {
-            key: {
-              text: "Companies House filing history"
-            },
-            value: {
-              html: '<a class="govuk-link" href="#">View data held on Companies House (opens in a new tab)</a>'
+              html: data.trust.academiesInTrust.academies | getLocalAuthoritiesWithCount | default('---', true)
             }
           },
           {
             key: {
-              text: "Get information about schools"
+              text: "Data from other services"
             },
             value: {
-              html: '<a class="govuk-link" href="#">View data held on Get information about schools (opens in a new tab)</a>'
+              html: '<a class="govuk-link" href="#">Get information about schools</a><br>
+              <a class="govuk-link" href="#">Schools financial benchmarking</a><br>
+              <a class="govuk-link" href="#">Find school college and performance data in England</a>'
+          
             }
           }
         ]
@@ -165,16 +82,57 @@
             </div>
             <div class="fiat-data-source-list__item">
               <dt class="fiat-data-source-list__title">Last updated:</dt>
-              <dd>21 December 2021</dd>
+              <dd>21 March 2023</dd>
             </div>
             <div class="fiat-data-source-list__item">
               <dt class="fiat-data-source-list__title">Next scheduled update:</dt>
-              <dd>21 January 2022</dd>
+              <dd>21 June 2023</dd>
             </div>
           </dl>
         '
       }) }}
   </section>
+  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
+    <h2>Trust reference numbers</h2>
+
+    {{ govukSummaryList({
+        rows: [
+        {
+          key: {
+            text: "Unique group identifier (UID)"
+          },
+          value: {
+            html: data.trust.uid | default('---', true)
+          }
+        },
+        {
+          key: {
+            text: "Group identifier (ID) also known as trust reference number (TRN)"
+          },
+          value: {
+            html: data.trust.trustDetails.trustReferenceNumber | default('---', true)
+          }
+        },
+        {
+          key: {
+            text: "UK provider reference number (UKPRN)"
+          },
+          value: {
+            html: data.trust.trustDetails.ukprn | default('---', true)
+          }
+        },
+        {
+          key: {
+            text: "Companies House number"
+          },
+          value: {
+            html: link('#', linkText=data.trust.trustDetails.companiesHouseNumber) | default('---', true)
+          }  
+          }
+        ]
+      }) }}
+  </section>
+
   <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
     <h2>Sponsor details</h2>
 
