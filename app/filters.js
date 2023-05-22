@@ -1,6 +1,6 @@
 const govukPrototypeKit = require("govuk-prototype-kit");
 const { formatAcademyRows } = require("./assets/javascripts/academiesUtils");
-const { formatGovernorRows } = require("./assets/javascripts/governanceUtils");
+const { formatGovernorRows, formatTrustContacts } = require("./assets/javascripts/governanceUtils");
 const {
   getLocalAuthoritiesWithCount,
 } = require("./assets/javascripts/trust-utils");
@@ -28,3 +28,4 @@ addFilter("formatNumber", function (num) {
 addFilter("formatAcademyRows", formatAcademyRows);
 addFilter("formatGovernorRows", formatGovernorRows);
 addFilter("getLocalAuthoritiesWithCount", getLocalAuthoritiesWithCount);
+addFilter("formatTrustContacts", formatTrustContacts);

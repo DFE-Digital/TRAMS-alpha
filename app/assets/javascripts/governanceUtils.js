@@ -1,6 +1,6 @@
 const DateUtils = require("./dateUtils");
 
-const formatGovernorRows = (governors, isCurrent = false) => governors.map(governor => getRow(governor,isCurrent));
+const formatGovernorRows = (governors, isCurrent = false) => governors.map(governor => getRow(governor, isCurrent));
 
 const getRow = (governor, isCurrent) => {
   let nameText = governor.name
@@ -15,4 +15,24 @@ const getRow = (governor, isCurrent) => {
   ])
 }
 
-module.exports = { formatGovernorRows };
+const formatTrustContacts = (presentGovernors) => presentGovernors.filter(governor => governor.role !== 'Trustee').map(governor => {
+  const html = `
+    <p class="govuk-!-margin-bottom-1">${governor.name}</p>
+    <p class="govuk-!-margin-bottom-1">
+      <a class="govuk-link" href="${governor.email}">${governor.email}</a>
+    </p>
+    <p class="govuk-!-margin-bottom-1">Tel: ${governor.telephone}</p>
+    `
+
+  return ({
+    key: {
+      text: governor.role
+    },
+    value: {
+      html
+    }
+  })
+
+});
+
+module.exports = { formatGovernorRows, formatTrustContacts };
