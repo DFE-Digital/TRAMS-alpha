@@ -55,7 +55,7 @@ const formatAcademyRows = (academies) =>
     ];
   });
 
-  const formatAcademyRowsVersion4b = (academies) =>
+const formatAcademyRowsVersion4b = (academies) =>
   academies.map((academy) => {
     return [
       {
@@ -118,8 +118,38 @@ const getPercentageCapacity = (pupilNumbers, capacity) => {
   return Math.round(pupilNumbers / capacity * 100);
 }
 
+const getOfstedRatingAsNum = ofsted => {
+  switch (ofsted) {
+    case "Outstanding":
+      return 4
+    case "Good":
+      return 3
+    case "Requires improvement":
+      return 2
+    case "Inadequate":
+      return 1
+    case "Not yet inspected":
+      return 0
+
+    default:
+      return -1;
+  }
+}
+
 const getOfstedTag = academy => {
-  return `<strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Improved </strong>`
+  if (academy.currentOfstedRating === "Not yet inspected")
+    return `<strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Not yet inspected </strong>`
+
+  else {
+    let change = getOfstedRatingAsNum(academy.currentOfstedRating) - getOfstedRatingAsNum(academy.previousOfstedRating);
+
+    if (change === 0)
+      return `<strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Maintained </strong>`
+    else if (change > 0)
+      return `<strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Improved </strong>`
+    else
+      return `<strong class="govuk-tag govuk-tag--red govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Declined </strong>`
+  }
 }
 
 module.exports = { AcademiesSummary, formatAcademyRows, formatAcademyRowsVersion4b };
