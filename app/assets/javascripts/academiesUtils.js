@@ -144,7 +144,7 @@ const getOfstedTag = academy => {
     let change = getOfstedRatingAsNum(academy.currentOfstedRating) - getOfstedRatingAsNum(academy.previousOfstedRating);
 
     if (change === 0)
-      return `<strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Maintained </strong>`
+      return `<strong class="govuk-tag govuk-tag--blue govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Maintained </strong>`
     else if (change > 0)
       return `<strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Improved </strong>`
     else
