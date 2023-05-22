@@ -55,13 +55,65 @@ const formatAcademyRows = (academies) =>
     ];
   });
 
+  const formatAcademyRowsVersion4b = (academies) =>
+  academies.map((academy) => {
+    return [
+      {
+        html: `<b>${academy.name}</b>`,
+        attributes: {
+          "data-sort-value": academy.name,
+        },
+      },
+      {
+        text: academy.localAuthority,
+      },
+      {
+        html: `${academy.phase}<br>(${academy.minPupilAge} - ${academy.maxPupilAge})`,
+        attributes: {
+          "data-sort-value": `${academy.minPupilAge}${academy.maxPupilAge}`,
+        },
+      },
+      {
+        text: academy.pupilNumbers.toLocaleString(),
+        attributes: {
+          "data-sort-value": academy.pupilNumbers,
+        },
+      },
+      {
+        html: `${academy.capacity.toLocaleString()}<br>(${getPercentageCapacity(academy.pupilNumbers, academy.capacity)}%)`,
+        attributes: {
+          "data-sort-value": academy.capacity,
+        },
+      },
+      {
+        text: formatDate(academy.dateJoined, {
+          year: "numeric",
+          month: "long",
+        }),
+        attributes: {
+          "data-sort-value": academy.dateJoined,
+        },
+      },
+      {
+        html: `<b>${academy.currentOfstedRating}</b><br>${formatDate(
+          academy.currentOfstedRatingDate
+        )}`,
+      },
+    ];
+  });
+
+
 
 class AcademiesSummary {
   constructor(academies) {
     this.totalPupilNumbers = academies.reduce((acc,academy) => acc + academy.pupilNumbers, 0);
     this.totalCapacity = academies.reduce((acc,academy) => acc + academy.capacity, 0);
-    this.percentageCapacity = Math.round(this.totalPupilNumbers / this.totalCapacity * 100)
+    this.percentageCapacity = getPercentageCapacity(this.totalPupilNumbers, this.totalCapacity);
   }
 }
 
-module.exports = { AcademiesSummary, formatAcademyRows };
+const getPercentageCapacity = (pupilNumbers, capacity) => {
+  return Math.round(pupilNumbers / capacity * 100);
+}
+
+module.exports = { AcademiesSummary, formatAcademyRows, formatAcademyRowsVersion4b };

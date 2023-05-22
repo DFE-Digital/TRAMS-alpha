@@ -7,14 +7,14 @@
 {% block pageContent %}
   <div class="fiat-card govuk-!-margin-top-9 ">
     <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Trust pupil numbers</h3>
-
+    
     <div class="fiat-summary-list-statistics">
       {{ govukSummaryList({
         classes: 'govuk-summary-list--no-border',
         rows: [
           {
             key: {
-              text: "Number of academies in trust"
+              text: "Academies in trust"
             },
             value: {
               text: data.trust.academiesInTrust.academies.length
@@ -22,7 +22,7 @@
           },
           {
             key: {
-              text: "Trust actual pupil numbers"
+              text: "Trust pupil numbers"
             },
             value: {
               text: data.academiesSummary.totalPupilNumbers | formatNumber
@@ -30,38 +30,30 @@
           },
           {
             key: {
-              text: "Trust capacity"
+              text: "Trust capacity (% full)"
             },
             value: {
-              text: data.academiesSummary.totalCapacity | formatNumber
+              text: data.academiesSummary.percentageCapacity + "(%)" | formatNumber
             }
           },
           {
             key: {
-              text: "Trust capacity % full"
+              html: "Local authorites <br>(number of academies)"
             },
             value: {
-              text: data.academiesSummary.percentageCapacity + "%"
+              html: data.trust.academiesInTrust.academies | getLocalAuthoritiesWithCount | default('---', true)
             }
           }
         ]
       }) }}
     </div>
   </div>
-{% endblock %}
-
-{% block pageContentColumnOverride %}
-
-  <div class="govuk-grid-column-full">
-
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+  <div class="govuk-!-margin-top-9">
 
     {{ govukTable({
       attributes: {
         'data-module': 'moj-sortable-table'
       },
-      caption: academiesInTrustTitle(data.trust.academiesInTrust.academies.length),
-      captionClasses: "govuk-table__caption--l",
       head: [
         {
           text: "Establishment name",
@@ -76,25 +68,19 @@
           }
         },
         {
-          text: "Phase",
+          text: "Phase (age range)",
           attributes: {
             "aria-sort": "none"
           }
         },
         {
-          text: "Age range",
-          attributes: {
-            "aria-sort": "none"
-          }
-        },
-        {
-            text: "Capacity",
+            text: "Pupil numbers",
             attributes: {
             "aria-sort": "none"
             }
         },
         {
-            text: "Pupil numbers",
+            text: "Capacity (% full)",
             attributes: {
             "aria-sort": "none"
             }
@@ -106,20 +92,15 @@
             }
         },
         {
-            text: "Current Ofsted rating",
-            attributes: {
-            "aria-sort": "none"
-            }
-        },
-        {
-            text: "Previous Ofsted rating",
+            text: "Current Ofsted (since joined)",
             attributes: {
             "aria-sort": "none"
             }
         }
       ],
-      rows: data.trust.academiesInTrust.academies | formatAcademyRows
+      rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion4b
     }) }}
+    </div>
 
     <div class="fiat-flex-between">
       {{ govukDetails({
