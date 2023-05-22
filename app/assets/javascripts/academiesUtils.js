@@ -97,7 +97,9 @@ const formatAcademyRows = (academies) =>
       {
         html: `<b>${academy.currentOfstedRating}</b><br>${formatDate(
           academy.currentOfstedRatingDate
-        )}`,
+        )}
+        <br>
+        ${getOfstedTag(academy)}`,
       },
     ];
   });
@@ -114,6 +116,10 @@ class AcademiesSummary {
 
 const getPercentageCapacity = (pupilNumbers, capacity) => {
   return Math.round(pupilNumbers / capacity * 100);
+}
+
+const getOfstedTag = academy => {
+  return `<strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Improved </strong>`
 }
 
 module.exports = { AcademiesSummary, formatAcademyRows, formatAcademyRowsVersion4b };
