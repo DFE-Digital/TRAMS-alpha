@@ -36,7 +36,7 @@ const formatAcademyRows = (academies) =>
       {
         text: formatDate(academy.dateJoined, {
           year: "numeric",
-          month: "long",
+          month: "short",
         }),
         attributes: {
           "data-sort-value": academy.dateJoined,
@@ -88,7 +88,7 @@ const formatAcademyRows = (academies) =>
       {
         text: formatDate(academy.dateJoined, {
           year: "numeric",
-          month: "long",
+          month: "short",
         }),
         attributes: {
           "data-sort-value": academy.dateJoined,
