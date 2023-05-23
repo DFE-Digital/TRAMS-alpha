@@ -139,7 +139,8 @@ const getOfstedRatingAsNum = ofsted => {
 const getOfstedTag = academy => {
   if (academy.currentOfstedRating === "Not yet inspected")
     return `<strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Not yet inspected </strong>`
-
+  else if (academy.previousOfstedRating === "Not yet inspected")
+    return `<strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Not enough data </strong>`
   else {
     let change = getOfstedRatingAsNum(academy.currentOfstedRating) - getOfstedRatingAsNum(academy.previousOfstedRating);
 
