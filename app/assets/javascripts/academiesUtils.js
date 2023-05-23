@@ -98,7 +98,7 @@ const formatAcademyRowsVersion4a = (academies) =>
         html: getOfstedRatingText(academy, 'currentOfstedRating'),
       },
       {
-        html: getOfstedRatingText(academy, 'previousOfstedRating'),
+        html: academy.currentOfstedRating !== "Not yet inspected" && getOfstedRatingText(academy, 'previousOfstedRating'),
       },
     ];
   });
