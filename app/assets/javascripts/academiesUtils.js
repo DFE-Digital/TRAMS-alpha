@@ -98,18 +98,10 @@ const formatAcademyRowsVersion4a = (academies) =>
         },
       },
       {
-        html: `<b>${academy.currentOfstedRating}</b><br>${formatDate(
-          academy.currentOfstedRatingDate
-        )}
-        <br>
-        ${getOfstedStatusTag(academy.currentOfstedRatingDate, academy.dateJoined)}`,
+        html: getOfstedRatingText(academy, 'currentOfstedRating'),
       },
       {
-        html: `<b>${academy.previousOfstedRating}</b><br>${formatDate(
-          academy.previousOfstedRatingDate
-        )}
-        <br>
-        ${getOfstedStatusTag(academy.previousOfstedRatingDate, academy.dateJoined)}`,
+        html: getOfstedRatingText(academy, 'previousOfstedRating'),
       },
     ];
   });
@@ -217,5 +209,16 @@ const getOfstedStatusTag = (ofstedDate, dateJoined) => {
   return "";
 }
 
+const getOfstedRatingText = (academy, ofstedRatingPropName) => {
+  let html = `<b>${academy[ofstedRatingPropName]}</b>`;
+  if (academy[ofstedRatingPropName] !== "Not yet inspected") {
+    html += `<br>${formatDate(
+      academy[ofstedRatingPropName + 'Date']
+    )}
+    <br>
+    ${getOfstedStatusTag(academy[ofstedRatingPropName + 'Date'], academy.dateJoined)}`;
+  }
+  return html;
+}
 
 module.exports = { AcademiesSummary, formatAcademyRows, formatAcademyRowsVersion4a, formatAcademyRowsVersion4b };
