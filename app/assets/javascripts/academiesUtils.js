@@ -68,24 +68,21 @@ const formatAcademyRowsVersion4a = (academies) =>
         text: academy.localAuthority,
       },
       {
-        text: academy.phase,
-      },
-      {
-        text: `${academy.minPupilAge} - ${academy.maxPupilAge}`,
+        html: `${academy.phase}<br>(${academy.minPupilAge} - ${academy.maxPupilAge})`,
         attributes: {
           "data-sort-value": `${academy.minPupilAge}${academy.maxPupilAge}`,
-        },
-      },
-      {
-        text: academy.capacity.toLocaleString(),
-        attributes: {
-          "data-sort-value": academy.capacity,
         },
       },
       {
         text: academy.pupilNumbers.toLocaleString(),
         attributes: {
           "data-sort-value": academy.pupilNumbers,
+        },
+      },
+      {
+        html: `${academy.capacity.toLocaleString()}<br>(${getPercentageCapacity(academy.pupilNumbers, academy.capacity)}%)`,
+        attributes: {
+          "data-sort-value": academy.capacity,
         },
       },
       {
