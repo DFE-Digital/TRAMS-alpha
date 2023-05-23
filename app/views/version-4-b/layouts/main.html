@@ -1,0 +1,116 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "../includes/trust-search.njk" import appTrustSearch %}
+
+{% set bodyClasses = "version-4 fiat-template__body" %}
+
+{% block pageTitle %}
+  {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block header %}
+<header class="dfe-header" role="banner">
+  <div class="dfe-width-container dfe-header__container">
+     <div class="dfe-header__logo">
+        <a class="dfe-header__link dfe-header__link--service " href="./home" aria-label="{{ serviceName }} homepage">
+        <img src="/public/images/dfe-logo.png" class="dfe-logo" alt="DfE logo">
+        <img src="/public/images/dfe-logo-alt.png" class="dfe-logo-hover" alt="DfE logo"> 
+        <span class="dfe-header__service-name">
+          {{ serviceName }}
+        </span>
+        </a>
+     </div>
+     <div class="dfe-header__content" id="content-header">
+        <div class="dfe-header__search">
+           <button class="dfe-header__search-toggle" id="toggle-search" aria-controls="search" aria-label="Open search">
+              <svg class="dfe-icon dfe-icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="27" height="27">
+                 <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
+              </svg>
+              <span class="govuk-visually-hidden">Search</span>
+           </button>
+           <div class="dfe-header__search-wrap" id="wrap-search">
+              <form class="dfe-header__search-form" id="search" action="./search" method="post" role="search">
+                 <div class="fiat-autocomplete fiat-autocomplete--header">
+                   <label class="govuk-visually-hidden" for="header-search">Search for a trust</label>
+                   <div id="header-autocomplete-container" class="fiat-header-autocomplete__container"></div>
+                   <input type="hidden" id="header-uid" name="uid"/>
+                   <button class="dfe-search__submit" type="submit">
+                      <svg class="dfe-icon dfe-icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="27" height="27">
+                         <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
+                      </svg>
+                      <span class="govuk-visually-hidden">Search</span>
+                   </button>
+                 </div>
+                 <button class="dfe-search__close" id="close-search">
+                    <svg class="dfe-icon dfe-icon__close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="27" height="27">
+                       <path d="M13.41 12l5.3-5.29a1 1 0 1 0-1.42-1.42L12 10.59l-5.29-5.3a1 1 0 0 0-1.42 1.42l5.3 5.29-5.3 5.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l5.29-5.3 5.29 5.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"></path>
+                    </svg>
+                    <span class="govuk-visually-hidden">Close search</span>
+                 </button>
+              </form>
+           </div>
+        </div>
+     </div>
+     
+  </div>
+</header>
+<div id="search-menu" class="fiat-banner fiat-banner--white" hidden>
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row ">
+      <div class="govuk-grid-column-two-thirds">
+        <form class="govuk-form-group" action="./search" method="post">
+          {{appTrustSearch('header')}}
+        </form>	
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "/",
+         text: "Prototype versions"
+       },
+       {
+         href: "/manage-prototype",
+         text: "Manage your prototype"
+       },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/dfefrontend.js"></script>
+  <script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+  <script src="/public/javascripts/autocomplete.js"></script>
+  <script src="/public/javascripts/header-search.js"></script>
+  <script type="text/javascript">
+    autocomplete({
+      idPrefix: 'header',
+      formName: 'search',
+      valueName: 'uid',
+      path: '/api/trusts',
+      placeholder: 'Search for a trust',
+    })
+  </script>
+{% endblock %}

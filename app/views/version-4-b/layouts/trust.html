@@ -1,0 +1,100 @@
+{% extends "./main.html" %}
+{% from "../includes/academies-in-trust-title.html" import academiesInTrustTitle %}
+
+{% block main %}
+
+  <div class="fiat-banner">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full fiat-page-heading">
+          <p class="fiat-page-heading__title">{{ data.trust.name }}</p>
+          <div class="fiat-page-heading__detail">
+            <p class="govuk-body govuk-!-margin-bottom-0">{{ data.trust.trustType }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<div class="govuk-main-wrapper ">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-one-quarter">
+  
+        <nav class="fiat-side-nav">
+  
+          <h2 class="fiat-side-nav__heading">About the trust</h2>
+          <ul class="fiat-side-nav__list">
+            <li class="fiat-side-nav__item {% if current_page == 'trust-details' %}fiat-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state fiat-side-nav__link" href="./trust-details">Trust details</a>
+            </li>
+            <li class="fiat-side-nav__item {% if current_page == 'trust-contacts' %}fiat-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state fiat-side-nav__link" href="./trust-contacts">Trust contacts</a>
+            </li>
+            <li class="fiat-side-nav__item {% if current_page == 'trust-overview' %}fiat-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state fiat-side-nav__link" href="./trust-overview">Trust overview</a>
+            </li>
+            <li class="fiat-side-nav__item {% if current_page == 'academies-in-this-trust' %}fiat-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state fiat-side-nav__link" href="./academies-in-this-trust">
+                {{ academiesInTrustTitle(data.trust.academiesInTrust.academies.length )}}
+              </a>
+            </li>
+            <li class="fiat-side-nav__item {% if current_page == 'governance' %}fiat-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state fiat-side-nav__link" href="./governance">Governance</a>
+            </li>
+          </ul>
+  
+          <h2 class="fiat-side-nav__heading">Risk and interventions</h2>
+          <ul class="fiat-side-nav__list">
+            <li class="fiat-side-nav__item {% if current_page == 'cases-and-concerns' %}fiat-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state fiat-side-nav__link" href="./cases-and-concerns">Cases and concerns</a>
+            </li>
+          </ul>
+  
+          <h2 class="fiat-side-nav__heading">Educational performance</h2>
+          <ul class="fiat-side-nav__list">
+            <li class="fiat-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state fiat-side-nav__link" href="#">Primary</a>
+            </li>
+            <li class="fiat-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state fiat-side-nav__link" href="#">Secondary</a>
+            </li>
+          </ul>
+  
+          <h2 class="fiat-side-nav__heading">Financial</h2>
+          <ul class="dfeuk-list fiat-side-nav__list">
+            <li class="fiat-side-nav__item">
+              <a class="govuk-link govuk-link--no-visited-state fiat-side-nav__link" href="#">Financial data</a>
+            </li>
+            <li class="fiat-side-nav__item  {% if current_page == 'financial-documents' %}fiat-side-nav__item--current{% endif %}">
+              <a class="govuk-link govuk-link--no-visited-state fiat-side-nav__link" href="./financial-documents">Financial documents</a>
+            </li>
+          </ul>
+  
+        </nav>
+  
+      </div>
+  
+      <main id="main-content">
+        <div class="govuk-grid-column-three-quarters">
+          <header class="fiat-page-heading">
+            <span class="govuk-caption-m">{{ pageSection }}</span>
+            <h1 class="govuk-heading-l">{{ title }}</h1>
+          </header>
+          {% block pageContent %}{% endblock %}
+          {% block anythingWrong %}
+            <div class="govuk-!-margin-top-8 govuk-!-margin-bottom-4">
+              <a class="govuk-body govuk-link govuk-link--no-visited-state" href="#">Is there anything wrong with this page?</a>
+            </div>
+          {% endblock %}
+        </div>
+
+        {% block pageContentColumnOverride %}{% endblock %}
+      </main>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

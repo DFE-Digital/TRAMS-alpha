@@ -6,8 +6,6 @@
 
 {% block pageContent %}
   <div class="fiat-card govuk-!-margin-top-9 ">
-    <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Trust pupil numbers</h3>
-
     <div class="fiat-summary-list-statistics">
       {{ govukSummaryList({
         classes: 'govuk-summary-list--no-border',
@@ -56,20 +54,12 @@
       }) }}
     </div>
   </div>
-{% endblock %}
-
-{% block pageContentColumnOverride %}
-
-  <div class="govuk-grid-column-full">
-
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+  <div class="govuk-!-margin-top-9">
 
     {{ govukTable({
       attributes: {
         'data-module': 'moj-sortable-table'
       },
-      caption: academiesInTrustTitle(data.trust.academiesInTrust.academies.length),
-      captionClasses: "govuk-table__caption--l",
       head: [
         {
           text: "Establishment name",
@@ -90,10 +80,10 @@
           }
         },
         {
-          text: "Pupil numbers",
-          attributes: {
+            text: "Pupil numbers",
+            attributes: {
             "aria-sort": "none"
-          }
+            }
         },
         {
             text: "Capacity (% full)",
@@ -108,20 +98,15 @@
             }
         },
         {
-            text: "Current Ofsted rating",
-            attributes: {
-            "aria-sort": "none"
-            }
-        },
-        {
-            text: "Previous Ofsted rating",
+            text: "Current Ofsted (since joined)",
             attributes: {
             "aria-sort": "none"
             }
         }
       ],
-      rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion4a
+      rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion4b
     }) }}
+    </div>
 
     <div class="fiat-flex-between">
       {{ govukDetails({
@@ -154,7 +139,7 @@
     </div>
 
     <div class="govuk-!-margin-top-9 govuk-!-margin-bottom-4">
-      <a class="govuk-body govuk-link  govuk-link--no-visited-state" href="#" class="govuk-link govuk-link--no-visited-state">Is there anything wrong with this page?</a>
+      <a class="govuk-body govuk-link  govuk-link--no-visited-state" href="#">Is there anything wrong with this page?</a>
     </div>
   </div>
 

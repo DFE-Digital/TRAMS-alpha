@@ -1,0 +1,177 @@
+{% extends "./layouts/trust.html" %}
+{% from "./includes/contact.html" import contact %}
+{% from "./includes/link.njk" import link %}
+{% set current_page = "trust-details" %} 
+{% set title = "Trust details" %}
+{% set pageSection = "About the trust" %}
+
+{% block pageContent %}
+  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
+
+    {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              text: data.trust.trustDetails.address | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Website"
+            },
+            value: {
+              html: link(data.trust.trustDetails.website, opensInNewTab=true)
+            }
+          },
+          {
+            key: {
+              text: "Incorporated on (open date)"
+            },
+            value: {
+              html: data.trust.trustDetails.dateIncorporated | formatDate
+            }
+          },
+          {
+            key: {
+              text: "Region / territory"
+            },
+            value: {
+              text: data.trust.trustDetails.regionsGroup | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Lead local authority"
+            },
+            value: {
+              text: data.trust.trustDetails.localAuthorities[0] | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Local authorites (number of academies)"
+            },
+            value: {
+              html: data.trust.academiesInTrust.academies | getLocalAuthoritiesWithCount | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Data from other services"
+            },
+            value: {
+              html: '<a class="govuk-link" href="#">Get information about schools</a><br>
+              <a class="govuk-link" href="#">Schools financial benchmarking</a><br>
+              <a class="govuk-link" href="#">Find school college and performance data in England</a>'
+          
+            }
+          }
+        ]
+      }) }}
+
+    {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="fiat-data-source-list">
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Last updated:</dt>
+              <dd>21 March 2023</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 June 2023</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+  </section>
+  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
+    <h2>Trust reference numbers</h2>
+
+    {{ govukSummaryList({
+        rows: [
+        {
+          key: {
+            text: "Unique group identifier (UID)"
+          },
+          value: {
+            html: data.trust.uid | default('---', true)
+          }
+        },
+        {
+          key: {
+            text: "Group identifier (ID) also known as trust reference number (TRN)"
+          },
+          value: {
+            html: data.trust.trustDetails.trustReferenceNumber | default('---', true)
+          }
+        },
+        {
+          key: {
+            text: "UK provider reference number (UKPRN)"
+          },
+          value: {
+            html: data.trust.trustDetails.ukprn | default('---', true)
+          }
+        },
+        {
+          key: {
+            text: "Companies House number"
+          },
+          value: {
+            html: link('#', linkText=data.trust.trustDetails.companiesHouseNumber) | default('---', true)
+          }  
+          }
+        ]
+      }) }}
+  </section>
+
+  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
+    <h2>Sponsor details</h2>
+
+    {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Sponsor status"
+            },
+            value: {
+              text: data.trust.trustDetails.sponsorStatus | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Sponsor restrictions"
+            },
+            value: {
+              text: data.trust.trustDetails.sponsorRestrictions | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Sponsor approval date"
+            },
+            value: {
+              html: data.trust.trustDetails.sponsorApprovalDate | formatDate
+            }
+          },
+          {
+            key: {
+              text: "Sponsor name"
+            },
+            value: {
+              html: data.trust.trustDetails.sponsorName | default('---', true)
+            }
+          }
+        ]
+      }) }}
+  </section>
+
+{% endblock %}
