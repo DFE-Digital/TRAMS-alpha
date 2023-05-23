@@ -1,5 +1,13 @@
 const { formatDate } = require("./dateUtils");
 
+const OFSTED_RATINGS = {
+  outstanding: "Outstanding",
+  good: "Good",
+  requiresImprovement: "Requires improvement",
+  inadequate: "Inadequate",
+  notYetInspected: "Not yet inspected",
+};
+
 const formatAcademyRows = (academies) =>
   academies.map((academy) => {
     return [
@@ -80,7 +88,10 @@ const formatAcademyRowsVersion4a = (academies) =>
         },
       },
       {
-        html: `${academy.capacity.toLocaleString()}<br>(${getPercentageCapacity(academy.pupilNumbers, academy.capacity)}%)`,
+        html: `${academy.capacity.toLocaleString()}<br>(${getPercentageCapacity(
+          academy.pupilNumbers,
+          academy.capacity
+        )}%)`,
         attributes: {
           "data-sort-value": academy.capacity,
         },
@@ -95,10 +106,12 @@ const formatAcademyRowsVersion4a = (academies) =>
         },
       },
       {
-        html: getOfstedRatingText(academy, 'currentOfstedRating'),
+        html: getOfstedRatingText(academy, "currentOfstedRating"),
       },
       {
-        html: academy.currentOfstedRating !== "Not yet inspected" && getOfstedRatingText(academy, 'previousOfstedRating'),
+        html:
+          academy.currentOfstedRating !== OFSTED_RATINGS.notYetInspected &&
+          getOfstedRatingText(academy, "previousOfstedRating"),
       },
     ];
   });
@@ -128,7 +141,10 @@ const formatAcademyRowsVersion4b = (academies) =>
         },
       },
       {
-        html: `${academy.capacity.toLocaleString()}<br>(${getPercentageCapacity(academy.pupilNumbers, academy.capacity)}%)`,
+        html: `${academy.capacity.toLocaleString()}<br>(${getPercentageCapacity(
+          academy.pupilNumbers,
+          academy.capacity
+        )}%)`,
         attributes: {
           "data-sort-value": academy.capacity,
         },
@@ -152,45 +168,54 @@ const formatAcademyRowsVersion4b = (academies) =>
     ];
   });
 
-
-
 class AcademiesSummary {
   constructor(academies) {
-    this.totalPupilNumbers = academies.reduce((acc, academy) => acc + academy.pupilNumbers, 0);
-    this.totalCapacity = academies.reduce((acc, academy) => acc + academy.capacity, 0);
-    this.percentageCapacity = getPercentageCapacity(this.totalPupilNumbers, this.totalCapacity);
+    this.totalPupilNumbers = academies.reduce(
+      (acc, academy) => acc + academy.pupilNumbers,
+      0
+    );
+    this.totalCapacity = academies.reduce(
+      (acc, academy) => acc + academy.capacity,
+      0
+    );
+    this.percentageCapacity = getPercentageCapacity(
+      this.totalPupilNumbers,
+      this.totalCapacity
+    );
   }
 }
 
 const getPercentageCapacity = (pupilNumbers, capacity) => {
-  return Math.round(pupilNumbers / capacity * 100);
-}
+  return Math.round((pupilNumbers / capacity) * 100);
+};
 
-const getOfstedRatingAsNum = ofsted => {
+const getOfstedRatingAsNum = (ofsted) => {
   switch (ofsted) {
-    case "Outstanding":
+    case OFSTED_RATINGS.outstanding:
       return 4;
-    case "Good":
+    case OFSTED_RATINGS.good:
       return 3;
-    case "Requires improvement":
+    case OFSTED_RATINGS.requiresImprovement:
       return 2;
-    case "Inadequate":
+    case OFSTED_RATINGS.inadequate:
       return 1;
-    case "Not yet inspected":
+    case OFSTED_RATINGS.notYetInspected:
       return 0;
 
     default:
       return -1;
   }
-}
+};
 
-const getOfstedRatingChangeTag = academy => {
-  if (academy.currentOfstedRating === "Not yet inspected")
+const getOfstedRatingChangeTag = (academy) => {
+  if (academy.currentOfstedRating === OFSTED_RATINGS.notYetInspected)
     return `<strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Not yet inspected </strong>`;
-  else if (academy.previousOfstedRating === "Not yet inspected")
+  else if (academy.previousOfstedRating === OFSTED_RATINGS.notYetInspected)
     return `<strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Not enough data </strong>`;
   else {
-    let change = getOfstedRatingAsNum(academy.currentOfstedRating) - getOfstedRatingAsNum(academy.previousOfstedRating);
+    let change =
+      getOfstedRatingAsNum(academy.currentOfstedRating) -
+      getOfstedRatingAsNum(academy.previousOfstedRating);
 
     if (change === 0)
       return `<strong class="govuk-tag govuk-tag--blue govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Maintained </strong>`;
@@ -199,23 +224,29 @@ const getOfstedRatingChangeTag = academy => {
     else
       return `<strong class="govuk-tag govuk-tag--red govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Declined </strong>`;
   }
-}
+};
 const getOfstedStatusTag = (ofstedDate, dateJoined) => {
   if (dateJoined > ofstedDate)
     return `<strong class="govuk-tag govuk-tag--blue govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Before joining </strong>`;
   return "";
-}
+};
 
 const getOfstedRatingText = (academy, ofstedRatingPropName) => {
   let html = `<b>${academy[ofstedRatingPropName]}</b>`;
-  if (academy[ofstedRatingPropName] !== "Not yet inspected") {
-    html += `<br>${formatDate(
-      academy[ofstedRatingPropName + 'Date']
-    )}
+  if (academy[ofstedRatingPropName] !== OFSTED_RATINGS.notYetInspected) {
+    html += `<br>${formatDate(academy[ofstedRatingPropName + "Date"])}
     <br>
-    ${getOfstedStatusTag(academy[ofstedRatingPropName + 'Date'], academy.dateJoined)}`;
+    ${getOfstedStatusTag(
+      academy[ofstedRatingPropName + "Date"],
+      academy.dateJoined
+    )}`;
   }
   return html;
-}
+};
 
-module.exports = { AcademiesSummary, formatAcademyRows, formatAcademyRowsVersion4a, formatAcademyRowsVersion4b };
+module.exports = {
+  AcademiesSummary,
+  formatAcademyRows,
+  formatAcademyRowsVersion4a,
+  formatAcademyRowsVersion4b,
+};
