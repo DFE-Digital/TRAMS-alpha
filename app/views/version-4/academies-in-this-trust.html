@@ -5,12 +5,13 @@
 {% from "./includes/academies-in-trust-title.html" import academiesInTrustTitle %}
 
 {% block pageContent %}
-  <div class="fiat-card govuk-!-margin-top-9 ">
-    <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Trust pupil numbers</h3>
-
-    <div class="fiat-summary-list-statistics">
+<section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
       {{ govukSummaryList({
-        classes: 'govuk-summary-list--no-border',
+        card: {
+        title: {
+        text: "Trust information"
+        }
+    },
         rows: [
           {
             key: {
@@ -54,8 +55,8 @@
           }
         ]
       }) }}
-    </div>
-  </div>
+    
+  </section>
 {% endblock %}
 
 {% block pageContentColumnOverride %}
@@ -84,7 +85,7 @@
           }
         },
         {
-          text: "Phase (age range)",
+          text: "Phase and age range",
           attributes: {
             "aria-sort": "none"
           }
@@ -108,13 +109,13 @@
             }
         },
         {
-            text: "Current Ofsted rating",
+            text: "Previous Ofsted rating",
             attributes: {
             "aria-sort": "none"
             }
         },
         {
-            text: "Previous Ofsted rating",
+            text: "Current Ofsted rating",
             attributes: {
             "aria-sort": "none"
             }
