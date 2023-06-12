@@ -76,7 +76,7 @@ const formatAcademyRowsVersion4a = (academies) =>
         text: academy.localAuthority,
       },
       {
-        html: `${academy.phase}<br>(${academy.minPupilAge} - ${academy.maxPupilAge})`,
+        html: `${academy.phase}<br>${academy.minPupilAge} - ${academy.maxPupilAge}`,
         attributes: {
           "data-sort-value": `${academy.minPupilAge}${academy.maxPupilAge}`,
         },
@@ -106,12 +106,12 @@ const formatAcademyRowsVersion4a = (academies) =>
         },
       },
       {
-        html: getOfstedRatingText(academy, "currentOfstedRating"),
+        html: getOfstedRatingText(academy, "previousOfstedRating"),
       },
       {
         html:
           academy.currentOfstedRating !== OFSTED_RATINGS.notYetInspected &&
-          getOfstedRatingText(academy, "previousOfstedRating"),
+          getOfstedRatingText(academy, "currentOfstedRating"),
       },
     ];
   });
@@ -225,10 +225,12 @@ const getOfstedRatingChangeTag = (academy) => {
       return `<strong class="govuk-tag govuk-tag--red govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Declined </strong>`;
   }
 };
-const getOfstedStatusTag = (ofstedDate, dateJoined) => {
-  if (dateJoined > ofstedDate)
-    return `<strong class="govuk-tag govuk-tag--blue govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Before joining </strong>`;
-  return "";
+const getOfstedStatusTagBeforeJoining = (ofstedDate, dateJoined) => {
+  if (dateJoined > ofstedDate) {
+    return `<strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Before joining </strong>`; 
+  } else {
+    return `<strong class="govuk-tag govuk-tag govuk-!-margin-top-2 govuk-!-margin-bottom-1"> After joining </strong>`;
+  }
 };
 
 const getOfstedRatingText = (academy, ofstedRatingPropName) => {
@@ -236,12 +238,14 @@ const getOfstedRatingText = (academy, ofstedRatingPropName) => {
   if (academy[ofstedRatingPropName] !== OFSTED_RATINGS.notYetInspected) {
     html += `<br>${formatDate(academy[ofstedRatingPropName + "Date"])}
     <br>
-    ${getOfstedStatusTag(
+    ${getOfstedStatusTagBeforeJoining(
       academy[ofstedRatingPropName + "Date"],
       academy.dateJoined
     )}`;
   }
   return html;
+
+
 };
 
 module.exports = {
