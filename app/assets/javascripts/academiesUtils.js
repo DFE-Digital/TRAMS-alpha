@@ -225,7 +225,7 @@ const getOfstedRatingChangeTag = (academy) => {
       return `<strong class="govuk-tag govuk-tag--red govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Declined </strong>`;
   }
 };
-const getOfstedStatusTagBeforeJoining = (ofstedDate, dateJoined) => {
+const getOfstedStatusTag = (ofstedDate, dateJoined) => {
   if (dateJoined > ofstedDate) {
     return `<strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2 govuk-!-margin-bottom-1"> Before joining </strong>`; 
   } else {
@@ -238,7 +238,7 @@ const getOfstedRatingText = (academy, ofstedRatingPropName) => {
   if (academy[ofstedRatingPropName] !== OFSTED_RATINGS.notYetInspected) {
     html += `<br>${formatDate(academy[ofstedRatingPropName + "Date"])}
     <br>
-    ${getOfstedStatusTagBeforeJoining(
+    ${getOfstedStatusTag(
       academy[ofstedRatingPropName + "Date"],
       academy.dateJoined
     )}`;
