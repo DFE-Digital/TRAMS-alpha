@@ -1,6 +1,6 @@
 {% extends "./layouts/trust.html" %}
 {% set current_page = "academies-in-this-trust" %}
-{% set title = "Academies in trust" %}
+{% set title = "Academies in this trust" %}
 {% set pageSection = "About the trust" %}
 {% from "./includes/academies-in-trust-title.html" import academiesInTrustTitle %}
 
@@ -15,10 +15,18 @@
         rows: [
           {
             key: {
-              text: "Academies in trust"
+              text: "Academies in this trust"
             },
             value: {
               text: data.trust.academiesInTrust.academies.length
+            }
+          },
+          {
+            key: {
+              html: "Number of academies in each local authority"
+            },
+            value: {
+              html: data.trust.academiesInTrust.academies | getLocalAuthoritiesWithCount | default('---', true)
             }
           },
           {
@@ -35,14 +43,6 @@
             },
             value: {
               text: data.academiesSummary.totalCapacity | formatNumber + " (" + data.academiesSummary.percentageCapacity + "%)"
-            }
-          },
-          {
-            key: {
-              html: "Local authorities <br>(number of academies)"
-            },
-            value: {
-              html: data.trust.academiesInTrust.academies | getLocalAuthoritiesWithCount | default('---', true)
             }
           },
           {
