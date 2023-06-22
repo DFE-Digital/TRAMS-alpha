@@ -9,6 +9,11 @@
   <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
 
     {{ govukSummaryList({
+      card: {
+        title: {
+          text: "Trust details"
+        }
+      },
         rows: [
           {
             key: {
@@ -95,9 +100,13 @@
       }) }}
   </section>
   <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
-    <h2>Trust reference numbers</h2>
 
     {{ govukSummaryList({
+      card: {
+        title: {
+          text: "Trust reference numbers"
+        }
+      },
         rows: [
         {
           key: {
@@ -136,9 +145,13 @@
   </section>
 
   <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
-    <h2>Sponsor details</h2>
 
     {{ govukSummaryList({
+      card: {
+        title: {
+          text: "Sponsor details"
+        }
+      },
         rows: [
           {
             key: {
