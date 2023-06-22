@@ -128,7 +128,7 @@
             text: "Companies House number"
           },
           value: {
-            html: link('#', linkText=data.trust.trustDetails.companiesHouseNumber) | default('---', true)
+            html: data.trust.trustDetails.companiesHouseNumber | default('---', true)
           }  
           }
         ]
