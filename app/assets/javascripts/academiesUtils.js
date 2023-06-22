@@ -88,10 +88,16 @@ const formatAcademyRowsVersion4a = (academies) =>
         },
       },
       {
-        html: `${academy.capacity.toLocaleString()}<br>(${getPercentageCapacity(
+        html: academy.capacity.toLocaleString(),
+        attributes: {
+          "data-sort-value": academy.capacity,
+        },
+      },
+      {
+        html: `${getPercentageCapacity(
           academy.pupilNumbers,
           academy.capacity
-        )}%)`,
+        )}%`,
         attributes: {
           "data-sort-value": academy.capacity,
         },
