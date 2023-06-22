@@ -60,7 +60,7 @@
           },
           {
             key: {
-              text: "Data from other services"
+              text: "Information from other services"
             },
             value: {
               html: 
@@ -142,7 +142,7 @@
         rows: [
           {
             key: {
-              text: "Sponsor status"
+              text: "Status"
             },
             value: {
               text: data.trust.trustDetails.sponsorStatus | default('---', true)
@@ -150,7 +150,7 @@
           },
           {
             key: {
-              text: "Sponsor restrictions"
+              text: "Restrictions"
             },
             value: {
               text: data.trust.trustDetails.sponsorRestrictions | default('---', true)
@@ -158,7 +158,7 @@
           },
           {
             key: {
-              text: "Sponsor approval date"
+              text: "Approval date"
             },
             value: {
               html: data.trust.trustDetails.sponsorApprovalDate | formatDate
@@ -166,7 +166,7 @@
           },
           {
             key: {
-              text: "Sponsor name"
+              text: "Name"
             },
             value: {
               html: data.trust.trustDetails.sponsorName | default('---', true)
