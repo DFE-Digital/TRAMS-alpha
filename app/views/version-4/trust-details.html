@@ -49,18 +49,10 @@
           },
           {
             key: {
-              text: "Lead local authority"
+              text: "Local authority"
             },
             value: {
               text: data.trust.trustDetails.localAuthorities[0] | default('---', true)
-            }
-          },
-          {
-            key: {
-              text: "Local authorites (number of academies)"
-            },
-            value: {
-              html: data.trust.academiesInTrust.academies | getLocalAuthoritiesWithCount | default('---', true)
             }
           },
           {
