@@ -67,7 +67,7 @@ const formatAcademyRowsVersion4a = (academies) =>
   academies.map((academy) => {
     return [
       {
-        html: `<b>${academy.name}</b>`,
+        html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
         attributes: {
           "data-sort-value": academy.name,
         },
@@ -88,10 +88,16 @@ const formatAcademyRowsVersion4a = (academies) =>
         },
       },
       {
-        html: `${academy.capacity.toLocaleString()}<br>(${getPercentageCapacity(
+        html: academy.capacity.toLocaleString(),
+        attributes: {
+          "data-sort-value": academy.capacity,
+        },
+      },
+      {
+        html: `${getPercentageCapacity(
           academy.pupilNumbers,
           academy.capacity
-        )}%)`,
+        )}%`,
         attributes: {
           "data-sort-value": academy.capacity,
         },

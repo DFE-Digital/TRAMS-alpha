@@ -2,13 +2,18 @@
 {% from "./includes/contact.html" import contact %}
 {% from "./includes/link.njk" import link %}
 {% set current_page = "trust-details" %} 
-{% set title = "Trust details" %}
+{% set title = "Details" %}
 {% set pageSection = "About the trust" %}
 
 {% block pageContent %}
   <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
 
     {{ govukSummaryList({
+      card: {
+        title: {
+          text: "Trust details"
+        }
+      },
         rows: [
           {
             key: {
@@ -28,7 +33,7 @@
           },
           {
             key: {
-              text: "Incorporated on (open date)"
+              text: "Opened on"
             },
             value: {
               html: data.trust.trustDetails.dateIncorporated | formatDate
@@ -36,7 +41,7 @@
           },
           {
             key: {
-              text: "Region / territory"
+              text: "Region and territory"
             },
             value: {
               text: data.trust.trustDetails.regionsGroup | default('---', true)
@@ -44,7 +49,7 @@
           },
           {
             key: {
-              text: "Lead local authority"
+              text: "Local authority"
             },
             value: {
               text: data.trust.trustDetails.localAuthorities[0] | default('---', true)
@@ -52,15 +57,7 @@
           },
           {
             key: {
-              text: "Local authorites (number of academies)"
-            },
-            value: {
-              html: data.trust.academiesInTrust.academies | getLocalAuthoritiesWithCount | default('---', true)
-            }
-          },
-          {
-            key: {
-              text: "Data from other services"
+              text: "Information from other services"
             },
             value: {
               html: 
@@ -95,13 +92,17 @@
       }) }}
   </section>
   <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
-    <h2>Trust reference numbers</h2>
 
     {{ govukSummaryList({
+      card: {
+        title: {
+          text: "Reference numbers"
+        }
+      },
         rows: [
         {
           key: {
-            text: "Unique group identifier (UID)"
+            text: "UID (Unique group identifier)"
           },
           value: {
             html: data.trust.uid | default('---', true)
@@ -109,7 +110,7 @@
         },
         {
           key: {
-            text: "Group identifier (ID) also known as trust reference number (TRN)"
+            text: "Group ID (identifier) and TRN (trust reference number)"
           },
           value: {
             html: data.trust.trustDetails.trustReferenceNumber | default('---', true)
@@ -117,7 +118,7 @@
         },
         {
           key: {
-            text: "UK provider reference number (UKPRN)"
+            text: "UKPRN (UK provider reference number)"
           },
           value: {
             html: data.trust.trustDetails.ukprn | default('---', true)
@@ -128,7 +129,7 @@
             text: "Companies House number"
           },
           value: {
-            html: link('#', linkText=data.trust.trustDetails.companiesHouseNumber) | default('---', true)
+            html: data.trust.trustDetails.companiesHouseNumber | default('---', true)
           }  
           }
         ]
@@ -136,13 +137,17 @@
   </section>
 
   <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
-    <h2>Sponsor details</h2>
 
     {{ govukSummaryList({
+      card: {
+        title: {
+          text: "Sponsor details"
+        }
+      },
         rows: [
           {
             key: {
-              text: "Sponsor status"
+              text: "Status"
             },
             value: {
               text: data.trust.trustDetails.sponsorStatus | default('---', true)
@@ -150,7 +155,7 @@
           },
           {
             key: {
-              text: "Sponsor restrictions"
+              text: "Restrictions"
             },
             value: {
               text: data.trust.trustDetails.sponsorRestrictions | default('---', true)
@@ -158,7 +163,7 @@
           },
           {
             key: {
-              text: "Sponsor approval date"
+              text: "Approval date"
             },
             value: {
               html: data.trust.trustDetails.sponsorApprovalDate | formatDate
@@ -166,7 +171,7 @@
           },
           {
             key: {
-              text: "Sponsor name"
+              text: "Name"
             },
             value: {
               html: data.trust.trustDetails.sponsorName | default('---', true)

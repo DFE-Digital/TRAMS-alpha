@@ -21,7 +21,7 @@ const formatTrustContacts = (presentGovernors) => presentGovernors.filter(govern
     <p class="govuk-!-margin-bottom-1">
       <a class="govuk-link" href="${governor.email}">${governor.email}</a>
     </p>
-    <p class="govuk-!-margin-bottom-1">Tel: ${governor.telephone}</p>
+    <p class="govuk-!-margin-bottom-1">Telephone: ${governor.telephone}</p>
     `
 
   return ({
