@@ -1,0 +1,244 @@
+{% extends "./layouts/trust.html" %}
+{% set current_page = "trust-overview" %}
+{% set title = "Overview" %}
+{% set pageSection = "About the trust" %}
+
+
+{% block pageContent %}
+  <div class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+    <div class="fiat-grid-2">
+      
+      <article class="fiat-card fiat-grid-2__item">
+          {% include "./includes/internal-data-use.html"%}
+          <h2 class="govuk-heading-m">Trust risk grade</h2>
+          <div>
+            <p class="fiat-statistic-large">C</p>
+            <p class="govuk-body">Expected to be stable in the short-term, but potentially exposed to adverse events in the long-term</p>
+            <p class="govuk-body"><a class="govuk-link" href="#">School Financial Benchmarking data (Opens in a new tab)</a></p>
+          </div>
+        {% include "./includes/data-source.html"%}
+      </article>
+
+      <article class="fiat-card fiat-grid-2__item">
+        {# TODO: This card needs a title or label #}
+        {% include "./includes/internal-data-use.html"%}
+        {{ govukSummaryList({
+          classes: 'govuk-summary-list--no-border fiat-summary-list-statistics',
+          rows: [
+            {
+              key: {
+                text: "Latest trust banding score"
+              },
+              value: {
+                html: "Upper Consolidate"
+              }
+            },
+            {
+              key: {
+                text: "Date of trust review meeting"
+              },
+              value: {
+                text: "1 Feb 2023"
+              }
+            },
+            {
+              key: {
+                text: "Single joint risk rating"
+              },
+              value: {
+                text: "Monitor"
+              }
+            },
+            {
+              key: {
+                text: "SFSO concern level"
+              },
+              value: {
+                text: "Amber / Green"
+              }
+            }
+          ]
+        }) }}
+        {% include "./includes/data-source.html"%}
+      </article>
+
+      <article class="fiat-card fiat-grid-2__item">
+        {{ govukTable({
+          attributes: {
+            'data-module': 'moj-sortable-table'
+          },
+          caption: "Ofsted data",
+          captionClasses: "govuk-table__caption--m",
+          head: [
+            {
+              text: "Rating",
+              attributes: {
+                "aria-sort": "ascending"
+              }
+            },
+            {
+              text: "Number of schools",
+              attributes: {
+                "aria-sort": "none"
+              },
+              classes: 'govuk-!-width-one-third',
+              format: "numeric"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: 'Outstanding',
+                attributes: {
+                  "data-sort-value": "1"
+                }
+              },
+              {
+                text: "3",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: 'Good',
+                attributes: {
+                  "data-sort-value": "2"
+                }
+              },
+              {
+                text: "5",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: 'Requires improvement',
+                attributes: {
+                  "data-sort-value": "3"
+                }
+              },
+              {
+                text: "2",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: 'Inadequate',
+                attributes: {
+                  "data-sort-value": "4"
+                }
+              },
+              {
+                text: "3",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: 'Not yet inspected',
+                attributes: {
+                  "data-sort-value": "5"
+                }
+              },
+              {
+                text: "4",
+                format: "numeric"
+              }
+            ]
+          ]
+        }) }}
+        {% include "./includes/data-source.html"%}
+      </article>
+      <article class="fiat-card fiat-grid-2__item">
+        {{ govukTable({
+          attributes: {
+            'data-module': 'moj-sortable-table'
+          },
+          caption: "Free school meals %",
+          captionClasses: "govuk-table__caption--m",
+          head: [
+            {
+              text: "% banding",
+              attributes: {
+                "aria-sort": "ascending"
+              }
+            },
+            {
+              text: "Number of schools",
+              attributes: {
+                "aria-sort": "none"
+              },
+              classes: 'govuk-!-width-one-third',
+              format: "numeric"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "0 - 10%",
+                attributes: {
+                  "data-sort-value": "1"
+                }
+              },
+              {
+                text: "2",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: "10 - 30%",
+                attributes: {
+                  "data-sort-value": "2"
+                }
+              },
+              {
+                text: "2",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: "30 - 50%",
+                attributes: {
+                  "data-sort-value": "3"
+                }
+              },
+              {
+                text: "3",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: "50 - 70%",
+                attributes: {
+                  "data-sort-value": "4"
+                }
+              },
+              {
+                text: "7",
+                format: "numeric"
+              }
+            ],
+            [
+              {
+                text: "70 - 100%",
+                attributes: {
+                  "data-sort-value": "5"
+                }
+              },
+              {
+                text: "3",
+                format: "numeric"
+              }
+            ]
+          ]
+        }) }}
+        {% include "./includes/data-source.html"%}
+      </article>
+    </div>
+  </div>
+
+{% endblock %}
