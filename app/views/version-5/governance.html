@@ -14,35 +14,35 @@
         attributes: {
           'data-module': 'moj-sortable-table'
         },
-        caption: "Present",
+        caption: "Trust leadership",
         captionClasses: "govuk-table__caption--m",
         head: [
           {
-            text: "Full name",
+            text: "Name",
             attributes: {
               "aria-sort": "none"
             }
           },
           {
-            text: "Trust role",
+            text: "Role",
             attributes: {
               "aria-sort": "none"
             }
           },
           {
-            text: "Date appointed",
+            text: "From",
             attributes: {
               "aria-sort": "none"
             }
           },
           {
-            text: "Term end",
+            text: "To",
             attributes: {
               "aria-sort": "none"
             }
           }
         ],
-        rows: data.trust.governance.present | formatGovernorRows(true)
+        rows: data.trust.governance.trustManagement | formattrustleadershipRows
       }) }}
 
       {{ govukDetails({
