@@ -1,7 +1,7 @@
 const getLocalAuthoritiesWithCount = academies => {
   let html = '';
   for (const [localAuthority, count] of Object.entries(countLocalAuthorities(academies))) {
-    html += `<p class="govuk-!-margin-bottom-1">${localAuthority}(${count})</p>`
+    html += `<p class="govuk-!-margin-bottom-1">${count} in ${localAuthority}</p>`
   }
   return html;
 }
