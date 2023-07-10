@@ -42,7 +42,7 @@
             }
           }
         ],
-        rows: data.trust.governance.present | formatGovernorRows(true)
+        rows: data.trust.governance.present | formatGovernorRows({showContactDetails: true, showRole: true})
       }) }}
 
       {{ govukDetails({

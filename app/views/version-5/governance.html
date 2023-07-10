@@ -42,7 +42,7 @@
             }
           }
         ],
-        rows: data.trust.governance.trustManagement | formattrustleadershipRows
+        rows: data.trust.governance.trustManagement | formatGovernorRows
       }) }}
 
       {{ govukDetails({
@@ -98,7 +98,7 @@
             }
           }
         ],
-        rows: data.trust.governance.trustees | formatAppointedByRows
+        rows: data.trust.governance.trustees | formatGovernorRows({showAppointmentType: true})
       }) }}
 
       {{ govukDetails({
@@ -154,7 +154,7 @@
             }
           }
         ],
-        rows: data.trust.governance.members | formatAppointedByRows
+        rows: data.trust.governance.members | formatGovernorRows({showAppointmentType: true})
       }) }}
 
       {{ govukDetails({
@@ -193,6 +193,12 @@
             }
           },
           {
+            text: "Role",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
             text: "Appointed by",
             attributes: {
               "aria-sort": "none"
@@ -211,7 +217,7 @@
             }
           }
         ],
-        rows: data.trust.governance.pastTwelveMonths | formatAppointedByRows
+        rows: data.trust.governance.pastTwelveMonths | formatGovernorRows({showRole: true, showAppointmentType: true})
       }) }}
 
       {{ govukDetails({

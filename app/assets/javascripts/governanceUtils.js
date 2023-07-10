@@ -1,15 +1,19 @@
 const DateUtils = require("./dateUtils");
 
-const formatGovernorRows = (governors, isCurrent = false) => governors.map(governor => getRow(governor, isCurrent));
+const formatGovernorRows = (governors, options = {showContactDetails: false, showRole: true, showAppointmentType: false }) => governors.map(governor => getRow(governor, options));
 
-const getRow = (governor, isCurrent) => {
+const getRow = (governor, options) => {
+  const { showContactDetails, showRole, showAppointmentType } = options
   let nameText = governor.name
-  if (isCurrent && (governor.role === 'Accounting Officer' || governor.role === 'Chair of Trustees')) {
+  if (showContactDetails && (governor.role === 'Accounting officer' || governor.role === 'Chair of trustees')) {
     nameText += `<br><a class="govuk-link" href="mailto:${governor.email}">${governor.email}</a>`
   }
-  return ([
-    { html: nameText },
-    { text: governor.role },
+
+  let row = [{html: nameText}]
+  if (showRole) row.push({ text: governor.role })
+  if (showAppointmentType) row.push({ text: governor.appointmentType })
+  
+  return row.concat([
     { text: DateUtils.formatDate(governor.dateAppointed) },
     { text: DateUtils.formatDate(governor.termEnd) }
   ])
@@ -35,26 +39,4 @@ const formatTrustContacts = (presentGovernors) => presentGovernors.filter(govern
 
 });
 
-const formattrustleadershipRows = (governors) => governors.map(governor => gettrustleadershipRow(governor));
-
-const gettrustleadershipRow = (governor) => {
-  return ([
-    { html: governor.name },
-    { text: governor.role },
-    { text: DateUtils.formatDate(governor.dateAppointed) },
-    { text: DateUtils.formatDate(governor.termEnd) }
-  ])
-}
-
-const formatAppointedByRows = (governors) => governors.map(governor => getAppointedByRow(governor));
-
-const getAppointedByRow = (governor) => {
-  return ([
-    { html: governor.name },
-    { text: governor.appointmentType },
-    { text: DateUtils.formatDate(governor.dateAppointed) },
-    { text: DateUtils.formatDate(governor.termEnd) }
-  ])
-}
-
-module.exports = { formatGovernorRows, formatTrustContacts, formattrustleadershipRows, formatAppointedByRows };
+module.exports = { formatGovernorRows, formatTrustContacts };
