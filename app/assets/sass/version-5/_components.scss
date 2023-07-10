@@ -349,6 +349,9 @@
   }
 
   .app-error {
+    display: flex;
+    align-items: center;
+    
     &__text--red {
       color: $govuk-error-colour;
     }
