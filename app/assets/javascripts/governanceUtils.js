@@ -20,7 +20,7 @@ const getRow = (governor, options) => {
 
 const addWarning = (governorRows) => {
   const secondRow = governorRows[1]
-  secondRow[0].html += '<br><div class="govuk-warning-text govuk-!-margin-bottom-0"><span class="govuk-warning-text__icon" aria-hidden="true">!</span><strong class="govuk-warning-text__text error-text-red"><span class="govuk-warning-text__assistive">Warning</span>Also listed as a trustee. Could be a conflict of interest. Check financial statements or website.</strong></div>'
+  secondRow[0].html += '<br><div class="govuk-warning-text app-error govuk-!-margin-bottom-0"><span class="govuk-warning-text__icon app-error__icon--red" aria-hidden="true">!</span><strong class="govuk-warning-text__text app-error__text--red"><span class="govuk-warning-text__assistive">Warning</span>Also listed as a trustee. Could be a conflict of interest. Check financial statements or website.</strong></div>'
   return governorRows;
 }
 

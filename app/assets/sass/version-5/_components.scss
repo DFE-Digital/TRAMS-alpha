@@ -3,7 +3,6 @@
 @import "./mixins";
 
 .version-5 {
-  
     .fiat-blue-search-button {
       background-color: $fiat-blue-secondary;
       color: govuk-colour("white");
@@ -346,6 +345,17 @@
   
     .fiat-search-js-fallback {
       display: none;
+    }
+  }
+
+  .app-error {
+    &__text--red {
+      color: $govuk-error-colour;
+    }
+  
+    &__icon--red {
+      background: $govuk-error-colour;
+      border: $govuk-error-colour;
     }
   }
 }
