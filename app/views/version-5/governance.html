@@ -70,35 +70,35 @@
         attributes: {
           'data-module': 'moj-sortable-table'
         },
-        caption: "Members",
+        caption: "Trustees",
         captionClasses: "govuk-table__caption--m",
         head: [
           {
-            text: "Full name",
+            text: "Name",
             attributes: {
               "aria-sort": "none"
             }
           },
           {
-            text: "Trust role",
+            text: "Appointed by",
             attributes: {
               "aria-sort": "none"
             }
           },
           {
-            text: "Date appointed",
+            text: "From",
             attributes: {
               "aria-sort": "none"
             }
           },
           {
-            text: "Term end",
+            text: "To",
             attributes: {
               "aria-sort": "none"
             }
           }
         ],
-        rows: data.trust.governance.members | formatGovernorRows
+        rows: data.trust.governance.trustees | formatAppointedByRows
       }) }}
 
       {{ govukDetails({
@@ -122,6 +122,125 @@
       }) }}
     </section>
     <section class="govuk-!-margin-bottom-9">
+      {{ govukTable({
+        attributes: {
+          'data-module': 'moj-sortable-table'
+        },
+        caption: "Members",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Name",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Appointed by",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "From",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "To",
+            attributes: {
+              "aria-sort": "none"
+            }
+          }
+        ],
+        rows: data.trust.governance.members | formatAppointedByRows
+      }) }}
+
+      {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="fiat-data-source-list">
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+    </section>
+    
+    <section class="govuk-!-margin-bottom-9">
+      {{ govukTable({
+        attributes: {
+          'data-module': 'moj-sortable-table'
+        },
+        caption: "Historic (left within last 12 months)",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Name",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Role",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },{
+            text: "Appointed by",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "From",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "To",
+            attributes: {
+              "aria-sort": "none"
+            }
+          }
+        ],
+        rows: data.trust.governance.pastTwelveMonths | formatAppointedByRows
+      }) }}
+
+      {{ govukDetails({
+        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        html: '
+          <dl class="fiat-data-source-list">
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Data source:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Last updated:</dt>
+              <dd>21 December 2021</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Next scheduled update:</dt>
+              <dd>21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+    </section>
+    
+    <!--<section class="govuk-!-margin-bottom-9">
       {{ govukTable({
       attributes: {
         'data-module': 'moj-sortable-table'
@@ -176,6 +295,6 @@
           </dl>
         '
       }) }}
-    </section>
+    </section> -->
   </div>
 {% endblock %}

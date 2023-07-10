@@ -46,4 +46,15 @@ const gettrustleadershipRow = (governor) => {
   ])
 }
 
-module.exports = { formatGovernorRows, formatTrustContacts, formattrustleadershipRows };
+const formatAppointedByRows = (governors) => governors.map(governor => getAppointedByRow(governor));
+
+const getAppointedByRow = (governor) => {
+  return ([
+    { html: governor.name },
+    { text: governor.appointmentType },
+    { text: DateUtils.formatDate(governor.dateAppointed) },
+    { text: DateUtils.formatDate(governor.termEnd) }
+  ])
+}
+
+module.exports = { formatGovernorRows, formatTrustContacts, formattrustleadershipRows, formatAppointedByRows };
