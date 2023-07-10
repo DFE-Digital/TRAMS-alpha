@@ -42,7 +42,7 @@
             }
           }
         ],
-        rows: data.trust.governance.trustManagement | formatGovernorRows
+        rows: data.trust.governance.trustManagement | formatGovernorRows | addWarning
       }) }}
 
       {{ govukDetails({

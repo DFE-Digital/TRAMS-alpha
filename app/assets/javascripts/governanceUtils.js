@@ -8,7 +8,6 @@ const getRow = (governor, options) => {
   if (showContactDetails && (governor.role === 'Accounting officer' || governor.role === 'Chair of trustees')) {
     nameText += `<br><a class="govuk-link" href="mailto:${governor.email}">${governor.email}</a>`
   }
-
   let row = [{html: nameText}]
   if (showRole) row.push({ text: governor.role })
   if (showAppointmentType) row.push({ text: governor.appointmentType })
@@ -17,6 +16,12 @@ const getRow = (governor, options) => {
     { text: DateUtils.formatDate(governor.dateAppointed) },
     { text: DateUtils.formatDate(governor.termEnd) }
   ])
+}
+
+const addWarning = (governorRows) => {
+  const secondRow = governorRows[1]
+  secondRow[0].html += '<br><div class="govuk-warning-text govuk-!-margin-bottom-0"><span class="govuk-warning-text__icon" aria-hidden="true">!</span><strong class="govuk-warning-text__text error-text-red"><span class="govuk-warning-text__assistive">Warning</span>Also listed as a trustee. Could be a conflict of interest. Check financial statements or website.</strong></div>'
+  return governorRows;
 }
 
 const formatTrustContacts = (presentGovernors) => presentGovernors.filter(governor => governor.role !== 'Trustee').map(governor => {
@@ -39,4 +44,4 @@ const formatTrustContacts = (presentGovernors) => presentGovernors.filter(govern
 
 });
 
-module.exports = { formatGovernorRows, formatTrustContacts };
+module.exports = { formatGovernorRows, formatTrustContacts, addWarning };
