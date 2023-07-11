@@ -361,7 +361,7 @@
       border: $govuk-error-colour;
     }
   }
-  
+
   .risk-grade {
     display: flex;
 
@@ -379,13 +379,40 @@
       flex:none;  
     } 
   }
-.govuk-summary-card__title-wrapper-dark {
-  background: #000;
-color: #fff;
-}
 
-.risk-image {
-  margin-top:20px;
-  margin-bottom:20px;
-}
+  .govuk-summary-card__title-wrapper-dark {
+    background: #000;
+    color: #fff;
+  }
+
+  .app-warning-text--white {
+    .app-warning-text__icon {
+      background-color: #fff;
+      border-color: #fff;
+      color: #000;
+    }
+
+    .app-warning-text__text {
+      color: #fff;
+    }
+  }
+
+  .risk-image {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .app-error {
+    display: flex;
+    align-items: center;
+    
+    &__text--red {
+      color: $govuk-error-colour;
+    }
+
+    &__icon--red {
+      background: $govuk-error-colour;
+      border: $govuk-error-colour;
+    }
+  }
 }
