@@ -254,7 +254,7 @@
                         </div>
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-          Financial concern level
+          Current concern level
         </dt>
                           <dd class="govuk-summary-list__value">
                             <strong class="govuk-tag govuk-tag--orange"> Amber </strong>
@@ -271,5 +271,52 @@
                           </dd>
                         </div>
                       </section>
+   {{ govukDetails({
+        summaryHtml: '<span>Source and updates</span>',
+        html: '
+          <dl class="fiat-data-source-list">
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Trust information: </dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Last updated: 21 March 2023</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Next scheduled update: 21 June 2023</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Ofsted ratings: </dt>
+              <dd>Ofsted</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Last updated: 21 March 2023</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Next scheduled update: 21 June 2023</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Trust risk grade:</dt>
+              <dd>(SFSO) Schools financial oversight</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Last updated: 21 March 2023</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Next scheduled update: 21 June 2023</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Joint risk and financial concern:</dt>
+              <dd>Regional services division</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Last updated: 21 March 2023</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Next scheduled update: 21 June 2023</dd>
+            </div>
+          </dl>
+        '
+      }) }}                     
 
                     {% endblock %}

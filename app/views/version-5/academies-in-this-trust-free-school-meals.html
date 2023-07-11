@@ -64,33 +64,31 @@
       rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion5FreeSchoolMeals
     }) }}
 
-    <div class="fiat-flex-between">
+<div class="fiat-flex-between">
       {{ govukDetails({
-        summaryHtml: '<span>Data source</span> <span>(last updated 21 December 2021)</span>',
+        summaryHtml: '<span>Source and updates</span>',
         html: '
         <dl class="fiat-data-source-list">
           <div class="fiat-data-source-list__item">
-            <dt class="fiat-data-source-list__title">Data source:</dt>
+            <dt class="fiat-data-source-list__title">Ofsted ratings, pupil numbers, capacity and free school meals:</dt>
             <dd>Get information about schools</dd>
           </div>
           <div class="fiat-data-source-list__item">
-            <dt class="fiat-data-source-list__title">Last updated:</dt>
-            <dd>21 December 2021</dd>
+            <dd>Last updated:21 May 2023</dd>
           </div>
           <div class="fiat-data-source-list__item">
-            <dt class="fiat-data-source-list__title">Next scheduled update:</dt>
-            <dd>21 January 2022</dd>
+            <dd>Next scheduled update: 21 August 2023</dd>
           </div>
         </dl>
         '
       }) }}
 
-      <button class="fiat-image-button">
+     <button class="fiat-image-button">
         <svg class="fiat-image-button__image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M23,4H22V21a1,1,0,0,1-1,1H4v1a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1V5A1,1,0,0,0,23,4Z"/>
           <path d="M19,20a1,1,0,0,0,1-1V1a1,1,0,0,0-1-1H1A1,1,0,0,0,0,1V19a1,1,0,0,0,1,1H19Z"/>
         </svg>
-      Download data
+     <a class="govuk-link--no-visited-state" href="https://docs.google.com/spreadsheets/d/10MIBjwYS1qhzDxsEFHvJj6yN5rnr3h6dVKC_z97pua4/edit?usp=sharing" class="govuk-link govuk-link--no-visited-state"> Download CSV file </a>
     </button>
     </div>
 

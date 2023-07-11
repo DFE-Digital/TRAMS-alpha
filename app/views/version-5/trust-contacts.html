@@ -44,5 +44,21 @@
       rows: data.trust.governance.present | formatTrustContacts
     }) }}
 </section>
-
+  {{ govukDetails({
+        summaryHtml: '<span>Source and updates</span>',
+        html: '
+          <dl class="fiat-data-source-list">
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">DfE contacts, trust contacts: </dt>
+              <dd>Regional Services Division</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Last updated: 21 March 2023</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Next scheduled update: 21 June 2023</dd>
+            </div>
+          </dl>
+        '
+      }) }}
 {% endblock %}
