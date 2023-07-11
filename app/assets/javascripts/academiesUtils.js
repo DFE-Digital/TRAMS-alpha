@@ -266,48 +266,44 @@ academies.map((academy) => {
   ];
 });
 
-const formatAcademyRowsVersion5FreeSchoolMeals = (academies) =>
-academies.map((academy) => {
-  return [
-    {
-      html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
-      attributes: {
-        "data-sort-value": academy.name,
+const formatAcademyRowsVersion5FreeSchoolMeals = (academies) => {
+  const averageFreeSchoolMeals = getPercentageFreeSchoolMeals(academies);
+  return academies.map((academy) => {
+    const authorityAverageFreeSchoolMeals = averageFreeSchoolMeals[academy.localAuthority];
+    return [
+      {
+        html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
+        attributes: {
+          "data-sort-value": academy.name,
+        },
       },
-    },
-    {
-      text: academy.localAuthority,
-    },
-    {
-      html: `${getPercentageCapacity(
-        academy.pupilNumbers,
-        academy.capacity
-      )}%`,
-      attributes: {
-        "data-sort-value": academy.capacity,
+      {
+        text: academy.localAuthority,
       },
-    },
-    {
-      html: `${getPercentageCapacity(
-        academy.pupilNumbers,
-        academy.capacity
-      )}%`,
-      attributes: {
-        "data-sort-value": academy.capacity,
+      {
+        html: `${academy.freeSchoolMealsPercentage}%`,
+        attributes: {
+          "data-sort-value": academy.capacity,
+        },
       },
-    },
-    {
-      html: `${getPercentageCapacity(
-        academy.pupilNumbers,
-        academy.capacity
-      )}%`,
-      attributes: {
-        "data-sort-value": academy.capacity,
+      {
+        html: `${authorityAverageFreeSchoolMeals}%`,
+        attributes: {
+          "data-sort-value": authorityAverageFreeSchoolMeals,
+        },
       },
-    },
-   
-  ];
-});
+      {
+        html: `${getPercentageCapacity(
+          academy.pupilNumbers,
+          academy.capacity
+        )}%`,
+        attributes: {
+          "data-sort-value": academy.capacity,
+        },
+      },
+    ];
+  });
+};
 
 class AcademiesSummary {
   constructor(academies) {
@@ -329,6 +325,26 @@ class AcademiesSummary {
 const getPercentageCapacity = (pupilNumbers, capacity) => {
   return Math.round((pupilNumbers / capacity) * 100);
 };
+
+const getPercentageFreeSchoolMeals = (academies) => {
+  const localAuthorities = {};
+  const freeShoolMealsByLocalAuthority = {};
+  academies.forEach(academy => {
+    if (localAuthorities[academy.localAuthority]) {
+      localAuthorities[academy.localAuthority].freeSchoolMeals += academy.freeSchoolMealsPercentage
+      localAuthorities[academy.localAuthority].academyCount ++
+    } else {
+      localAuthorities[academy.localAuthority] = {
+        freeSchoolMeals: academy.freeSchoolMealsPercentage,
+        academyCount: 1
+      }
+    }
+  })
+  for (const authority in localAuthorities) {
+    freeShoolMealsByLocalAuthority[authority] = Math.round(localAuthorities[authority].freeSchoolMeals / localAuthorities[authority].academyCount);
+  }
+  return freeShoolMealsByLocalAuthority;
+}
 
 const getOfstedRatingAsNum = (ofsted) => {
   switch (ofsted) {
