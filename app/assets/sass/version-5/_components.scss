@@ -1,0 +1,364 @@
+@import "node_modules/govuk-frontend/govuk/all";
+@import "./variables";
+@import "./mixins";
+
+.version-5 {
+    .fiat-blue-search-button {
+      background-color: $fiat-blue-secondary;
+      color: govuk-colour("white");
+      box-shadow: none;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 4px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 4px;
+  
+      &:hover {
+        background-color: #0B2542;
+      }
+    }
+    .fiat-inline-button {
+      display: flex;
+      flex: 1 1 auto;
+      margin-bottom: 0;
+    }
+  .fiat-autocomplete {
+    .autocomplete__input {
+      background-color: govuk-colour("white");
+    }
+
+    .autocomplete__option {
+      margin-bottom: 0;
+    }
+
+    .autocomplete__option-hint {
+      display: block;
+      @include govuk-font(16);
+      color: $govuk-secondary-text-colour;
+    }
+
+    .autocomplete__option--focused,
+    .autocomplete__option:hover {
+
+      .autocomplete__option-hint {
+        color: govuk-colour("white");
+      }
+    }
+  }
+
+  .fiat-autocomplete--home {
+    &>div {
+      width: 100%;
+    }
+
+    .autocomplete__input {
+      @extend .govuk-input;
+      border-right:none;
+      border-left-color: govuk-colour("black");
+      border-top-color: govuk-colour("black");
+      border-bottom-color: govuk-colour("black");
+      height: 3rem;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 0;
+    }
+  }
+
+  .fiat-autocomplete--header {
+    .autocomplete__input {
+      -webkit-appearance: listbox;
+      /* [5] */
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 0;
+      padding: 0 16px;  
+    }
+    .autocomplete__input:focus {
+      border: 4px solid #0b0c0c;
+      box-shadow: 0 0 0 4px #ffdd00;
+      outline: 4px solid transparent;
+      outline-offset: 4px;
+      padding: 0 9px;
+    }
+    .autocomplete__input::placeholder {
+      color: #505a5f;
+      font-size: 16px;
+    }
+    .autocomplete__input:-ms-input-placeholder {
+      color: #505a5f;
+      font-size: 16px;
+    }
+    .autocomplete__input::-webkit-input-placeholder {
+      color: #505a5f;
+      font-size: 16px;
+    }
+
+    .autocomplete__menu {
+      text-align: left;
+    }
+
+    .autocomplete__option-hint {
+      display: block;
+      @include govuk-font(16);
+      color: $govuk-secondary-text-colour;
+      
+    }
+
+    .autocomplete__option--focused,
+    .autocomplete__option:hover {
+
+      .autocomplete__option-hint {
+        color: govuk-colour("white");
+      }
+    }
+
+    .fiat-header-autocomplete__container {
+      display: inline-block;
+    }
+
+    @media (max-width: 40.0525em) {
+      .autocomplete__input {
+        border-bottom: 1px solid #aeb7bd;
+        border-left: 1px solid #aeb7bd;
+        border-right: 0;
+        border-top: 1px solid #aeb7bd;
+        flex-grow: 2;
+        -ms-flex-positive: 2;
+        font-size: inherit;
+        height: 52px;
+        /* [4] */
+        margin: 0;
+        outline: none;
+        width: 100%;
+        /* [4] */
+        z-index: 1;
+      }
+    }
+    @media (min-width: 40.0625em) {
+      .autocomplete__input {
+        border: 1px solid #ffffff;
+        font-size: 16px;
+        height: 40px;
+        /* [2] */
+        width: 335px;
+        /* [2] */
+      }
+    }
+    @media (min-width: 48.0625em) {
+      .autocomplete__input {
+        width: 335px;
+      }
+    }
+  }
+
+  .fiat-image-button {
+    @extend .govuk-button;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: none;
+    box-shadow: none;
+    border: transparent;
+    color: $govuk-link-colour;
+
+    &:hover {
+      background-color: $govuk-link-colour;
+    }
+
+    .fiat-image-button__image {
+      height: 20px;
+      fill: currentColor;
+    }
+  }
+
+  .fiat-search-button {
+    margin-left: 10px;
+  }
+
+  .fiat-search-icon-button {
+    background-color: $fiat-blue-secondary;
+    color: govuk-colour("white");
+    box-shadow: none;
+    height: 60px;
+    width: 60px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+
+
+    &:hover {
+      background-color: $fiat-blue-secondary;
+    }
+  }
+  
+  .fiat-banner {
+    @include govuk-responsive-padding(5, "top");
+    @include govuk-responsive-padding(5, "bottom");
+    background-color: $fiat-blue-light;
+
+    .govuk-heading-l,
+    .govuk-heading-xl{color: $fiat-blue;}
+    .govuk-body {color: black;}
+ 
+
+    &.fiat-banner--l {
+      @include govuk-responsive-padding(9, "top");
+      @include govuk-responsive-padding(8, "bottom");
+    }
+
+    &.fiat-banner--white {
+      background-color: white;
+    }
+
+  }
+
+  .fiat-card {
+    @include govuk-responsive-padding(5);
+    background-color: govuk-colour("light-grey");
+
+    &--two-columns {
+      .fiat-card__content {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 3.75rem;
+      }
+      
+      .fiat-card__column {
+        flex: 1 1 45%;
+      }
+    }
+
+    &--blue {
+      background-color: $accent;
+
+      .govuk-heading-l,
+      .govuk-body {
+        color: govuk-colour("white");
+      }
+    }
+  }
+
+  .fiat-side-nav {
+    margin-left: -12px;
+
+    .fiat-side-nav__list {
+      @include govuk-responsive-margin(6, "bottom");
+      list-style-type: none;
+      padding: 0;
+      margin-top: 0;
+    }
+
+    .fiat-side-nav__item {
+      padding-left: 8px;
+      padding-bottom: 8px;
+      padding-top: 6px;
+      box-sizing: content-box;
+      border-left: 4px solid transparent;
+    }
+
+    .fiat-side-nav__item--current {
+      background-color: $fiat-grey-light;
+      border-color: $fiat-blue-secondary;
+      font-weight: bold;
+    }
+
+    .fiat-side-nav__heading {
+      @extend .fiat-side-nav__item;
+      font-weight: normal;
+      font-size: 1.1857rem;
+      color: $fiat-grey;
+      margin: 0;
+    }
+
+    .fiat-side-nav__link {
+      text-decoration: none;
+    }
+  }
+
+  .fiat-page-heading {
+    .fiat-page-heading__title {
+      @extend .govuk-heading-l;
+      @include govuk-responsive-margin(3, "bottom");
+    }
+
+    .fiat-page-heading__detail {
+      @include grid-2-row-variable-width(1.25rem);
+    }
+  }
+
+  .fiat-data-source-list {
+    .fiat-data-source-list__item {
+      @include grid-2-row-variable-width(0.625rem);
+      margin-bottom: 0.625rem;
+    }
+
+    .fiat-data-source-list__title {
+      font-weight: bold;
+    }
+  }
+
+  .fiat-summary-list-narrow {
+    .govuk-summary-list__key {
+      @include govuk-media-query($from: tablet) {
+        width: 20%;
+      }
+    }
+  }
+
+  .fiat-summary-list-statistics {
+    &.gov-uk-summary-list, 
+    .govuk-summary-list {
+      width: auto;
+      margin-bottom: 0;
+    }
+
+    .govuk-summary-list__key {
+      @include govuk-media-query($from: tablet) {
+        width: auto;
+      }
+    }
+  }
+
+  .fiat-phase-banner--no-border {
+    &.govuk-phase-banner {
+      border-bottom: none;
+    }
+  }
+
+  // Manage 'js-enabled' components and fallback visibility
+  .fiat-search-js-toggle {
+    display: none;
+  }
+  
+  .fiat-search-js-fallback {
+    display: flex;
+  }
+  
+  &.js-enabled {
+    .fiat-search-js-toggle {
+      display: flex;
+    }
+  
+    .fiat-search-js-fallback {
+      display: none;
+    }
+  }
+
+  .app-error {
+    display: flex;
+    align-items: center;
+    
+    &__text--red {
+      color: $govuk-error-colour;
+    }
+  
+    &__icon--red {
+      background: $govuk-error-colour;
+      border: $govuk-error-colour;
+    }
+  }
+}

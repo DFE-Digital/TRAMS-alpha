@@ -1,19 +1,38 @@
 const DateUtils = require("./dateUtils");
 
-const formatGovernorRows = (governors, isCurrent = false) => governors.map(governor => getRow(governor, isCurrent));
+const formatGovernorRows = (governors, options = {showContactDetails: false, showRole: true, showAppointmentType: false }) => governors.map(governor => getRow(governor, options));
 
-const getRow = (governor, isCurrent) => {
+const getRow = (governor, options) => {
+  const { showContactDetails, showRole, showAppointmentType } = options
   let nameText = governor.name
-  if (isCurrent && (governor.role === 'Accounting Officer' || governor.role === 'Chair of Trustees')) {
+  if (showContactDetails && (governor.role === 'Accounting officer' || governor.role === 'Chair of trustees')) {
     nameText += `<br><a class="govuk-link" href="mailto:${governor.email}">${governor.email}</a>`
   }
-  return ([
-    { html: nameText },
-    { text: governor.role },
+  let row = [{html: nameText}]
+  if (showRole) row.push({ text: governor.role })
+  if (showAppointmentType) row.push({ text: governor.appointmentType })
+  
+  return row.concat([
     { text: DateUtils.formatDate(governor.dateAppointed) },
     { text: DateUtils.formatDate(governor.termEnd) }
   ])
 }
+
+const addWarning = (governorRows) => {
+  const secondRow = governorRows[1];
+  const warningText = `
+    <br>
+    <div class="govuk-warning-text app-error govuk-!-margin-bottom-0">
+      <span class="govuk-warning-text__icon app-error__icon--red" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text app-error__text--red">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Also listed as a trustee. Could be a conflict of interest. Check financial statements or website.
+      </strong>
+    </div>
+  `;
+  secondRow[0].html += warningText;
+  return governorRows;
+};
 
 const formatTrustContacts = (presentGovernors) => presentGovernors.filter(governor => governor.role !== 'Trustee').map(governor => {
   const html = `
@@ -35,4 +54,4 @@ const formatTrustContacts = (presentGovernors) => presentGovernors.filter(govern
 
 });
 
-module.exports = { formatGovernorRows, formatTrustContacts };
+module.exports = { formatGovernorRows, formatTrustContacts, addWarning };
