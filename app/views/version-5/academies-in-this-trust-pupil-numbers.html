@@ -10,11 +10,11 @@
 
   <ul class="moj-sub-navigation__list">
     <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" aria-current="page" href="./academies-in-this-trust">Ofsted ratings</a>
+      <a class="moj-sub-navigation__link" href="./academies-in-this-trust">Ofsted ratings</a>
     </li>
 
     <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" href="./academies-in-this-trust-pupil-numbers">Pupil numbers and capacity</a>
+      <a class="moj-sub-navigation__link" aria-current="page" href="./academies-in-this-trust-pupil-numbers">Pupil numbers and capacity</a>
     </li>
 
     <li class="moj-sub-navigation__item">
@@ -31,43 +31,43 @@
       },
       head: [
         {
-          text: "School",
+          text: "School name",
           attributes: {
             "aria-sort": "ascending"
           }
         },
         {
-          text: "Local authority",
+          text: "Pupil numbers",
           attributes: {
             "aria-sort": "none"
           }
         },
         {
-          text: "Phase and age range",
+          text: "Pupil capacity",
           attributes: {
             "aria-sort": "none"
           }
         },
         {
-          text: "Date joined",
+          text: "% full",
           attributes: {
             "aria-sort": "none"
           }
         },
-        {
-          text: "Previous Ofsted rating",
+      {
+          text: "SEN pupils",
           attributes: {
-          "aria-sort": "none"
+            "aria-sort": "none"
           }
         },
-        {
-          text: "Current Ofsted rating",
+      {
+          text: "English as an additional language",
           attributes: {
             "aria-sort": "none"
           }
         }
       ],
-      rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion5Ofsted
+      rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion5PupilNumbers
     }) }}
 
     <div class="fiat-flex-between">

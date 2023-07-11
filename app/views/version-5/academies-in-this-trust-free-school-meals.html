@@ -10,7 +10,7 @@
 
   <ul class="moj-sub-navigation__list">
     <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" aria-current="page" href="./academies-in-this-trust">Ofsted ratings</a>
+      <a class="moj-sub-navigation__link" href="./academies-in-this-trust">Ofsted ratings</a>
     </li>
 
     <li class="moj-sub-navigation__item">
@@ -18,7 +18,7 @@
     </li>
 
     <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" href="./academies-in-this-trust-free-school-meals">Free school meals</a>
+      <a class="moj-sub-navigation__link"aria-current="page" href="./academies-in-this-trust-free-school-meals">Free school meals</a>
     </li>
   </ul>
 
@@ -31,43 +31,37 @@
       },
       head: [
         {
-          text: "School",
+          text: "School name",
           attributes: {
             "aria-sort": "ascending"
           }
         },
         {
-          text: "Local authority",
+          text: "Local Authority",
           attributes: {
             "aria-sort": "none"
           }
         },
         {
-          text: "Phase and age range",
+          text: "Free school meals",
           attributes: {
             "aria-sort": "none"
           }
         },
         {
-          text: "Date joined",
+          text: "Local authority average",
           attributes: {
             "aria-sort": "none"
           }
         },
-        {
-          text: "Previous Ofsted rating",
-          attributes: {
-          "aria-sort": "none"
-          }
-        },
-        {
-          text: "Current Ofsted rating",
+      {
+          text: "National average",
           attributes: {
             "aria-sort": "none"
           }
         }
       ],
-      rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion5Ofsted
+      rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion5FreeSchoolMeals
     }) }}
 
     <div class="fiat-flex-between">

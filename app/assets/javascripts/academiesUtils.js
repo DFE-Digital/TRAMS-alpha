@@ -174,6 +174,140 @@ const formatAcademyRowsVersion4b = (academies) =>
       },
     ];
   });
+  
+const formatAcademyRowsVersion5Ofsted = (academies) =>
+  academies.map((academy) => {
+    return [
+      {
+        html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
+        attributes: {
+          "data-sort-value": academy.name,
+        },
+      },
+      {
+        text: academy.localAuthority,
+      },
+      {
+        html: `${academy.phase}<br>${academy.minPupilAge} - ${academy.maxPupilAge}`,
+        attributes: {
+          "data-sort-value": `${academy.minPupilAge}${academy.maxPupilAge}`,
+        },
+      },
+      {
+        text: formatDate(academy.dateJoined, {
+          year: "numeric",
+          month: "short",
+        }),
+        attributes: {
+          "data-sort-value": academy.dateJoined,
+        },
+      },
+      {
+        html: 
+        academy.currentOfstedRating !== OFSTED_RATINGS.notYetInspected &&
+        getOfstedRatingText(academy, "previousOfstedRating"),
+      },
+      {
+        html:
+          getOfstedRatingText(academy, "currentOfstedRating"),
+      },
+    ];
+  });
+
+const formatAcademyRowsVersion5PupilNumbers = (academies) =>
+academies.map((academy) => {
+  return [
+    {
+      html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
+      attributes: {
+        "data-sort-value": academy.name,
+      },
+    },
+    {
+      text: academy.pupilNumbers.toLocaleString(),
+      attributes: {
+        "data-sort-value": academy.pupilNumbers,
+      },
+    },
+    {
+      html: academy.capacity.toLocaleString(),
+      attributes: {
+        "data-sort-value": academy.capacity,
+      },
+    },
+    {
+      html: `${getPercentageCapacity(
+        academy.pupilNumbers,
+        academy.capacity
+      )}%`,
+      attributes: {
+        "data-sort-value": academy.capacity,
+      },
+    },
+    {
+      html: `${getPercentageCapacity(
+        academy.pupilNumbers,
+        academy.capacity
+      )}%`,
+      attributes: {
+        "data-sort-value": academy.capacity,
+      },
+    },
+    {
+      html: `${getPercentageCapacity(
+        academy.pupilNumbers,
+        academy.capacity
+      )}%`,
+      attributes: {
+        "data-sort-value": academy.capacity,
+      },
+    },
+   
+  ];
+});
+
+const formatAcademyRowsVersion5FreeSchoolMeals = (academies) =>
+academies.map((academy) => {
+  return [
+    {
+      html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
+      attributes: {
+        "data-sort-value": academy.name,
+      },
+    },
+    {
+      text: academy.localAuthority,
+    },
+    {
+      html: `${getPercentageCapacity(
+        academy.pupilNumbers,
+        academy.capacity
+      )}%`,
+      attributes: {
+        "data-sort-value": academy.capacity,
+      },
+    },
+    {
+      html: `${getPercentageCapacity(
+        academy.pupilNumbers,
+        academy.capacity
+      )}%`,
+      attributes: {
+        "data-sort-value": academy.capacity,
+      },
+    },
+    {
+      html: `${getPercentageCapacity(
+        academy.pupilNumbers,
+        academy.capacity
+      )}%`,
+      attributes: {
+        "data-sort-value": academy.capacity,
+      },
+    },
+   
+  ];
+});
 
 class AcademiesSummary {
   constructor(academies) {
@@ -260,4 +394,7 @@ module.exports = {
   formatAcademyRows,
   formatAcademyRowsVersion4a,
   formatAcademyRowsVersion4b,
+  formatAcademyRowsVersion5Ofsted,
+  formatAcademyRowsVersion5PupilNumbers,
+  formatAcademyRowsVersion5FreeSchoolMeals,
 };
