@@ -36,16 +36,16 @@
           Pupil numbers
         </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data.academiesSummary.totalPupilNumbers}}
+                  {{data.academiesSummary.totalPupilNumbers | formatNumber}}
                 </dd>
               </div>
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          Pupil numbers (% full)
+          Pupil numbers <br>(% full)
         </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data.academiesSummary.totalCapacity}}
+                  {{data.academiesSummary.totalCapacity | formatNumber + " (" + data.academiesSummary.percentageCapacity + "%)"}}
                 </dd>
               </div>
             </article>
@@ -143,10 +143,7 @@
                       ]
                     }) }}
 
-                  <div class="govuk-body">
-                    <a class="govuk-link" href="#">View Ofsted data for academies within this trust (opens in a new tab)</a>
-                  </div>
-                </div>
+             
 
               </div>
             </div>
@@ -156,10 +153,49 @@
           <section class="govuk-!-margin-top-0 govuk-!-margin-bottom-1">
             <div class="govuk-summary-card">
               <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Financial risk grade</h2>
+                <ul class="govuk-summary-card__actions">
+                  <li class="govuk-summary-card__action">
+                    <div class="govuk-warning-text govuk-!-margin-top-0 govuk-!-margin-bottom-0 govuk-!-padding-bottom-0 govuk-!-padding-top-0">
+                      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                      <strong class="govuk-warning-text__text">
+                        <span class="govuk-warning-text__assistive">Warning</span>
+    Internal use only
+  </strong>
+                    </div>
+
+                  </li>
+
+                </ul>
+
+              </div>
+              <div class="govuk-summary-card__content">
+                <dl class="govuk-summary-list">
+             
+              <article class="fiat-card">
+         
+       
+          <div class="risk-grade">
+           <div class="risk-grade-letter">C</div>
+            <div>
+           <p class="govuk-body govuk-!-margin-bottom-0">Expected to be stable in the short-term, but potentially exposed to adverse events in the long-term
+            <a class="govuk-link" href="#">View details of risks in RAT (Risk assessment tool) (Opens in a new tab)</a></p>
+          </div>
+          </div>
+      
+      </article>
+                  </div></div></div>
+                
+
+                  <div></article>
+
+          <section class="govuk-!-margin-top-0 govuk-!-margin-bottom-1">
+            <div class="govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
                 <h2 class="govuk-summary-card__title">Joint risk and financial concern</h2>
                 <ul class="govuk-summary-card__actions">
                   <li class="govuk-summary-card__action">
-                    <div class="govuk-warning-text">
+                    <div class="govuk-warning-text govuk-!-margin-top-0 govuk-!-margin-bottom-0 govuk-!-padding-bottom-0 govuk-!-padding-top-0">
                       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                       <strong class="govuk-warning-text__text">
                         <span class="govuk-warning-text__assistive">Warning</span>
