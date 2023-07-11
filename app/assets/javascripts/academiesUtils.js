@@ -245,23 +245,17 @@ academies.map((academy) => {
       },
     },
     {
-      html: `${getPercentageCapacity(
-        academy.pupilNumbers,
-        academy.capacity
-      )}%`,
+      html: `${academy.senPupilsPercentage}%`,
       attributes: {
         "data-sort-value": academy.capacity,
       },
     },
-    {
-      html: `${getPercentageCapacity(
-        academy.pupilNumbers,
-        academy.capacity
-      )}%`,
-      attributes: {
-        "data-sort-value": academy.capacity,
+      {
+        html: `${academy.englishAsAnAdditionalLangPercentage}%`,
+        attributes: {
+          "data-sort-value": academy.capacity,
+        },
       },
-    },
    
   ];
 });
@@ -293,13 +287,8 @@ const formatAcademyRowsVersion5FreeSchoolMeals = (academies) => {
         },
       },
       {
-        html: `${getPercentageCapacity(
-          academy.pupilNumbers,
-          academy.capacity
-        )}%`,
-        attributes: {
-          "data-sort-value": academy.capacity,
-        },
+        html: `<p>23.8%</p>`,
+        
       },
     ];
   });
