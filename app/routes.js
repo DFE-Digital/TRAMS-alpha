@@ -60,24 +60,6 @@ router.get("/version-*/academies-in-this-trust/", function (request, response) {
   }
 );
 
-router.get("/version-*/trust-overview/", function (request, response) {
-  const currentVersion = request.url.split("/")[1];
-  const versionNo = currentVersion.split("-")[1];
-
-  //version-1 does not support variables so return immediately
-  if (+versionNo < 5) {
-    response.render(currentVersion + "/trust-overview");
-    return;
-  }
-
-  response.locals.data.academiesSummary = new AcademiesSummary(
-    request.session.data.trust.academiesInTrust.academies
-  );
-  response.render(currentVersion + "/trust-overview");
-}
-);
-
-
 // Routes for specific versions
 
 router.post("/version-2/trust-details", function (request, response) {

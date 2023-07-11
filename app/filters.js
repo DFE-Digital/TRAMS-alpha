@@ -1,10 +1,13 @@
 const govukPrototypeKit = require("govuk-prototype-kit");
-const { formatAcademyRows, formatAcademyRowsVersion4a, formatAcademyRowsVersion4b, formatAcademyRowsVersion5Ofsted, formatAcademyRowsVersion5PupilNumbers, formatAcademyRowsVersion5FreeSchoolMeals } = require("./assets/javascripts/academiesUtils");
+const { formatAcademyRows, formatAcademyRowsVersion4a, formatAcademyRowsVersion4b, formatAcademyRowsVersion5Ofsted, formatAcademyRowsVersion5PupilNumbers, formatAcademyRowsVersion5FreeSchoolMeals, getAcademiesSummary } = require("./assets/javascripts/academiesUtils");
 const { formatGovernorRows, formatTrustContacts, addWarning } = require("./assets/javascripts/governanceUtils");
 const {
   getLocalAuthoritiesWithCount,
 } = require("./assets/javascripts/trust-utils");
 const addFilter = govukPrototypeKit.views.addFilter;
+const addGlobal = govukPrototypeKit.views.addGlobal;
+
+addGlobal("getAcademiesSummary", getAcademiesSummary);
 
 addFilter("formatDate", function (date) {
   try {

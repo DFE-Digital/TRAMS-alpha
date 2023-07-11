@@ -405,6 +405,10 @@ const getOfstedRatingText = (academy, ofstedRatingPropName) => {
 
 };
 
+const getAcademiesSummary = (academies) => {
+  return new AcademiesSummary(academies);
+}
+
 module.exports = {
   AcademiesSummary,
   formatAcademyRows,
@@ -413,4 +417,5 @@ module.exports = {
   formatAcademyRowsVersion5Ofsted,
   formatAcademyRowsVersion5PupilNumbers,
   formatAcademyRowsVersion5FreeSchoolMeals,
+  getAcademiesSummary
 };

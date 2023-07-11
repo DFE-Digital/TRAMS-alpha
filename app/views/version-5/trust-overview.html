@@ -2,6 +2,7 @@
 {% set current_page = "trust-overview" %}
 {% set title = "Overview" %}
 {% set pageSection = "About the trust" %}
+{% set academiesSummary = getAcademiesSummary(data.trust.academiesInTrust.academies) %}
 
 {% block pageContent %}
   <div class="govuk-!-margin-top-9 govuk-!-margin-bottom-1">
@@ -36,7 +37,7 @@
           Pupil numbers
         </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data.academiesSummary.totalPupilNumbers | formatNumber}}
+                  {{ academiesSummary.totalPupilNumbers | formatNumber }}
                 </dd>
               </div>
 
@@ -45,7 +46,7 @@
           Pupil numbers <br>(% full)
         </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data.academiesSummary.totalCapacity | formatNumber + " (" + data.academiesSummary.percentageCapacity + "%)"}}
+                  {{ academiesSummary.totalCapacity | formatNumber + " (" + data.academiesSummary.percentageCapacity + "%)" }}
                 </dd>
               </div>
             </article>
