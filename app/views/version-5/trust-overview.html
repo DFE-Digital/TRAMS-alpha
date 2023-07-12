@@ -7,10 +7,10 @@
 {% block pageContent %}
   <div class="govuk-!-margin-top-9 govuk-!-margin-bottom-1">
     <div class="fiat-grid-2">
-      <article class="fiat-grid-2__item">
-        <div class="govuk-summary-card">
+      <div class="fiat-grid-2__item">
+        <section class="govuk-summary-card" aria-labelledby="trust-information">
           <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">Trust information</h2>
+            <h2 class="govuk-summary-card__title" id="trust-information">Trust information</h2>
           </div>
           <div class="govuk-summary-card__content">
             <dl class="govuk-summary-list">
@@ -48,13 +48,13 @@
               </div>
             </dl>
           </div>
-        </div>
-      </article>
+        </section>
+      </div>
 
-      <article class="fiat-grid-2__item">
-        <div class="govuk-summary-card">
+      <div class="fiat-grid-2__item">
+        <section class="govuk-summary-card" aria-labelledby="ofsted-ratings">
           <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">Ofsted ratings</h2>
+            <h2 class="govuk-summary-card__title" id="ofsted-ratings">Ofsted ratings</h2>
           </div>
           <div class="govuk-summary-card__content">
             {{ govukTable({
@@ -142,16 +142,16 @@
                 ]
               }) }}
           </div>
-        </div>
-      </article>
+        </section>
+      </div>
     </div>
   </div>
-  <section class="govuk-!-margin-top-0 govuk-!-margin-bottom-1">
-    <div class="govuk-summary-card">
+  <div class="govuk-!-margin-top-0 govuk-!-margin-bottom-1">
+    <section class="govuk-summary-card" aria-labelledby="risk-grade">
       <div class="govuk-summary-card__title-wrapper govuk-summary-card__title-wrapper-dark">
-        <h2 class="govuk-summary-card__title">Financial risk grade</h2>
-        <ul class="govuk-summary-card__actions">
-          <li class="govuk-summary-card__action">
+        <h2 class="govuk-summary-card__title" id="risk-grade">Financial risk grade</h2>
+        <div class="govuk-summary-card__actions">
+          <div class="govuk-summary-card__action">
             <div class="govuk-warning-text app-warning-text--white govuk-!-margin-top-0 govuk-!-margin-bottom-0 govuk-!-padding-bottom-0 govuk-!-padding-top-0">
               <span class="govuk-warning-text__icon app-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text app-warning-text__text">
@@ -159,8 +159,8 @@
                 Internal use only
               </strong>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
       <div class="govuk-summary-card__content">
         <article class="fiat-card">
@@ -194,14 +194,14 @@
           </details>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="govuk-!-margin-top-0 govuk-!-margin-bottom-1">
-    <div class="govuk-summary-card">
+    </section>
+  </div>
+  <div class="govuk-!-margin-top-0 govuk-!-margin-bottom-1">
+    <section class="govuk-summary-card" aria-labelledby="concern">
       <div class="govuk-summary-card__title-wrapper govuk-summary-card__title-wrapper-dark">
-        <h2 class="govuk-summary-card__title">Joint risk and financial concern</h2>
-        <ul class="govuk-summary-card__actions">
-          <li class="govuk-summary-card__action">
+        <h2 class="govuk-summary-card__title" id="concern">Joint risk and financial concern</h2>
+        <div class="govuk-summary-card__actions">
+          <div class="govuk-summary-card__action">
             <div class="govuk-warning-text app-warning-text--white govuk-!-margin-top-0 govuk-!-margin-bottom-0 govuk-!-padding-bottom-0 govuk-!-padding-top-0">
               <span class="govuk-warning-text__icon app-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text app-warning-text__text">
@@ -209,8 +209,8 @@
                 Internal use only
               </strong>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
@@ -257,8 +257,8 @@
           </div>
         </dl>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
   {{ govukDetails({
     summaryHtml: '<span>Source and updates</span>',
     html: '
