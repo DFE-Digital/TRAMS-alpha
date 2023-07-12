@@ -249,14 +249,7 @@ academies.map((academy) => {
       attributes: {
         "data-sort-value": academy.capacity,
       },
-    },
-      {
-        html: `${academy.englishAsAnAdditionalLangPercentage}%`,
-        attributes: {
-          "data-sort-value": academy.capacity,
-        },
-      },
-   
+    },  
   ];
 });
 
