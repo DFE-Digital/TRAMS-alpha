@@ -216,6 +216,11 @@ const formatAcademyRowsVersion5Ofsted = (academies) =>
 
 const formatAcademyRowsVersion5PupilNumbers = (academies) =>
 academies.map((academy) => {
+  const percentageCapacity = getPercentageCapacity(
+    academy.pupilNumbers,
+    academy.capacity
+  );
+
   return [
     {
       html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
@@ -236,18 +241,15 @@ academies.map((academy) => {
       },
     },
     {
-      html: `${getPercentageCapacity(
-        academy.pupilNumbers,
-        academy.capacity
-      )}%`,
+      html: `${percentageCapacity}%`,
       attributes: {
-        "data-sort-value": academy.capacity,
+        "data-sort-value": percentageCapacity,
       },
     },
     {
       html: `${academy.senPupilsPercentage}%`,
       attributes: {
-        "data-sort-value": academy.capacity,
+        "data-sort-value": academy.senPupilsPercentage,
       },
     },  
   ];
@@ -270,7 +272,7 @@ const formatAcademyRowsVersion5FreeSchoolMeals = (academies) => {
       {
         html: `${academy.freeSchoolMealsPercentage}%`,
         attributes: {
-          "data-sort-value": academy.capacity,
+          "data-sort-value": academy.freeSchoolMealsPercentage,
         },
       },
       {
