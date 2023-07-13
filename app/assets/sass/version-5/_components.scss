@@ -162,8 +162,13 @@
     border: transparent;
     color: $govuk-link-colour;
 
+    &:link {
+      color: $govuk-link-colour;
+    }
+
     &:hover {
       background-color: $govuk-link-colour;
+      color: #fff;
     }
 
     .fiat-image-button__image {
