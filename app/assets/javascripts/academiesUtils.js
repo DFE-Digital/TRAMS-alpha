@@ -174,6 +174,120 @@ const formatAcademyRowsVersion4b = (academies) =>
       },
     ];
   });
+  
+const formatAcademyRowsVersion5Ofsted = (academies) =>
+  academies.map((academy) => {
+    return [
+      {
+        html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
+        attributes: {
+          "data-sort-value": academy.name,
+        },
+      },
+      {
+        text: academy.localAuthority,
+      },
+      {
+        html: `${academy.phase}<br>${academy.minPupilAge} - ${academy.maxPupilAge}`,
+        attributes: {
+          "data-sort-value": `${academy.minPupilAge}${academy.maxPupilAge}`,
+        },
+      },
+      {
+        text: formatDate(academy.dateJoined, {
+          year: "numeric",
+          month: "short",
+        }),
+        attributes: {
+          "data-sort-value": academy.dateJoined,
+        },
+      },
+      {
+        html: 
+        academy.currentOfstedRating !== OFSTED_RATINGS.notYetInspected &&
+        getOfstedRatingText(academy, "previousOfstedRating"),
+      },
+      {
+        html:
+          getOfstedRatingText(academy, "currentOfstedRating"),
+      },
+    ];
+  });
+
+const formatAcademyRowsVersion5PupilNumbers = (academies) =>
+academies.map((academy) => {
+  const percentageCapacity = getPercentageCapacity(
+    academy.pupilNumbers,
+    academy.capacity
+  );
+
+  return [
+    {
+      html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
+      attributes: {
+        "data-sort-value": academy.name,
+      },
+    },
+    {
+      text: academy.pupilNumbers.toLocaleString(),
+      attributes: {
+        "data-sort-value": academy.pupilNumbers,
+      },
+    },
+    {
+      html: academy.capacity.toLocaleString(),
+      attributes: {
+        "data-sort-value": academy.capacity,
+      },
+    },
+    {
+      html: `${percentageCapacity}%`,
+      attributes: {
+        "data-sort-value": percentageCapacity,
+      },
+    },
+    {
+      html: `${academy.senPupilsPercentage}%`,
+      attributes: {
+        "data-sort-value": academy.senPupilsPercentage,
+      },
+    },  
+  ];
+});
+
+const formatAcademyRowsVersion5FreeSchoolMeals = (academies) => {
+  const averageFreeSchoolMeals = getPercentageFreeSchoolMeals(academies);
+  return academies.map((academy) => {
+    const authorityAverageFreeSchoolMeals = averageFreeSchoolMeals[academy.localAuthority];
+    return [
+      {
+        html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
+        attributes: {
+          "data-sort-value": academy.name,
+        },
+      },
+      {
+        text: academy.localAuthority,
+      },
+      {
+        html: `${academy.freeSchoolMealsPercentage}%`,
+        attributes: {
+          "data-sort-value": academy.freeSchoolMealsPercentage,
+        },
+      },
+      {
+        html: `${authorityAverageFreeSchoolMeals}%`,
+        attributes: {
+          "data-sort-value": authorityAverageFreeSchoolMeals,
+        },
+      },
+      {
+        html: `<p>23.8%</p>`,
+        
+      },
+    ];
+  });
+};
 
 class AcademiesSummary {
   constructor(academies) {
@@ -195,6 +309,26 @@ class AcademiesSummary {
 const getPercentageCapacity = (pupilNumbers, capacity) => {
   return Math.round((pupilNumbers / capacity) * 100);
 };
+
+const getPercentageFreeSchoolMeals = (academies) => {
+  const localAuthorities = {};
+  const freeShoolMealsByLocalAuthority = {};
+  academies.forEach(academy => {
+    if (localAuthorities[academy.localAuthority]) {
+      localAuthorities[academy.localAuthority].freeSchoolMeals += academy.freeSchoolMealsPercentage
+      localAuthorities[academy.localAuthority].academyCount ++
+    } else {
+      localAuthorities[academy.localAuthority] = {
+        freeSchoolMeals: academy.freeSchoolMealsPercentage,
+        academyCount: 1
+      }
+    }
+  })
+  for (const authority in localAuthorities) {
+    freeShoolMealsByLocalAuthority[authority] = Math.round(localAuthorities[authority].freeSchoolMeals / localAuthorities[authority].academyCount);
+  }
+  return freeShoolMealsByLocalAuthority;
+}
 
 const getOfstedRatingAsNum = (ofsted) => {
   switch (ofsted) {
@@ -255,9 +389,17 @@ const getOfstedRatingText = (academy, ofstedRatingPropName) => {
 
 };
 
+const getAcademiesSummary = (academies) => {
+  return new AcademiesSummary(academies);
+}
+
 module.exports = {
   AcademiesSummary,
   formatAcademyRows,
   formatAcademyRowsVersion4a,
   formatAcademyRowsVersion4b,
+  formatAcademyRowsVersion5Ofsted,
+  formatAcademyRowsVersion5PupilNumbers,
+  formatAcademyRowsVersion5FreeSchoolMeals,
+  getAcademiesSummary
 };

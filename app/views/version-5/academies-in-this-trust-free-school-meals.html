@@ -10,7 +10,7 @@
 
   <ul class="moj-sub-navigation__list">
     <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" aria-current="page" href="./academies-in-this-trust">Ofsted ratings</a>
+      <a class="moj-sub-navigation__link" href="./academies-in-this-trust">Ofsted ratings</a>
     </li>
 
     <li class="moj-sub-navigation__item">
@@ -18,7 +18,7 @@
     </li>
 
     <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" href="./academies-in-this-trust-free-school-meals">Free school meals</a>
+      <a class="moj-sub-navigation__link"aria-current="page" href="./academies-in-this-trust-free-school-meals">Free school meals</a>
     </li>
   </ul>
 
@@ -31,46 +31,40 @@
       },
       head: [
         {
-          text: "School",
+          text: "School name",
           attributes: {
             "aria-sort": "ascending"
           }
         },
         {
-          text: "Local authority",
+          text: "Local Authority",
           attributes: {
             "aria-sort": "none"
           }
         },
         {
-          text: "Phase and age range",
+          text: "Free school meals",
           attributes: {
             "aria-sort": "none"
           }
         },
         {
-          text: "Date joined",
+          text: "Local authority average",
           attributes: {
             "aria-sort": "none"
           }
         },
-        {
-          text: "Previous Ofsted rating",
-          attributes: {
-          "aria-sort": "none"
-          }
-        },
-        {
-          text: "Current Ofsted rating",
+      {
+          text: "National average",
           attributes: {
             "aria-sort": "none"
           }
         }
       ],
-      rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion5Ofsted
+      rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion5FreeSchoolMeals
     }) }}
 
-    <div class="fiat-flex-between">
+<div class="fiat-flex-between">
       {{ govukDetails({
         summaryHtml: '<span>Source and updates</span>',
         html: '
@@ -89,7 +83,7 @@
         '
       }) }}
 
-      <button class="fiat-image-button">
+     <button class="fiat-image-button">
         <svg class="fiat-image-button__image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M23,4H22V21a1,1,0,0,1-1,1H4v1a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1V5A1,1,0,0,0,23,4Z"/>
           <path d="M19,20a1,1,0,0,0,1-1V1a1,1,0,0,0-1-1H1A1,1,0,0,0,0,1V19a1,1,0,0,0,1,1H19Z"/>

@@ -361,4 +361,58 @@
       border: $govuk-error-colour;
     }
   }
+
+  .risk-grade {
+    display: flex;
+
+    .risk-grade-letter {
+      background: #1d70b8;
+      border-radius: 5px; 
+      width: 50px;
+      height: 50px;
+      text-align:center;
+      color:#fff;
+      font-size:2rem;
+      font-weight: bold;
+      line-height:50px;
+      margin-right: 20px;  
+      flex:none;  
+    } 
+  }
+
+  .govuk-summary-card__title-wrapper-dark {
+    background: #000;
+    color: #fff;
+  }
+
+  .app-warning-text--white {
+    .app-warning-text__icon {
+      background-color: #fff;
+      border-color: #fff;
+      color: #000;
+    }
+
+    .app-warning-text__text {
+      color: #fff;
+    }
+  }
+
+  .risk-image {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .app-error {
+    display: flex;
+    align-items: center;
+    
+    &__text--red {
+      color: $govuk-error-colour;
+    }
+
+    &__icon--red {
+      background: $govuk-error-colour;
+      border: $govuk-error-colour;
+    }
+  }
 }

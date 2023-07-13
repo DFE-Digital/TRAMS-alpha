@@ -60,7 +60,6 @@ router.get("/version-*/academies-in-this-trust/", function (request, response) {
   }
 );
 
-
 // Routes for specific versions
 
 router.post("/version-2/trust-details", function (request, response) {
