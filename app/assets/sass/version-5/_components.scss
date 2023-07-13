@@ -162,7 +162,7 @@
     border: transparent;
     color: $govuk-link-colour;
 
-    &:link {
+    &:link, &:visited {
       color: $govuk-link-colour;
     }
 
