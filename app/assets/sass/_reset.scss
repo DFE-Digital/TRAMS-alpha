@@ -1,4 +1,8 @@
-dl, dd {
+dl, dd, li {
   margin: 0;
   padding: 0;
+}
+
+ul > li {
+  margin-bottom: 0;
 }
