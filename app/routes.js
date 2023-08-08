@@ -44,19 +44,19 @@ router.get("/version-*/trust-details/:uid", function (request, response) {
   response.redirect('../trust-details');
 })
 
-router.get("/version-*/academies-in-this-trust/", function (request, response) {
+router.get("/version-*/academies-in-this-trust-ofsted/", function (request, response) {
     const currentVersion = request.url.split("/")[1];
 
     //version-1 does not support variables so return immediately
     if (currentVersion === "version-1") {
-      response.render(currentVersion + "/academies-in-this-trust");
+      response.render(currentVersion + "/academies-in-this-trust-ofsted");
       return;
     }
 
     response.locals.data.academiesSummary = new AcademiesSummary(
       request.session.data.trust.academiesInTrust.academies
     );
-    response.render(currentVersion + "/academies-in-this-trust");
+    response.render(currentVersion + "/academies-in-this-trust-ofsted");
   }
 );
 
