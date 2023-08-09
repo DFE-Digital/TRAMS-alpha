@@ -1,5 +1,5 @@
 const govukPrototypeKit = require("govuk-prototype-kit");
-const { formatAcademyRows, formatAcademyRowsVersion4a, formatAcademyRowsVersion4b, formatAcademyRowsVersion5Ofsted, formatAcademyRowsVersion5PupilNumbers, formatAcademyRowsVersion5FreeSchoolMeals, getAcademiesSummary } = require("./assets/javascripts/academiesUtils");
+const { formatAcademyRows, formatAcademyRowsVersion4a, formatAcademyRowsVersion4b, formatAcademyRowsVersion5Ofsted, formatAcademyRowsVersion5PupilNumbers, formatAcademyRowsVersion5FreeSchoolMeals, formatAcademyRowsVersion5Details, getAcademiesSummary } = require("./assets/javascripts/academiesUtils");
 const { formatGovernorRows, formatTrustContacts, addWarning } = require("./assets/javascripts/governanceUtils");
 const {
   getLocalAuthoritiesWithCount,
@@ -31,6 +31,7 @@ addFilter("formatNumber", function (num) {
 addFilter("formatAcademyRows", formatAcademyRows);
 addFilter("formatAcademyRowsVersion4a", formatAcademyRowsVersion4a);
 addFilter("formatAcademyRowsVersion4b", formatAcademyRowsVersion4b);
+addFilter("formatAcademyRowsVersion5Details", formatAcademyRowsVersion5Details);
 addFilter("formatAcademyRowsVersion5Ofsted", formatAcademyRowsVersion5Ofsted);
 addFilter("formatAcademyRowsVersion5PupilNumbers", formatAcademyRowsVersion5PupilNumbers);
 addFilter("formatAcademyRowsVersion5FreeSchoolMeals", formatAcademyRowsVersion5FreeSchoolMeals);
