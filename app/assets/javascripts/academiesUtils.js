@@ -194,7 +194,7 @@ const formatAcademyRowsVersion5Details = (academies) =>
         html: `<p>Urban city and town</p>`,  
       },
       {
-        html: `<p><a href="./#">Get information about schools</a></p>`,  
+        html: `<p><a href="#">Get information about schools</a></p>`,  
       },
     ];
   });
