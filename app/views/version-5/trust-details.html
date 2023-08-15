@@ -57,7 +57,7 @@
           },
           {
             key: {
-              text: "Information from other services"
+              text: "Information from other services (opens in a new tab)"
             },
             value: {
               html: 
@@ -117,57 +117,12 @@
         ]
       }) }}
   </section>
-
-  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
-
-    {{ govukSummaryList({
-      card: {
-        title: {
-          text: "Sponsor details"
-        }
-      },
-        rows: [
-          {
-            key: {
-              text: "Status"
-            },
-            value: {
-              text: data.trust.trustDetails.sponsorStatus | default('---', true)
-            }
-          },
-          {
-            key: {
-              text: "Restrictions"
-            },
-            value: {
-              text: data.trust.trustDetails.sponsorRestrictions | default('---', true)
-            }
-          },
-          {
-            key: {
-              text: "Approval date"
-            },
-            value: {
-              html: data.trust.trustDetails.sponsorApprovalDate | formatDate
-            }
-          },
-          {
-            key: {
-              text: "Name"
-            },
-            value: {
-              html: data.trust.trustDetails.sponsorName | default('---', true)
-            }
-          }
-        ]
-      }) }}
-  </section>
    {{ govukDetails({
         summaryHtml: '<span>Source and updates</span>',
         html: '
           <dl class="fiat-data-source-list">
             <div class="fiat-data-source-list__item">
-              <dt class="fiat-data-source-list__title">Trust details, reference numbers, sponsor details: </dt>
+              <dt class="fiat-data-source-list__title">Trust details, Reference numbers: </dt>
               <dd>Get information about schools</dd>
             </div>
             <div class="fiat-data-source-list__item">

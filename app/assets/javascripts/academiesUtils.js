@@ -175,11 +175,11 @@ const formatAcademyRowsVersion4b = (academies) =>
     ];
   });
   
-const formatAcademyRowsVersion5Ofsted = (academies) =>
+const formatAcademyRowsVersion5Details = (academies) =>
   academies.map((academy) => {
     return [
       {
-        html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
+        html: `<b>${academy.name}<br><p class=govuk-body-s>URN: 012345</p></b>`,
         attributes: {
           "data-sort-value": academy.name,
         },
@@ -188,9 +188,24 @@ const formatAcademyRowsVersion5Ofsted = (academies) =>
         text: academy.localAuthority,
       },
       {
-        html: `${academy.phase}<br>${academy.minPupilAge} - ${academy.maxPupilAge}`,
+        text: academy.type,
+      },
+      {
+        html: `<p>Urban city and town</p>`,  
+      },
+      {
+        html: `<p><a href="#">Get information about schools</a></p>`,  
+      },
+    ];
+  });
+
+  const formatAcademyRowsVersion5Ofsted = (academies) =>
+  academies.map((academy) => {
+    return [
+      {
+        html: `<b>${academy.name}<br><p class=govuk-body-s>URN: 012345</p></b>`,
         attributes: {
-          "data-sort-value": `${academy.minPupilAge}${academy.maxPupilAge}`,
+          "data-sort-value": academy.name,
         },
       },
       {
@@ -223,9 +238,15 @@ academies.map((academy) => {
 
   return [
     {
-      html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
+      html: `<b>${academy.name}<br><p class=govuk-body-s>URN: 012345</p></b>`,
       attributes: {
         "data-sort-value": academy.name,
+      },
+    },
+    {
+      html: `${academy.phase}<br>${academy.minPupilAge} - ${academy.maxPupilAge}`,
+      attributes: {
+        "data-sort-value": `${academy.minPupilAge}${academy.maxPupilAge}`,
       },
     },
     {
@@ -261,13 +282,10 @@ const formatAcademyRowsVersion5FreeSchoolMeals = (academies) => {
     const authorityAverageFreeSchoolMeals = averageFreeSchoolMeals[academy.localAuthority];
     return [
       {
-        html: `<b>${academy.name}<br><p class=govuk-body-s>${academy.type}</p></b>`,
+        html: `<b>${academy.name}<br><p class=govuk-body-s>URN: 012345</p></b>`,
         attributes: {
           "data-sort-value": academy.name,
         },
-      },
-      {
-        text: academy.localAuthority,
       },
       {
         html: `${academy.freeSchoolMealsPercentage}%`,
@@ -398,6 +416,7 @@ module.exports = {
   formatAcademyRows,
   formatAcademyRowsVersion4a,
   formatAcademyRowsVersion4b,
+  formatAcademyRowsVersion5Details,
   formatAcademyRowsVersion5Ofsted,
   formatAcademyRowsVersion5PupilNumbers,
   formatAcademyRowsVersion5FreeSchoolMeals,

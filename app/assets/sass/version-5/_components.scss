@@ -334,6 +334,11 @@
     }
   }
 
+  .fiat-phase-banner {
+    background-color: $fiat-blue-light;
+
+}  
+
   // Manage 'js-enabled' components and fallback visibility
   .fiat-search-js-toggle {
     display: none;

@@ -9,8 +9,8 @@
 <nav class="moj-sub-navigation" aria-label="Sub navigation">
 
   <ul class="moj-sub-navigation__list">
-  <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link"  href="./academies-in-this-trust-details">Details</a>
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" aria-current="page" href="./academies-in-this-trust-details">Details</a>
     </li>
 
     <li class="moj-sub-navigation__item">
@@ -18,7 +18,7 @@
     </li>
 
     <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" aria-current="page" href="./academies-in-this-trust-pupil-numbers">Pupil numbers</a>
+      <a class="moj-sub-navigation__link" href="./academies-in-this-trust-pupil-numbers">Pupil numbers</a>
     </li>
 
     <li class="moj-sub-navigation__item">
@@ -40,41 +40,35 @@
             "aria-sort": "ascending"
           }
         },
-         {
-          text: "Phase and age range",
+        {
+          text: "Local authority",
           attributes: {
             "aria-sort": "none"
           }
         },
         {
-          text: "Pupil numbers",
+          text: "Type",
           attributes: {
             "aria-sort": "none"
           }
         },
         {
-          text: "Pupil capacity",
+          text: "Rural or urban",
           attributes: {
             "aria-sort": "none"
           }
         },
         {
-          text: "% full",
+          html: 'More information (opens in a new tab)',
           attributes: {
-            "aria-sort": "none"
+          "aria-sort": "none"
           }
-        },
-      {
-          text: "SEN pupils",
-          attributes: {
-            "aria-sort": "none"
-          }    
         }
       ],
-      rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion5PupilNumbers
+      rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion5Details
     }) }}
 
-     <div class="fiat-flex-between">
+    <div class="fiat-flex-between">
       {{ govukDetails({
         summaryHtml: '<span>Source and updates</span>',
         html: '
@@ -93,12 +87,12 @@
         '
       }) }}
 
-     <a class="fiat-image-button" target="blank" href="https://docs.google.com/spreadsheets/d/10MIBjwYS1qhzDxsEFHvJj6yN5rnr3h6dVKC_z97pua4/edit?usp=sharing">
+      <a class="fiat-image-button" target="blank" href="https://docs.google.com/spreadsheets/d/10MIBjwYS1qhzDxsEFHvJj6yN5rnr3h6dVKC_z97pua4/edit?usp=sharing">
         <svg class="fiat-image-button__image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M23,4H22V21a1,1,0,0,1-1,1H4v1a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1V5A1,1,0,0,0,23,4Z"/>
           <path d="M19,20a1,1,0,0,0,1-1V1a1,1,0,0,0-1-1H1A1,1,0,0,0,0,1V19a1,1,0,0,0,1,1H19Z"/>
         </svg>
-      Download CSV file
+        Download CSV file
     </a>
     </div>
 
