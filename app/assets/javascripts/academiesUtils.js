@@ -179,7 +179,7 @@ const formatAcademyRowsVersion5Details = (academies) =>
   academies.map((academy) => {
     return [
       {
-        html: `<b>${academy.name}<br><p class=govuk-body-s>URN: 012345</p></b>`,
+        html: `<b>${academy.name}<br><p class=govuk-body-s>URN: ${academy.urn}</p></b>`,
         attributes: {
           "data-sort-value": academy.name,
         },
@@ -191,7 +191,7 @@ const formatAcademyRowsVersion5Details = (academies) =>
         text: academy.type,
       },
       {
-        html: `<p>Urban city and town</p>`,  
+        text: academy.ruralOrUrban,
       },
       {
         html: `<p><a href="#">More information</a></p>`,  
