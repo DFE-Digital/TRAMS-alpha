@@ -1,0 +1,138 @@
+{% extends "./layouts/trust.html" %}
+{% from "./includes/contact.html" import contact %}
+{% from "./includes/link.njk" import link %}
+{% set current_page = "trust-details" %} 
+{% set title = "Details" %}
+{% set pageSection = "About the trust" %}
+
+{% block pageContent %}
+  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          text: "Trust details"
+        }
+      },
+        rows: [
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              text: data.trust.trustDetails.address | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Website"
+            },
+            value: {
+              html: link(data.trust.trustDetails.website, opensInNewTab=true)
+            }
+          },
+          {
+            key: {
+              text: "Opened on"
+            },
+            value: {
+              html: data.trust.trustDetails.dateIncorporated | formatDate
+            }
+          },
+          {
+            key: {
+              text: "Region and territory"
+            },
+            value: {
+              text: data.trust.trustDetails.regionsGroup | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Local authority"
+            },
+            value: {
+              text: data.trust.trustDetails.localAuthorities[0] | default('---', true)
+            }
+          },
+          {
+            key: {
+              text: "Information from other services (opens in a new tab)"
+            },
+            value: {
+              html: 
+              '<a class="govuk-link" href="#">Companies House</a><br>
+              <a class="govuk-link" href="#">Get information about schools</a><br>
+              <a class="govuk-link" href="#">Schools financial benchmarking</a><br>
+              <a class="govuk-link" href="#">Find school college and performance data in England</a>'
+          
+            }
+          }
+        ]
+      }) }}
+
+   
+  </section>
+  <section class="govuk-!-margin-top-8 govuk-!-margin-bottom-9">
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          text: "Reference numbers"
+        }
+      },
+        rows: [
+        {
+          key: {
+            text: "UID (Unique group identifier)"
+          },
+          value: {
+            html: data.trust.uid | default('---', true)
+          }
+        },
+        {
+          key: {
+            text: "Group ID (identifier) and TRN (trust reference number)"
+          },
+          value: {
+            html: data.trust.trustDetails.trustReferenceNumber | default('---', true)
+          }
+        },
+        {
+          key: {
+            text: "UKPRN (UK provider reference number)"
+          },
+          value: {
+            html: data.trust.trustDetails.ukprn | default('---', true)
+          }
+        },
+        {
+          key: {
+            text: "Companies House number"
+          },
+          value: {
+            html: data.trust.trustDetails.companiesHouseNumber | default('---', true)
+          }  
+          }
+        ]
+      }) }}
+  </section>
+   {{ govukDetails({
+        summaryHtml: '<span>Source and updates</span>',
+        html: '
+          <dl class="fiat-data-source-list">
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Trust details, Reference numbers: </dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Last updated: 21 March 2023</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Next scheduled update: 21 June 2023</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+
+{% endblock %}
