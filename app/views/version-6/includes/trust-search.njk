@@ -1,0 +1,21 @@
+{% macro appTrustSearch(idPrefix) %}
+  <label class="govuk-hint">
+    Enter trust name, TRN, group ID, UID, UKPRN or Companies House number
+    <a href="#name-reference-help" class="help-icon modal-link">
+      <span class="govuk-visually-hidden">Help with reference numbers</span>
+      <span class="govuk-visually-hidden">Opens a dialog</span>
+    </a>
+  </a>
+</label>
+<div class="govuk-input__wrapper govuk-!-margin-top-4 fiat-autocomplete fiat-autocomplete--home">
+  <div id="{{idPrefix}}-autocomplete-container"></div>
+  <input type="hidden" id="{{idPrefix}}-uid" name="uid"/>
+  <button class="govuk-button fiat-blue-search-button fiat-inline-button" data-module="govuk-button" type="submit">
+                    <span class="govuk-visually-hidden">Search</span>
+                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                      <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+                      <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+                    </svg>
+                  </button>
+</div>
+{% endmacro %}

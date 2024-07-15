@@ -1,0 +1,114 @@
+{% extends "./layouts/trust.html" %}
+{% set current_page = "academies-in-this-trust" %}
+{% set title = "Academies in this trust" %}
+{% set pageSection = "About the trust" %}
+{% from "./includes/academies-in-trust-title.html" import academiesInTrustTitle %}
+
+{% block pageContent %}
+
+<nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+  <ul class="moj-sub-navigation__list">
+  <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link"  href="./academies-in-this-trust-details">Details</a>
+    </li>
+
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" href="./academies-in-this-trust-ofsted">Ofsted ratings</a>
+    </li>
+
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" aria-current="page" href="./academies-in-this-trust-pupil-numbers">Pupil numbers</a>
+    </li>
+
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" href="./academies-in-this-trust-free-school-meals">Free school meals</a>
+    </li>
+  </ul>
+
+</nav>
+
+  <div>
+    {{ govukTable({
+      attributes: {
+      'data-module': 'moj-sortable-table'
+      },
+      head: [
+        {
+          text: "School name",
+          attributes: {
+            "aria-sort": "ascending"
+          }
+        },
+         {
+          text: "Phase and age range",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+          text: "Pupil numbers",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+          text: "Pupil capacity",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+          text: "% full",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+      {
+          text: "SEN pupils",
+          attributes: {
+            "aria-sort": "none"
+          }    
+        }
+      ],
+      rows: data.trust.academiesInTrust.academies | formatAcademyRowsVersion5PupilNumbers
+    }) }}
+
+     <div class="fiat-flex-between">
+      {{ govukDetails({
+        summaryHtml: '<span>Source and updates</span>',
+        html: '
+        <dl class="fiat-data-source-list">
+          <div class="fiat-data-source-list__item">
+            <dt class="fiat-data-source-list__title">Ofsted ratings, pupil numbers, capacity and free school meals:</dt>
+            <dd>Get information about schools</dd>
+          </div>
+          <div class="fiat-data-source-list__item">
+            <dd>Last updated:21 May 2023</dd>
+          </div>
+          <div class="fiat-data-source-list__item">
+            <dd>Next scheduled update: 21 August 2023</dd>
+          </div>
+        </dl>
+        '
+      }) }}
+
+     <a class="fiat-image-button" target="blank" href="https://docs.google.com/spreadsheets/d/10MIBjwYS1qhzDxsEFHvJj6yN5rnr3h6dVKC_z97pua4/edit?usp=sharing">
+        <svg class="fiat-image-button__image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M23,4H22V21a1,1,0,0,1-1,1H4v1a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1V5A1,1,0,0,0,23,4Z"/>
+          <path d="M19,20a1,1,0,0,0,1-1V1a1,1,0,0,0-1-1H1A1,1,0,0,0,0,1V19a1,1,0,0,0,1,1H19Z"/>
+        </svg>
+      Download CSV file
+    </a>
+    </div>
+
+    <div class="govuk-!-margin-top-9 govuk-!-margin-bottom-4">
+      <a class="govuk-body govuk-link  govuk-link--no-visited-state" href="#"
+      class="govuk-link govuk-link--no-visited-state">Report a problem with information on this page</a>
+    </div>
+  </div>
+
+{% endblock %}
+
+{# Override anything wrong link block because it is manually included above #}
+{% block anythingWrong %}{% endblock %}

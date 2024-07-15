@@ -1,0 +1,208 @@
+{% extends "./layouts/trust.html" %}
+{% set current_page = "governance" %} 
+{% set title = "Governance" %}
+{% set pageSection = "About the trust" %}
+
+{% block pageContent %}
+  <div class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+    {# {{ govukInsetText({
+      html: '<a class="govuk-link" href="#">View this trust on Companies House officer information (opens in new tab)</a>'
+    }) }} #}
+   
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Governance turnover</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-2">{{ data.trust.governance.turnover }}% within the last 12 months</p>
+        <p class="govuk-body">Number of trustees appointed or resigned as a proportion of the number of trustees on the board.</p>
+      </div>
+    </div>
+
+    <section class="govuk-!-margin-bottom-9 govuk-!-margin-top-9">
+      {{ govukTable({
+        attributes: {
+          'data-module': 'moj-sortable-table'
+        },
+        caption: "Trust leadership",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Name",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Role",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "From",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "To",
+            attributes: {
+              "aria-sort": "none"
+            }
+          }
+        ],
+        rows: data.trust.governance.trustManagement | formatGovernorRows | addWarning
+      }) }}
+
+    </section>
+    <section class="govuk-!-margin-bottom-9">
+      {{ govukTable({
+        attributes: {
+          'data-module': 'moj-sortable-table'
+        },
+        caption: "Trustees",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Name",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Appointed by",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "From",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "To",
+            attributes: {
+              "aria-sort": "none"
+            }
+          }
+        ],
+        rows: data.trust.governance.trustees | formatGovernorRows({showAppointmentType: true})
+      }) }}
+
+   
+    </section>
+    <section class="govuk-!-margin-bottom-9">
+      {{ govukTable({
+        attributes: {
+          'data-module': 'moj-sortable-table'
+        },
+        caption: "Members",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Name",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Appointed by",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "From",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "To",
+            attributes: {
+              "aria-sort": "none"
+            }
+          }
+        ],
+        rows: data.trust.governance.members | formatGovernorRows({showAppointmentType: true})
+      }) }}
+
+ 
+    </section>
+    
+    <section class="govuk-!-margin-bottom-9">
+      {{ govukTable({
+        attributes: {
+          'data-module': 'moj-sortable-table'
+        },
+        caption: "Historic (left within last 12 months)",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Name",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Role",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Appointed by",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "From",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "To",
+            attributes: {
+              "aria-sort": "none"
+            }
+          }
+        ],
+        rows: data.trust.governance.pastTwelveMonths | formatGovernorRows({showRole: true, showAppointmentType: true})
+      }) }}
+
+       {{ govukDetails({
+        summaryHtml: '<span>Source and updates</span>',
+        html: '
+          <dl class="fiat-data-source-list">
+            <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Governance turnover:</dt>
+              <dd>(RAT) Risk assessment tool</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Last updated: 21 December 2021</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Next scheduled update: 21 January 2022</dd>
+            </div>
+             <div class="fiat-data-source-list__item">
+              <dt class="fiat-data-source-list__title">Governance:</dt>
+              <dd>Get information about schools</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Last updated: 21 December 2021</dd>
+            </div>
+            <div class="fiat-data-source-list__item">
+              <dd>Next scheduled update: 21 January 2022</dd>
+            </div>
+          </dl>
+        '
+      }) }}
+    </section>
+    
+  </div>
+{% endblock %}

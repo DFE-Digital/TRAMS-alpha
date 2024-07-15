@@ -1,0 +1,329 @@
+{% extends "./layouts/trust.html" %}
+{% set current_page = "trust-overview" %}
+{% set title = "Overview" %}
+{% set pageSection = "About the trust" %}
+{% set academiesSummary = getAcademiesSummary(data.trust.academiesInTrust.academies) %}
+
+{% block pageContent %}
+  <div class="govuk-!-margin-top-9 govuk-!-margin-bottom-1">
+    <div class="fiat-grid-2">
+      <div class="fiat-grid-2__item">
+        <section class="govuk-summary-card" aria-labelledby="trust-information">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title" id="trust-information">Trust summary</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                  Total academies
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data.trust.academiesInTrust.academies.length}}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                  Academies in each local authority
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data.trust.academiesInTrust.academies | getLocalAuthoritiesWithCount | safe }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                  Pupil numbers
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ academiesSummary.totalPupilNumbers | formatNumber }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                  Pupil capacity <br>(% full)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ academiesSummary.totalCapacity | formatNumber }}<br>({{ academiesSummary.percentageCapacity }}%)
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+      </div>
+
+      <div class="fiat-grid-2__item">
+        <section class="govuk-summary-card" aria-labelledby="ofsted-ratings">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title" id="ofsted-ratings">Ofsted ratings</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            {{ govukTable({
+                attributes: {
+                  'data-module': 'moj-sortable-table'
+                },
+            
+                head: [
+                  {
+                    text: "Rating",
+                    attributes: {
+                      "aria-sort": "ascending"
+                    }
+                  },
+                  {
+                    text: "Number of schools",
+                    attributes: {
+                      "aria-sort": "none"
+                    },
+                    classes: 'govuk-!-width-one-third',
+                    format: "numeric"
+                  }
+                ],
+                rows: [
+                  [
+                    {
+                      text: 'Outstanding',
+                      attributes: {
+                        "data-sort-value": "1"
+                      }
+                    },
+                    {
+                      text: "3",
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      text: 'Good',
+                      attributes: {
+                        "data-sort-value": "2"
+                      }
+                    },
+                    {
+                      text: "5",
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      text: 'Requires improvement',
+                      attributes: {
+                        "data-sort-value": "3"
+                      }
+                    },
+                    {
+                      text: "2",
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      text: 'Inadequate',
+                      attributes: {
+                        "data-sort-value": "4"
+                      }
+                    },
+                    {
+                      text: "3",
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      text: 'Not yet inspected',
+                      attributes: {
+                        "data-sort-value": "5"
+                      }
+                    },
+                    {
+                      text: "4",
+                      format: "numeric"
+                    }
+                  ]
+                ]
+              }) }}
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-!-margin-top-0 govuk-!-margin-bottom-1">
+    <section class="govuk-summary-card" aria-labelledby="risk-grade">
+      <div class="govuk-summary-card__title-wrapper govuk-summary-card__title-wrapper-dark">
+        <h2 class="govuk-summary-card__title" id="risk-grade">Financial risk grade</h2>
+        <div class="govuk-summary-card__actions">
+          <div class="govuk-summary-card__action">
+            <div class="govuk-warning-text app-warning-text--white govuk-!-margin-top-0 govuk-!-margin-bottom-0 govuk-!-padding-bottom-0 govuk-!-padding-top-0">
+              <span class="govuk-warning-text__icon app-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text app-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                Internal use only
+              </strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-summary-card__content">
+        <article class="fiat-card">
+          <div class="risk-grade">
+            <div class="risk-grade-letter">C</div>
+            <div>
+              <p class="govuk-body govuk-!-margin-bottom-0">
+                Expected to be stable in the short-term, but potentially exposed to adverse events in the long-term
+                <a class="govuk-link" href="#">View details of risks in RAT (Risk assessment tool) (Opens in a new tab)</a>
+              </p>
+            </div>
+          </div>
+        </article>
+        <div>
+          <img src="/public/images/risk-scale.svg" class="risk-image" />
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What the other risk ratings mean
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>A: a high or good performer that should be stable on a long-term basis</p>
+              <p>B: should be stable on a long-term basis</p>
+              <p>C: expected to be stable in the short-term, but potentially exposed to adverse events in long-term</p>
+              <p>D: somewhat vulnerable in the short-term, and could be even more vulnerable in the longer term</p>
+              <p>E: appears to be vulnerable to adverse events in the short and long terms</p>
+              <p>F: may need favourable conditions to operate, for example, few competing schools, historic surplus</p>
+              <p>G: needs urgent improvement, possibly in intervention</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="govuk-!-margin-top-0 govuk-!-margin-bottom-1">
+    <section class="govuk-summary-card" aria-labelledby="concern">
+      <div class="govuk-summary-card__title-wrapper govuk-summary-card__title-wrapper-dark">
+        <h2 class="govuk-summary-card__title" id="concern">Joint risk rating</h2>
+        <div class="govuk-summary-card__actions">
+          <div class="govuk-summary-card__action">
+            <div class="govuk-warning-text app-warning-text--white govuk-!-margin-top-0 govuk-!-margin-bottom-0 govuk-!-padding-bottom-0 govuk-!-padding-top-0">
+              <span class="govuk-warning-text__icon app-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text app-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                Internal use only
+              </strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of strategic overview meeting
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 February 2023
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Trust banding
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Upper consolidate
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Joint risk rating
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Monitor
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </div>
+  <div class="govuk-!-margin-top-0 govuk-!-margin-bottom-1">
+    <section class="govuk-summary-card" aria-labelledby="concern">
+      <div class="govuk-summary-card__title-wrapper govuk-summary-card__title-wrapper-dark">
+        <h2 class="govuk-summary-card__title" id="concern">Risk to trust of active concerns case</h2>
+        <div class="govuk-summary-card__actions">
+          <div class="govuk-summary-card__action">
+            <div class="govuk-warning-text app-warning-text--white govuk-!-margin-top-0 govuk-!-margin-bottom-0 govuk-!-padding-bottom-0 govuk-!-padding-top-0">
+              <span class="govuk-warning-text__icon app-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text app-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                Internal use only
+              </strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-summary-card__content">
+        <div class="govuk-!-padding-top-2">
+          <strong class="govuk-tag govuk-tag--orange"> Amber </strong>
+          <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"> Green </strong>
+          <p>
+            <a class= "govuk-link" href="#">View details of concerns in ReCast (Record concerns and support for trusts) (opens in a new tab)</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+  {{ govukDetails({
+    summaryHtml: '<span>Source and updates</span>',
+    html: '
+      <dl class="fiat-data-source-list">
+        <div class="fiat-data-source-list__item">
+          <dt class="fiat-data-source-list__title">Trust information: </dt>
+          <dd>Get information about schools</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dd>Last updated: 21 March 2023</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dd>Next scheduled update: 21 June 2023</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dt class="fiat-data-source-list__title">Ofsted ratings: </dt>
+          <dd>Ofsted</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dd>Last updated: 21 March 2023</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dd>Next scheduled update: 21 June 2023</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dt class="fiat-data-source-list__title">Trust risk grade:</dt>
+          <dd>SFSO (Schools financial oversight)</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dd>Last updated: 21 March 2023</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dd>Next scheduled update: 21 June 2023</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dt class="fiat-data-source-list__title">Joint risk rating:</dt>
+          <dd>Regions group</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dd>Last updated: 21 March 2023</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dd>Next scheduled update: 21 June 2023</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dt class="fiat-data-source-list__title">Risk to trust of active concerns case:</dt>
+          <dd>Record concerns and support for trusts service</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dd>Last updated: 21 March 2023</dd>
+        </div>
+        <div class="fiat-data-source-list__item">
+          <dd>Next scheduled update: 21 June 2023</dd>
+        </div>
+      </dl>
+    '
+    }) }}                     
+{% endblock %}
